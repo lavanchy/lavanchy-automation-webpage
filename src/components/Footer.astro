@@ -1,0 +1,16 @@
+---
+import { siteConfig } from '../config/site';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-border bg-surface">
+  <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-4 py-6 text-sm text-text-muted">
+    <p>&copy; {year} {siteConfig.name}</p>
+    <ul class="flex gap-4">
+      <li><a href="/de/impressum/" class="hover:text-brand-primary">Impressum</a></li>
+      <li><a href="/de/datenschutz/" class="hover:text-brand-primary">Datenschutz</a></li>
+      <li><a href="/de/agb/" class="hover:text-brand-primary">AGB</a></li>
+    </ul>
+  </div>
+</footer>

@@ -1,0 +1,15 @@
+---
+import { siteConfig } from '../config/site';
+import Nav from './Nav.astro';
+import CtaButton from './CtaButton.astro';
+---
+
+<header class="border-b border-border bg-background">
+  <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-4 py-4">
+    <a href="/de/" class="font-heading text-lg font-bold text-brand-primary">
+      {siteConfig.name}
+    </a>
+    <Nav />
+    <CtaButton class="text-sm" />
+  </div>
+</header>

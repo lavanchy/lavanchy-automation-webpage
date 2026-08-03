@@ -1,0 +1,24 @@
+---
+import { nav } from '../config/site';
+
+const currentPath = Astro.url.pathname;
+---
+
+<nav aria-label="Hauptnavigation">
+  <ul class="flex flex-wrap gap-6">
+    {nav.map((item) => {
+      const isCurrent = currentPath === item.href;
+      return (
+        <li>
+          <a
+            href={item.href}
+            aria-current={isCurrent ? 'page' : undefined}
+            class="font-body text-text hover:text-brand-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-primary aria-[current=page]:font-bold aria-[current=page]:text-brand-primary"
+          >
+            {item.label}
+          </a>
+        </li>
+      );
+    })}
+  </ul>
+</nav>

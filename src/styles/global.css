@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+/* Self-hosted Fonts (kein externer Google-Fonts-Request, kein CLS/Third-Party-Cookie).
+   Space Grotesk: Überschriften (500/700). Inter: Fliesstext (400/500/600). */
+@import "@fontsource/space-grotesk/500.css";
+@import "@fontsource/space-grotesk/700.css";
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+
+/* Zentrale Design-Tokens gemäss Lavanchy Automation CI/CD-Richtlinie.
+   Quelle: Corporate-Design-PDF (Claude Design). Änderungen hier wirken überall,
+   keine Komponente muss angepasst werden. */
+@theme {
+  /* Markenfarben */
+  --color-ink: #1b2b31; /* Ink Petrol — dunkler Hintergrund (Hero/Banner-Sektionen) */
+  --color-petrol: #1c6f72; /* Petrol — Primärfarbe: Logo "A", Wordmark, CTA, Überschriften-Akzent */
+  --color-teal: #2fbfb3; /* Teal — NUR als Akzent (Hover, kleine Highlights), nicht als Fläche */
+  --color-slate: #56707c; /* Slate — sekundäre/gedämpfte Elemente */
+  --color-paper: #f4f8f8; /* Paper — Standard-Hintergrund (hell) */
+  --color-mist: #dce7e8; /* Mist — Rahmen/Kartenflächen innerhalb heller Sektionen */
+  --color-body-text: #45575e; /* Body Text — gedämpfter Fliesstext */
+  --color-ink-text: #17242a; /* Ink Text — Haupttextfarbe */
+
+  /* Semantische Tokens (von Komponenten genutzt) */
+  --color-brand-primary: var(--color-petrol);
+  --color-brand-secondary: var(--color-ink);
+  --color-brand-accent: var(--color-teal);
+  --color-text: var(--color-ink-text);
+  --color-text-muted: var(--color-body-text);
+  --color-background: var(--color-paper);
+  --color-surface: var(--color-mist);
+  --color-border: var(--color-mist);
+
+  --font-heading: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  --spacing-section: 6rem;
+}
