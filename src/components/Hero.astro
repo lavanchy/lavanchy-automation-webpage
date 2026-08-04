@@ -11,7 +11,7 @@ interface Props {
 const { eyebrow, headline, subheadline, dark = false } = Astro.props;
 ---
 
-<Section bg={dark ? 'ink' : 'paper'} class="py-20 md:py-28">
+<Section bg={dark ? 'ink' : 'paper'} class="py-14 md:py-20">
   <p class={`mb-4 font-body text-sm font-semibold uppercase tracking-wide ${dark ? 'text-teal' : 'text-brand-primary'}`}>
     {eyebrow}
   </p>
@@ -21,7 +21,11 @@ const { eyebrow, headline, subheadline, dark = false } = Astro.props;
   <p class={`max-w-2xl text-lg leading-relaxed ${dark ? 'text-white/85' : 'text-text-muted'}`}>
     {subheadline}
   </p>
-  <div class="mt-8">
-    <slot />
-  </div>
+  {
+    Astro.slots.has('default') && (
+      <div class="mt-8">
+        <slot />
+      </div>
+    )
+  }
 </Section>

@@ -8,7 +8,7 @@ interface Props {
 const { name, text, url } = Astro.props;
 ---
 
-<div class="rounded-lg border border-border bg-surface p-6">
+<div class="flex h-full flex-col rounded-lg border border-border bg-surface p-6">
   <h3 class="mb-3 font-heading text-xl font-bold text-text">{name}</h3>
   <p class="mb-4 leading-relaxed text-text-muted">{text}</p>
   {
@@ -17,7 +17,7 @@ const { name, text, url } = Astro.props;
         href={url}
         target="_blank"
         rel="noopener noreferrer"
-        class="font-body font-semibold text-brand-primary hover:underline"
+        class="mt-auto font-body font-semibold text-brand-primary hover:underline"
       >
         {name} besuchen ↗
       </a>

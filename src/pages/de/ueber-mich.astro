@@ -23,9 +23,8 @@ const { hero, werdegang, wieIchArbeite, wieIchVorgehe, testimonials, linkedinNot
       <Image
         src={portrait}
         alt="Loïc Lavanchy"
-        width={420}
-        height={420}
-        class="mx-auto w-full max-w-xs rounded-lg object-cover md:col-span-1"
+        width={320}
+        class="mx-auto w-full max-w-[240px] rounded-lg md:col-span-1"
       />
       <div class="md:col-span-2">
         <h2 class="mb-4 font-heading text-3xl font-bold text-text">{werdegang.headline}</h2>
@@ -42,7 +41,11 @@ const { hero, werdegang, wieIchArbeite, wieIchVorgehe, testimonials, linkedinNot
       {wieIchArbeite.text.map((p) => <p>{p}</p>)}
     </div>
     <div class="grid gap-6 sm:grid-cols-2">
-      {wieIchArbeite.grundsaetze.map((item) => <TitledCard title={item.title} text={item.text} />)}
+      {
+        wieIchArbeite.grundsaetze.map((item, i) => (
+          <TitledCard title={item.title} text={item.text} index={i + 1} />
+        ))
+      }
     </div>
   </Section>
 

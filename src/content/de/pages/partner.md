@@ -7,7 +7,7 @@ hero:
   headline: "Passende Lösungen, sinnvoll verbunden"
   subheadline: "Ich arbeite mit ausgewählten Partnern aus dem DACH Raum zusammen. Mein Mehrwert liegt darin, die passende Lösung auszuwählen und sie mit euren konkreten Abläufen zu verbinden."
 warum:
-  text: "Ich arbeite mit Partnern zusammen, deren Lösungen nachvollziehbar, praxistauglich und für KMU geeignet sind. Wichtig sind dabei:"
+  text: "Wichtig ist mir dabei, dass die Lösungen meiner Partner nachvollziehbar, praxistauglich und für KMU geeignet sind:"
   items:
     - "Klare Datenverantwortung"
     - "Lösungen aus dem DACH Raum"
@@ -22,6 +22,7 @@ partners:
     url: "https://balmung.at"
     text: "balmung ist ein browserbasiertes ERP System mit Funktionen für CRM, Einkauf, Buchhaltung, Registrierkasse und Zeiterfassung. balmung eignet sich hervorragend als Frontend für n8n Automatisierungen. Das Team arbeitet in einer vertrauten Oberfläche, während die Prozesse im Hintergrund automatisiert werden. Ich baue diese Prozesse passend zum Arbeitsalltag des Kunden auf und verbinde balmung mit weiteren Systemen, wenn dies sinnvoll ist. Ich bin autorisierter balmung Partner und begleite Einführung, Konfiguration und Schulung."
   - name: "headwAI"
+    url: "https://www.headwai.org"
     text: "headwAI ermöglicht eine eigene KI Umgebung mit einem eigenen Sprachmodell. Unternehmen können damit unabhängig von US Anbietern arbeiten. headwAI übernimmt den Aufbau der Server und die technische Grundinstallation. Ich bin Vertriebs- und Umsetzungspartner. Ich übernehme die Konfiguration und das Fine-Tuning, damit die Lösung zum jeweiligen Betrieb passt."
   - name: "JuThinkAI"
     url: "https://juthinkai.de"

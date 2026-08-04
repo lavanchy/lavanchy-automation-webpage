@@ -4,6 +4,7 @@ import PageLayout from '../../layouts/PageLayout.astro';
 import Hero from '../../components/Hero.astro';
 import Section from '../../components/Section.astro';
 import TitledCard from '../../components/TitledCard.astro';
+import Tile from '../../components/Tile.astro';
 import ClosingCta from '../../components/ClosingCta.astro';
 
 const entry = await getEntry('leistungen', 'leistungen');
@@ -21,16 +22,9 @@ const { hero, n8n, zusammenarbeit, managedKi, fuerWen, abschlussCta } = entry.da
     </div>
 
     <h3 class="mb-4 font-heading text-xl font-bold text-text">{n8n.bulletsHeadline}</h3>
-    <ul class="mb-10 grid gap-3 sm:grid-cols-2">
-      {
-        n8n.bullets.map((bullet) => (
-          <li class="flex items-start gap-2 leading-relaxed text-text-muted">
-            <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-primary" />
-            {bullet}
-          </li>
-        ))
-      }
-    </ul>
+    <div class="mb-10 grid gap-4 sm:grid-cols-2">
+      {n8n.bullets.map((bullet) => <Tile text={bullet} />)}
+    </div>
 
     <div class="mb-10 grid gap-6 md:grid-cols-2">
       <div class="rounded-lg border border-border bg-surface p-6">
@@ -72,16 +66,9 @@ const { hero, n8n, zusammenarbeit, managedKi, fuerWen, abschlussCta } = entry.da
     </div>
 
     <h3 class="mb-4 font-heading text-xl font-bold text-text">{managedKi.bulletsHeadline}</h3>
-    <ul class="mb-10 grid gap-3 sm:grid-cols-2">
-      {
-        managedKi.bullets.map((bullet) => (
-          <li class="flex items-start gap-2 leading-relaxed text-text-muted">
-            <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-primary" />
-            {bullet}
-          </li>
-        ))
-      }
-    </ul>
+    <div class="mb-10 grid gap-4 sm:grid-cols-2">
+      {managedKi.bullets.map((bullet) => <Tile text={bullet} />)}
+    </div>
 
     <div class="rounded-lg border border-border bg-surface p-6">
       <h3 class="mb-3 font-heading text-lg font-bold text-text">{managedKi.grundsatzHeadline}</h3>

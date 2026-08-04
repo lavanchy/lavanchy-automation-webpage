@@ -4,6 +4,7 @@ import PageLayout from '../../layouts/PageLayout.astro';
 import Hero from '../../components/Hero.astro';
 import Section from '../../components/Section.astro';
 import TitledCard from '../../components/TitledCard.astro';
+import Tile from '../../components/Tile.astro';
 import StatGrid from '../../components/StatGrid.astro';
 import ClosingCta from '../../components/ClosingCta.astro';
 import CtaButton from '../../components/CtaButton.astro';
@@ -20,37 +21,10 @@ const { hero, fallstudien, weitereIdeen, fallstudienHinweis, abschlussCta } = en
     fallstudien.map((fallstudie, i) => (
       <Section class={i % 2 === 1 ? 'bg-surface' : ''}>
         <h2 class="mb-8 font-heading text-3xl font-bold text-text">{fallstudie.headline}</h2>
-        <div class="mb-8 grid gap-6 md:grid-cols-3">
-          <div>
-            <h3 class="mb-2 font-heading text-sm font-semibold uppercase tracking-wide text-brand-primary">
-              Ausgangslage
-            </h3>
-            <div class="space-y-3 leading-relaxed text-text-muted">
-              {fallstudie.ausgangslage.map((p) => (
-                <p>{p}</p>
-              ))}
-            </div>
-          </div>
-          <div>
-            <h3 class="mb-2 font-heading text-sm font-semibold uppercase tracking-wide text-brand-primary">
-              Lösung
-            </h3>
-            <div class="space-y-3 leading-relaxed text-text-muted">
-              {fallstudie.loesung.map((p) => (
-                <p>{p}</p>
-              ))}
-            </div>
-          </div>
-          <div>
-            <h3 class="mb-2 font-heading text-sm font-semibold uppercase tracking-wide text-brand-primary">
-              Mehrwert
-            </h3>
-            <div class="space-y-3 leading-relaxed text-text-muted">
-              {fallstudie.mehrwert.map((p) => (
-                <p>{p}</p>
-              ))}
-            </div>
-          </div>
+        <div class="mb-8 grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+          {fallstudie.ausgangslage.map((p) => <Tile label="Ausgangslage" text={p} />)}
+          {fallstudie.loesung.map((p) => <Tile label="Lösung" text={p} />)}
+          {fallstudie.mehrwert.map((p) => <Tile label="Mehrwert" text={p} />)}
         </div>
         <StatGrid stats={fallstudie.stats} />
       </Section>

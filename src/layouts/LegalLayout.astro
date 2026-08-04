@@ -34,7 +34,9 @@ const { title, description } = Astro.props;
     <Header />
     <main id="main" class="mx-auto max-w-3xl flex-1 px-4 py-12">
       <h1 class="mb-6 font-heading text-3xl font-bold text-text">{title}</h1>
-      <div class="space-y-4 leading-relaxed text-text">
+      <div
+        class="space-y-4 leading-relaxed text-text [&>h2]:mt-10 [&>h2]:mb-1 [&>h2:first-child]:mt-0 [&_h2]:font-heading [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-text [&_strong]:font-semibold [&_a]:text-brand-primary [&_a]:underline [&_a]:underline-offset-2 hover:[&_a]:no-underline"
+      >
         <slot />
       </div>
     </main>

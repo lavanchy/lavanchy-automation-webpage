@@ -65,10 +65,10 @@ testimonials:
 linkedinNote: "Die vollständigen Empfehlungen können auf LinkedIn eingesehen werden."
 persoenliches:
   headline: "Kurz gesagt"
-  intro: "Aufgewachsen bin ich in Baden, studiert habe ich in Olten und gearbeitet habe ich in Bern. Dadurch bin ich im grössten Teil der Schweiz zuhause."
+  intro: "Meine Wurzeln liegen in Lausanne, aufgewachsen bin ich in Baden, studiert habe ich in Olten und gearbeitet habe ich in Bern. Dadurch bin ich im grössten Teil der Schweiz zuhause."
   items:
     - "Standort: St-Sulpice VD, Schweiz"
-    - "Sprachen: Deutsch und Französisch, Gespräche auch auf Englisch"
+    - "Sprachen: Deutsch und Französisch, Englisch"
     - "Erfahrung: Mehr als neun Jahre Requirement Engineering und IT Projektleitung, davon vier Jahre mit Fokus auf Prozesse"
     - "Antrieb: Meinen Kunden und mir mehr Flexibilität und mehr Zeit für Aufgaben ermöglichen, die einen echten Mehrwert bringen"
 abschlussCta:

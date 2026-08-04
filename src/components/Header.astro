@@ -3,16 +3,14 @@ import { Image } from 'astro:assets';
 import { siteConfig } from '../config/site';
 import logoIcon from '../assets/brand/logo-icon.png';
 import Nav from './Nav.astro';
-import CtaButton from './CtaButton.astro';
 ---
 
 <header class="border-b border-border bg-background">
   <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-4 py-4">
     <a href="/de/" class="flex items-center gap-2 font-heading text-lg font-bold text-brand-primary">
-      <Image src={logoIcon} alt="" width={36} height={28} />
+      <Image src={logoIcon} alt="" width={48} height={38} />
       {siteConfig.name}
     </a>
     <Nav />
-    <CtaButton class="text-sm" />
   </div>
 </header>

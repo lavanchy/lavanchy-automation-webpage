@@ -5,14 +5,11 @@ description: "Datenschutzerklärung nach DSGVO-Standard."
 
 ## Verantwortlicher
 
-Lavanchy Automation
-
+**Lavanchy Automation**<br />
 Einzelunternehmen, Loïc Lavanchy
 
-Rue du Centre 53
-
-1025 St-Sulpice VD
-
+Rue du Centre 53<br />
+1025 St-Sulpice VD<br />
 Schweiz
 
 E-Mail: [lo.lavanchy@gmail.com](mailto:lo.lavanchy@gmail.com)
@@ -57,9 +54,7 @@ Soweit die gesetzlichen Voraussetzungen erfüllt sind, könnt ihr Auskunft über
 
 Ausserdem habt ihr das Recht, eine Beschwerde bei der zuständigen Aufsichtsbehörde einzureichen, in der Schweiz beim Eidgenössischen Datenschutz- und Öffentlichkeitsbeauftragten (EDÖB), in der EU bei der für euch zuständigen Datenschutzbehörde.
 
-Für Datenschutzfragen könnt ihr euch an folgende Adresse wenden:
-
-[lo.lavanchy@gmail.com](mailto:lo.lavanchy@gmail.com)
+Für Datenschutzfragen könnt ihr euch an folgende Adresse wenden: [lo.lavanchy@gmail.com](mailto:lo.lavanchy@gmail.com)
 
 ## Rechtlicher Prüfhinweis
 
