@@ -1,21 +1,69 @@
 ---
-import { getEntry, render } from 'astro:content';
+import { getEntry } from 'astro:content';
 import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/Hero.astro';
+import Section from '../../components/Section.astro';
 import CtaButton from '../../components/CtaButton.astro';
+import ContactForm from '../../components/ContactForm.astro';
+import { siteConfig } from '../../config/site';
 
-const entry = await getEntry('pages', 'kontakt');
+const entry = await getEntry('kontakt', 'kontakt');
 if (!entry) throw new Error('Content entry "kontakt" not found');
-const { Content } = await render(entry);
+const { hero, erstgespraech, kontaktmoeglichkeiten, kontaktformular, wasEuchErwartet, standort } = entry.data;
 ---
 
-<PageLayout title={entry.data.title} description={entry.data.description}>
-  <section class="mx-auto max-w-4xl px-4 py-12">
-    <h1 class="mb-6 font-heading text-4xl font-bold text-text">{entry.data.title}</h1>
-    <div class="space-y-4 leading-relaxed text-text">
-      <Content />
+<PageLayout title={entry.data.seo.title} description={entry.data.seo.description}>
+  <Hero eyebrow={hero.eyebrow} headline={hero.headline} subheadline={hero.subheadline} />
+
+  <Section>
+    <div class="grid gap-10 md:grid-cols-2">
+      <div class="rounded-lg border border-border bg-surface p-6 md:p-8">
+        <h2 class="mb-2 font-heading text-2xl font-bold text-text">{erstgespraech.headline}</h2>
+        <p class="mb-6 text-text-muted">{erstgespraech.note}</p>
+        <CtaButton label={erstgespraech.buttonLabel} />
+      </div>
+
+      <div>
+        <h2 class="mb-4 font-heading text-2xl font-bold text-text">{kontaktmoeglichkeiten.headline}</h2>
+        <ul class="space-y-3 leading-relaxed text-text-muted">
+          <li>
+            Telefon: <a href={`tel:${siteConfig.phone.replace(/\s/g, '')}`} class="text-brand-primary hover:underline">{siteConfig.phone}</a>
+          </li>
+          <li>
+            E-Mail: <a href={`mailto:${siteConfig.email}`} class="text-brand-primary hover:underline">{siteConfig.email}</a>
+          </li>
+          <li>
+            LinkedIn: <a href={siteConfig.linkedin} target="_blank" rel="noopener noreferrer" class="text-brand-primary hover:underline">linkedin.com/in/loic-lavanchy</a>
+          </li>
+          <li>
+            Terminbuchung: <a href={siteConfig.bookingUrl} target="_blank" rel="noopener noreferrer" class="text-brand-primary hover:underline">Direkt online buchen</a>
+          </li>
+        </ul>
+      </div>
     </div>
-    <div class="mt-8">
-      <CtaButton />
+  </Section>
+
+  <Section bg="paper" class="bg-surface">
+    <div class="mx-auto max-w-xl">
+      <ContactForm
+        headline={kontaktformular.headline}
+        text={kontaktformular.text}
+        fields={kontaktformular.fields}
+        buttonLabel={kontaktformular.buttonLabel}
+        hinweis={kontaktformular.hinweis}
+      />
     </div>
-  </section>
+  </Section>
+
+  <Section>
+    <p class="mx-auto max-w-2xl text-center leading-relaxed text-text-muted">{wasEuchErwartet.text}</p>
+  </Section>
+
+  <Section bg="paper" class="bg-surface">
+    <h2 class="mb-4 font-heading text-2xl font-bold text-text">Standort</h2>
+    <p class="mb-2 leading-relaxed text-text-muted">{standort.text}</p>
+    <p class="leading-relaxed text-text-muted">
+      Offizieller Sitz: {siteConfig.address.street}, {siteConfig.address.zipCity}, {siteConfig.address.country}.
+    </p>
+  </Section>
 </PageLayout>

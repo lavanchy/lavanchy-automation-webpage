@@ -1,0 +1,64 @@
+---
+interface Props {
+  headline: string;
+  text: string;
+  fields: string[];
+  buttonLabel: string;
+  hinweis: string;
+}
+
+const { headline, text, fields, buttonLabel, hinweis } = Astro.props;
+
+const fieldConfig: Record<string, { type: 'text' | 'email' | 'textarea'; autocomplete: string }> = {
+  Name: { type: 'text', autocomplete: 'name' },
+  'E-Mail': { type: 'email', autocomplete: 'email' },
+  Nachricht: { type: 'textarea', autocomplete: 'off' },
+};
+---
+
+<div class="rounded-lg border border-border bg-surface p-6 md:p-8">
+  <h2 class="mb-2 font-heading text-2xl font-bold text-text">{headline}</h2>
+  <p class="mb-6 text-text-muted">{text}</p>
+
+  {/* TODO: Formular-Backend noch offen (siehe Datenschutzerklärung) — Submit-Handler ergänzen, sobald der Dienst feststeht. */}
+  <form class="space-y-4">
+    {
+      fields.map((field) => {
+        const config = fieldConfig[field] ?? { type: 'text', autocomplete: 'off' };
+        const id = field.toLowerCase().replace(/[^a-z]+/g, '-');
+        return (
+          <div>
+            <label for={id} class="mb-1 block text-sm font-semibold text-text">
+              {field}
+            </label>
+            {config.type === 'textarea' ? (
+              <textarea
+                id={id}
+                name={id}
+                rows={4}
+                required
+                class="w-full rounded-md border border-border bg-background px-3 py-2 text-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-primary"
+              />
+            ) : (
+              <input
+                id={id}
+                name={id}
+                type={config.type}
+                autocomplete={config.autocomplete}
+                required
+                class="w-full rounded-md border border-border bg-background px-3 py-2 text-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-primary"
+              />
+            )}
+          </div>
+        );
+      })
+    }
+    <button
+      type="submit"
+      class="inline-block rounded-md bg-brand-primary px-6 py-3 font-heading text-white transition-colors hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-primary"
+    >
+      {buttonLabel}
+    </button>
+    <p class="text-sm text-text-muted">{hinweis}</p>
+  </form>
+</div>

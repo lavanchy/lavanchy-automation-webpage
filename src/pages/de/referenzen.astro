@@ -1,17 +1,77 @@
 ---
-import { getEntry, render } from 'astro:content';
+import { getEntry } from 'astro:content';
 import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/Hero.astro';
+import Section from '../../components/Section.astro';
+import TitledCard from '../../components/TitledCard.astro';
+import StatGrid from '../../components/StatGrid.astro';
+import ClosingCta from '../../components/ClosingCta.astro';
+import CtaButton from '../../components/CtaButton.astro';
 
-const entry = await getEntry('pages', 'referenzen');
+const entry = await getEntry('referenzen', 'referenzen');
 if (!entry) throw new Error('Content entry "referenzen" not found');
-const { Content } = await render(entry);
+const { hero, fallstudien, weitereIdeen, fallstudienHinweis, abschlussCta } = entry.data;
 ---
 
-<PageLayout title={entry.data.title} description={entry.data.description}>
-  <section class="mx-auto max-w-4xl px-4 py-12">
-    <h1 class="mb-6 font-heading text-4xl font-bold text-text">{entry.data.title}</h1>
-    <div class="space-y-4 leading-relaxed text-text">
-      <Content />
+<PageLayout title={entry.data.seo.title} description={entry.data.seo.description}>
+  <Hero eyebrow={hero.eyebrow} headline={hero.headline} subheadline={hero.subheadline} />
+
+  {
+    fallstudien.map((fallstudie, i) => (
+      <Section class={i % 2 === 1 ? 'bg-surface' : ''}>
+        <h2 class="mb-8 font-heading text-3xl font-bold text-text">{fallstudie.headline}</h2>
+        <div class="mb-8 grid gap-6 md:grid-cols-3">
+          <div>
+            <h3 class="mb-2 font-heading text-sm font-semibold uppercase tracking-wide text-brand-primary">
+              Ausgangslage
+            </h3>
+            <div class="space-y-3 leading-relaxed text-text-muted">
+              {fallstudie.ausgangslage.map((p) => (
+                <p>{p}</p>
+              ))}
+            </div>
+          </div>
+          <div>
+            <h3 class="mb-2 font-heading text-sm font-semibold uppercase tracking-wide text-brand-primary">
+              Lösung
+            </h3>
+            <div class="space-y-3 leading-relaxed text-text-muted">
+              {fallstudie.loesung.map((p) => (
+                <p>{p}</p>
+              ))}
+            </div>
+          </div>
+          <div>
+            <h3 class="mb-2 font-heading text-sm font-semibold uppercase tracking-wide text-brand-primary">
+              Mehrwert
+            </h3>
+            <div class="space-y-3 leading-relaxed text-text-muted">
+              {fallstudie.mehrwert.map((p) => (
+                <p>{p}</p>
+              ))}
+            </div>
+          </div>
+        </div>
+        <StatGrid stats={fallstudie.stats} />
+      </Section>
+    ))
+  }
+
+  <Section>
+    <h2 class="mb-2 font-heading text-3xl font-bold text-text">{weitereIdeen.headline}</h2>
+    <p class="mb-8 max-w-3xl leading-relaxed text-text-muted">{weitereIdeen.intro}</p>
+    <div class="grid gap-6 md:grid-cols-2">
+      {weitereIdeen.items.map((item) => <TitledCard title={item.title} text={item.text} />)}
     </div>
-  </section>
+  </Section>
+
+  <Section bg="paper" class="bg-surface text-center">
+    <div class="mx-auto max-w-2xl">
+      <h2 class="mb-4 font-heading text-2xl font-bold text-text">{fallstudienHinweis.headline}</h2>
+      <p class="mb-6 leading-relaxed text-text-muted">{fallstudienHinweis.text}</p>
+      <CtaButton label={fallstudienHinweis.ctaLabel} />
+    </div>
+  </Section>
+
+  <ClosingCta text={abschlussCta.text} buttonLabel={abschlussCta.buttonLabel} />
 </PageLayout>

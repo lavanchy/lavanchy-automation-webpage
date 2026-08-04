@@ -1,0 +1,27 @@
+---
+import Section from './Section.astro';
+
+interface Props {
+  eyebrow: string;
+  headline: string;
+  subheadline: string;
+  dark?: boolean;
+}
+
+const { eyebrow, headline, subheadline, dark = false } = Astro.props;
+---
+
+<Section bg={dark ? 'ink' : 'paper'} class="py-20 md:py-28">
+  <p class={`mb-4 font-body text-sm font-semibold uppercase tracking-wide ${dark ? 'text-teal' : 'text-brand-primary'}`}>
+    {eyebrow}
+  </p>
+  <h1 class={`mb-6 max-w-3xl font-heading text-4xl font-bold md:text-5xl ${dark ? 'text-white' : 'text-text'}`}>
+    {headline}
+  </h1>
+  <p class={`max-w-2xl text-lg leading-relaxed ${dark ? 'text-white/85' : 'text-text-muted'}`}>
+    {subheadline}
+  </p>
+  <div class="mt-8">
+    <slot />
+  </div>
+</Section>

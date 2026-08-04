@@ -1,0 +1,20 @@
+---
+import Section from './Section.astro';
+import CtaButton from './CtaButton.astro';
+
+interface Props {
+  headline?: string;
+  text: string;
+  buttonLabel: string;
+}
+
+const { headline, text, buttonLabel } = Astro.props;
+---
+
+<Section bg="ink" class="text-center">
+  <div class="mx-auto max-w-2xl">
+    {headline && <h2 class="mb-4 font-heading text-3xl font-bold text-white">{headline}</h2>}
+    <p class="mb-8 text-lg leading-relaxed text-white/85">{text}</p>
+    <CtaButton label={buttonLabel} />
+  </div>
+</Section>

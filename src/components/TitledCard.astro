@@ -1,0 +1,21 @@
+---
+interface Props {
+  title: string;
+  text: string;
+  index?: number;
+}
+
+const { title, text, index } = Astro.props;
+---
+
+<div class="rounded-lg border border-border bg-surface p-6">
+  {
+    index !== undefined && (
+      <span class="mb-3 inline-flex h-8 w-8 items-center justify-center rounded-full bg-brand-primary font-heading text-sm font-bold text-white">
+        {index}
+      </span>
+    )
+  }
+  <h3 class="mb-2 font-heading text-lg font-bold text-text">{title}</h3>
+  <p class="leading-relaxed text-text-muted">{text}</p>
+</div>

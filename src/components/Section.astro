@@ -1,0 +1,15 @@
+---
+interface Props {
+  bg?: 'paper' | 'ink';
+  class?: string;
+}
+
+const { bg = 'paper', class: className = '' } = Astro.props;
+const bgClass = bg === 'ink' ? 'bg-ink text-white' : 'bg-background text-text';
+---
+
+<section class={`${bgClass} py-16 md:py-[var(--spacing-section)] ${className}`}>
+  <div class="mx-auto max-w-5xl px-4">
+    <slot />
+  </div>
+</section>

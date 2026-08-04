@@ -1,0 +1,53 @@
+---
+import { getEntry } from 'astro:content';
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/Hero.astro';
+import Section from '../../components/Section.astro';
+import PartnerCard from '../../components/PartnerCard.astro';
+import CtaButton from '../../components/CtaButton.astro';
+
+const entry = await getEntry('partner', 'partner');
+if (!entry) throw new Error('Content entry "partner" not found');
+const { hero, warum, partners, kontaktHinweis } = entry.data;
+
+// "Rechtliche Begleitung" (Empfehlung Stephan Wagner, Datenschutzjurist) ist im
+// Content-Export vorbereitet, wird aber laut Loïc erst veröffentlicht, sobald die
+// Erlaubnis zur Erwähnung bestätigt ist. Text zur Erinnerung, absichtlich nicht gerendert:
+//
+// ## Rechtliche Begleitung
+// Die technische Umsetzung meiner Automatisierungen wird konsequent auf DSGVO-Konformität
+// ausgerichtet. Für Kunden, die zusätzlich eine unabhängige rechtliche Einschätzung wünschen,
+// zum Beispiel bei einer formellen Datenschutz Folgenabschätzung, empfehle ich Stephan Wagner,
+// Jurist und Datenschutzexperte aus Deutschland.
+---
+
+<PageLayout title={entry.data.seo.title} description={entry.data.seo.description}>
+  <Hero eyebrow={hero.eyebrow} headline={hero.headline} subheadline={hero.subheadline} />
+
+  <Section>
+    <p class="mb-6 max-w-3xl leading-relaxed text-text-muted">{warum.text}</p>
+    <ul class="grid gap-3 sm:grid-cols-2">
+      {
+        warum.items.map((item) => (
+          <li class="flex items-start gap-2 leading-relaxed text-text-muted">
+            <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-primary" />
+            {item}
+          </li>
+        ))
+      }
+    </ul>
+  </Section>
+
+  <Section bg="paper" class="bg-surface">
+    <div class="grid gap-6 md:grid-cols-2">
+      {partners.map((partner) => <PartnerCard name={partner.name} text={partner.text} url={partner.url} />)}
+    </div>
+  </Section>
+
+  <Section class="text-center">
+    <div class="mx-auto max-w-2xl">
+      <p class="mb-6 leading-relaxed text-text">{kontaktHinweis.text}</p>
+      <CtaButton label={kontaktHinweis.ctaLabel} />
+    </div>
+  </Section>
+</PageLayout>
