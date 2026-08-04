@@ -8,7 +8,7 @@ interface Props {
 const { name, text, url } = Astro.props;
 ---
 
-<div class="flex h-full flex-col rounded-lg border border-border bg-surface p-6">
+<div class="flex h-full flex-col rounded-lg border border-border bg-background p-6 shadow-sm">
   <h3 class="mb-3 font-heading text-xl font-bold text-text">{name}</h3>
   <p class="mb-4 leading-relaxed text-text-muted">{text}</p>
   {

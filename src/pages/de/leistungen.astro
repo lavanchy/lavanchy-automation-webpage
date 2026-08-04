@@ -27,13 +27,13 @@ const { hero, n8n, zusammenarbeit, managedKi, fuerWen, abschlussCta } = entry.da
     </div>
 
     <div class="mb-10 grid gap-6 md:grid-cols-2">
-      <div class="rounded-lg border border-border bg-surface p-6">
+      <div class="rounded-lg border border-border bg-background shadow-sm p-6">
         <h3 class="mb-3 font-heading text-lg font-bold text-text">{n8n.kiHeadline}</h3>
         <div class="space-y-3 leading-relaxed text-text-muted">
           {n8n.kiText.map((p) => <p>{p}</p>)}
         </div>
       </div>
-      <div class="rounded-lg border border-border bg-surface p-6">
+      <div class="rounded-lg border border-border bg-background shadow-sm p-6">
         <h3 class="mb-3 font-heading text-lg font-bold text-text">{n8n.tempoHeadline}</h3>
         <p class="leading-relaxed text-text-muted">{n8n.tempoText}</p>
       </div>
@@ -70,7 +70,7 @@ const { hero, n8n, zusammenarbeit, managedKi, fuerWen, abschlussCta } = entry.da
       {managedKi.bullets.map((bullet) => <Tile text={bullet} />)}
     </div>
 
-    <div class="rounded-lg border border-border bg-surface p-6">
+    <div class="rounded-lg border border-border bg-background shadow-sm p-6">
       <h3 class="mb-3 font-heading text-lg font-bold text-text">{managedKi.grundsatzHeadline}</h3>
       <p class="leading-relaxed text-text-muted">{managedKi.grundsatzText}</p>
     </div>

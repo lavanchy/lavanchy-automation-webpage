@@ -8,7 +8,7 @@ interface Props {
 const { title, text, index } = Astro.props;
 ---
 
-<div class="flex h-full flex-col rounded-lg border border-border bg-surface p-6">
+<div class="flex h-full flex-col rounded-lg border border-border bg-background p-6 shadow-sm">
   {
     index !== undefined && (
       <span class="mb-3 inline-flex h-8 w-8 items-center justify-center rounded-full bg-brand-primary font-heading text-sm font-bold text-white">

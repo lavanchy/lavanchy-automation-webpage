@@ -30,7 +30,10 @@
   --color-text-muted: var(--color-body-text);
   --color-background: var(--color-paper);
   --color-surface: var(--color-mist);
-  --color-border: var(--color-mist);
+  /* Eigenständiger Rahmenton (Slate, abgedunkelt): muss sich sowohl von Paper- als
+     auch von Mist-Flächen abheben, damit Kachel-Ränder immer sichtbar bleiben,
+     unabhängig davon, welche Hintergrundfarbe die umgebende Sektion hat. */
+  --color-border: color-mix(in srgb, var(--color-slate) 40%, transparent);
 
   --font-heading: "Space Grotesk", sans-serif;
   --font-body: "Inter", sans-serif;
