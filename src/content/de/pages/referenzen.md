@@ -59,6 +59,7 @@ fallstudienHinweis:
   text: "Bis Ende September 2026 erarbeite ich für ausgewählte Betriebe kostenlose Fallstudien. Ihr bekommt eine massgeschneiderte Automatisierungslösung. Ich erhalte einen Referenzfall für meine Arbeit."
   ctaLabel: "Kostenloses Erstgespräch buchen"
 abschlussCta:
+  headline: "Bereit, eure Prozesse zu vereinfachen?"
   text: "In einem kostenlosen Erstgespräch schauen wir gemeinsam auf einen eurer Abläufe. Unverbindlich, auf Deutsch, Französisch oder Englisch."
   buttonLabel: "Kostenloses Erstgespräch buchen"
 ---

@@ -22,6 +22,7 @@ kontaktformular:
   buttonLabel: "Nachricht senden"
   hinweis: "Für eine erste gemeinsame Standortbestimmung empfehle ich das kostenlose Erstgespräch. Das geht oft schneller als ein längerer Austausch per E-Mail."
 wasEuchErwartet:
+  headline: "Was euch erwartet"
   text: "In 30 Minuten schauen wir gemeinsam auf einen eurer Abläufe. Ich höre zu, stelle Fragen zur heutigen Arbeitsweise und zeige auf, wo sich ein Blick auf Automatisierung lohnen könnte. Unverbindlich und ohne Verkaufsdruck."
 standort:
   text: "Gespräche finden nach Wunsch per Video-Call oder, wo passend, persönlich vor Ort statt."

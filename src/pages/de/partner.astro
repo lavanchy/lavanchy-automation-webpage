@@ -25,6 +25,7 @@ const { hero, warum, partners, kontaktHinweis } = entry.data;
   <Hero eyebrow={hero.eyebrow} headline={hero.headline} subheadline={hero.subheadline} />
 
   <Section>
+    <h2 class="mb-4 font-heading text-3xl font-bold text-text">{warum.headline}</h2>
     <p class="mb-6 max-w-3xl leading-relaxed text-text-muted">{warum.text}</p>
     <ul class="grid gap-3 sm:grid-cols-2">
       {

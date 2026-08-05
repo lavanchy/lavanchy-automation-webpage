@@ -72,6 +72,7 @@ persoenliches:
     - "Erfahrung: Mehr als neun Jahre Requirement Engineering und IT Projektleitung, davon vier Jahre mit Fokus auf Prozesse"
     - "Antrieb: Meinen Kunden und mir mehr Flexibilität und mehr Zeit für Aufgaben ermöglichen, die einen echten Mehrwert bringen"
 abschlussCta:
+  headline: "Bereit, eure Prozesse zu vereinfachen?"
   text: "In einem kostenlosen Erstgespräch schauen wir gemeinsam auf einen eurer Abläufe. Unverbindlich, auf Deutsch, Französisch oder Englisch."
   buttonLabel: "Kostenloses Erstgespräch buchen"
 ---

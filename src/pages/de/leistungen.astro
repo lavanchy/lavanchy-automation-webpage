@@ -77,8 +77,9 @@ const { hero, n8n, zusammenarbeit, managedKi, fuerWen, abschlussCta } = entry.da
   </Section>
 
   <Section bg="paper" class="bg-surface text-center">
+    <h2 class="mb-4 font-heading text-2xl font-bold text-text">{fuerWen.headline}</h2>
     <p class="mx-auto max-w-3xl leading-relaxed text-text">{fuerWen.text}</p>
   </Section>
 
-  <ClosingCta text={abschlussCta.text} buttonLabel={abschlussCta.buttonLabel} />
+  <ClosingCta headline={abschlussCta.headline} text={abschlussCta.text} buttonLabel={abschlussCta.buttonLabel} />
 </PageLayout>

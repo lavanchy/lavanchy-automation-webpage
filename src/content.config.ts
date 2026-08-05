@@ -101,8 +101,8 @@ const leistungen = defineCollection({
       grundsatzHeadline: z.string(),
       grundsatzText: z.string(),
     }),
-    fuerWen: z.object({ text: z.string() }),
-    abschlussCta: z.object({ text: z.string(), buttonLabel: z.string() }),
+    fuerWen: z.object({ headline: z.string(), text: z.string() }),
+    abschlussCta: z.object({ headline: z.string(), text: z.string(), buttonLabel: z.string() }),
   }),
 });
 
@@ -130,7 +130,7 @@ const referenzen = defineCollection({
       text: z.string(),
       ctaLabel: z.string(),
     }),
-    abschlussCta: z.object({ text: z.string(), buttonLabel: z.string() }),
+    abschlussCta: z.object({ headline: z.string(), text: z.string(), buttonLabel: z.string() }),
   }),
 });
 
@@ -140,6 +140,7 @@ const partner = defineCollection({
     seo,
     hero,
     warum: z.object({
+      headline: z.string(),
       text: z.string(),
       items: z.array(z.string()),
     }),
@@ -185,7 +186,7 @@ const ueberMich = defineCollection({
       intro: z.string(),
       items: z.array(z.string()),
     }),
-    abschlussCta: z.object({ text: z.string(), buttonLabel: z.string() }),
+    abschlussCta: z.object({ headline: z.string(), text: z.string(), buttonLabel: z.string() }),
   }),
 });
 
@@ -207,7 +208,7 @@ const kontakt = defineCollection({
       buttonLabel: z.string(),
       hinweis: z.string(),
     }),
-    wasEuchErwartet: z.object({ text: z.string() }),
+    wasEuchErwartet: z.object({ headline: z.string(), text: z.string() }),
     standort: z.object({ text: z.string() }),
   }),
 });

@@ -8,6 +8,7 @@ import StatGrid from '../../components/StatGrid.astro';
 import ClosingCta from '../../components/ClosingCta.astro';
 import CtaButton from '../../components/CtaButton.astro';
 import heroPhoto from '../../assets/brand/loic-hero.jpg';
+import portraitPhoto from '../../assets/brand/loic-portrait.jpg';
 
 const entry = await getEntry('home', 'home');
 if (!entry) throw new Error('Content entry "home" not found');
@@ -86,6 +87,12 @@ const { hero, problem, angebot, kontrolle, referenzabschnitt, fallstudienHinweis
 
   <Section bg="paper" class="bg-surface">
     <div class="grid items-center gap-8 md:grid-cols-2">
+      <Image
+        src={portraitPhoto}
+        alt="Loïc Lavanchy"
+        width={360}
+        class="mx-auto w-full max-w-xs rounded-lg"
+      />
       <div>
         <h2 class="mb-4 font-heading text-3xl font-bold text-text">{ueberMichTeaser.headline}</h2>
         <div class="space-y-3 leading-relaxed text-text-muted">

@@ -7,6 +7,7 @@ hero:
   headline: "Passende Lösungen, sinnvoll verbunden"
   subheadline: "Ich arbeite mit ausgewählten Partnern aus dem DACH Raum zusammen. Mein Mehrwert liegt darin, die passende Lösung auszuwählen und sie mit euren konkreten Abläufen zu verbinden."
 warum:
+  headline: "Worauf es bei der Auswahl ankommt"
   text: "Wichtig ist mir dabei, dass die Lösungen meiner Partner nachvollziehbar, praxistauglich und für KMU geeignet sind:"
   items:
     - "Klare Datenverantwortung"

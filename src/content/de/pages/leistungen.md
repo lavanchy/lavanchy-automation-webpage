@@ -66,8 +66,10 @@ managedKi:
   grundsatzHeadline: "Grundsatz"
   grundsatzText: "KI ist kein Selbstzweck. Eine KI Lösung soll einen bestehenden Arbeitsablauf sinnvoll unterstützen. Wenn eine klare, einfache Automatisierung ohne KI besser funktioniert, ist sie die richtige Wahl."
 fuerWen:
+  headline: "Für KMU, Selbständige und Startups im DACH-Raum"
   text: "Ob Handwerksbetrieb, Handelsunternehmen, Coaching Business, Selbständige oder Startup: Wenn wiederkehrende Aufgaben Zeit fressen, mehrere Systeme nicht miteinander sprechen oder KI sinnvoll eingesetzt werden soll, lohnt sich ein Blick auf eure Abläufe."
 abschlussCta:
+  headline: "Bereit, eure Prozesse zu vereinfachen?"
   text: "In einem kostenlosen Erstgespräch schauen wir gemeinsam auf einen eurer Abläufe. Unverbindlich, auf Deutsch, Französisch oder Englisch."
   buttonLabel: "Kostenloses Erstgespräch buchen"
 ---
