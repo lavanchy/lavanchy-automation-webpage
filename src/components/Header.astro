@@ -11,6 +11,49 @@ import Nav from './Nav.astro';
       <Image src={logoIcon} alt="" width={48} height={38} />
       {siteConfig.name}
     </a>
-    <Nav />
+
+    <button
+      id="nav-toggle"
+      type="button"
+      class="flex h-10 w-10 items-center justify-center rounded-md text-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-primary md:hidden"
+      aria-expanded="false"
+      aria-controls="main-nav"
+      aria-label="Menü öffnen"
+    >
+      <svg id="nav-icon-open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+      <svg id="nav-icon-close" class="hidden" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+
+    <Nav id="main-nav" class="hidden w-full pb-2 md:block md:w-auto md:pb-0" />
   </div>
 </header>
+
+<script>
+  const toggle = document.getElementById('nav-toggle');
+  const nav = document.getElementById('main-nav');
+  const iconOpen = document.getElementById('nav-icon-open');
+  const iconClose = document.getElementById('nav-icon-close');
+
+  const setOpen = (open: boolean) => {
+    nav?.classList.toggle('hidden', !open);
+    iconOpen?.classList.toggle('hidden', open);
+    iconClose?.classList.toggle('hidden', !open);
+    toggle?.setAttribute('aria-expanded', String(open));
+    toggle?.setAttribute('aria-label', open ? 'Menü schliessen' : 'Menü öffnen');
+  };
+
+  toggle?.addEventListener('click', () => {
+    setOpen(nav?.classList.contains('hidden') ?? false);
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') setOpen(false);
+  });
+</script>

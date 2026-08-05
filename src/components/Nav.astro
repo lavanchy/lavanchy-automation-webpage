@@ -1,11 +1,17 @@
 ---
 import { nav } from '../config/site';
 
+interface Props {
+  id?: string;
+  class?: string;
+}
+
+const { id, class: className = '' } = Astro.props;
 const currentPath = Astro.url.pathname;
 ---
 
-<nav aria-label="Hauptnavigation">
-  <ul class="flex flex-wrap gap-6">
+<nav id={id} aria-label="Hauptnavigation" class={className}>
+  <ul class="flex flex-col gap-4 md:flex-row md:flex-wrap md:items-center md:gap-6">
     {nav.map((item) => {
       const isCurrent = currentPath === item.href;
       return (
