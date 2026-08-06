@@ -11,9 +11,12 @@ const { name, text, url, logo } = Astro.props;
 
 <div class="flex h-full flex-col rounded-lg border border-border bg-background p-6 shadow-sm">
   {
-    logo && <img src={logo} alt={`${name} Logo`} class="mb-3 h-10 w-auto grayscale" />
+    logo ? (
+      <img src={logo} alt={name} class="mb-3 h-10 w-auto" />
+    ) : (
+      <h3 class="mb-3 font-heading text-xl font-bold text-text">{name}</h3>
+    )
   }
-  <h3 class="mb-3 font-heading text-xl font-bold text-text">{name}</h3>
   <p class="mb-4 leading-relaxed text-text-muted">{text}</p>
   {
     url && (
