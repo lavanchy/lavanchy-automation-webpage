@@ -3,6 +3,12 @@ name: Build & Deploy
 on:
   push:
     branches: [main]
+  # Weekly rebuild (no code change needed) so the image picks up security
+  # patches in its base layers (node:22-alpine, nginx:alpine) even when
+  # nothing in the repo itself changed. Runs after the VPS's own weekly
+  # image-pull cron (Sundays 03:00 UTC) so both stay in sync.
+  schedule:
+    - cron: '0 4 * * 0'
 
 env:
   REGISTRY: ghcr.io
