@@ -28,6 +28,5 @@ export const nav = [
   { label: 'Referenzen', href: '/de/referenzen/' },
   { label: 'Partner', href: '/de/partner/' },
   { label: 'Über mich', href: '/de/ueber-mich/' },
-  { label: 'Blog', href: '/de/blog/' },
   { label: 'Kontakt', href: '/de/kontakt/' },
 ] as const;

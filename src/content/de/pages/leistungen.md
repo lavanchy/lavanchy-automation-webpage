@@ -52,7 +52,13 @@ zusammenarbeit:
       text: "Nach einem Monat und nach sechs Monaten überprüfen wir die Ergebnisse gemeinsam in einem Call von 30 Minuten. Bei Bedarf wird die Lösung feinjustiert."
 qualitaet:
   headline: "Qualität, die nachvollziehbar ist"
-  intro: "Jede Automatisierung, die ich umsetze, wird anhand eines festen Kriterienkatalogs dokumentiert. Dieser hält fest, welche technischen und organisatorischen Massnahmen umgesetzt wurden, welche Drittanbieter eingebunden sind, welche Daten verarbeitet werden und ob besondere Risiken erkennbar sind. Das Ergebnis ist keine interne Checkliste, sondern eine belastbare Projektdokumentation, die ihr als Kunde tatsächlich verwenden könnt."
+  introSatz: "Jede Automatisierung, die ich umsetze, wird anhand eines festen Kriterienkatalogs dokumentiert. Der Katalog hält fest:"
+  introBullets:
+    - "Welche technischen und organisatorischen Massnahmen umgesetzt wurden"
+    - "Welche Drittanbieter eingebunden sind"
+    - "Welche Daten verarbeitet werden"
+    - "Ob besondere Risiken erkennbar sind, zum Beispiel mit Blick auf DSGVO Artikel 35 oder den EU AI Act"
+  introAbschluss: "Das Ergebnis ist keine interne Checkliste, sondern eine belastbare Projektdokumentation, die ihr als Kunde tatsächlich verwenden könnt."
   pruefungVorLink: "Für Projekte, bei denen eine unabhängige externe Prüfung gewünscht wird, arbeite ich mit "
   linkStephan: "Stephan Wagner"
   pruefungZwischenLinks: ", Jurist und Datenschutzexperte. Er prüft die konkrete Lösung, hält Befunde und allfällige Nachbesserungen fest und erstellt einen datierten Prüfbericht mit dokumentiertem Geltungsbereich. Nach erfolgreicher Prüfung erhält der Kunde ein projektbezogenes Prüfzeichen für den geprüften Stand. Der Prüfbericht wird nach zwölf Monaten aufgefrischt. Dieser Ansatz heisst "

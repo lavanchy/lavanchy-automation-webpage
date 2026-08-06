@@ -31,7 +31,11 @@ const { hero, warum, partners, kontaktHinweis } = entry.data;
 
   <Section bg="paper" class="bg-surface">
     <div class="grid gap-6 md:grid-cols-2">
-      {partners.map((partner) => <PartnerCard name={partner.name} text={partner.text} url={partner.url} />)}
+      {
+        partners.map((partner) => (
+          <PartnerCard name={partner.name} text={partner.text} url={partner.url} logo={partner.logo} />
+        ))
+      }
     </div>
   </Section>
 

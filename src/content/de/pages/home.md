@@ -36,7 +36,7 @@ kontrolle:
     - "Eure Prozesse werden dokumentiert, getestet und überwacht. Ihr seht, was automatisch läuft und wie der Ablauf aufgebaut ist. Bei Bedarf bleibt der bisherige manuelle Ablauf als Referenz erhalten."
 referenzabschnitt:
   headline: "Bewiesen, nicht nur versprochen"
-  text: "Bei einer Schweizer Bundesbehörde wurde ein papierbasiertes Verfahren mit rund 7'000 Vorgängen pro Jahr digitalisiert und automatisiert. Umgesetzt habe ich dies im Angestelltenverhältnis als Requirement Engineer, vor der Gründung von Lavanchy Automation."
+  text: "Bei einer Schweizer Bundesbehörde wurde ein papierbasiertes Verfahren mit rund 7'000 Vorgängen pro Jahr digitalisiert und automatisiert."
   stats:
     - value: "Rund 90 %"
       label: "weniger manueller Aufwand pro Vorgang"

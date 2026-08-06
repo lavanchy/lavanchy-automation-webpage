@@ -40,7 +40,7 @@ wieIchVorgehe:
       text: "Ich baue die Automatisierung mit n8n und nutze KI Werkzeuge dort, wo sie die Umsetzung sinnvoll unterstützt."
     - title: "Ergebnis testen"
       text: "Die Automatisierung wird geprüft, bevor sie produktiv eingesetzt wird."
-    - title: "Gemeinsam iterieren"
+    - title: "Ergebnis besprechen und anpassen"
       text: "Wir besprechen das Ergebnis und passen die Lösung an, bis sie im Alltag funktioniert."
     - title: "Automatisierte Tests und Fehlerbehandlung"
       text: "Wo es sinnvoll ist, werden automatische Tests und Fehlerbehandlungen eingebaut. Das verbessert Wartbarkeit und Nachvollziehbarkeit."

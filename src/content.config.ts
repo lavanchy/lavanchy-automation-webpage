@@ -95,7 +95,9 @@ const leistungen = defineCollection({
     }),
     qualitaet: z.object({
       headline: z.string(),
-      intro: z.string(),
+      introSatz: z.string(),
+      introBullets: z.array(z.string()),
+      introAbschluss: z.string(),
       pruefungVorLink: z.string(),
       linkStephan: z.string(),
       pruefungZwischenLinks: z.string(),
@@ -161,6 +163,7 @@ const partner = defineCollection({
         name: z.string(),
         text: z.string(),
         url: z.string().optional(),
+        logo: z.string().optional(),
       })
     ),
     kontaktHinweis: z.object({ text: z.string(), ctaLabel: z.string() }),
