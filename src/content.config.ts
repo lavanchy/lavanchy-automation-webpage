@@ -151,6 +151,12 @@ const partner = defineCollection({
         url: z.string().optional(),
       })
     ),
+    rechtlicheBegleitung: z.object({
+      headline: z.string(),
+      text: z.string(),
+      linkLabel: z.string(),
+      url: z.string(),
+    }),
     kontaktHinweis: z.object({ text: z.string(), ctaLabel: z.string() }),
   }),
 });

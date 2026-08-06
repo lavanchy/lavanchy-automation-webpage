@@ -28,6 +28,11 @@ partners:
   - name: "JuThinkAI"
     url: "https://juthinkai.de"
     text: "JuThinkAI ist auf Langdock und KI Orchestrierung für KMU spezialisiert. Langdock unterstützt Unternehmen dabei, verschiedene KI Anwendungen zentral und geordnet einzusetzen. In dieser Zusammenarbeit übernehme ich die technische Umsetzung und verbinde KI Anwendungen mit konkreten Geschäftsprozessen."
+rechtlicheBegleitung:
+  headline: "Rechtliche Begleitung"
+  text: "Die technische Umsetzung meiner Automatisierungen richte ich von Anfang an an den Datenschutzanforderungen aus, etwa bei Hosting, Datensparsamkeit, Zugriffsrechten und Protokollierung. Für Fragen, die darüber hinausgehen, zum Beispiel bei der datenschutzrechtlichen Bewertung, bei Datenschutz-Governance, beim EU AI Act oder bei einer Datenschutz-Folgenabschätzung, arbeite ich mit Stephan Wagner zusammen, Jurist und externer Datenschutzbeauftragter. Auf Wunsch prüft er die entwickelte Lösung und bestätigt das Ergebnis schriftlich."
+  linkLabel: "lex-generalis.de besuchen"
+  url: "https://lex-generalis.de"
 kontaktHinweis:
   text: "Wenn eine dieser Lösungen für euren Betrieb interessant sein könnte, sprechen wir am besten direkt darüber."
   ctaLabel: "Kostenloses Erstgespräch buchen"

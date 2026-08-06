@@ -8,17 +8,7 @@ import CtaButton from '../../components/CtaButton.astro';
 
 const entry = await getEntry('partner', 'partner');
 if (!entry) throw new Error('Content entry "partner" not found');
-const { hero, warum, partners, kontaktHinweis } = entry.data;
-
-// "Rechtliche Begleitung" (Empfehlung Stephan Wagner, Datenschutzjurist) ist im
-// Content-Export vorbereitet, wird aber laut Loïc erst veröffentlicht, sobald die
-// Erlaubnis zur Erwähnung bestätigt ist. Text zur Erinnerung, absichtlich nicht gerendert:
-//
-// ## Rechtliche Begleitung
-// Die technische Umsetzung meiner Automatisierungen wird konsequent auf DSGVO-Konformität
-// ausgerichtet. Für Kunden, die zusätzlich eine unabhängige rechtliche Einschätzung wünschen,
-// zum Beispiel bei einer formellen Datenschutz Folgenabschätzung, empfehle ich Stephan Wagner,
-// Jurist und Datenschutzexperte aus Deutschland. Website (bestätigt 2026-08-04): https://lex-generalis.de
+const { hero, warum, partners, rechtlicheBegleitung, kontaktHinweis } = entry.data;
 ---
 
 <PageLayout title={entry.data.seo.title} description={entry.data.seo.description}>
@@ -45,7 +35,22 @@ const { hero, warum, partners, kontaktHinweis } = entry.data;
     </div>
   </Section>
 
-  <Section class="text-center">
+  <Section>
+    <h2 class="mb-4 font-heading text-3xl font-bold text-text">{rechtlicheBegleitung.headline}</h2>
+    <div class="max-w-3xl rounded-lg border border-border bg-background p-6 shadow-sm">
+      <p class="mb-4 leading-relaxed text-text-muted">{rechtlicheBegleitung.text}</p>
+      <a
+        href={rechtlicheBegleitung.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="font-body font-semibold text-brand-primary hover:underline"
+      >
+        {rechtlicheBegleitung.linkLabel} ↗
+      </a>
+    </div>
+  </Section>
+
+  <Section bg="paper" class="bg-surface text-center">
     <div class="mx-auto max-w-2xl">
       <p class="mb-6 leading-relaxed text-text">{kontaktHinweis.text}</p>
       <CtaButton label={kontaktHinweis.ctaLabel} />
