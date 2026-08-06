@@ -25,6 +25,10 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - letsencrypt:/letsencrypt
+      # Vorschau-Sperre (siehe website-Service): Traefik liest den htpasswd-Hash
+      # direkt aus der Datei, damit Docker Compose die "$"-Zeichen im Hash nicht
+      # als Variablen-Interpolation fehlinterpretiert.
+      - ./htpasswd:/etc/traefik/htpasswd:ro
 
   website:
     image: ghcr.io/lavanchy/lavanchy-automation-webpage:latest
@@ -34,6 +38,11 @@ services:
       - traefik.http.routers.website.rule=Host(`lavanchyautomation.ch`) || Host(`www.lavanchyautomation.ch`)
       - traefik.http.routers.website.entrypoints=websecure
       - traefik.http.routers.website.tls.certresolver=le
+      # Vorschau-Sperre, solange die Seite nicht öffentlich sein soll.
+      # Entfernen (diese Zeile + die middlewares-Zeile + der volume-Mount beim
+      # traefik-Service), sobald die Seite live gehen soll.
+      - traefik.http.middlewares.website-auth.basicauth.usersfile=/etc/traefik/htpasswd
+      - traefik.http.routers.website.middlewares=website-auth
       - traefik.http.services.website.loadbalancer.server.port=80
     healthcheck:
       test: ["CMD", "wget", "-q", "--spider", "http://127.0.0.1/"]

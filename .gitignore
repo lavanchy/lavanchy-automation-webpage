@@ -17,6 +17,9 @@ pnpm-debug.log*
 .env
 .env.production
 
+# VPS-seitige Vorschau-Sperre (Basic Auth), nur auf dem Server, nicht im Repo
+deploy/htpasswd
+
 # macOS-specific files
 .DS_Store
 

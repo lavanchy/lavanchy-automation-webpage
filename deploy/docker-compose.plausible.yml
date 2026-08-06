@@ -36,12 +36,17 @@ services:
   plausible_db:
     image: postgres:16-alpine
     restart: unless-stopped
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=plausible_db
     volumes:
       - plausible-db-data:/var/lib/postgresql/data
 
   plausible_events_db:
     image: clickhouse/clickhouse-server:24-alpine
     restart: unless-stopped
+    environment:
+      - CLICKHOUSE_DB=plausible_events_db
     ulimits:
       nofile: { soft: 262144, hard: 262144 }
     volumes:
