@@ -50,6 +50,21 @@ zusammenarbeit:
       text: "Die Lösung wird geprüft, dokumentiert und mit Fehlerbehandlung sowie automatisierten Tests ausgestattet, soweit dies für den Prozess sinnvoll ist."
     - title: "Nachbesprechen und feinjustieren"
       text: "Nach einem Monat und nach sechs Monaten überprüfen wir die Ergebnisse gemeinsam in einem Call von 30 Minuten. Bei Bedarf wird die Lösung feinjustiert."
+qualitaet:
+  headline: "Qualität, die nachvollziehbar ist"
+  intro: "Jede Automatisierung, die ich umsetze, wird anhand eines festen Kriterienkatalogs dokumentiert. Dieser hält fest, welche technischen und organisatorischen Massnahmen umgesetzt wurden, welche Drittanbieter eingebunden sind, welche Daten verarbeitet werden und ob besondere Risiken erkennbar sind. Das Ergebnis ist keine interne Checkliste, sondern eine belastbare Projektdokumentation, die ihr als Kunde tatsächlich verwenden könnt."
+  pruefungVorLink: "Für Projekte, bei denen eine unabhängige externe Prüfung gewünscht wird, arbeite ich mit "
+  linkStephan: "Stephan Wagner"
+  pruefungZwischenLinks: ", Jurist und Datenschutzexperte. Er prüft die konkrete Lösung, hält Befunde und allfällige Nachbesserungen fest und erstellt einen datierten Prüfbericht mit dokumentiertem Geltungsbereich. Nach erfolgreicher Prüfung erhält der Kunde ein projektbezogenes Prüfzeichen für den geprüften Stand. Der Prüfbericht wird nach zwölf Monaten aufgefrischt. Dieser Ansatz heisst "
+  linkLexGeneralis: "LexGeneralis Compliance Check"
+  pruefungNachLink: "."
+  linkUrl: "https://lex-generalis.de"
+  cards:
+    - title: "Projektdokumentation"
+      text: "Jede Lösung wird anhand eines festen Kriterienkatalogs dokumentiert. Technische Massnahmen, eingebundene Drittanbieter, verarbeitete Daten und erkennbare Risiken werden schriftlich festgehalten. Diese Dokumentation gehört euch."
+    - title: "LexGeneralis Compliance Check (optional)"
+      text: "Für Projekte mit erhöhten Anforderungen an Datenschutz oder KI-Konformität kann eine externe Prüfung durch Stephan Wagner (LexGeneralis) beauftragt werden. Das Ergebnis ist ein datierter Prüfbericht und ein projektbezogenes Prüfzeichen für den geprüften Stand."
+  hinweis: "Details dazu besprechen wir bei Bedarf im kostenlosen Erstgespräch."
 managedKi:
   headline: "KI sinnvoll einführen, sicher und nachvollziehbar"
   intro:

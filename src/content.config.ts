@@ -93,6 +93,18 @@ const leistungen = defineCollection({
       intro: z.string(),
       schritte: z.array(titledText),
     }),
+    qualitaet: z.object({
+      headline: z.string(),
+      intro: z.string(),
+      pruefungVorLink: z.string(),
+      linkStephan: z.string(),
+      pruefungZwischenLinks: z.string(),
+      linkLexGeneralis: z.string(),
+      pruefungNachLink: z.string(),
+      linkUrl: z.string(),
+      cards: z.array(titledText),
+      hinweis: z.string(),
+    }),
     managedKi: z.object({
       headline: z.string(),
       intro: z.array(z.string()),
@@ -151,12 +163,6 @@ const partner = defineCollection({
         url: z.string().optional(),
       })
     ),
-    rechtlicheBegleitung: z.object({
-      headline: z.string(),
-      text: z.string(),
-      linkLabel: z.string(),
-      url: z.string(),
-    }),
     kontaktHinweis: z.object({ text: z.string(), ctaLabel: z.string() }),
   }),
 });
