@@ -8,9 +8,10 @@ import { siteConfig } from '../config/site';
 interface Props {
   title: string;
   description: string;
+  noindex?: boolean;
 }
 
-const { title, description } = Astro.props;
+const { title, description, noindex = false } = Astro.props;
 ---
 
 <!doctype html>
@@ -24,6 +25,18 @@ const { title, description } = Astro.props;
     <title>{title} · {siteConfig.name}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={new URL(Astro.url.pathname, siteConfig.url)} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={siteConfig.name} />
+    <meta property="og:title" content={`${title} · ${siteConfig.name}`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={new URL(Astro.url.pathname, siteConfig.url)} />
+    <meta property="og:image" content={new URL('/og-image.jpg', siteConfig.url)} />
+    <meta property="og:locale" content="de_CH" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={`${title} · ${siteConfig.name}`} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL('/og-image.jpg', siteConfig.url)} />
     <OrganizationSchema />
   </head>
   <body class="flex min-h-screen flex-col bg-background font-body text-text">

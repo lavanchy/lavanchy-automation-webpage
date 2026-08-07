@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: 'Lavanchy Automation',
   url: 'https://lavanchyautomation.ch',
-  bookingUrl: 'https://cal.meetergo.com/loic-lavanchy/30-min-meeting-or-loic-lavanchy',
+  bookingUrl: 'https://cal.meetergo.com/loic-lavanchy/30-min-meeting',
   ctaLabel: 'Kostenloses Erstgespräch buchen',
   phone: '+41 79 687 81 28',
   email: 'lo.lavanchy@gmail.com',

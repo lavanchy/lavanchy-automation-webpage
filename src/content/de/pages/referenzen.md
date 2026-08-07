@@ -1,6 +1,6 @@
 ---
 seo:
-  title: "Fallstudien Prozessautomatisierung mit n8n | Lavanchy Automation"
+  title: "Fallstudien zur n8n Automatisierung"
   description: "Konkrete Beispiele für Prozessautomatisierung: Excel integrieren, manuelle Übertragungen reduzieren und Verwaltungsprozesse nachvollziehbar digitalisieren."
 hero:
   eyebrow: "Referenzen"

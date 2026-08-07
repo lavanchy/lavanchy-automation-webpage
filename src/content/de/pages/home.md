@@ -1,7 +1,7 @@
 ---
 seo:
-  title: "Prozessautomatisierung und KI Beratung für KMU | Lavanchy Automation"
-  description: "Prozessautomatisierung mit n8n und Managed KI Beratung für KMU, Selbständige und Startups. Bestehende Tools verbinden, Abläufe vereinfachen und Daten im DACH Raum sicher verarbeiten."
+  title: "n8n Automatisierung und KI für KMU"
+  description: "n8n Automatisierung und Managed KI für KMU, Selbständige und Startups: bestehende Tools verbinden, Abläufe vereinfachen, Daten sicher im DACH Raum verarbeiten."
 hero:
   eyebrow: "Prozessautomatisierung und KI Beratung für KMU, Selbständige und Startups"
   headline: "Eure Tools bleiben. Der Aufwand verschwindet."
@@ -36,10 +36,10 @@ kontrolle:
     - "Eure Prozesse werden dokumentiert, getestet und überwacht. Ihr seht, was automatisch läuft und wie der Ablauf aufgebaut ist. Bei Bedarf bleibt der bisherige manuelle Ablauf als Referenz erhalten."
 referenzabschnitt:
   headline: "Bewiesen, nicht nur versprochen"
-  text: "Bei einer Schweizer Bundesbehörde wurde ein papierbasiertes Verfahren mit rund 7'000 Vorgängen pro Jahr digitalisiert und automatisiert."
+  text: "Bei einer Schweizer Bundesbehörde wurde ein papierbasiertes Verfahren mit rund 7'000 Verfahren pro Jahr digitalisiert und automatisiert."
   stats:
     - value: "Rund 90 %"
-      label: "weniger manueller Aufwand pro Vorgang"
+      label: "weniger manueller Aufwand pro Verfahren"
     - value: "Mehr als 7'000"
       label: "Verfahren pro Jahr"
     - value: "Mehr als 40 %"

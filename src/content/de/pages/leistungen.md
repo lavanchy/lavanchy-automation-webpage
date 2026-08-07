@@ -1,6 +1,6 @@
 ---
 seo:
-  title: "n8n Prozessautomatisierung und Managed KI Beratung | Lavanchy Automation"
+  title: "n8n Prozessautomatisierung, Managed KI"
   description: "n8n Prozessautomatisierung und Managed KI Beratung für KMU. Bestehende Tools verbinden, Abläufe dokumentieren und KI sicher in den Arbeitsalltag einbinden."
 hero:
   eyebrow: "Leistungen"
@@ -105,7 +105,7 @@ faq:
         - frage: "Was bedeutet Managed KI?"
           antwort: "Managed KI bedeutet, dass KI-Anwendungen für euch eingerichtet, konfiguriert und betrieben werden. Ihr nutzt die KI im Alltag, ohne euch selbst um Modellauswahl, Updates oder technische Einrichtung kümmern zu müssen. Entscheidend ist, dass die Lösung zu euren Aufgaben und Datenschutzanforderungen passt."
         - frage: "Was ist ein KI-Orchestrator?"
-          antwort: "Ein KI-Orchestrator ist eine Plattform, die verschiedene KI-Modelle und Werkzeuge an einem zentralen Ort bündelt und koordiniert. Das Team arbeitet mit einer einheitlichen Oberfläche, statt mit vielen einzelnen Tools. Zugriffsrechte und Nutzung lassen sich zentral steuern. headwAI ist ein Beispiel für einen solchen Orchestrator aus dem DACH-Raum."
+          antwort: "Ein KI-Orchestrator ist eine Plattform, die verschiedene KI-Modelle und Werkzeuge an einem zentralen Ort bündelt und koordiniert. Das Team arbeitet mit einer einheitlichen Oberfläche, statt mit vielen einzelnen Tools. Zugriffsrechte und Nutzung lassen sich zentral steuern. headwAI ist ein Beispiel für einen solchen Orchestrator aus dem DACH Raum."
         - frage: "Was sind die Vorteile eines KI-Orchestrators wie headwAI?"
           antwort: "Statt viele einzelne KI-Tools parallel zu nutzen, arbeitet das Team an einem zentralen Ort. Neue Modelle oder Funktionen können hinzugefügt werden, ohne dass jede Person selbst etwas einrichten muss. Datenschutz und Zugriffsrechte werden einheitlich geregelt. Die KI lässt sich mit bestehenden Abläufen verbinden, statt als isoliertes Werkzeug zu existieren."
     - label: "Aufwand, Dauer & Vorgehen"
@@ -123,7 +123,7 @@ faq:
     - label: "Datenschutz & Standort"
       items:
         - frage: "Wo liegen unsere Daten?"
-          antwort: "Das hängt von der bestehenden Systemlandschaft und den Anforderungen des Projekts ab. Daten können bei euch oder bei einem Hoster im EU- beziehungsweise DACH-Raum bleiben. Die konkrete Infrastruktur wird gemeinsam festgelegt."
+          antwort: "Das hängt von der bestehenden Systemlandschaft und den Anforderungen des Projekts ab. Daten können bei euch oder bei einem Hoster im EU- beziehungsweise DACH Raum bleiben. Die konkrete Infrastruktur wird gemeinsam festgelegt."
         - frage: "Wird die Automatisierung DSGVO-konform umgesetzt?"
           antwort: "Die technische Umsetzung wird von Anfang an auf Datenschutzanforderungen ausgerichtet. Dazu gehören Datensparsamkeit, Zugriffsrechte, Hosting, Protokollierung und die Auswahl eingebundener Dienste. Für eine unabhängige rechtliche Einschätzung kann ein externer Datenschutzexperte beigezogen werden."
     - label: "Erstgespräch & Zielgruppe"
@@ -133,7 +133,7 @@ faq:
         - frage: "Was passiert im kostenlosen Erstgespräch?"
           antwort: "In 30 Minuten schauen wir gemeinsam auf einen eurer Abläufe. Ich höre zu, stelle Fragen zur heutigen Arbeitsweise und zeige auf, wo sich ein Blick auf Automatisierung lohnen könnte. Das Gespräch ist unverbindlich und auf Deutsch, Französisch oder Englisch möglich."
 fuerWen:
-  headline: "Für KMU, Selbständige und Startups im DACH-Raum"
+  headline: "Für KMU, Selbständige und Startups im DACH Raum"
   text: "Ob Handwerksbetrieb, Handelsunternehmen, Coaching Business, Selbständige oder Startup: Wenn wiederkehrende Aufgaben Zeit fressen, mehrere Systeme nicht miteinander sprechen oder KI sinnvoll eingesetzt werden soll, lohnt sich ein Blick auf eure Abläufe."
 abschlussCta:
   headline: "Bereit, eure Prozesse zu vereinfachen?"

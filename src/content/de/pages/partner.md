@@ -1,7 +1,7 @@
 ---
 seo:
-  title: "Partner für Prozessautomatisierung, ERP und KI | Lavanchy Automation"
-  description: "Ausgewählte Partner aus dem DACH Raum für ERP, KI und Prozessautomatisierung. Lavanchy Automation verbindet passende Lösungen mit den Abläufen deines Unternehmens."
+  title: "Partner für ERP, KI und Automatisierung"
+  description: "Ausgewählte Partner aus dem DACH Raum für ERP, KI und Prozessautomatisierung, passend zu den Abläufen eures Unternehmens."
 hero:
   eyebrow: "Partner"
   headline: "Passende Lösungen, sinnvoll verbunden"

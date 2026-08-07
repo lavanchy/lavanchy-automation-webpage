@@ -44,9 +44,9 @@ Der konkrete technische Dienst für die Formularübermittlung wird ergänzt, sob
 
 Für die Buchung eines Erstgesprächs wird meetergo verwendet, ein Terminbuchungstool mit Serverstandort in Deutschland. Bei der Terminbuchung können Name, E-Mail-Adresse, Terminangaben und weitere von euch eingegebene Informationen verarbeitet werden. Grundlage dafür ist die Vereinbarung des Erstgesprächs als vorvertragliche Massnahme.
 
-Die Terminbuchung erfolgt über die Infrastruktur von meetergo, konkret über [cal.meetergo.com/loic-lavanchy](https://cal.meetergo.com/loic-lavanchy/30-min-meeting-or-loic-lavanchy). Es gelten zusätzlich die Datenschutzbestimmungen von meetergo.
+Die Terminbuchung erfolgt über die Infrastruktur von meetergo, konkret über [cal.meetergo.com/loic-lavanchy](https://cal.meetergo.com/loic-lavanchy/30-min-meeting). Es gelten zusätzlich die Datenschutzbestimmungen von meetergo.
 
-Ob der Link extern verlinkt oder als eingebettetes Element auf der Website eingebunden wird, wird vor der Veröffentlichung festgelegt und entsprechend beschrieben.
+Der Link öffnet die Buchungsseite von meetergo extern in einem neuen Tab, ohne dass Buchungsinhalte in diese Website eingebettet werden.
 
 ## Rechte der betroffenen Personen
 

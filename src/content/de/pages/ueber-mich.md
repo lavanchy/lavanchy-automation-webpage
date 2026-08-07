@@ -1,7 +1,7 @@
 ---
 seo:
-  title: "Loïc Lavanchy, Berater für Prozessautomatisierung und KI"
-  description: "Loïc Lavanchy begleitet KMU, Selbständige und Startups bei Prozessautomatisierung mit n8n und beim sinnvollen Einsatz von KI. Klar, pragmatisch und verständlich."
+  title: "Loïc Lavanchy, Berater für Automatisierung"
+  description: "Loïc Lavanchy begleitet KMU, Selbständige und Startups bei Prozessautomatisierung mit n8n und beim sinnvollen Einsatz von KI."
 hero:
   eyebrow: "Über mich"
   headline: "Wer dahintersteckt"
@@ -11,7 +11,7 @@ werdegang:
   text:
     - "Als Projektleiter und Requirement Engineer habe ich in den letzten neun Jahren Fachbereiche und IT zusammengebracht. Dabei habe ich beim Institut für Geistiges Eigentum auf Bundesebene und bei einem Schweizer Software Unternehmen gearbeitet."
     - "Meine Aufgabe war es, die Bedürfnisse der Fachbereiche zu verstehen und daraus Lösungen zu entwickeln, die im Alltag tatsächlich funktionieren. Davon habe ich vier Jahre mit besonderem Fokus auf Prozesse gearbeitet."
-    - "Unter anderem habe ich ein papierbasiertes Verfahren mit rund 7'000 Vorgängen pro Jahr digitalisiert und automatisiert. Das Ergebnis waren rund 90 Prozent weniger manueller Aufwand pro Vorgang und mehr als 40 Prozent mehr bearbeitete Fälle innerhalb eines Jahres."
+    - "Unter anderem habe ich ein papierbasiertes Verfahren mit rund 7'000 Verfahren pro Jahr digitalisiert und automatisiert. Das Ergebnis waren rund 90 Prozent weniger manueller Aufwand pro Verfahren und mehr als 40 Prozent mehr bearbeitete Fälle innerhalb eines Jahres."
     - "Von Prozessen und Automation war ich schon immer fasziniert. Selbständig gemacht habe ich mich, um mehr pragmatische Prozessautomatisierungen umzusetzen. n8n ermöglicht mir, solche Lösungen schnell und flexibel zu entwickeln."
     - "Heute begleite ich KMU und Selbständige dabei, administrative Arbeit zu reduzieren und mehr Zeit für Aufgaben zu gewinnen, die einen echten Mehrwert bringen."
 wieIchArbeite:

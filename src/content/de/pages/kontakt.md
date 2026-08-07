@@ -1,6 +1,6 @@
 ---
 seo:
-  title: "Kontakt für Prozessautomatisierung und KI Beratung | Lavanchy Automation"
+  title: "Kontakt für n8n Automatisierung und KI"
   description: "Kostenloses Erstgespräch zu n8n Prozessautomatisierung und KI Beratung für KMU, Selbständige und Startups. Auf Deutsch, Französisch oder Englisch."
 hero:
   eyebrow: "Kontakt"
