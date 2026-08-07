@@ -19,7 +19,7 @@ LinkedIn: [linkedin.com/in/loic-lavanchy](https://www.linkedin.com/in/loic-lavan
 **Verantwortlich für den Inhalt dieser Website:**<br />
 Loïc Lavanchy
 
-UID und MWST Angaben werden ergänzt, sobald eine entsprechende Nummer vorhanden ist oder eine Registrierung erfolgt.
+<!-- UID und MWST Angaben werden ergänzt, sobald eine entsprechende Nummer vorhanden ist oder eine Registrierung erfolgt. -->
 
 ## Rechtlicher Prüfhinweis
 

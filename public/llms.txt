@@ -1,0 +1,11 @@
+# Lavanchy Automation
+
+> Lavanchy Automation ist eine n8n-basierte Prozessautomatisierungs- und Managed-KI-Beratung für KMU, Selbständige und Startups im DACH-Raum. Bestehende Systeme wie Excel, CRM und E-Mail werden verbunden, wiederkehrende Abläufe automatisiert, und KI wird dort eingesetzt, wo sie im Prozess einen echten Nutzen bringt.
+
+## Seiten
+
+- [Leistungen](https://lavanchyautomation.ch/de/leistungen/): n8n Prozessautomatisierung und Managed KI Beratung im Detail
+- [Referenzen](https://lavanchyautomation.ch/de/referenzen/): Fallstudien, u.a. Digitalisierung eines Verfahrens mit rund 7'000 Vorgängen pro Jahr bei einer Schweizer Bundesbehörde
+- [Über mich](https://lavanchyautomation.ch/de/ueber-mich/): Loïc Lavanchy, Requirement Engineer und Berater für Prozessautomatisierung
+- [Partner](https://lavanchyautomation.ch/de/partner/): Ausgewählte Partner aus dem DACH-Raum für ERP, KI und Prozessautomatisierung
+- [Kontakt](https://lavanchyautomation.ch/de/kontakt/): Kostenloses, unverbindliches Erstgespräch buchen

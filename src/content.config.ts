@@ -115,6 +115,16 @@ const leistungen = defineCollection({
       grundsatzHeadline: z.string(),
       grundsatzText: z.string(),
     }),
+    faq: z.object({
+      headline: z.string(),
+      intro: z.string(),
+      gruppen: z.array(
+        z.object({
+          label: z.string(),
+          items: z.array(z.object({ frage: z.string(), antwort: z.string() })),
+        })
+      ),
+    }),
     fuerWen: z.object({ headline: z.string(), text: z.string() }),
     abschlussCta: z.object({ headline: z.string(), text: z.string(), buttonLabel: z.string() }),
   }),

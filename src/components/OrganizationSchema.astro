@@ -1,0 +1,21 @@
+---
+import { siteConfig } from '../config/site';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: siteConfig.name,
+  url: siteConfig.url,
+  email: siteConfig.email,
+  telephone: siteConfig.phone,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: siteConfig.address.street,
+    addressLocality: siteConfig.address.zipCity,
+    addressCountry: 'CH',
+  },
+  sameAs: [siteConfig.linkedin],
+};
+---
+
+<script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />

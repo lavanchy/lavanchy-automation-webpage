@@ -6,13 +6,49 @@ import Section from '../../components/Section.astro';
 import TitledCard from '../../components/TitledCard.astro';
 import Tile from '../../components/Tile.astro';
 import ClosingCta from '../../components/ClosingCta.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import { siteConfig } from '../../config/site';
 
 const entry = await getEntry('leistungen', 'leistungen');
 if (!entry) throw new Error('Content entry "leistungen" not found');
-const { hero, n8n, zusammenarbeit, qualitaet, managedKi, fuerWen, abschlussCta } = entry.data;
+const { hero, n8n, zusammenarbeit, qualitaet, managedKi, faq, fuerWen, abschlussCta } = entry.data;
+
+const servicesJsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Service',
+      name: n8n.headline,
+      description: n8n.intro[0],
+      provider: { '@type': 'Organization', name: siteConfig.name, url: siteConfig.url },
+      areaServed: 'DACH',
+    },
+    {
+      '@type': 'Service',
+      name: managedKi.headline,
+      description: managedKi.intro[0],
+      provider: { '@type': 'Organization', name: siteConfig.name, url: siteConfig.url },
+      areaServed: 'DACH',
+    },
+  ],
+};
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.gruppen.flatMap((gruppe) =>
+    gruppe.items.map((item) => ({
+      '@type': 'Question',
+      name: item.frage,
+      acceptedAnswer: { '@type': 'Answer', text: item.antwort },
+    }))
+  ),
+};
 ---
 
 <PageLayout title={entry.data.seo.title} description={entry.data.seo.description}>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(servicesJsonLd)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
   <Hero eyebrow={hero.eyebrow} headline={hero.headline} subheadline={hero.subheadline} />
 
   <Section>
@@ -119,6 +155,10 @@ const { hero, n8n, zusammenarbeit, qualitaet, managedKi, fuerWen, abschlussCta }
       <h3 class="mb-3 font-heading text-lg font-bold text-text">{managedKi.grundsatzHeadline}</h3>
       <p class="leading-relaxed text-text-muted">{managedKi.grundsatzText}</p>
     </div>
+  </Section>
+
+  <Section bg="paper" class="bg-surface">
+    <FaqSection headline={faq.headline} intro={faq.intro} gruppen={faq.gruppen} />
   </Section>
 
   <Section bg="paper" class="bg-surface text-center">
