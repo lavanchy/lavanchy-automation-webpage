@@ -34,11 +34,13 @@ Plausible verwendet keine Cookies und erstellt keine persönlichen Nutzerprofile
 
 ## Kontaktformular
 
+Für das Kontaktformular auf dieser Website wird der Dienst Tally (Tally, Belgien) eingesetzt. Das Formular ist als eingebettetes Element (iframe) integriert; Tally verarbeitet die eingegebenen Daten dabei direkt auf eigener Infrastruktur mit Serverstandort in der EU.
+
 Wenn ihr das Kontaktformular verwendet, werden Name, E-Mail-Adresse und Nachricht verarbeitet. Grundlage dafür ist die Bearbeitung eurer Anfrage, gegebenenfalls als vorvertragliche Massnahme.
 
-Die Daten werden nur so lange aufbewahrt, wie dies für die Bearbeitung der Anfrage erforderlich ist oder gesetzliche Aufbewahrungspflichten bestehen.
+Neue Formulareinsendungen werden mir zusätzlich automatisch als Nachricht in einem internen Slack-Workspace angezeigt, damit ich zeitnah reagieren kann. Slack wird von Salesforce (USA) betrieben; die Übermittlung in die USA erfolgt auf Grundlage von Standardvertragsklauseln bzw. des EU-U.S. Data Privacy Framework.
 
-Der konkrete technische Dienst für die Formularübermittlung wird ergänzt, sobald er festgelegt ist.
+Die Daten werden nur so lange aufbewahrt, wie dies für die Bearbeitung der Anfrage erforderlich ist oder gesetzliche Aufbewahrungspflichten bestehen.
 
 ## Terminbuchung mit meetergo
 

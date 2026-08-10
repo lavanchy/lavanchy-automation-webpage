@@ -229,8 +229,6 @@ const kontakt = defineCollection({
     kontaktformular: z.object({
       headline: z.string(),
       text: z.string(),
-      fields: z.array(z.string()),
-      buttonLabel: z.string(),
       hinweis: z.string(),
     }),
     wasEuchErwartet: z.object({ headline: z.string(), text: z.string() }),

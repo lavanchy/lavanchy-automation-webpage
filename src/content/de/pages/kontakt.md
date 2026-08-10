@@ -15,11 +15,6 @@ kontaktmoeglichkeiten:
 kontaktformular:
   headline: "Frage stellen"
   text: "Lieber zuerst eine Frage klären, statt gleich einen Termin zu buchen? Schreibt mir kurz. Ich melde mich."
-  fields:
-    - "Name"
-    - "E-Mail"
-    - "Nachricht"
-  buttonLabel: "Nachricht senden"
   hinweis: "Für eine erste gemeinsame Standortbestimmung empfehle ich das kostenlose Erstgespräch. Das geht oft schneller als ein längerer Austausch per E-Mail."
 wasEuchErwartet:
   headline: "Was euch erwartet"
