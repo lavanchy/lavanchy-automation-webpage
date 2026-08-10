@@ -38,7 +38,7 @@ Für das Kontaktformular auf dieser Website wird der Dienst Tally (Tally, Belgie
 
 Wenn ihr das Kontaktformular verwendet, werden Name, E-Mail-Adresse und Nachricht verarbeitet. Grundlage dafür ist die Bearbeitung eurer Anfrage, gegebenenfalls als vorvertragliche Massnahme.
 
-Neue Formulareinsendungen werden mir zusätzlich automatisch als Nachricht in einem internen Slack-Workspace angezeigt, damit ich zeitnah reagieren kann. Slack wird von Salesforce (USA) betrieben; die Übermittlung in die USA erfolgt auf Grundlage von Standardvertragsklauseln bzw. des EU-U.S. Data Privacy Framework.
+Über neue Formulareinsendungen werde ich zusätzlich automatisch in einem internen Slack-Workspace benachrichtigt, damit ich zeitnah reagieren kann. Dabei werden keine Inhalte aus dem Formular (Name, E-Mail-Adresse, Nachricht) an Slack übermittelt, sondern lediglich der Hinweis, dass eine neue Einsendung vorliegt.
 
 Die Daten werden nur so lange aufbewahrt, wie dies für die Bearbeitung der Anfrage erforderlich ist oder gesetzliche Aufbewahrungspflichten bestehen.
 
