@@ -9,7 +9,8 @@ import { siteConfig } from '../../config/site';
 
 const entry = await getEntry('kontakt', 'kontakt');
 if (!entry) throw new Error('Content entry "kontakt" not found');
-const { hero, erstgespraech, kontaktmoeglichkeiten, kontaktformular, wasEuchErwartet, standort } = entry.data;
+const { hero, erstgespraech, kontaktmoeglichkeiten, kontaktformular, wasEuchErwartet, standort, abschluss } =
+  entry.data;
 ---
 
 <PageLayout title={entry.data.seo.title} description={entry.data.seo.description}>
@@ -63,6 +64,12 @@ const { hero, erstgespraech, kontaktmoeglichkeiten, kontaktformular, wasEuchErwa
     <p class="mb-2 leading-relaxed text-text-muted">{standort.text}</p>
     <p class="leading-relaxed text-text-muted">
       Offizieller Sitz: {siteConfig.address.street}, {siteConfig.address.zipCity}, {siteConfig.address.country}.
+    </p>
+  </Section>
+
+  <Section class="text-center">
+    <p class="leading-relaxed text-text-muted">
+      {abschluss.text} Telefon: <a href={`tel:${siteConfig.phone.replace(/\s/g, '')}`} class="text-brand-primary hover:underline">{siteConfig.phone}</a> · E-Mail: <a href={`mailto:${siteConfig.email}`} class="text-brand-primary hover:underline">{siteConfig.email}</a>
     </p>
   </Section>
 </PageLayout>

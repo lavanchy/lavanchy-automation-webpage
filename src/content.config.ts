@@ -93,6 +93,11 @@ const leistungen = defineCollection({
       intro: z.string(),
       schritte: z.array(titledText),
     }),
+    mittenCta: z.object({
+      headline: z.string(),
+      text: z.string(),
+      ctaLabel: z.string(),
+    }),
     qualitaet: z.object({
       headline: z.string(),
       introSatz: z.string(),
@@ -176,7 +181,7 @@ const partner = defineCollection({
         logo: z.string().optional(),
       })
     ),
-    kontaktHinweis: z.object({ text: z.string(), ctaLabel: z.string() }),
+    kontaktHinweis: z.object({ headline: z.string(), text: z.string(), ctaLabel: z.string() }),
   }),
 });
 
@@ -233,6 +238,7 @@ const kontakt = defineCollection({
     }),
     wasEuchErwartet: z.object({ headline: z.string(), text: z.string() }),
     standort: z.object({ text: z.string() }),
+    abschluss: z.object({ text: z.string() }),
   }),
 });
 

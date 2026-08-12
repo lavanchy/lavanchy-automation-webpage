@@ -4,7 +4,7 @@ import PageLayout from '../../layouts/PageLayout.astro';
 import Hero from '../../components/Hero.astro';
 import Section from '../../components/Section.astro';
 import PartnerCard from '../../components/PartnerCard.astro';
-import CtaButton from '../../components/CtaButton.astro';
+import ClosingCta from '../../components/ClosingCta.astro';
 
 const entry = await getEntry('partner', 'partner');
 if (!entry) throw new Error('Content entry "partner" not found');
@@ -39,10 +39,5 @@ const { hero, warum, partners, kontaktHinweis } = entry.data;
     </div>
   </Section>
 
-  <Section bg="paper" class="bg-surface text-center">
-    <div class="mx-auto max-w-2xl">
-      <p class="mb-6 leading-relaxed text-text">{kontaktHinweis.text}</p>
-      <CtaButton label={kontaktHinweis.ctaLabel} />
-    </div>
-  </Section>
+  <ClosingCta headline={kontaktHinweis.headline} text={kontaktHinweis.text} buttonLabel={kontaktHinweis.ctaLabel} />
 </PageLayout>

@@ -33,6 +33,7 @@ partners:
     url: "https://lex-generalis.de"
     text: "Für rechtliche Fragen rund um Datenschutz arbeite ich mit Stephan Wagner zusammen, Jurist und externer Datenschutzbeauftragter. Die technische Umsetzung meiner Automatisierungen richte ich von Anfang an an den Datenschutzanforderungen aus, etwa bei Hosting, Datensparsamkeit, Zugriffsrechten und Protokollierung. Für Fragen, die darüber hinausgehen, zum Beispiel bei der datenschutzrechtlichen Bewertung, bei Datenschutz-Governance, beim EU AI Act oder bei einer Datenschutz-Folgenabschätzung, übernimmt Stephan Wagner die Begleitung. Auf Wunsch prüft er die entwickelte Lösung und bestätigt das Ergebnis schriftlich."
 kontaktHinweis:
+  headline: "Bereit für die passende Lösung?"
   text: "Wenn eine dieser Lösungen für euren Betrieb interessant sein könnte, sprechen wir am besten direkt darüber."
   ctaLabel: "Kostenloses Erstgespräch buchen"
 ---

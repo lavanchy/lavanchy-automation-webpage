@@ -6,12 +6,13 @@ import Section from '../../components/Section.astro';
 import TitledCard from '../../components/TitledCard.astro';
 import Tile from '../../components/Tile.astro';
 import ClosingCta from '../../components/ClosingCta.astro';
+import CtaButton from '../../components/CtaButton.astro';
 import FaqSection from '../../components/FaqSection.astro';
 import { siteConfig } from '../../config/site';
 
 const entry = await getEntry('leistungen', 'leistungen');
 if (!entry) throw new Error('Content entry "leistungen" not found');
-const { hero, n8n, zusammenarbeit, qualitaet, managedKi, faq, fuerWen, abschlussCta } = entry.data;
+const { hero, n8n, zusammenarbeit, mittenCta, qualitaet, managedKi, faq, fuerWen, abschlussCta } = entry.data;
 
 const servicesJsonLd = {
   '@context': 'https://schema.org',
@@ -93,6 +94,14 @@ const faqJsonLd = {
         ))
       }
     </ol>
+  </Section>
+
+  <Section class="text-center">
+    <div class="mx-auto max-w-2xl">
+      <h2 class="mb-4 font-heading text-2xl font-bold text-text">{mittenCta.headline}</h2>
+      <p class="mb-6 leading-relaxed text-text-muted">{mittenCta.text}</p>
+      <CtaButton label={mittenCta.ctaLabel} />
+    </div>
   </Section>
 
   <Section bg="paper" class="bg-surface">

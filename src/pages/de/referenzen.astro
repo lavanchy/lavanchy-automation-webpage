@@ -62,19 +62,19 @@ function tileGridClass(count: number) {
     ))
   }
 
-  <Section>
-    <h2 class="mb-2 font-heading text-3xl font-bold text-text">{weitereIdeen.headline}</h2>
-    <p class="mb-8 max-w-3xl leading-relaxed text-text-muted">{weitereIdeen.intro}</p>
-    <div class="grid gap-6 md:grid-cols-2">
-      {weitereIdeen.items.map((item) => <TitledCard title={item.title} text={item.text} />)}
-    </div>
-  </Section>
-
-  <Section bg="paper" class="bg-surface text-center">
+  <Section class="text-center">
     <div class="mx-auto max-w-2xl">
       <h2 class="mb-4 font-heading text-2xl font-bold text-text">{fallstudienHinweis.headline}</h2>
       <p class="mb-6 leading-relaxed text-text-muted">{fallstudienHinweis.text}</p>
       <CtaButton label={fallstudienHinweis.ctaLabel} />
+    </div>
+  </Section>
+
+  <Section bg="paper" class="bg-surface">
+    <h2 class="mb-2 font-heading text-3xl font-bold text-text">{weitereIdeen.headline}</h2>
+    <p class="mb-8 max-w-3xl leading-relaxed text-text-muted">{weitereIdeen.intro}</p>
+    <div class="grid gap-6 md:grid-cols-2">
+      {weitereIdeen.items.map((item) => <TitledCard title={item.title} text={item.text} />)}
     </div>
   </Section>
 

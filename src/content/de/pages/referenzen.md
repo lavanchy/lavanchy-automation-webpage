@@ -57,7 +57,7 @@ weitereIdeen:
 fallstudienHinweis:
   headline: "Jetzt einsteigen, als Fallstudie"
   text: "Bis Ende September 2026 erarbeite ich für ausgewählte Betriebe kostenlose Fallstudien. Ihr bekommt eine massgeschneiderte Automatisierungslösung. Ich erhalte einen Referenzfall für meine Arbeit."
-  ctaLabel: "Kostenloses Erstgespräch buchen"
+  ctaLabel: "Fallstudien-Platz sichern"
 abschlussCta:
   headline: "Bereit, eure Prozesse zu vereinfachen?"
   text: "In einem kostenlosen Erstgespräch schauen wir gemeinsam auf einen eurer Abläufe. Unverbindlich, auf Deutsch, Französisch oder Englisch."

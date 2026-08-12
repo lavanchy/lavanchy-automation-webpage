@@ -50,6 +50,10 @@ zusammenarbeit:
       text: "Die Lösung wird geprüft, dokumentiert und mit Fehlerbehandlung sowie automatisierten Tests ausgestattet, soweit dies für den Prozess sinnvoll ist."
     - title: "Nachbesprechen und feinjustieren"
       text: "Nach einem Monat und nach sechs Monaten überprüfen wir die Ergebnisse gemeinsam in einem Call von 30 Minuten. Bei Bedarf wird die Lösung feinjustiert."
+mittenCta:
+  headline: "Jetzt einsteigen, als Fallstudie"
+  text: "Bis Ende September 2026 erarbeite ich für ausgewählte Betriebe kostenlose Fallstudien. Ihr bekommt eine massgeschneiderte Automatisierungslösung. Ich erhalte einen Referenzfall für meine Arbeit."
+  ctaLabel: "Fallstudien-Platz sichern"
 qualitaet:
   headline: "Qualität, die nachvollziehbar ist"
   introSatz: "Jede Automatisierung, die ich umsetze, wird anhand eines festen Kriterienkatalogs dokumentiert. Der Katalog hält fest:"
