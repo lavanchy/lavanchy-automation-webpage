@@ -1,0 +1,82 @@
+---
+import { getEntry } from 'astro:content';
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/Hero.astro';
+import Section from '../../components/Section.astro';
+import TitledCard from '../../components/TitledCard.astro';
+import Tile from '../../components/Tile.astro';
+import StatGrid from '../../components/StatGrid.astro';
+import ClosingCta from '../../components/ClosingCta.astro';
+import CtaButton from '../../components/CtaButton.astro';
+
+const entry = await getEntry('referenzenFr', 'referenzen');
+if (!entry) throw new Error('Content entry "referenzen" (fr) not found');
+const { hero, fallstudien, weitereIdeen, fallstudienHinweis, abschlussCta } = entry.data;
+
+function fallstudienBloecke(fallstudie: (typeof fallstudien)[number]) {
+  return [
+    { label: 'Situation de départ', paragraphs: fallstudie.ausgangslage },
+    { label: 'Solution', paragraphs: fallstudie.loesung },
+    { label: 'Valeur ajoutée', paragraphs: fallstudie.mehrwert },
+  ];
+}
+
+function tileGridClass(count: number) {
+  if (count >= 3) return 'sm:grid-cols-2 lg:grid-cols-3';
+  if (count === 2) return 'sm:grid-cols-2';
+  return '';
+}
+---
+
+<PageLayout title={entry.data.seo.title} description={entry.data.seo.description}>
+  <Hero eyebrow={hero.eyebrow} headline={hero.headline} subheadline={hero.subheadline} />
+
+  {
+    fallstudien.map((fallstudie, i) => (
+      <Section class={i % 2 === 1 ? 'bg-surface' : ''}>
+        <h2 class="mb-10 font-heading text-3xl font-bold text-text">{fallstudie.headline}</h2>
+
+        <div>
+          {fallstudienBloecke(fallstudie).map((block, idx, arr) => (
+            <div class="flex gap-5 sm:gap-6">
+              <div class="flex flex-col items-center">
+                <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-primary font-heading text-sm font-bold text-white">
+                  {idx + 1}
+                </span>
+                {idx < arr.length - 1 && <span aria-hidden="true" class="mt-2 w-px flex-1 bg-border" />}
+              </div>
+              <div class={`flex-1 ${idx < arr.length - 1 ? 'pb-8' : ''}`}>
+                <h3 class="mb-4 font-heading text-xl font-bold text-text">{block.label}</h3>
+                <div class={`grid gap-4 ${tileGridClass(block.paragraphs.length)}`}>
+                  {block.paragraphs.map((p) => <Tile text={p} />)}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div class="mt-10">
+          <StatGrid stats={fallstudie.stats} />
+        </div>
+      </Section>
+    ))
+  }
+
+  <Section class="text-center">
+    <div class="mx-auto max-w-2xl">
+      <h2 class="mb-4 font-heading text-2xl font-bold text-text">{fallstudienHinweis.headline}</h2>
+      <p class="mb-6 leading-relaxed text-text-muted">{fallstudienHinweis.text}</p>
+      <CtaButton label={fallstudienHinweis.ctaLabel} />
+    </div>
+  </Section>
+
+  <Section bg="paper" class="bg-surface">
+    <h2 class="mb-2 font-heading text-3xl font-bold text-text">{weitereIdeen.headline}</h2>
+    <p class="mb-8 max-w-3xl leading-relaxed text-text-muted">{weitereIdeen.intro}</p>
+    <div class="grid gap-6 md:grid-cols-2">
+      {weitereIdeen.items.map((item) => <TitledCard title={item.title} text={item.text} />)}
+    </div>
+  </Section>
+
+  <ClosingCta headline={abschlussCta.headline} text={abschlussCta.text} buttonLabel={abschlussCta.buttonLabel} />
+</PageLayout>

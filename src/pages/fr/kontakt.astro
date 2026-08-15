@@ -1,0 +1,75 @@
+---
+import { getEntry } from 'astro:content';
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/Hero.astro';
+import Section from '../../components/Section.astro';
+import CtaButton from '../../components/CtaButton.astro';
+import ContactForm from '../../components/ContactForm.astro';
+import { siteConfig, countryByLocale } from '../../config/site';
+
+const entry = await getEntry('kontaktFr', 'kontakt');
+if (!entry) throw new Error('Content entry "kontakt" (fr) not found');
+const { hero, erstgespraech, kontaktmoeglichkeiten, kontaktformular, wasEuchErwartet, standort, abschluss } =
+  entry.data;
+---
+
+<PageLayout title={entry.data.seo.title} description={entry.data.seo.description}>
+  <Hero eyebrow={hero.eyebrow} headline={hero.headline} subheadline={hero.subheadline} />
+
+  <Section>
+    <div class="grid gap-10 md:grid-cols-2">
+      <div class="rounded-lg border border-border bg-background shadow-sm p-6 md:p-8">
+        <h2 class="mb-2 font-heading text-2xl font-bold text-text">{erstgespraech.headline}</h2>
+        <p class="mb-6 text-text-muted">{erstgespraech.note}</p>
+        <CtaButton label={erstgespraech.buttonLabel} />
+      </div>
+
+      <div>
+        <h2 class="mb-4 font-heading text-2xl font-bold text-text">{kontaktmoeglichkeiten.headline}</h2>
+        <ul class="space-y-3 leading-relaxed text-text-muted">
+          <li>
+            Téléphone : <a href={`tel:${siteConfig.phone.replace(/\s/g, '')}`} class="text-brand-primary hover:underline">{siteConfig.phone}</a>
+          </li>
+          <li>
+            E-mail : <a href={`mailto:${siteConfig.email}`} class="text-brand-primary hover:underline">{siteConfig.email}</a>
+          </li>
+          <li>
+            LinkedIn : <a href={siteConfig.linkedin} target="_blank" rel="noopener noreferrer" class="text-brand-primary hover:underline">linkedin.com/in/loic-lavanchy</a>
+          </li>
+          <li>
+            Prise de rendez-vous : <a href={siteConfig.bookingUrl} target="_blank" rel="noopener noreferrer" class="text-brand-primary hover:underline">Réserver directement en ligne</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </Section>
+
+  <Section bg="paper" class="bg-surface">
+    <div class="mx-auto max-w-xl">
+      <ContactForm
+        headline={kontaktformular.headline}
+        text={kontaktformular.text}
+        hinweis={kontaktformular.hinweis}
+      />
+    </div>
+  </Section>
+
+  <Section class="text-center">
+    <h2 class="mb-4 font-heading text-2xl font-bold text-text">{wasEuchErwartet.headline}</h2>
+    <p class="mx-auto max-w-2xl leading-relaxed text-text-muted">{wasEuchErwartet.text}</p>
+  </Section>
+
+  <Section bg="paper" class="bg-surface">
+    <h2 class="mb-4 font-heading text-2xl font-bold text-text">Localisation</h2>
+    <p class="mb-2 leading-relaxed text-text-muted">{standort.text}</p>
+    <p class="leading-relaxed text-text-muted">
+      Siège officiel : {siteConfig.address.street}, {siteConfig.address.zipCity}, {countryByLocale.fr}.
+    </p>
+  </Section>
+
+  <Section class="text-center">
+    <p class="leading-relaxed text-text-muted">
+      {abschluss.text} Téléphone : <a href={`tel:${siteConfig.phone.replace(/\s/g, '')}`} class="text-brand-primary hover:underline">{siteConfig.phone}</a> · E-mail : <a href={`mailto:${siteConfig.email}`} class="text-brand-primary hover:underline">{siteConfig.email}</a>
+    </p>
+  </Section>
+</PageLayout>

@@ -1,5 +1,5 @@
 ---
-import { nav } from '../config/site';
+import { navByLocale, getLocale, uiByLocale } from '../config/site';
 
 interface Props {
   id?: string;
@@ -8,9 +8,11 @@ interface Props {
 
 const { id, class: className = '' } = Astro.props;
 const currentPath = Astro.url.pathname;
+const currentLocale = getLocale(currentPath);
+const nav = navByLocale[currentLocale];
 ---
 
-<nav id={id} aria-label="Hauptnavigation" class={className}>
+<nav id={id} aria-label={uiByLocale[currentLocale].navAriaLabel} class={className}>
   <ul class="flex flex-col gap-4 md:flex-row md:flex-wrap md:items-center md:gap-6">
     {nav.map((item) => {
       const isCurrent = currentPath === item.href;

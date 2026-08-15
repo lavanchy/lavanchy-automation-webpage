@@ -1,0 +1,110 @@
+---
+import { getEntry } from 'astro:content';
+import { Image } from 'astro:assets';
+import PageLayout from '../../layouts/PageLayout.astro';
+import Section from '../../components/Section.astro';
+import TitledCard from '../../components/TitledCard.astro';
+import StatGrid from '../../components/StatGrid.astro';
+import ClosingCta from '../../components/ClosingCta.astro';
+import CtaButton from '../../components/CtaButton.astro';
+import { ctaLabelByLocale } from '../../config/site';
+import heroPhoto from '../../assets/brand/loic-hero.jpg';
+import portraitPhoto from '../../assets/brand/loic-portrait.jpg';
+
+const entry = await getEntry('homeEn', 'home');
+if (!entry) throw new Error('Content entry "home" (en) not found');
+const { hero, problem, angebot, kontrolle, referenzabschnitt, fallstudienHinweis, ueberMichTeaser, abschlussCta } =
+  entry.data;
+---
+
+<PageLayout title={entry.data.seo.title} description={entry.data.seo.description}>
+  <Section bg="ink" class="py-20 md:py-28">
+    <div class="grid items-center gap-10 md:grid-cols-2">
+      <div>
+        <p class="mb-4 font-body text-sm font-semibold uppercase tracking-wide text-teal">{hero.eyebrow}</p>
+        <h1 class="mb-6 font-heading text-4xl font-bold text-white md:text-5xl">{hero.headline}</h1>
+        <p class="mb-4 text-lg leading-relaxed text-white/85">{hero.subheadline}</p>
+        <p class="mb-8 text-white/70">{hero.zusatztext}</p>
+        <CtaButton label={ctaLabelByLocale.en} />
+        <p class="mt-3 text-sm text-white/70">{hero.ctaNote}</p>
+      </div>
+      <Image
+        src={heroPhoto}
+        alt="Loïc Lavanchy, founder of Lavanchy Automation"
+        width={480}
+        class="mx-auto w-full max-w-sm rounded-lg"
+      />
+    </div>
+  </Section>
+
+  <Section>
+    <h2 class="mb-10 text-center font-heading text-3xl font-bold text-text">{problem.headline}</h2>
+    <div class="grid gap-6 md:grid-cols-3">
+      {problem.items.map((item) => <TitledCard title={item.title} text={item.text} />)}
+    </div>
+  </Section>
+
+  <Section bg="paper" class="bg-surface">
+    <h2 class="mb-10 text-center font-heading text-3xl font-bold text-text">{angebot.headline}</h2>
+    <div class="grid gap-8 md:grid-cols-2">
+      {
+        angebot.items.map((item) => (
+          <div class="rounded-lg border border-border bg-background p-6 shadow-sm">
+            <h3 class="mb-3 font-heading text-xl font-bold text-text">{item.title}</h3>
+            <div class="space-y-3 leading-relaxed text-text-muted">
+              {item.text.map((p) => (
+                <p>{p}</p>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </Section>
+
+  <Section>
+    <h2 class="mb-6 font-heading text-3xl font-bold text-text">{kontrolle.headline}</h2>
+    <div class="max-w-3xl space-y-4 leading-relaxed text-text-muted">
+      {kontrolle.text.map((p) => <p>{p}</p>)}
+    </div>
+  </Section>
+
+  <Section bg="paper" class="bg-surface">
+    <h2 class="mb-4 font-heading text-3xl font-bold text-text">{referenzabschnitt.headline}</h2>
+    <p class="mb-8 max-w-3xl leading-relaxed text-text-muted">{referenzabschnitt.text}</p>
+    <StatGrid stats={referenzabschnitt.stats} />
+    <a href={referenzabschnitt.linkHref} class="mt-6 inline-block font-semibold text-brand-primary hover:underline">
+      {referenzabschnitt.linkLabel} →
+    </a>
+  </Section>
+
+  <Section class="text-center">
+    <div class="mx-auto max-w-2xl">
+      <h2 class="mb-4 font-heading text-2xl font-bold text-text">{fallstudienHinweis.headline}</h2>
+      <p class="mb-6 leading-relaxed text-text-muted">{fallstudienHinweis.text}</p>
+      <CtaButton label={fallstudienHinweis.ctaLabel} />
+    </div>
+  </Section>
+
+  <Section bg="paper" class="bg-surface">
+    <div class="grid items-center gap-8 md:grid-cols-2">
+      <Image
+        src={portraitPhoto}
+        alt="Loïc Lavanchy"
+        width={360}
+        class="mx-auto w-full max-w-xs rounded-lg"
+      />
+      <div>
+        <h2 class="mb-4 font-heading text-3xl font-bold text-text">{ueberMichTeaser.headline}</h2>
+        <div class="space-y-3 leading-relaxed text-text-muted">
+          {ueberMichTeaser.text.map((p) => <p>{p}</p>)}
+        </div>
+        <a href={ueberMichTeaser.linkHref} class="mt-4 inline-block font-semibold text-brand-primary hover:underline">
+          {ueberMichTeaser.linkLabel} →
+        </a>
+      </div>
+    </div>
+  </Section>
+
+  <ClosingCta headline={abschlussCta.headline} text={abschlussCta.text} buttonLabel={abschlussCta.buttonLabel} />
+</PageLayout>

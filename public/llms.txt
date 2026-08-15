@@ -1,11 +1,27 @@
 # Lavanchy Automation
 
-> Lavanchy Automation ist eine n8n-basierte Prozessautomatisierungs- und Managed-KI-Beratung für KMU, Selbständige und Startups im DACH-Raum. Bestehende Systeme wie Excel, CRM und E-Mail werden verbunden, wiederkehrende Abläufe automatisiert, und KI wird dort eingesetzt, wo sie im Prozess einen echten Nutzen bringt.
+> Lavanchy Automation ist eine n8n-basierte Prozessautomatisierungs- und Managed-KI-Beratung für KMU, Selbständige und Startups im DACH-Raum. Bestehende Systeme wie Excel, CRM und E-Mail werden verbunden, wiederkehrende Abläufe automatisiert, und KI wird dort eingesetzt, wo sie im Prozess einen echten Nutzen bringt. Die Website ist auf Deutsch, Französisch und Englisch verfügbar (/de/, /fr/, /en/).
 
-## Seiten
+## Seiten (Deutsch)
 
 - [Leistungen](https://lavanchyautomation.ch/de/leistungen/): n8n Prozessautomatisierung und Managed KI Beratung im Detail
 - [Referenzen](https://lavanchyautomation.ch/de/referenzen/): Fallstudien, u.a. Digitalisierung eines Verfahrens mit rund 7'000 Vorgängen pro Jahr bei einer Schweizer Bundesbehörde
 - [Über mich](https://lavanchyautomation.ch/de/ueber-mich/): Loïc Lavanchy, Requirement Engineer und Berater für Prozessautomatisierung
 - [Partner](https://lavanchyautomation.ch/de/partner/): Ausgewählte Partner aus dem DACH-Raum für ERP, KI und Prozessautomatisierung
 - [Kontakt](https://lavanchyautomation.ch/de/kontakt/): Kostenloses, unverbindliches Erstgespräch buchen
+
+## Pages (Français)
+
+- [Prestations](https://lavanchyautomation.ch/fr/leistungen/): Automatisation des processus n8n et conseil en IA managée en détail
+- [Références](https://lavanchyautomation.ch/fr/referenzen/): Études de cas, dont la numérisation d'une procédure d'environ 7'000 dossiers par an dans une autorité fédérale suisse
+- [À propos](https://lavanchyautomation.ch/fr/ueber-mich/): Loïc Lavanchy, Requirement Engineer et consultant en automatisation des processus
+- [Partenaires](https://lavanchyautomation.ch/fr/partner/): Partenaires sélectionnés dans l'espace DACH pour l'ERP, l'IA et l'automatisation des processus
+- [Contact](https://lavanchyautomation.ch/fr/kontakt/): Réserver un premier entretien gratuit et sans engagement
+
+## Pages (English)
+
+- [Services](https://lavanchyautomation.ch/en/leistungen/): n8n process automation and managed AI consulting in detail
+- [References](https://lavanchyautomation.ch/en/referenzen/): Case studies, including digitizing a procedure handling around 7,000 cases a year at a Swiss federal authority
+- [About](https://lavanchyautomation.ch/en/ueber-mich/): Loïc Lavanchy, requirement engineer and process automation consultant
+- [Partners](https://lavanchyautomation.ch/en/partner/): Selected partners across the DACH region for ERP, AI and process automation
+- [Contact](https://lavanchyautomation.ch/en/kontakt/): Book a free, no-obligation intro call

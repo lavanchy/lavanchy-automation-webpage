@@ -9,7 +9,7 @@ export default defineConfig({
   site: 'https://lavanchyautomation.ch',
   integrations: [
     sitemap({
-      filter: (page) => !page.includes('/de/blog/'),
+      filter: (page) => !/\/blog\//.test(page),
     }),
   ],
   redirects: {
@@ -17,8 +17,7 @@ export default defineConfig({
   },
   i18n: {
     defaultLocale: 'de',
-    // Später ergänzen: 'fr', 'en' — Ordner unter src/content/<locale>/ anlegen, hier eintragen.
-    locales: ['de'],
+    locales: ['de', 'fr', 'en'],
     routing: {
       prefixDefaultLocale: true
     }

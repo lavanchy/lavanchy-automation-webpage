@@ -3,7 +3,7 @@ import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import OrganizationSchema from '../components/OrganizationSchema.astro';
-import { siteConfig } from '../config/site';
+import { siteConfig, locales, getLocale, ogLocaleByLocale, uiByLocale } from '../config/site';
 
 interface Props {
   title: string;
@@ -11,10 +11,12 @@ interface Props {
 }
 
 const { title, description } = Astro.props;
+const currentLocale = getLocale(Astro.url.pathname);
+const alternatePath = (locale: string) => Astro.url.pathname.replace(/^\/(de|fr|en)\//, `/${locale}/`);
 ---
 
 <!doctype html>
-<html lang="de">
+<html lang={currentLocale}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -24,13 +26,15 @@ const { title, description } = Astro.props;
     <title>{title} · {siteConfig.name}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={new URL(Astro.url.pathname, siteConfig.url)} />
+    {locales.map((locale) => <link rel="alternate" hreflang={locale} href={new URL(alternatePath(locale), siteConfig.url)} />)}
+    <link rel="alternate" hreflang="x-default" href={new URL(alternatePath('de'), siteConfig.url)} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={siteConfig.name} />
     <meta property="og:title" content={`${title} · ${siteConfig.name}`} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={new URL(Astro.url.pathname, siteConfig.url)} />
     <meta property="og:image" content={new URL('/og-image.jpg', siteConfig.url)} />
-    <meta property="og:locale" content="de_CH" />
+    <meta property="og:locale" content={ogLocaleByLocale[currentLocale]} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={`${title} · ${siteConfig.name}`} />
     <meta name="twitter:description" content={description} />
@@ -42,7 +46,7 @@ const { title, description } = Astro.props;
       href="#main"
       class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-brand-primary focus:px-4 focus:py-2 focus:text-white"
     >
-      Zum Hauptinhalt springen
+      {uiByLocale[currentLocale].skipLink}
     </a>
     <Header />
     <main id="main" class="mx-auto w-full max-w-3xl flex-1 px-4 py-12">

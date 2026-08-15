@@ -1,0 +1,27 @@
+---
+import { locales, getLocale, uiByLocale } from '../config/site';
+
+const currentPath = Astro.url.pathname;
+const currentLocale = getLocale(currentPath);
+const labels: Record<string, string> = { de: 'DE', fr: 'FR', en: 'EN' };
+---
+
+<ul aria-label={uiByLocale[currentLocale].langSwitcherLabel} class="flex items-center gap-1 text-sm">
+  {
+    locales.map((locale) => {
+      const href = currentPath.replace(/^\/(de|fr|en)\//, `/${locale}/`);
+      const isCurrent = locale === currentLocale;
+      return (
+        <li>
+          <a
+            href={href}
+            aria-current={isCurrent ? 'page' : undefined}
+            class="rounded px-1.5 py-1 font-semibold text-text-muted hover:text-brand-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-primary aria-[current=page]:text-brand-primary"
+          >
+            {labels[locale]}
+          </a>
+        </li>
+      );
+    })
+  }
+</ul>
