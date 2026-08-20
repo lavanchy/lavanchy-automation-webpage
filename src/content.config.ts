@@ -89,6 +89,11 @@ const leistungenSchema = z.object({
     intro: z.string(),
     schritte: z.array(titledText),
   }),
+  schrittFuerSchritt: z.object({
+    headline: z.string(),
+    intro: z.array(z.string()),
+    schritte: z.array(titledText),
+  }),
   mittenCta: z.object({
     headline: z.string(),
     text: z.string(),
@@ -122,7 +127,7 @@ const leistungenSchema = z.object({
     gruppen: z.array(
       z.object({
         label: z.string(),
-        items: z.array(z.object({ frage: z.string(), antwort: z.string() })),
+        items: z.array(z.object({ frage: z.string(), antwort: z.array(z.string()) })),
       })
     ),
   }),

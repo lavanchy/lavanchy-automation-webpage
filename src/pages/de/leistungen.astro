@@ -12,7 +12,8 @@ import { siteConfig } from '../../config/site';
 
 const entry = await getEntry('leistungen', 'leistungen');
 if (!entry) throw new Error('Content entry "leistungen" not found');
-const { hero, n8n, zusammenarbeit, mittenCta, qualitaet, managedKi, faq, fuerWen, abschlussCta } = entry.data;
+const { hero, n8n, zusammenarbeit, schrittFuerSchritt, mittenCta, qualitaet, managedKi, faq, fuerWen, abschlussCta } =
+  entry.data;
 
 const servicesJsonLd = {
   '@context': 'https://schema.org',
@@ -41,7 +42,7 @@ const faqJsonLd = {
     gruppe.items.map((item) => ({
       '@type': 'Question',
       name: item.frage,
-      acceptedAnswer: { '@type': 'Answer', text: item.antwort },
+      acceptedAnswer: { '@type': 'Answer', text: item.antwort.join(' ') },
     }))
   ),
 };
@@ -88,6 +89,22 @@ const faqJsonLd = {
     <ol class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
       {
         zusammenarbeit.schritte.map((schritt, i) => (
+          <li>
+            <TitledCard title={schritt.title} text={schritt.text} index={i + 1} />
+          </li>
+        ))
+      }
+    </ol>
+  </Section>
+
+  <Section bg="paper" class="bg-surface">
+    <h2 class="mb-4 font-heading text-3xl font-bold text-text">{schrittFuerSchritt.headline}</h2>
+    <div class="mb-10 max-w-3xl space-y-3 leading-relaxed text-text-muted">
+      {schrittFuerSchritt.intro.map((p) => <p>{p}</p>)}
+    </div>
+    <ol class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {
+        schrittFuerSchritt.schritte.map((schritt, i) => (
           <li>
             <TitledCard title={schritt.title} text={schritt.text} index={i + 1} />
           </li>

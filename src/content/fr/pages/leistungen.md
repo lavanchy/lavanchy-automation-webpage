@@ -50,6 +50,27 @@ zusammenarbeit:
       text: "La solution est vérifiée, documentée et dotée d'une gestion des erreurs ainsi que de tests automatisés, dans la mesure où cela est pertinent pour le processus."
     - title: "Faire un bilan et ajuster"
       text: "Après un mois puis après six mois, nous examinons ensemble les résultats lors d'un appel de 30 minutes. Si nécessaire, la solution est ajustée."
+schrittFuerSchritt:
+  headline: "Étape par étape plutôt que big bang"
+  intro:
+    - "Nous ne commençons pas par une transformation complète de vos processus. Nous choisissons d'abord un processus restreint et clairement délimité, avec un bénéfice identifiable."
+    - "Pour ce premier processus, l'environnement technique est mis en place et le déroulement réalisé avec n8n. Une phase de test avec des exemples réalistes suit ensuite. Ce n'est que lorsque le processus a été suffisamment vérifié qu'il est mis en production."
+    - "D'autres processus peuvent ensuite être ajoutés les uns après les autres. L'automatisation grandit ainsi de manière itérative avec votre entreprise, tout en restant compréhensible, maîtrisable et lisible."
+  schritte:
+    - title: "Choisir un petit processus"
+      text: "Un processus clairement délimité avec un bénéfice identifiable."
+    - title: "Mettre en place l'environnement"
+      text: "Connecter n8n et les systèmes concernés."
+    - title: "Réaliser le premier processus"
+      text: "Construire techniquement le processus sélectionné."
+    - title: "Mener la phase de test"
+      text: "Vérifier avec des exemples réalistes et recueillir les retours."
+    - title: "Améliorer le résultat"
+      text: "Recueillir les retours et ajuster le processus."
+    - title: "Démarrer en production"
+      text: "Mettre en œuvre le processus vérifié au quotidien et l'observer."
+    - title: "Ajouter un processus suivant"
+      text: "Seulement une fois que le premier processus est stable."
 mittenCta:
   headline: "Devenez une étude de cas"
   text: "Jusqu'à fin septembre 2026, j'élabore gratuitement des études de cas pour des entreprises sélectionnées. Vous obtenez une solution d'automatisation sur mesure. J'obtiens un cas de référence pour mon activité."
@@ -97,45 +118,82 @@ faq:
     - label: "Systèmes et processus existants"
       items:
         - frage: "Devons-nous remplacer nos outils existants ?"
-          antwort: "Non. Les systèmes existants comme Excel, le CRM, l'e-mail ou la comptabilité sont, dans la mesure du possible, intégrés et connectés entre eux. L'objectif n'est pas de remplacer vos outils habituels, mais de réduire les transferts manuels inutiles et les ruptures de médias."
+          antwort:
+            - "Non. Les systèmes existants comme Excel, le CRM, l'e-mail ou la comptabilité sont, dans la mesure du possible, intégrés et connectés entre eux. L'objectif n'est pas de remplacer vos outils habituels, mais de réduire les transferts manuels inutiles et les ruptures de médias."
         - frage: "Quels processus peuvent être automatisés avec n8n ?"
-          antwort: "Les tâches récurrentes entre plusieurs systèmes s'y prêtent particulièrement bien. Par exemple la synchronisation de données entre Excel, CRM et e-mail, les briefings quotidiens, les contrôles qualité automatiques, les notifications en cas d'erreur, ainsi que la catégorisation et le traitement des e-mails."
+          antwort:
+            - "Les tâches récurrentes entre plusieurs systèmes s'y prêtent particulièrement bien. Par exemple la synchronisation de données entre Excel, CRM et e-mail, les briefings quotidiens, les contrôles qualité automatiques, les notifications en cas d'erreur, ainsi que la catégorisation et le traitement des e-mails."
+        - frage: "Quels processus conviennent particulièrement bien à une automatisation n8n ?"
+          antwort:
+            - "Les processus numériques récurrents avec un déclencheur clair et un résultat attendu conviennent particulièrement bien. Cela inclut par exemple les transferts de données entre Excel, e-mail, CRM, ERP ou comptabilité, les notifications automatiques, les contrôles réguliers et la préparation de brouillons de réponse."
+            - "Plus un processus revient fréquemment, plus les transferts manuels nécessaires sont nombreux et plus les étapes sont claires, plus l'automatisation vaut la peine. Lors du premier entretien, nous examinons ensemble si votre processus s'y prête."
+        - frage: "Quels processus conviennent moins bien à une automatisation ?"
+          antwort:
+            - "Tous les processus ne devraient pas être automatisés. Sont moins adaptées les tâches qui ne reviennent que très rarement, qui se déroulent différemment à chaque fois, ou qui reposent fortement sur une appréciation personnelle et un contact client direct."
+            - "Les processus flous ou pas encore standardisés ne devraient pas non plus être automatisés immédiatement. Dans ce cas, il est préférable de d'abord simplifier et structurer le processus. Ensuite seulement, on peut examiner si certaines étapes peuvent être automatisées avec n8n."
+            - "L'objectif n'est pas d'automatiser un maximum. L'objectif est une solution qui apporte de manière fiable un réel bénéfice au quotidien."
         - frage: "Un fichier Excel existant avec notre propre logique peut-il continuer à être utilisé ?"
-          antwort: "Oui. Si votre logique a fait ses preuves au fil des années, elle n'a pas besoin d'être remplacée. Le fichier Excel peut être copié automatiquement, rempli via une interface, puis relu après le calcul. Le calcul habituel est ainsi conservé et le processus devient plus traçable."
+          antwort:
+            - "Oui. Si votre logique a fait ses preuves au fil des années, elle n'a pas besoin d'être remplacée. Le fichier Excel peut être copié automatiquement, rempli via une interface, puis relu après le calcul. Le calcul habituel est ainsi conservé et le processus devient plus traçable."
     - label: "IA et automatisation"
       items:
         - frage: "L'IA est-elle utilisée dans chaque automatisation ?"
-          antwort: "Non. L'IA n'est utilisée que lorsqu'elle apporte un réel bénéfice au processus, par exemple pour comprendre, trier, résumer ou préparer des informations. De nombreuses démarches fonctionnent plus simplement, plus solidement et de manière plus traçable sans IA."
+          antwort:
+            - "Non. L'IA n'est utilisée que lorsqu'elle apporte un réel bénéfice au processus, par exemple pour comprendre, trier, résumer ou préparer des informations. De nombreuses démarches fonctionnent plus simplement, plus solidement et de manière plus traçable sans IA."
         - frage: "Que signifie « IA managée » ?"
-          antwort: "L'IA managée signifie que des applications d'IA sont installées, configurées et exploitées pour vous. Vous utilisez l'IA au quotidien sans avoir à vous occuper vous-même du choix des modèles, des mises à jour ou de l'installation technique. L'essentiel est que la solution corresponde à vos tâches et à vos exigences de protection des données."
+          antwort:
+            - "L'IA managée signifie que des applications d'IA sont installées, configurées et exploitées pour vous. Vous utilisez l'IA au quotidien sans avoir à vous occuper vous-même du choix des modèles, des mises à jour ou de l'installation technique. L'essentiel est que la solution corresponde à vos tâches et à vos exigences de protection des données."
         - frage: "Qu'est-ce qu'un orchestrateur d'IA ?"
-          antwort: "Un orchestrateur d'IA est une plateforme qui réunit et coordonne différents modèles et outils d'IA en un seul endroit central. L'équipe travaille avec une interface unifiée, au lieu de nombreux outils séparés. Les droits d'accès et l'utilisation peuvent être gérés de manière centralisée. headwAI est un exemple d'un tel orchestrateur issu de l'espace DACH."
+          antwort:
+            - "Un orchestrateur d'IA est une plateforme qui réunit et coordonne différents modèles et outils d'IA en un seul endroit central. L'équipe travaille avec une interface unifiée, au lieu de nombreux outils séparés. Les droits d'accès et l'utilisation peuvent être gérés de manière centralisée. headwAI est un exemple d'un tel orchestrateur issu de l'espace DACH."
         - frage: "Quels sont les avantages d'un orchestrateur d'IA comme headwAI ?"
-          antwort: "Plutôt que d'utiliser en parallèle de nombreux outils d'IA séparés, l'équipe travaille à un endroit central. De nouveaux modèles ou fonctions peuvent être ajoutés sans que chaque personne doive installer quoi que ce soit elle-même. La protection des données et les droits d'accès sont réglés de manière uniforme. L'IA peut être connectée aux processus existants, au lieu d'exister comme un outil isolé."
+          antwort:
+            - "Plutôt que d'utiliser en parallèle de nombreux outils d'IA séparés, l'équipe travaille à un endroit central. De nouveaux modèles ou fonctions peuvent être ajoutés sans que chaque personne doive installer quoi que ce soit elle-même. La protection des données et les droits d'accès sont réglés de manière uniforme. L'IA peut être connectée aux processus existants, au lieu d'exister comme un outil isolé."
     - label: "Effort, durée et démarche"
       items:
         - frage: "Combien de temps dure la mise en œuvre ?"
-          antwort: "Un processus simple peut souvent être automatisé en quelques jours. Les démarches plus complexes sont découpées en étapes clairement délimitées. Le processus suivant n'est abordé que lorsque le précédent est opérationnel."
+          antwort:
+            - "Un processus simple peut souvent être automatisé en quelques jours."
+            - "La durée exacte de la mise en œuvre dépend du processus, des systèmes impliqués et de la qualité des données existantes. Cela comprend la mise en place de l'environnement, la connexion des systèmes concernés, la réalisation du processus et la phase de test."
+            - "Les processus plus complexes sont découpés en étapes plus petites. Le processus suivant n'est abordé que lorsque le précédent est opérationnel et suffisamment vérifié."
         - frage: "Quelle charge de travail cela représente-t-il pour nous ?"
-          antwort: "Au départ, j'ai besoin de temps pour comprendre votre façon de travailler actuelle. Pour cela, nous menons un premier entretien gratuit et, si nécessaire, un ou deux échanges supplémentaires sur l'état des lieux. J'élabore ensuite une proposition de solution. La mise en œuvre se fait processus par processus, avec des points réguliers."
+          antwort:
+            - "Au départ, j'ai besoin de votre temps pour comprendre le processus actuel. Pour cela, nous examinons ensemble les personnes, systèmes, données et étapes de travail concernés."
+            - "Selon le processus, le premier entretien et un ou deux échanges supplémentaires sont utiles. Le premier processus peut ensuite être clairement délimité et mis en œuvre."
+            - "Votre implication reste ensuite limitée : vous donnez vos retours, vérifiez les résultats et décidez avec moi quel processus suivant a du sens."
+        - frage: "Comment estimer le bénéfice possible ?"
+          antwort:
+            - "Nous regardons à quelle fréquence un processus revient, combien de temps il prend aujourd'hui et à quelle fréquence des erreurs ou des reprises surviennent."
+            - "Un processus Excel éprouvé sert de repère : avec quatre appels par jour, environ cinq minutes ont pu être économisées par appel. Cela correspond à environ 100 minutes d'effort manuel en moins par semaine. Grâce aux erreurs évitées et aux reprises réduites, environ 30 minutes supplémentaires s'y ajoutent dans cet exemple."
+            - "Au total, cela représente un gain de temps possible d'environ deux heures et dix minutes par semaine. Sous ces hypothèses, l'investissement pour un premier petit processus s'amortirait en quelques mois. L'effet réel dépend du processus concerné, de sa fréquence et de son taux d'erreur."
+            - "Lors du premier entretien, nous examinons si une estimation similaire peut être établie pour votre processus."
     - label: "Contrôle, qualité et maintenance"
       items:
         - frage: "Pouvons-nous suivre ce qui se passe automatiquement ?"
-          antwort: "Oui. Chaque exécution est enregistrée. Chaque étape peut être consultée et vérifiée a posteriori. L'automatisation n'est pas une boîte noire."
+          antwort:
+            - "Oui. Chaque exécution est enregistrée. Chaque étape peut être consultée et vérifiée a posteriori. L'automatisation n'est pas une boîte noire."
         - frage: "Qui s'occupe de la solution si quelque chose doit être ajusté plus tard ?"
-          antwort: "La solution est construite de manière documentée et maintenable. Le support et la maintenance sont assurés sur mandat clair de Lavanchy Automation. L'étendue, le délai de réaction et les autres conditions sont convenus séparément à chaque fois."
+          antwort:
+            - "La solution est construite de manière documentée et maintenable. Le support et la maintenance sont assurés sur mandat clair de Lavanchy Automation. L'étendue, le délai de réaction et les autres conditions sont convenus séparément à chaque fois."
     - label: "Protection des données et localisation"
       items:
         - frage: "Où se trouvent nos données ?"
-          antwort: "Cela dépend du paysage système existant et des exigences du projet. Les données peuvent rester chez vous ou chez un hébergeur en Suisse ou dans l'UE. L'infrastructure concrète est définie ensemble."
+          antwort:
+            - "Cela dépend du paysage système existant et des exigences du projet. Les données peuvent rester chez vous ou chez un hébergeur en Suisse ou dans l'UE. L'infrastructure concrète est définie ensemble."
         - frage: "L'automatisation est-elle mise en œuvre conformément au RGPD ?"
-          antwort: "La mise en œuvre technique est orientée dès le départ vers les exigences de protection des données. Cela inclut la minimisation des données, les droits d'accès, l'hébergement, la journalisation et le choix des services intégrés. Pour une évaluation juridique indépendante, un expert externe en protection des données peut être consulté."
+          antwort:
+            - "La mise en œuvre technique est orientée dès le départ vers les exigences de protection des données. Cela inclut la minimisation des données, les droits d'accès, l'hébergement, la journalisation et le choix des services intégrés. Pour une évaluation juridique indépendante, un expert externe en protection des données peut être consulté."
     - label: "Premier entretien et public cible"
       items:
         - frage: "À qui s'adresse l'automatisation des processus ?"
-          antwort: "Aux PME, indépendants et startups qui souhaitent simplifier des tâches récurrentes, connecter des systèmes existants ou intégrer l'IA de manière pertinente dans leurs processus."
+          antwort:
+            - "Aux PME, indépendants et startups qui souhaitent simplifier des tâches récurrentes, connecter des systèmes existants ou intégrer l'IA de manière pertinente dans leurs processus."
         - frage: "Que se passe-t-il lors du premier entretien gratuit ?"
-          antwort: "En 30 minutes, nous examinons ensemble l'un de vos processus. J'écoute, je pose des questions sur votre façon de travailler actuelle et je montre où un regard sur l'automatisation pourrait valoir la peine. L'entretien est sans engagement et possible en français, allemand ou anglais."
+          antwort:
+            - "Durant les 30 premières minutes, nous examinons ensemble un processus concret de votre quotidien de travail."
+            - "Nous analysons les principaux points de friction : où le travail manuel se crée-t-il ? Où les données sont-elles transférées plusieurs fois ? Où surviennent des erreurs, des retards ou des reprises inutiles ?"
+            - "Je pose des questions sur votre façon de travailler actuelle, les systèmes concernés et la fréquence du processus. Je donne ensuite une première estimation sur la pertinence d'une automatisation avec n8n et sur la prochaine étape possible."
+            - "L'entretien est sans engagement et possible en français, allemand ou anglais."
 fuerWen:
   headline: "Pour les PME, indépendants et startups de l'espace DACH et de Suisse romande"
   text: "Qu'il s'agisse d'une entreprise artisanale, commerciale, de coaching, d'un indépendant ou d'une startup : si des tâches récurrentes prennent du temps, si plusieurs systèmes ne communiquent pas entre eux ou si l'IA doit être utilisée de manière pertinente, un regard sur vos processus vaut la peine."
