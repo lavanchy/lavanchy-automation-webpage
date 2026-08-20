@@ -47,7 +47,7 @@ Dans la mesure où des accords supplémentaires sur le traitement des mandats ou
 
 ## Responsabilité
 
-Lavanchy Automation répond dans le cadre des dispositions légales. Une limitation de responsabilité ne s'applique que dans la mesure où elle est légalement admissible.
+Lavanchy Automation répond dans le cadre des dispositions légales. Dans la mesure où la loi le permet, la responsabilité pour un cas de dommage donné est limitée au montant de la rémunération versée par le client pour le mandat concerné.
 
 Aucune limitation de responsabilité ne s'applique aux dommages causés intentionnellement ou par négligence grave, ou dans la mesure où une responsabilité légale impérative existe.
 
@@ -56,6 +56,10 @@ Aucune limitation de responsabilité ne s'applique aux dommages causés intentio
 Sauf disposition contraire dans le contrat individuel, les accords de support et de maintenance en cours peuvent être résiliés moyennant un délai de 30 jours pour la fin d'un mois civil.
 
 Le droit à la résiliation extraordinaire pour juste motif est réservé.
+
+## Modification des présentes CGV
+
+Lavanchy Automation peut modifier unilatéralement les présentes conditions générales à tout moment. La version publiée sur le site au moment de la conclusion du contrat fait foi. Pour les accords en cours, la version alors en vigueur, publiée sur le site, s'applique, sauf accord contraire.
 
 ## Droit applicable et for juridique
 

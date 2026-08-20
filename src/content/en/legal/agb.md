@@ -47,7 +47,7 @@ Where additional agreements on data processing or data security are required for
 
 ## Liability
 
-Lavanchy Automation is liable within the scope of statutory provisions. A limitation of liability applies only to the extent legally permissible.
+Lavanchy Automation is liable within the scope of statutory provisions. Insofar as legally permissible, liability for any individual claim is limited to the amount of the fee paid by the client for the respective engagement.
 
 No limitation of liability applies to damages caused intentionally or through gross negligence, or where mandatory statutory liability applies.
 
@@ -56,6 +56,10 @@ No limitation of liability applies to damages caused intentionally or through gr
 Unless otherwise agreed in the individual contract, ongoing support and maintenance agreements can be terminated with 30 days' notice to the end of a calendar month.
 
 The right to extraordinary termination for good cause remains reserved.
+
+## Amendments to these Terms
+
+Lavanchy Automation may amend these general terms and conditions unilaterally at any time. The version published on the website at the time the contract is concluded applies. For ongoing agreements, the version then in force, as published on the website, applies, unless otherwise agreed.
 
 ## Governing law and jurisdiction
 

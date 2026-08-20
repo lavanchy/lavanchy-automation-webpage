@@ -47,7 +47,7 @@ Soweit für ein Projekt zusätzliche Vereinbarungen zur Auftragsbearbeitung oder
 
 ## Haftung
 
-Lavanchy Automation haftet im Rahmen der gesetzlichen Bestimmungen. Eine Haftungsbeschränkung gilt nur, soweit sie gesetzlich zulässig ist.
+Lavanchy Automation haftet im Rahmen der gesetzlichen Bestimmungen. Die Haftung für einen einzelnen Schadensfall ist, soweit gesetzlich zulässig, auf die Höhe der vom Kunden für den betreffenden Auftrag bezahlten Vergütung begrenzt.
 
 Keine Haftungsbeschränkung gilt für Schäden, die vorsätzlich oder grob fahrlässig verursacht wurden, oder soweit eine zwingende gesetzliche Haftung besteht.
 
@@ -56,6 +56,10 @@ Keine Haftungsbeschränkung gilt für Schäden, die vorsätzlich oder grob fahrl
 Sofern im Einzelvertrag nichts anderes vereinbart ist, können laufende Support- und Wartungsvereinbarungen mit einer Frist von 30 Tagen auf das Ende eines Kalendermonats gekündigt werden.
 
 Das Recht zur ausserordentlichen Kündigung aus wichtigem Grund bleibt vorbehalten.
+
+## Änderungen dieser AGB
+
+Lavanchy Automation kann diese Allgemeinen Geschäftsbedingungen jederzeit einseitig anpassen. Massgebend ist die bei Vertragsabschluss auf der Website veröffentlichte Fassung. Bei laufenden Vereinbarungen gilt die jeweils aktuelle, auf der Website veröffentlichte Fassung, soweit nichts anderes vereinbart wird.
 
 ## Anwendbares Recht und Gerichtsstand
 
