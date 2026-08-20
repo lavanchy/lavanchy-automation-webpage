@@ -12,7 +12,9 @@ werdegang:
     - "En tant que chef de projet et Requirement Engineer, j'ai rapproché métiers et informatique pendant neuf ans. J'ai notamment travaillé pour l'Institut fédéral de la propriété intellectuelle et pour une entreprise suisse de logiciels."
     - "Ma mission était de comprendre les besoins des métiers et d'en tirer des solutions qui fonctionnent vraiment au quotidien. J'ai consacré quatre de ces années avec un focus particulier sur les processus."
     - "J'ai notamment numérisé et automatisé une procédure sur papier comptant environ 7'000 dossiers par an. Le résultat : environ 90 % de charge manuelle en moins par dossier et plus de 40 % de dossiers traités en plus en une année."
-    - "Les processus et l'automatisation m'ont toujours fasciné. Je me suis mis à mon compte pour réaliser davantage d'automatisations de processus pragmatiques. n8n me permet de développer ce type de solutions rapidement et avec flexibilité."
+    - "Comprendre le fonctionnement des choses m'intéresse. Quand je découvre un processus, je veux d'abord comprendre pourquoi il s'est construit ainsi. La plupart du temps, il y a une bonne raison derrière. Et souvent, en y regardant de plus près, on voit qu'une partie pourrait être simplifiée."
+    - "En 2020, j'ai découvert Camunda pour la première fois, une plateforme d'automatisation des processus. L'approche m'a à la fois convaincu et déçu : pour des projets plus modestes, l'outil était tout simplement trop lourd. Je ne pouvais pas l'utiliser moi-même."
+    - "Avec n8n, ce problème a disparu. Ce qui aurait auparavant nécessité tout un projet pouvait soudain se réaliser en quelques jours. C'est exactement pour cette raison que je me suis mis à mon compte."
     - "Aujourd'hui, j'accompagne les PME et indépendants pour réduire le travail administratif et gagner plus de temps pour des tâches qui apportent une réelle valeur ajoutée."
 wieIchArbeite:
   headline: "Écouter, comprendre et avancer ensemble"
@@ -72,6 +74,9 @@ persoenliches:
     - "Langues : allemand et français, anglais"
     - "Expérience : plus de neuf ans en Requirement Engineering et gestion de projets IT, dont quatre ans avec un focus sur les processus"
     - "Motivation : permettre à mes clients et à moi-même plus de flexibilité et plus de temps pour des tâches qui apportent une réelle valeur ajoutée"
+  nebenDerArbeit:
+    - "Voyager est l'une de mes passions. Ce qui compte pour moi, c'est d'élargir mes horizons : de nouveaux lieux, de nouvelles personnes, de nouveaux points de vue."
+    - "Pour me ressourcer, je lis, je fais de la randonnée ou des sports nautiques. J'ai un faible pour les romans de Clive Cussler. La curiosité qui m'anime en voyage est la même que celle qui, face à un processus, me pousse à me demander comment le simplifier."
 abschlussCta:
   headline: "Prêts à simplifier vos processus ?"
   text: "Lors d'un premier entretien gratuit, nous examinons ensemble l'un de vos processus. Sans engagement, en français, allemand ou anglais."

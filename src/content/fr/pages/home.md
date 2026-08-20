@@ -5,7 +5,7 @@ seo:
 hero:
   eyebrow: "Automatisation des processus et conseil en IA pour PME, indépendants et startups"
   headline: "Vos outils restent. La charge de travail disparaît."
-  subheadline: "Je connecte vos systèmes existants comme Excel, CRM et e-mail entre eux et j'automatise les tâches récurrentes avec n8n. L'IA peut être utilisée de manière ciblée, lorsqu'elle apporte une réelle valeur ajoutée au processus."
+  subheadline: "Vos données ne passent plus manuellement d'Excel au CRM puis aux e-mails. Les tâches récurrentes tournent automatiquement en arrière-plan, avec vos systèmes existants. L'IA intervient là où elle fait une réelle différence dans le processus."
   zusatztext: "Un processus simple peut souvent être automatisé en quelques jours. Les démarches plus complexes sont découpées en étapes claires."
   ctaNote: "30 minutes, sans engagement, en français, allemand ou anglais."
 problem:
@@ -20,15 +20,16 @@ problem:
 angebot:
   headline: "Simplifier les processus, sans tout refaire"
   items:
-    - title: "Automatisation des processus avec n8n"
+    - title: "Automatiser les processus"
       text:
-        - "Je connecte vos outils existants entre eux et j'automatise les tâches récurrentes. Vos systèmes habituels restent en place."
-        - "Les processus sont documentés, testés et surveillés automatiquement. Vous pouvez suivre ce qui se passe en arrière-plan et où en est un processus."
+        - "Vos outils existants travaillent ensemble, les tâches récurrentes s'effectuent d'elles-mêmes. Vos systèmes habituels restent en place."
+        - "Chaque exécution est enregistrée. Vous pouvez consulter et vérifier chaque étape a posteriori."
         - "Les processus peuvent, sur demande, inclure des étapes d'IA. Dans de nombreux cas, ce n'est toutefois pas nécessaire. Pour remplir et lire automatiquement un fichier Excel par exemple, une interface claire apporte souvent plus qu'une étape d'IA supplémentaire."
-    - title: "Conseil en IA managée"
+        - "Mis en œuvre techniquement avec n8n, une plateforme open source reconnue, originaire d'Allemagne."
+    - title: "Une IA adaptée à vos processus"
       text:
-        - "Je vous accompagne dans un usage pertinent et sûr de l'IA. Il ne s'agit pas d'introduire un maximum d'outils. Ce qui compte, c'est de savoir où l'IA aide vraiment au quotidien et comment elle s'intègre dans vos processus existants."
-        - "Selon les besoins, des solutions comme Langdock ou headwAI peuvent être utilisées. La protection des données, le RGPD et l'EU AI Act sont pris en compte dès le départ."
+        - "L'IA est utilisée là où elle aide vraiment au quotidien. Pas partout où elle serait possible. Installée, exploitée et intégrée à vos processus : c'est ce qu'on appelle l'IA managée."
+        - "Selon les besoins, des solutions comme headwAI peuvent être utilisées. La protection des données, le RGPD et l'EU AI Act sont pris en compte dès le départ."
 kontrolle:
   headline: "Pas de boîte noire, mais une automatisation traçable"
   text:
@@ -54,7 +55,7 @@ ueberMichTeaser:
   headline: "Qui se cache derrière"
   text:
     - "En tant que chef de projet et Requirement Engineer, j'ai rapproché métiers et informatique pendant neuf ans. Dont quatre ans avec un focus particulier sur les processus."
-    - "Aujourd'hui, j'accompagne les PME et indépendants pour réduire le travail administratif et connecter intelligemment leurs outils existants."
+    - "Les PME et indépendants regagnent le temps qui partait auparavant dans l'administratif. Leurs outils existants restent en place."
   linkLabel: "En savoir plus sur moi"
   linkHref: "/fr/ueber-mich/"
 abschlussCta:

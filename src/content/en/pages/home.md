@@ -5,7 +5,7 @@ seo:
 hero:
   eyebrow: "Process automation and AI consulting for SMEs, freelancers and startups"
   headline: "Your tools stay. The workload disappears."
-  subheadline: "I connect your existing systems, such as Excel, CRM and email, and automate recurring workflows with n8n. AI can be used where it genuinely adds value to a process."
+  subheadline: "Your data no longer moves by hand between Excel, CRM and email. Recurring workflows run automatically in the background, with your existing systems. AI comes in where it makes a real difference to the process."
   zusatztext: "A simple process can often be automated within a few days. More complex workflows are broken down into manageable steps."
   ctaNote: "30 minutes, no obligation, in German, French or English."
 problem:
@@ -20,15 +20,16 @@ problem:
 angebot:
   headline: "Simplifying workflows, not rebuilding everything"
   items:
-    - title: "n8n Process Automation"
+    - title: "Automating workflows"
       text:
-        - "I connect your existing tools with each other and automate recurring workflows. Your familiar systems stay in place."
-        - "Processes are documented, tested and monitored automatically. You can see what's happening in the background and where a process stands."
+        - "Your existing tools work together, and recurring workflows take care of themselves. Your familiar systems stay in place."
+        - "Every run is logged. You can review and check each individual step afterwards."
         - "Processes can include AI steps on request. In many cases that isn't necessary, though. For automatically filling and reading an Excel file, for example, a clear interface often achieves more than an extra AI step."
-    - title: "Managed AI Consulting"
+        - "Built technically with n8n, an established open-source platform from Germany."
+    - title: "AI that fits your workflows"
       text:
-        - "I help you use AI where it makes sense and is safe to do so. This isn't about introducing as many tools as possible. What matters is where AI genuinely helps day to day and how it's woven into your existing workflows."
-        - "Depending on your needs, platforms such as Langdock or headwAI can be used. Data protection, GDPR and the EU AI Act are considered from the start."
+        - "AI gets used where it genuinely helps day to day — not everywhere it could. Set up, operated and woven into your workflows: that's what Managed AI means."
+        - "Depending on your needs, platforms such as headwAI can be used. Data protection, GDPR and the EU AI Act are considered from the start."
 kontrolle:
   headline: "No black box — traceable automation instead"
   text:
@@ -54,7 +55,7 @@ ueberMichTeaser:
   headline: "Who's behind this"
   text:
     - "As a project lead and requirement engineer, I've spent the last nine years bringing business teams and IT together — four of them with a particular focus on processes."
-    - "Today I help SMEs and freelancers cut down on admin work and sensibly connect the tools they already have."
+    - "SMEs and freelancers win back time that used to go into admin work. Their existing tools stay in place."
   linkLabel: "More about me"
   linkHref: "/en/ueber-mich/"
 abschlussCta:

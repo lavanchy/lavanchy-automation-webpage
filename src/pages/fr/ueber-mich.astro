@@ -36,6 +36,27 @@ const { hero, werdegang, wieIchArbeite, wieIchVorgehe, testimonials, linkedinNot
   </Section>
 
   <Section bg="paper" class="bg-surface">
+    <h2 class="mb-4 font-heading text-3xl font-bold text-text">{persoenliches.headline}</h2>
+    <p class="mb-6 max-w-3xl leading-relaxed text-text-muted">{persoenliches.intro}</p>
+    <ul class="grid gap-3 sm:grid-cols-2">
+      {
+        persoenliches.items.map((item) => (
+          <li class="flex items-start gap-2 leading-relaxed text-text-muted">
+            <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-primary" />
+            {item}
+          </li>
+        ))
+      }
+    </ul>
+    <div class="mt-8 max-w-3xl">
+      <h3 class="mb-2 font-heading text-lg font-bold text-text">En dehors du travail</h3>
+      <div class="space-y-3 leading-relaxed text-text-muted">
+        {persoenliches.nebenDerArbeit.map((p) => <p>{p}</p>)}
+      </div>
+    </div>
+  </Section>
+
+  <Section>
     <h2 class="mb-4 font-heading text-3xl font-bold text-text">{wieIchArbeite.headline}</h2>
     <div class="mb-8 max-w-3xl space-y-4 leading-relaxed text-text-muted">
       {wieIchArbeite.text.map((p) => <p>{p}</p>)}
@@ -49,7 +70,7 @@ const { hero, werdegang, wieIchArbeite, wieIchVorgehe, testimonials, linkedinNot
     </div>
   </Section>
 
-  <Section>
+  <Section bg="paper" class="bg-surface">
     <h2 class="mb-4 font-heading text-3xl font-bold text-text">{wieIchVorgehe.headline}</h2>
     <p class="mb-8 max-w-3xl leading-relaxed text-text-muted">{wieIchVorgehe.text}</p>
     <ol class="mb-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -64,7 +85,7 @@ const { hero, werdegang, wieIchArbeite, wieIchVorgehe, testimonials, linkedinNot
     <p class="max-w-3xl leading-relaxed text-text-muted">{wieIchVorgehe.abschlussText}</p>
   </Section>
 
-  <Section bg="paper" class="bg-surface">
+  <Section>
     <h2 class="mb-8 font-heading text-3xl font-bold text-text">Ce que d'autres disent de la collaboration</h2>
     <div class="grid gap-6 md:grid-cols-2">
       {
@@ -80,21 +101,6 @@ const { hero, werdegang, wieIchArbeite, wieIchVorgehe, testimonials, linkedinNot
         Vers LinkedIn →
       </a>
     </p>
-  </Section>
-
-  <Section>
-    <h2 class="mb-4 font-heading text-3xl font-bold text-text">{persoenliches.headline}</h2>
-    <p class="mb-6 max-w-3xl leading-relaxed text-text-muted">{persoenliches.intro}</p>
-    <ul class="grid gap-3 sm:grid-cols-2">
-      {
-        persoenliches.items.map((item) => (
-          <li class="flex items-start gap-2 leading-relaxed text-text-muted">
-            <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-primary" />
-            {item}
-          </li>
-        ))
-      }
-    </ul>
   </Section>
 
   <ClosingCta headline={abschlussCta.headline} text={abschlussCta.text} buttonLabel={abschlussCta.buttonLabel} />

@@ -12,7 +12,9 @@ werdegang:
     - "As a project lead and requirement engineer, I've spent the last nine years bringing business teams and IT together. I worked at Switzerland's federal institute for intellectual property and at a Swiss software company."
     - "My job was to understand what business teams actually needed and turn that into solutions that genuinely work in daily use. I spent four of those years with a particular focus on processes."
     - "Among other things, I digitized and automated a paper-based procedure handling around 7,000 cases a year. The result was roughly 90% less manual effort per case and more than 40% more cases processed within a year."
-    - "Processes and automation have always fascinated me. I went self-employed to build more pragmatic process automations. n8n lets me develop that kind of solution quickly and flexibly."
+    - "I want to understand how things work. When I come across a workflow, I first want to understand why it grew the way it did. Usually there's a good reason behind it. And often, on a closer look, part of it could work more simply."
+    - "In 2020, I came across Camunda for the first time, a process automation platform. The approach both convinced and disappointed me: for smaller projects, the tool was simply too heavy. I couldn't use it myself."
+    - "With n8n, that changed. Suddenly, what used to take an entire project could be done in days. That's exactly why I went self-employed."
     - "Today I help SMEs and freelancers cut down on admin work and win back more time for tasks that create real value."
 wieIchArbeite:
   headline: "Listening, understanding, and moving forward together"
@@ -72,6 +74,9 @@ persoenliches:
     - "Languages: German and French, English"
     - "Experience: More than nine years in requirement engineering and IT project leadership, four of them focused on processes"
     - "Motivation: Giving my clients and myself more flexibility and more time for tasks that create real value"
+  nebenDerArbeit:
+    - "Travelling is one of my passions. What matters to me is broadening my horizon: new places, new people, new perspectives."
+    - "To unwind, I read, go hiking or do watersports. Clive Cussler novels are a particular favourite. The curiosity that drives me on the road is the same curiosity that makes me ask, with any process, how it could be made simpler."
 abschlussCta:
   headline: "Ready to simplify your processes?"
   text: "In a free intro call, we'll take a look at one of your workflows together. No obligation, in German, French or English."

@@ -202,6 +202,7 @@ const ueberMichSchema = z.object({
     headline: z.string(),
     intro: z.string(),
     items: z.array(z.string()),
+    nebenDerArbeit: z.array(z.string()),
   }),
   abschlussCta: z.object({ headline: z.string(), text: z.string(), buttonLabel: z.string() }),
 });

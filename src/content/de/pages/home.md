@@ -5,7 +5,7 @@ seo:
 hero:
   eyebrow: "Prozessautomatisierung und KI Beratung für KMU, Selbständige und Startups"
   headline: "Eure Tools bleiben. Der Aufwand verschwindet."
-  subheadline: "Ich verbinde bestehende Systeme wie Excel, CRM und E-Mail miteinander und automatisiere wiederkehrende Abläufe mit n8n. KI kann dabei gezielt eingesetzt werden, wenn sie im Prozess einen echten Nutzen bringt."
+  subheadline: "Eure Daten wandern nicht mehr von Hand zwischen Excel, CRM und E-Mail. Wiederkehrende Abläufe laufen automatisch im Hintergrund, mit euren bestehenden Systemen. KI kommt dort dazu, wo sie im Ablauf einen echten Unterschied macht."
   zusatztext: "Einfache Prozesse können oft innerhalb weniger Tage automatisiert werden. Komplexere Abläufe werden in überschaubare Schritte aufgeteilt."
   ctaNote: "30 Minuten, unverbindlich, auf Deutsch, Französisch oder Englisch."
 problem:
@@ -20,15 +20,16 @@ problem:
 angebot:
   headline: "Prozesse vereinfachen, ohne alles neu zu machen"
   items:
-    - title: "n8n Prozessautomatisierung"
+    - title: "Abläufe automatisieren"
       text:
-        - "Ich verbinde eure bestehenden Werkzeuge miteinander und automatisiere wiederkehrende Abläufe. Eure gewohnten Systeme bleiben erhalten."
-        - "Die Prozesse werden dokumentiert, getestet und automatisch überwacht. Ihr könnt nachvollziehen, was im Hintergrund passiert und wo ein Prozess steht."
+        - "Eure bestehenden Werkzeuge arbeiten zusammen, wiederkehrende Abläufe erledigen sich von selbst. Eure gewohnten Systeme bleiben erhalten."
+        - "Jede Ausführung wird gespeichert. Ihr könnt jeden einzelnen Schritt nachträglich anschauen und prüfen."
         - "Prozesse können auf Wunsch KI Schritte enthalten. In vielen Fällen ist das jedoch nicht notwendig. Beim automatischen Befüllen und Auslesen einer Excel Datei zum Beispiel bringt eine klare Schnittstelle oft mehr als ein zusätzlicher KI Schritt."
-    - title: "Managed KI Beratung"
+        - "Technisch umgesetzt mit n8n, einer etablierten Open-Source-Plattform aus Deutschland."
+    - title: "KI, die zu euren Abläufen passt"
       text:
-        - "Ich begleite euch beim sinnvollen und sicheren Einsatz von KI. Dabei geht es nicht darum, möglichst viele Werkzeuge einzuführen. Entscheidend ist, wo KI im Arbeitsalltag wirklich hilft und wie sie in bestehende Abläufe eingebunden wird."
-        - "Zum Einsatz kommen je nach Bedarf Lösungen wie Langdock oder headwAI. Datenschutz, DSGVO und EU AI Act werden von Anfang an berücksichtigt."
+        - "KI kommt dort zum Einsatz, wo sie im Arbeitsalltag wirklich hilft. Nicht überall, wo sie möglich wäre. Eingerichtet, betrieben und in eure Abläufe eingebunden, das nennt sich Managed KI."
+        - "Zum Einsatz kommen je nach Bedarf Lösungen wie headwAI. Datenschutz, DSGVO und EU AI Act werden von Anfang an berücksichtigt."
 kontrolle:
   headline: "Keine Blackbox, sondern nachvollziehbare Automatisierung"
   text:
@@ -54,7 +55,7 @@ ueberMichTeaser:
   headline: "Wer dahintersteckt"
   text:
     - "Als Projektleiter und Requirement Engineer habe ich in den letzten neun Jahren Fachbereiche und IT zusammengebracht. Davon habe ich vier Jahre mit besonderem Fokus auf Prozesse gearbeitet."
-    - "Heute begleite ich KMU und Selbständige dabei, administrative Arbeit zu reduzieren und ihre bestehenden Werkzeuge sinnvoll zu verbinden."
+    - "KMU und Selbständige gewinnen Zeit zurück, die vorher in die Administration geflossen ist. Ihre bestehenden Werkzeuge bleiben dabei erhalten."
   linkLabel: "Mehr über mich"
   linkHref: "/de/ueber-mich/"
 abschlussCta:

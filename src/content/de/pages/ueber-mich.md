@@ -12,7 +12,9 @@ werdegang:
     - "Als Projektleiter und Requirement Engineer habe ich in den letzten neun Jahren Fachbereiche und IT zusammengebracht. Dabei habe ich beim Institut für Geistiges Eigentum auf Bundesebene und bei einem Schweizer Software Unternehmen gearbeitet."
     - "Meine Aufgabe war es, die Bedürfnisse der Fachbereiche zu verstehen und daraus Lösungen zu entwickeln, die im Alltag tatsächlich funktionieren. Davon habe ich vier Jahre mit besonderem Fokus auf Prozesse gearbeitet."
     - "Unter anderem habe ich ein papierbasiertes Verfahren mit rund 7'000 Verfahren pro Jahr digitalisiert und automatisiert. Das Ergebnis waren rund 90 Prozent weniger manueller Aufwand pro Verfahren und mehr als 40 Prozent mehr bearbeitete Fälle innerhalb eines Jahres."
-    - "Von Prozessen und Automation war ich schon immer fasziniert. Selbständig gemacht habe ich mich, um mehr pragmatische Prozessautomatisierungen umzusetzen. n8n ermöglicht mir, solche Lösungen schnell und flexibel zu entwickeln."
+    - "Mich interessiert, wie Dinge funktionieren. Wenn ich einen Ablauf kennenlerne, will ich zuerst verstehen, warum er so gewachsen ist. Meistens steckt ein guter Grund dahinter. Und oft zeigt sich beim genauen Hinschauen, dass ein Teil davon einfacher gehen könnte."
+    - "2020 bin ich zum ersten Mal mit Camunda in Berührung gekommen, einer Plattform zur Prozessautomatisierung. Der Ansatz hat mich überzeugt und gleichzeitig enttäuscht: Für kleinere Vorhaben war das Werkzeug schlicht zu schwer. Ich konnte es selbst nicht einsetzen."
+    - "Mit n8n hat sich das aufgelöst. Plötzlich liess sich in Tagen umsetzen, wofür es vorher ein ganzes Projekt gebraucht hätte. Genau deshalb habe ich mich selbständig gemacht."
     - "Heute begleite ich KMU und Selbständige dabei, administrative Arbeit zu reduzieren und mehr Zeit für Aufgaben zu gewinnen, die einen echten Mehrwert bringen."
 wieIchArbeite:
   headline: "Zuhören, verstehen und gemeinsam weitergehen"
@@ -71,6 +73,9 @@ persoenliches:
     - "Sprachen: Deutsch und Französisch, Englisch"
     - "Erfahrung: Mehr als neun Jahre Requirement Engineering und IT Projektleitung, davon vier Jahre mit Fokus auf Prozesse"
     - "Antrieb: Meinen Kunden und mir mehr Flexibilität und mehr Zeit für Aufgaben ermöglichen, die einen echten Mehrwert bringen"
+  nebenDerArbeit:
+    - "Reisen ist eine meiner Leidenschaften. Dabei geht es mir darum, den Horizont zu erweitern: neue Orte, neue Menschen, neue Sichtweisen."
+    - "Als Ausgleich lese ich, gehe wandern oder mache Wassersport. Hoch im Kurs stehen die Bücher von Clive Cussler. Die Neugier, die mich unterwegs antreibt, ist dieselbe, die mich bei Prozessen fragen lässt, wie sich etwas einfacher lösen liesse."
 abschlussCta:
   headline: "Bereit, eure Prozesse zu vereinfachen?"
   text: "In einem kostenlosen Erstgespräch schauen wir gemeinsam auf einen eurer Abläufe. Unverbindlich, auf Deutsch, Französisch oder Englisch."
