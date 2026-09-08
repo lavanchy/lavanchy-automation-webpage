@@ -45,9 +45,24 @@ Hostingers tägliches Backup-Add-on ist bewusst (noch) nicht aktiviert (Kosten
 vs. Nutzen für die Vorschau-Phase) — siehe VPS-Bestellung, optional später im
 hPanel unter VPS → Snapshot & Backups nachrüstbar.
 
+## ClickHouse auf dem 1-vCPU-VPS
+
+Am 2026-08-21 hat ClickHouse (Plausibles Events-DB) die eine vCPU des VPS
+stundenlang zu ~100% ausgelastet und die Hostinger-CPU-Drosselung ausgelöst.
+Ursache: ClickHouse's eigene `system.metric_log`/`error_log`-Tabellen schreiben
+im Sekundentakt neue Parts; auf einem Ein-Kern-Host kam der Background-Merge
+nicht mehr hinterher, lief ans Speicherlimit, brach ab und wurde neu versucht
+— eine Dauerschleife. Fix in `docker-compose.plausible.yml`:
+
+- `clickhouse/disable-internal-logs.xml` deaktiviert alle `system.*_log`-Tabellen
+  (Plausible liest diese nie, reine ClickHouse-Introspektion).
+- `mem_limit: 1500m` als Sicherheitsnetz, damit ClickHouse nicht erneut den
+  ganzen Host-Speicher beansprucht und mit anderen Containern kollidiert.
+
 ## Dateien
 
 - `docker-compose.yml` — Traefik (Reverse Proxy + automatisches Let's-Encrypt-SSL) + Website-Container
 - `docker-compose.plausible.yml` — self-hosted Plausible Analytics unter `analytics.lavanchyautomation.ch`
+- `clickhouse/disable-internal-logs.xml` — deaktiviert ClickHouse's interne `system.*_log`-Tabellen (siehe oben)
 - `.env.example` — Vorlage für Secrets/Config, die auf dem VPS in `.env` liegen (nicht im Git-Repo)
 - `htpasswd` — Zugangsdaten für die Vorschau-Sperre (nicht im Git-Repo, siehe oben)

@@ -1,0 +1,18 @@
+<clickhouse>
+    <!-- ClickHouse's own introspection tables (system.*_log) insert on a fixed
+         interval regardless of load. On a 1-vCPU VPS the resulting stream of
+         tiny parts can starve the single core with background merges that
+         never catch up (this once pegged CPU at ~990% / triggered Hostinger's
+         throttle). Plausible does not read any of these tables, so they are
+         disabled outright rather than just tuned. -->
+    <metric_log remove="remove"/>
+    <asynchronous_metric_log remove="remove"/>
+    <error_log remove="remove"/>
+    <trace_log remove="remove"/>
+    <part_log remove="remove"/>
+    <query_log remove="remove"/>
+    <query_thread_log remove="remove"/>
+    <query_views_log remove="remove"/>
+    <session_log remove="remove"/>
+    <text_log remove="remove"/>
+</clickhouse>

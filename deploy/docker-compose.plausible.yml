@@ -49,8 +49,10 @@ services:
       - CLICKHOUSE_DB=plausible_events_db
     ulimits:
       nofile: { soft: 262144, hard: 262144 }
+    mem_limit: 1500m
     volumes:
       - plausible-events-db-data:/var/lib/clickhouse
+      - ./clickhouse/disable-internal-logs.xml:/etc/clickhouse-server/config.d/disable-internal-logs.xml:ro
 
 volumes:
   plausible-db-data:
