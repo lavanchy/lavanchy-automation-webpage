@@ -15,4 +15,6 @@
     <query_views_log remove="remove"/>
     <session_log remove="remove"/>
     <text_log remove="remove"/>
+    <query_metric_log remove="remove"/>
+    <processors_profile_log remove="remove"/>
 </clickhouse>

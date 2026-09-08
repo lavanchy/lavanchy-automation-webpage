@@ -67,10 +67,11 @@ fi
 say "5. Drop the log tables that already accumulated on disk"
 "${DC[@]}" start plausible_events_db
 sleep 8
+CH=(docker exec "$("${DC[@]}" ps -q plausible_events_db)" clickhouse-client)
 for t in metric_log asynchronous_metric_log error_log trace_log part_log \
-         query_log query_thread_log query_views_log session_log text_log; do
-  docker exec plausible_events_db clickhouse-client -q \
-    "DROP TABLE IF EXISTS system.${t}" 2>/dev/null \
+         query_log query_thread_log query_views_log session_log text_log \
+         query_metric_log processors_profile_log; do
+  "${CH[@]}" -q "DROP TABLE IF EXISTS system.${t} SYNC" 2>/dev/null \
     && echo "dropped system.${t}" || true
 done
 
@@ -84,8 +85,8 @@ sleep 5
 docker ps --format 'table {{.Names}}\t{{.Status}}'
 echo
 echo "internal log tables still present (want: empty):"
-docker exec plausible_events_db clickhouse-client -q \
-  "SELECT name FROM system.tables WHERE database='system' AND name LIKE '%\_log'" || true
+docker exec "$("${DC[@]}" ps -q plausible_events_db)" clickhouse-client -q \
+  "SELECT name FROM system.tables WHERE database='system' AND name LIKE '%\\_log'" || true
 echo
 uptime
 curl -sS -m 10 -o /dev/null -w "website  https -> %{http_code}\n" https://lavanchyautomation.ch/ || true
