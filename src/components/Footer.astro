@@ -1,7 +1,31 @@
 ---
-import { siteConfig } from '../config/site';
+import { siteConfig, getLocale, type Locale } from '../config/site';
 
 const year = new Date().getFullYear();
+const locale = getLocale(Astro.url.pathname);
+
+const legalLinksByLocale: Record<Locale, { label: string; slug: string }[]> = {
+  de: [
+    { label: 'Impressum', slug: 'impressum' },
+    { label: 'Datenschutz', slug: 'datenschutz' },
+    { label: 'AGB', slug: 'agb' },
+  ],
+  fr: [
+    { label: 'Mentions légales', slug: 'impressum' },
+    { label: 'Confidentialité', slug: 'datenschutz' },
+    { label: 'CGV', slug: 'agb' },
+  ],
+  en: [
+    { label: 'Legal notice', slug: 'impressum' },
+    { label: 'Privacy', slug: 'datenschutz' },
+    { label: 'Terms', slug: 'agb' },
+  ],
+};
+const linkedinLabelByLocale: Record<Locale, string> = {
+  de: 'Loïc Lavanchy auf LinkedIn',
+  fr: 'Loïc Lavanchy sur LinkedIn',
+  en: 'Loïc Lavanchy on LinkedIn',
+};
 ---
 
 <footer class="border-t border-border bg-surface">
@@ -9,15 +33,15 @@ const year = new Date().getFullYear();
     <p>&copy; {year} {siteConfig.name}</p>
     <div class="flex flex-wrap items-center gap-4">
       <ul class="flex gap-4">
-        <li><a href="/de/impressum/" class="hover:text-brand-primary">Impressum</a></li>
-        <li><a href="/de/datenschutz/" class="hover:text-brand-primary">Datenschutz</a></li>
-        <li><a href="/de/agb/" class="hover:text-brand-primary">AGB</a></li>
+        {legalLinksByLocale[locale].map(({ label, slug }) => (
+          <li><a href={`/${locale}/${slug}/`} class="hover:text-brand-primary">{label}</a></li>
+        ))}
       </ul>
       <a
         href={siteConfig.linkedin}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Loïc Lavanchy auf LinkedIn"
+        aria-label={linkedinLabelByLocale[locale]}
         class="text-text-muted hover:text-brand-primary"
       >
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">

@@ -1,6 +1,6 @@
 ---
 title: "Mentions légales"
-description: "Mentions légales conformes au standard juridique allemand (couvre DE/AT/CH)."
+description: "Mentions légales de Lavanchy Automation."
 ---
 
 ## Informations sur le prestataire
@@ -20,7 +20,3 @@ LinkedIn : [linkedin.com/in/loic-lavanchy](https://www.linkedin.com/in/loic-lava
 Loïc Lavanchy
 
 <!-- Les numéros IDE et TVA seront ajoutés dès qu'un numéro correspondant sera disponible ou qu'une immatriculation aura eu lieu. -->
-
-## Remarque juridique
-
-Ce document doit être vérifié juridiquement avant sa publication.

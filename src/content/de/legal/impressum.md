@@ -1,6 +1,6 @@
 ---
 title: "Impressum"
-description: "Impressum gemäss deutschem Rechtsstandard (deckt DE/AT/CH ab)."
+description: "Impressum von Lavanchy Automation."
 ---
 
 ## Angaben zum Anbieter
@@ -20,7 +20,3 @@ LinkedIn: [linkedin.com/in/loic-lavanchy](https://www.linkedin.com/in/loic-lavan
 Loïc Lavanchy
 
 <!-- UID und MWST Angaben werden ergänzt, sobald eine entsprechende Nummer vorhanden ist oder eine Registrierung erfolgt. -->
-
-## Rechtlicher Prüfhinweis
-
-Dieser Entwurf muss vor der Veröffentlichung rechtlich geprüft werden.

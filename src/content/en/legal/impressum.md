@@ -1,6 +1,6 @@
 ---
 title: "Legal Notice"
-description: "Legal notice meeting German legal standards (covers DE/AT/CH)."
+description: "Legal notice of Lavanchy Automation."
 ---
 
 ## Provider information
@@ -20,7 +20,3 @@ LinkedIn: [linkedin.com/in/loic-lavanchy](https://www.linkedin.com/in/loic-lavan
 Loïc Lavanchy
 
 <!-- VAT/business registration numbers will be added once a corresponding number is available or a registration has taken place. -->
-
-## Legal review notice
-
-This draft must be reviewed legally before publication.
