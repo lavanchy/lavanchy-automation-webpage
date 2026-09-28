@@ -4,22 +4,7 @@
 // meldet das Absenden per postMessage). Es werden keine Formularinhalte übermittelt.
 ---
 
+<!-- Init als Datei (nicht inline), damit die CSP ohne Hash auskommt. Vor dem async-Skript,
+     damit der plausible()-Stub steht, bevor pa-*.js die Warteschlange abarbeitet. -->
+<script is:inline src="/js/analytics-init.js"></script>
 <script async src="https://analytics.lavanchyautomation.ch/js/pa-Xex5KYHBg7ual4y0-sKhq.js"></script>
-<script is:inline>
-  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
-  plausible.init()
-
-  document.addEventListener('click', function (e) {
-    var link = e.target.closest && e.target.closest('a[href^="https://cal.meetergo.com/"]');
-    if (link) plausible('Erstgespräch Klick', { props: { seite: location.pathname } });
-  });
-
-  window.addEventListener('message', function (e) {
-    if (e.origin !== 'https://tally.so' || typeof e.data !== 'string') return;
-    try {
-      if (JSON.parse(e.data).event === 'Tally.FormSubmitted') {
-        plausible('Kontaktformular gesendet', { props: { seite: location.pathname } });
-      }
-    } catch (_) {}
-  });
-</script>

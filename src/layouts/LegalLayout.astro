@@ -41,7 +41,6 @@ const alternatePath = (locale: string) => Astro.url.pathname.replace(/^\/(de|fr|
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={new URL('/og-image.jpg', siteConfig.url)} />
     <OrganizationSchema />
-    <Analytics />
   </head>
   <body class="flex min-h-screen flex-col bg-background font-body text-text">
     <a
@@ -60,5 +59,7 @@ const alternatePath = (locale: string) => Astro.url.pathname.replace(/^\/(de|fr|
       </div>
     </main>
     <Footer />
+    <!-- Im body statt head: so gilt die CSP (<meta>, am Ende des head) auch für Plausible. -->
+    <Analytics />
   </body>
 </html>

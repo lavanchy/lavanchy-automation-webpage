@@ -30,6 +30,8 @@ const { hero, problem, angebot, kontrolle, referenzabschnitt, fallstudienHinweis
       </div>
       <Image
         src={heroPhoto}
+        loading="eager"
+        fetchpriority="high"
         alt="Loïc Lavanchy, founder of Lavanchy Automation"
         width={480}
         class="mx-auto w-full max-w-sm rounded-lg"

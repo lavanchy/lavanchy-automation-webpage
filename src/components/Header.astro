@@ -12,7 +12,7 @@ const ui = uiByLocale[currentLocale];
 <header class="sticky top-0 z-50 border-b border-border bg-background">
   <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-4 py-4">
     <a href={`/${currentLocale}/`} class="flex items-center gap-2 font-heading text-lg font-bold text-brand-primary">
-      <Image src={logoIcon} alt="" width={48} height={38} />
+      <Image src={logoIcon} alt="" width={48} height={38} loading="eager" />
       {siteConfig.name}
     </a>
 
