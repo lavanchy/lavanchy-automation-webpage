@@ -73,7 +73,7 @@ schrittFuerSchritt:
       text: "Erst wenn der erste Prozess stabil läuft."
 mittenCta:
   headline: "Jetzt einsteigen, als Fallstudie"
-  text: "Bis Ende September 2026 erarbeite ich für ausgewählte Betriebe kostenlose Fallstudien. Ihr bekommt eine massgeschneiderte Automatisierungslösung. Ich erhalte einen Referenzfall für meine Arbeit."
+  text: "Bis 16. Oktober 2026 erarbeite ich für ausgewählte Betriebe kostenlose Fallstudien. Ihr bekommt eine massgeschneiderte Automatisierungslösung. Ich erhalte einen Referenzfall für meine Arbeit."
   ctaLabel: "Fallstudien-Platz sichern"
 qualitaet:
   headline: "Qualität, die nachvollziehbar ist"

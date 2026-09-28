@@ -56,7 +56,7 @@ weitereIdeen:
       text: "Wenn Informationen klassifiziert, zusammengefasst oder vorbereitet werden müssen, kann ein Prozess auf Wunsch einen KI Schritt enthalten. Wo keine KI nötig ist, bleibt die Lösung bewusst einfach."
 fallstudienHinweis:
   headline: "Jetzt einsteigen, als Fallstudie"
-  text: "Bis Ende September 2026 erarbeite ich für ausgewählte Betriebe kostenlose Fallstudien. Ihr bekommt eine massgeschneiderte Automatisierungslösung. Ich erhalte einen Referenzfall für meine Arbeit."
+  text: "Bis 16. Oktober 2026 erarbeite ich für ausgewählte Betriebe kostenlose Fallstudien. Ihr bekommt eine massgeschneiderte Automatisierungslösung. Ich erhalte einen Referenzfall für meine Arbeit."
   ctaLabel: "Fallstudien-Platz sichern"
 abschlussCta:
   headline: "Bereit, eure Prozesse zu vereinfachen?"

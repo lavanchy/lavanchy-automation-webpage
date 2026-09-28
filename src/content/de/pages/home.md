@@ -49,7 +49,7 @@ referenzabschnitt:
   linkHref: "/de/referenzen/"
 fallstudienHinweis:
   headline: "Jetzt einsteigen, als Fallstudie"
-  text: "Bis Ende September 2026 erarbeite ich für ausgewählte Betriebe kostenlose Fallstudien. Ihr bekommt eine massgeschneiderte Automatisierungslösung. Ich erhalte einen Referenzfall für meine Arbeit."
+  text: "Bis 16. Oktober 2026 erarbeite ich für ausgewählte Betriebe kostenlose Fallstudien. Ihr bekommt eine massgeschneiderte Automatisierungslösung. Ich erhalte einen Referenzfall für meine Arbeit."
   ctaLabel: "Kostenloses Erstgespräch buchen"
 ueberMichTeaser:
   headline: "Wer dahintersteckt"

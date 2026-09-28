@@ -29,12 +29,14 @@ export function getLocale(pathname: string): Locale {
 }
 
 // Für jede Sprache dieselbe URL-Struktur wie unter /de/ (siehe README) — nur Labels übersetzt.
+// Partnerseite deaktiviert (2026-09-28): Seiten liegen als src/pages/<locale>/_partner.astro
+// (Unterstrich = von Astro nicht gebaut). Reaktivieren: Unterstrich entfernen + Nav-Einträge wieder einkommentieren.
 export const navByLocale: Record<Locale, { label: string; href: string }[]> = {
   de: [
     { label: 'Startseite', href: '/de/' },
     { label: 'Leistungen', href: '/de/leistungen/' },
     { label: 'Referenzen', href: '/de/referenzen/' },
-    { label: 'Partner', href: '/de/partner/' },
+    // { label: 'Partner', href: '/de/partner/' },
     { label: 'Über mich', href: '/de/ueber-mich/' },
     { label: 'Kontakt', href: '/de/kontakt/' },
   ],
@@ -42,7 +44,7 @@ export const navByLocale: Record<Locale, { label: string; href: string }[]> = {
     { label: 'Accueil', href: '/fr/' },
     { label: 'Prestations', href: '/fr/leistungen/' },
     { label: 'Références', href: '/fr/referenzen/' },
-    { label: 'Partenaires', href: '/fr/partner/' },
+    // { label: 'Partenaires', href: '/fr/partner/' },
     { label: 'À propos', href: '/fr/ueber-mich/' },
     { label: 'Contact', href: '/fr/kontakt/' },
   ],
@@ -50,7 +52,7 @@ export const navByLocale: Record<Locale, { label: string; href: string }[]> = {
     { label: 'Home', href: '/en/' },
     { label: 'Services', href: '/en/leistungen/' },
     { label: 'References', href: '/en/referenzen/' },
-    { label: 'Partners', href: '/en/partner/' },
+    // { label: 'Partners', href: '/en/partner/' },
     { label: 'About', href: '/en/ueber-mich/' },
     { label: 'Contact', href: '/en/kontakt/' },
   ],

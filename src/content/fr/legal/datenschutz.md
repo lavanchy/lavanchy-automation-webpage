@@ -5,7 +5,7 @@ description: "Politique de confidentialité selon la LPD suisse et le RGPD."
 
 Lavanchy Automation — Version du 09.09.2026
 
-*Ceci est une traduction. En cas de divergence, la version allemande fait foi.*
+*Ceci est une traduction libre fournie à titre informatif. Seule la version allemande fait foi et prévaut en cas de divergence.*
 
 ## 1. Responsable du traitement
 

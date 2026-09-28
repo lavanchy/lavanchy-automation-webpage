@@ -5,7 +5,7 @@ description: "Privacy policy under the Swiss FADP and the GDPR."
 
 Lavanchy Automation — Version: 09.09.2026
 
-*This is a translation. In case of discrepancies, the German version prevails.*
+*This is a free translation for information purposes. Only the German version is legally binding and prevails in case of discrepancies.*
 
 ## 1. Controller
 

@@ -5,7 +5,7 @@ description: "Conditions générales de vente."
 
 Lavanchy Automation — Version du 28.09.2026
 
-*Ceci est une traduction. En cas de divergence, la version allemande fait foi.*
+*Ceci est une traduction libre fournie à titre informatif. Seule la version allemande fait foi et prévaut en cas de divergence.*
 
 ## 1. Champ d'application
 

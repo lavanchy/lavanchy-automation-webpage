@@ -73,7 +73,7 @@ schrittFuerSchritt:
       text: "Seulement une fois que le premier processus est stable."
 mittenCta:
   headline: "Devenez une étude de cas"
-  text: "Jusqu'à fin septembre 2026, j'élabore gratuitement des études de cas pour des entreprises sélectionnées. Vous obtenez une solution d'automatisation sur mesure. J'obtiens un cas de référence pour mon activité."
+  text: "Jusqu'au 16 octobre 2026, j'élabore gratuitement des études de cas pour des entreprises sélectionnées. Vous obtenez une solution d'automatisation sur mesure. J'obtiens un cas de référence pour mon activité."
   ctaLabel: "Réserver ma place (étude de cas)"
 qualitaet:
   headline: "Une qualité traçable"

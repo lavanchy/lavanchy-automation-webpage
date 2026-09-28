@@ -56,7 +56,7 @@ weitereIdeen:
       text: "Lorsque des informations doivent être classées, résumées ou préparées, un processus peut, sur demande, comporter une étape d'IA. Là où l'IA n'est pas nécessaire, la solution reste volontairement simple."
 fallstudienHinweis:
   headline: "Devenez une étude de cas"
-  text: "Jusqu'à fin septembre 2026, j'élabore gratuitement des études de cas pour des entreprises sélectionnées. Vous obtenez une solution d'automatisation sur mesure. J'obtiens un cas de référence pour mon activité."
+  text: "Jusqu'au 16 octobre 2026, j'élabore gratuitement des études de cas pour des entreprises sélectionnées. Vous obtenez une solution d'automatisation sur mesure. J'obtiens un cas de référence pour mon activité."
   ctaLabel: "Réserver ma place (étude de cas)"
 abschlussCta:
   headline: "Prêts à simplifier vos processus ?"

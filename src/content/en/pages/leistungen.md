@@ -73,7 +73,7 @@ schrittFuerSchritt:
       text: "Only once the first process is running stably."
 mittenCta:
   headline: "Become a case study"
-  text: "Until the end of September 2026, I'm developing free case studies for selected businesses. You get a tailor-made automation solution. I get a reference case for my work."
+  text: "Until 16 October 2026, I'm developing free case studies for selected businesses. You get a tailor-made automation solution. I get a reference case for my work."
   ctaLabel: "Secure a case-study spot"
 qualitaet:
   headline: "Quality you can trace"
