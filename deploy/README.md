@@ -10,7 +10,7 @@ Diese Dateien werden **einmalig manuell** auf den Webseiten-VPS kopiert (z.B. na
 cp .env.example .env
 # Werte in .env eintragen (siehe Kommentare in den .yml-Dateien)
 
-# Vorschau-Sperre (Basic Auth), solange die Seite nicht öffentlich sein soll:
+# Nur falls wieder eine Vorschau-Sperre (Basic Auth) gewünscht ist:
 htpasswd -B -c htpasswd DEIN-USERNAME   # fragt interaktiv nach dem Passwort
 # ohne `htpasswd`-Tool: openssl passwd -apr1 'DEIN-PASSWORT' und Ergebnis manuell
 # als "username:hash" in eine Datei "htpasswd" schreiben.
@@ -18,9 +18,12 @@ htpasswd -B -c htpasswd DEIN-USERNAME   # fragt interaktiv nach dem Passwort
 docker compose -f docker-compose.yml -f docker-compose.plausible.yml up -d
 ```
 
-Sobald die Seite live gehen soll: die `website-auth`-Middleware-Zeilen in
-`docker-compose.yml` (beim `website`- und beim `traefik`-Service) entfernen und
-`htpasswd` löschen.
+**Seit 2026-09-28 live:** Die Vorschau-Sperre ist entfernt (Middleware-Labels,
+htpasswd-Mount und `htpasswd`-Datei). Für eine erneute Sperre: `htpasswd` wie oben
+anlegen und beim `traefik`-Service den Mount `./htpasswd:/etc/traefik/htpasswd:ro`,
+beim `website`-Service die Labels
+`traefik.http.middlewares.website-auth.basicauth.usersfile=/etc/traefik/htpasswd` und
+`traefik.http.routers.website.middlewares=website-auth` wieder ergänzen.
 
 ## Wartungsroutine
 
