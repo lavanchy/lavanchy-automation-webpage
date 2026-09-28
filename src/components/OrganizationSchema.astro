@@ -3,16 +3,33 @@ import { siteConfig } from '../config/site';
 
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'Organization',
+  '@type': 'ProfessionalService',
+  '@id': `${siteConfig.url}/#organization`,
   name: siteConfig.name,
   url: siteConfig.url,
+  logo: `${siteConfig.url}/favicon-192.png`,
+  image: `${siteConfig.url}/og-image.jpg`,
   email: siteConfig.email,
   telephone: siteConfig.phone,
   address: {
     '@type': 'PostalAddress',
     streetAddress: siteConfig.address.street,
-    addressLocality: siteConfig.address.zipCity,
+    postalCode: siteConfig.address.postalCode,
+    addressLocality: siteConfig.address.locality,
+    addressRegion: siteConfig.address.region,
     addressCountry: 'CH',
+  },
+  areaServed: [
+    { '@type': 'Country', name: 'Schweiz' },
+    { '@type': 'Country', name: 'Deutschland' },
+    { '@type': 'Country', name: 'Österreich' },
+  ],
+  knowsLanguage: ['de', 'fr', 'en'],
+  founder: {
+    '@type': 'Person',
+    name: 'Loïc Lavanchy',
+    url: `${siteConfig.url}/de/ueber-mich/`,
+    sameAs: [siteConfig.linkedin],
   },
   sameAs: [siteConfig.linkedin],
 };

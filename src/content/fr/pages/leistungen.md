@@ -1,7 +1,7 @@
 ---
 seo:
   title: "Automatisation des processus n8n, IA managée"
-  description: "Automatisation des processus avec n8n et conseil en IA managée pour PME. Connecter les outils existants, documenter les processus et intégrer l'IA de manière sûre et traçable."
+  description: "Automatisation des processus n8n et conseil en IA managée pour PME : connecter vos outils, documenter les processus, intégrer l'IA de manière sûre."
 hero:
   eyebrow: "Prestations"
   headline: "Automatiser les processus, créer de la clarté"

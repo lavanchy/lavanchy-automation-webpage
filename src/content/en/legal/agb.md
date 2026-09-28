@@ -71,15 +71,15 @@ Where additional agreements on commissioned processing or data security are requ
 
 ## 10. Termination and data handover
 
-At the end of the contract, Lavanchy Automation provides the client, upon request, with a copy of the workflow configurations created for it, insofar as these are not already with the client. Lavanchy Automation's access to the client's systems is deactivated within 10 days of the end of the contract.
+At the end of the contract, Lavanchy Automation provides the client, upon request, with a copy of the workflow configurations created for it, insofar as these are not already with the client. Lavanchy Automation's access to the client's systems is deactivated within 10 working days of the end of the contract.
 
 The client is itself responsible for independently continuing or replacing the automation after the end of the contract, unless a maintenance agreement with Lavanchy Automation is in place at that time.
 
+A single support assignment separately commissioned after the end of the contract does not give rise to any entitlement to ongoing or recurring support. It is remunerated as a separate new engagement on a time-and-material basis.
+
 ## 11. Liability
 
-Lavanchy Automation is liable within the scope of the statutory provisions. To the extent permitted by law, liability for any single case of damage is limited to the amount of the fee paid by the client for the engagement concerned, and in any case to a maximum of CHF 2,000.
-
-No limitation of liability applies to damage caused intentionally or through gross negligence, or where mandatory statutory liability exists.
+Lavanchy Automation is liable only for damage caused intentionally or through gross negligence. Liability for slight negligence is excluded to the extent permitted by law. The total liability of Lavanchy Automation arising from a single engagement is in any case limited to CHF 2,000.00, even if no fee or a reduced fee is owed as part of a case study or a comparable discount.
 
 Lavanchy Automation is not liable for damage arising from access credentials, systems or content of third parties (e.g. Microsoft, n8n.io or other third-party systems used by the client) being provided incorrectly, late or not at all, or for failures of such third-party systems.
 

@@ -1,7 +1,7 @@
 ---
 seo:
   title: "Automatisation n8n et IA pour PME"
-  description: "Automatisation n8n et IA managée pour PME, indépendants et startups : connectez vos outils existants, simplifiez vos processus, traitez vos données en toute sécurité en Suisse ou dans l'UE."
+  description: "Automatisation n8n et IA managée pour PME et indépendants en Suisse : connectez vos outils existants, simplifiez vos processus, données en Suisse ou UE."
 hero:
   eyebrow: "Automatisation des processus et conseil en IA pour PME, indépendants et startups"
   headline: "Vos outils restent. La charge de travail disparaît."

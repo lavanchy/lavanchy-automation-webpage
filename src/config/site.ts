@@ -10,6 +10,9 @@ export const siteConfig = {
     legalName: 'Lavanchy Automation, Einzelunternehmen, Loïc Lavanchy',
     street: 'Rue du Centre 53',
     zipCity: '1025 St-Sulpice VD',
+    postalCode: '1025',
+    locality: 'St-Sulpice',
+    region: 'VD',
     country: 'Schweiz',
   },
   // RAV-Auflage bis zu diesem Datum: keine Preise, kein Angebots-/Bestellformular.

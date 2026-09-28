@@ -69,15 +69,15 @@ Soweit für ein Projekt zusätzliche Vereinbarungen zur Auftragsbearbeitung oder
 
 ## 10. Vertragsbeendigung und Datenherausgabe
 
-Bei Vertragsende stellt Lavanchy Automation dem Kunden auf Wunsch eine Kopie der für ihn erstellten Workflow-Konfigurationen zur Verfügung, soweit diese nicht bereits beim Kunden liegen. Zugänge von Lavanchy Automation zu Systemen des Kunden werden innert 10 Tagen nach Vertragsende deaktiviert.
+Bei Vertragsende stellt Lavanchy Automation dem Kunden auf Wunsch eine Kopie der für ihn erstellten Workflow-Konfigurationen zur Verfügung, soweit diese nicht bereits beim Kunden liegen. Zugänge von Lavanchy Automation zu Systemen des Kunden werden innert 10 Arbeitstagen nach Vertragsende deaktiviert.
 
 Der Kunde ist für die eigenständige Weiterführung oder Ablösung der Automatisierung nach Vertragsende selbst verantwortlich, sofern zu diesem Zeitpunkt keine Wartungsvereinbarung mit Lavanchy Automation besteht.
 
+Ein einzelner, nach Vertragsende separat beauftragter Support-Einsatz begründet keinen Anspruch auf laufenden oder wiederkehrenden Support. Er wird als eigenständiger neuer Auftrag nach Aufwand vergütet.
+
 ## 11. Haftung
 
-Lavanchy Automation haftet im Rahmen der gesetzlichen Bestimmungen. Die Haftung für einen einzelnen Schadensfall ist, soweit gesetzlich zulässig, auf die Höhe der vom Kunden für den betreffenden Auftrag bezahlten Vergütung, in jedem Fall auf max. CHF 2'000, begrenzt.
-
-Keine Haftungsbeschränkung gilt für Schäden, die vorsätzlich oder grob fahrlässig verursacht wurden, oder soweit eine zwingende gesetzliche Haftung besteht.
+Lavanchy Automation haftet nur für Schäden, die durch Vorsatz oder grobe Fahrlässigkeit verursacht wurden. Die Haftung für leichte Fahrlässigkeit wird, soweit gesetzlich zulässig, ausgeschlossen. Die gesamte Haftung von Lavanchy Automation aus einem einzelnen Auftrag ist in jedem Fall auf CHF 2'000.00 begrenzt, auch wenn im Rahmen einer Case Study oder eines vergleichbaren Rabatts keine oder eine reduzierte Vergütung geschuldet ist.
 
 Lavanchy Automation haftet nicht für Schäden, die daraus entstehen, dass Zugangsdaten, Systeme oder Inhalte Dritter (z. B. Microsoft, n8n.io oder andere vom Kunden eingesetzte Drittsysteme) fehlerhaft, verzögert oder gar nicht bereitgestellt wurden, oder für Ausfälle solcher Drittsysteme.
 

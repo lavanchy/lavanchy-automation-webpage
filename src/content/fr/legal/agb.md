@@ -71,15 +71,15 @@ Si des accords supplémentaires relatifs au traitement de données sur mandat ou
 
 ## 10. Fin du contrat et restitution des données
 
-À la fin du contrat, Lavanchy Automation remet au client, sur demande, une copie des configurations de workflows créées pour lui, dans la mesure où celles-ci ne se trouvent pas déjà chez le client. Les accès de Lavanchy Automation aux systèmes du client sont désactivés dans les 10 jours suivant la fin du contrat.
+À la fin du contrat, Lavanchy Automation remet au client, sur demande, une copie des configurations de workflows créées pour lui, dans la mesure où celles-ci ne se trouvent pas déjà chez le client. Les accès de Lavanchy Automation aux systèmes du client sont désactivés dans les 10 jours ouvrables suivant la fin du contrat.
 
 Le client est lui-même responsable de la poursuite autonome ou du remplacement de l'automatisation après la fin du contrat, sauf si un contrat de maintenance avec Lavanchy Automation est en vigueur à ce moment-là.
 
+Une intervention de support isolée, mandatée séparément après la fin du contrat, ne donne droit à aucun support continu ou récurrent. Elle est rémunérée en tant que nouveau mandat indépendant, selon le travail effectif.
+
 ## 11. Responsabilité
 
-Lavanchy Automation répond dans le cadre des dispositions légales. Dans la mesure permise par la loi, la responsabilité pour un sinistre individuel est limitée au montant de la rémunération payée par le client pour le mandat concerné, et dans tous les cas à CHF 2'000 au maximum.
-
-Aucune limitation de responsabilité ne s'applique aux dommages causés intentionnellement ou par négligence grave, ni lorsqu'une responsabilité légale impérative existe.
+Lavanchy Automation ne répond que des dommages causés intentionnellement ou par négligence grave. La responsabilité pour négligence légère est exclue dans la mesure permise par la loi. La responsabilité totale de Lavanchy Automation découlant d'un mandat individuel est dans tous les cas limitée à CHF 2'000.00, même si aucune rémunération ou une rémunération réduite est due dans le cadre d'une étude de cas ou d'un rabais comparable.
 
 Lavanchy Automation ne répond pas des dommages résultant du fait que des données d'accès, systèmes ou contenus de tiers (p. ex. Microsoft, n8n.io ou d'autres systèmes tiers utilisés par le client) ont été fournis de manière erronée, tardive ou pas du tout, ni des pannes de tels systèmes tiers.
 
