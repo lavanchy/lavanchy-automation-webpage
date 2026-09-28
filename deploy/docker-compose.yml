@@ -4,10 +4,18 @@
 #
 # Vor dem ersten Start: .env.example nach .env kopieren und Werte eintragen.
 
+# Log-Grösse pro Container begrenzen (Docker-Default: unbegrenzt).
+x-logging: &default-logging
+  driver: json-file
+  options:
+    max-size: "10m"
+    max-file: "3"
+
 services:
   traefik:
     image: traefik:v3
     restart: unless-stopped
+    logging: *default-logging
     command:
       - --providers.docker
       - --providers.docker.exposedbydefault=false
@@ -33,6 +41,7 @@ services:
   website:
     image: ghcr.io/lavanchy/lavanchy-automation-webpage:latest
     restart: unless-stopped
+    logging: *default-logging
     labels:
       - traefik.enable=true
       - traefik.http.routers.website.rule=Host(`lavanchyautomation.ch`) || Host(`www.lavanchyautomation.ch`)

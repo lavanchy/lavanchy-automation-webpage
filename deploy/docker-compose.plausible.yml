@@ -12,10 +12,18 @@
 # SMTP-Variablen sind optional (nötig für E-Mail-Reports/Einladungen) und können
 # später nachgetragen werden — Plausible läuft auch ohne SMTP für den Eigengebrauch.
 
+# Log-Grösse pro Container begrenzen (Docker-Default: unbegrenzt).
+x-logging: &default-logging
+  driver: json-file
+  options:
+    max-size: "10m"
+    max-file: "3"
+
 services:
   plausible:
     image: ghcr.io/plausible/community-edition:v3
     restart: unless-stopped
+    logging: *default-logging
     depends_on:
       - plausible_db
       - plausible_events_db
@@ -38,6 +46,7 @@ services:
   plausible_db:
     image: postgres:16-alpine
     restart: unless-stopped
+    logging: *default-logging
     environment:
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=plausible_db
@@ -47,6 +56,7 @@ services:
   plausible_events_db:
     image: clickhouse/clickhouse-server:24-alpine
     restart: unless-stopped
+    logging: *default-logging
     environment:
       - CLICKHOUSE_DB=plausible_events_db
     ulimits:
