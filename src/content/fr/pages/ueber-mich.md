@@ -3,7 +3,7 @@ seo:
   title: "Loïc Lavanchy, consultant en automatisation"
   description: "Loïc Lavanchy accompagne les PME, indépendants et startups dans l'automatisation des processus avec n8n et dans un usage pertinent de l'IA."
 hero:
-  eyebrow: "À propos"
+  eyebrow: "À propos de Loïc Lavanchy"
   headline: "Qui se cache derrière"
   subheadline: "Je relie les métiers et l'informatique. Mon objectif : des solutions compréhensibles, qui fonctionnent au quotidien et grandissent étape par étape avec l'entreprise."
 werdegang:
@@ -14,7 +14,7 @@ werdegang:
     - "J'ai notamment numérisé et automatisé une procédure sur papier comptant environ 7'000 dossiers par an. Le résultat : environ 90 % de charge manuelle en moins par dossier et plus de 40 % de dossiers traités en plus en une année."
     - "Comprendre le fonctionnement des choses m'intéresse. Quand je découvre un processus, je veux d'abord comprendre pourquoi il s'est construit ainsi. La plupart du temps, il y a une bonne raison derrière. Et souvent, en y regardant de plus près, on voit qu'une partie pourrait être simplifiée."
     - "En 2020, j'ai découvert Camunda pour la première fois, une plateforme d'automatisation des processus. L'approche m'a à la fois convaincu et déçu : pour des projets plus modestes, l'outil était tout simplement trop lourd. Je ne pouvais pas l'utiliser moi-même."
-    - "Avec n8n, ce problème a disparu. Ce qui aurait auparavant nécessité tout un projet pouvait soudain se réaliser en quelques jours. C'est exactement pour cette raison que je me suis mis à mon compte."
+    - "Avec n8n, ce problème a disparu. Ce qui aurait exigé tout un projet était soudain réalisé en quelques jours. C'est exactement pour cette raison que je me suis mis à mon compte."
     - "Aujourd'hui, j'accompagne les PME et indépendants pour réduire le travail administratif et gagner plus de temps pour des tâches qui apportent une réelle valeur ajoutée."
 wieIchArbeite:
   headline: "Écouter, comprendre et avancer ensemble"

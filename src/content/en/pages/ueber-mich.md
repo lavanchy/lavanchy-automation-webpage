@@ -3,7 +3,7 @@ seo:
   title: "Loïc Lavanchy, Automation Consultant"
   description: "Loïc Lavanchy helps SMEs, freelancers and startups with process automation using n8n and with using AI sensibly."
 hero:
-  eyebrow: "About me"
+  eyebrow: "About Loïc Lavanchy"
   headline: "Who's behind this"
   subheadline: "I connect business teams and IT. My focus is on solutions that make sense, work in daily use, and grow with the business step by step."
 werdegang:
@@ -14,7 +14,7 @@ werdegang:
     - "Among other things, I digitized and automated a paper-based procedure handling around 7,000 cases a year. The result was roughly 90% less manual effort per case and more than 40% more cases processed within a year."
     - "I want to understand how things work. When I come across a workflow, I first want to understand why it grew the way it did. Usually there's a good reason behind it. And often, on a closer look, part of it could work more simply."
     - "In 2020, I came across Camunda for the first time, a process automation platform. The approach both convinced and disappointed me: for smaller projects, the tool was simply too heavy. I couldn't use it myself."
-    - "With n8n, that changed. What used to take an entire project could suddenly be done in a few days. That's exactly why I went self-employed."
+    - "With n8n, that changed. What would previously have required an entire project was suddenly done in a few days. That's exactly why I went self-employed."
     - "Today I help SMEs and freelancers cut down on admin work and win back more time for tasks that create real value."
 wieIchArbeite:
   headline: "Listening, understanding, and moving forward together"
