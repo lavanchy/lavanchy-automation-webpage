@@ -11,7 +11,7 @@ interface Props {
 const { eyebrow, headline, subheadline, dark = false } = Astro.props;
 ---
 
-<Section bg={dark ? 'ink' : 'paper'} class="py-14 md:py-20">
+<Section bg={dark ? 'ink' : 'paper'} class="!pt-14 md:!pt-20 !pb-8 md:!pb-12">
   <p class={`mb-4 font-body text-sm font-semibold uppercase tracking-wide ${dark ? 'text-teal' : 'text-brand-primary'}`}>
     {eyebrow}
   </p>

@@ -14,7 +14,7 @@ werdegang:
     - "Unter anderem habe ich ein papierbasiertes Verfahren mit rund 7'000 Verfahren pro Jahr digitalisiert und automatisiert. Das Ergebnis waren rund 90 Prozent weniger manueller Aufwand pro Verfahren und mehr als 40 Prozent mehr bearbeitete Fälle innerhalb eines Jahres."
     - "Mich interessiert, wie Dinge funktionieren. Wenn ich einen Ablauf kennenlerne, will ich zuerst verstehen, warum er so gewachsen ist. Meistens steckt ein guter Grund dahinter. Und oft zeigt sich beim genauen Hinschauen, dass ein Teil davon einfacher gehen könnte."
     - "2020 bin ich zum ersten Mal mit Camunda in Berührung gekommen, einer Plattform zur Prozessautomatisierung. Der Ansatz hat mich überzeugt und gleichzeitig enttäuscht: Für kleinere Vorhaben war das Werkzeug schlicht zu schwer. Ich konnte es selbst nicht einsetzen."
-    - "Mit n8n hat sich das aufgelöst. Plötzlich liess sich in Tagen umsetzen, wofür es vorher ein ganzes Projekt gebraucht hätte. Genau deshalb habe ich mich selbständig gemacht."
+    - "Mit n8n hat sich das aufgelöst. Was vorher ein ganzes Projekt gebraucht hätte, liess sich plötzlich in wenigen Tagen umsetzen. Genau deshalb habe ich mich selbständig gemacht."
     - "Heute begleite ich KMU und Selbständige dabei, administrative Arbeit zu reduzieren und mehr Zeit für Aufgaben zu gewinnen, die einen echten Mehrwert bringen."
 wieIchArbeite:
   headline: "Zuhören, verstehen und gemeinsam weitergehen"

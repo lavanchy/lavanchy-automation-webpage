@@ -16,7 +16,9 @@ const { hero, werdegang, wieIchArbeite, wieIchVorgehe, testimonials, linkedinNot
 ---
 
 <PageLayout title={entry.data.seo.title} description={entry.data.seo.description}>
-  <Hero eyebrow={hero.eyebrow} headline={hero.headline} subheadline={hero.subheadline} />
+  <Hero eyebrow={hero.eyebrow} headline={hero.headline} subheadline={hero.subheadline}>
+    <p class="font-heading text-xl font-bold text-text">Loïc Lavanchy</p>
+  </Hero>
 
   <Section>
     <div class="grid items-start gap-10 md:grid-cols-3">
