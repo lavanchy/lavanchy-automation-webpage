@@ -4,7 +4,7 @@ export const siteConfig = {
   bookingUrl: 'https://cal.meetergo.com/loic-lavanchy/30-min-meeting',
   ctaLabel: 'Kostenloses Erstgespräch buchen',
   phone: '+41 79 687 81 28',
-  email: 'lo.lavanchy@gmail.com',
+  email: 'info@lavanchyautomation.ch',
   linkedin: 'https://www.linkedin.com/in/loic-lavanchy/',
   address: {
     legalName: 'Lavanchy Automation, Einzelunternehmen, Loïc Lavanchy',

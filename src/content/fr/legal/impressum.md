@@ -13,7 +13,7 @@ Rue du Centre 53<br />
 Suisse
 
 Téléphone : [+41 79 687 81 28](tel:+41796878128)<br />
-E-mail : [lo.lavanchy@gmail.com](mailto:lo.lavanchy@gmail.com)<br />
+E-mail : [info@lavanchyautomation.ch](mailto:info@lavanchyautomation.ch)<br />
 LinkedIn : [linkedin.com/in/loic-lavanchy](https://www.linkedin.com/in/loic-lavanchy/)
 
 **Responsable du contenu de ce site :**<br />

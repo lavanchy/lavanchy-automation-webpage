@@ -3,7 +3,7 @@ title: "Datenschutzerklärung"
 description: "Datenschutzerklärung nach Schweizer DSG und DSGVO."
 ---
 
-Lavanchy Automation — Stand: 09.09.2026
+Lavanchy Automation — Stand: 12.10.2026
 
 ## 1. Verantwortlicher
 
@@ -12,7 +12,7 @@ Rue du Centre 53<br />
 1025 St-Sulpice VD<br />
 Schweiz
 
-E-Mail: [lo.lavanchy@gmail.com](mailto:lo.lavanchy@gmail.com)<br />
+E-Mail: [info@lavanchyautomation.ch](mailto:info@lavanchyautomation.ch)<br />
 Telefon: [+41 79 687 81 28](tel:+41796878128)
 
 ## 2. Allgemeines
@@ -106,7 +106,7 @@ Betroffene Personen haben, soweit die gesetzlichen Voraussetzungen erfüllt sind
 
 Zuständige Aufsichtsbehörde in der Schweiz ist der Eidgenössische Datenschutz- und Öffentlichkeitsbeauftragte (EDÖB), in der EU die jeweils zuständige Datenschutzbehörde.
 
-Für Datenschutzfragen oder zur Ausübung dieser Rechte: [lo.lavanchy@gmail.com](mailto:lo.lavanchy@gmail.com)
+Für Datenschutzfragen oder zur Ausübung dieser Rechte: [info@lavanchyautomation.ch](mailto:info@lavanchyautomation.ch)
 
 ## 15. Änderungen dieser Datenschutzerklärung
 

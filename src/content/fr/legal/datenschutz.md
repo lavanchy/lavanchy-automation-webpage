@@ -3,7 +3,7 @@ title: "Politique de confidentialité"
 description: "Politique de confidentialité selon la LPD suisse et le RGPD."
 ---
 
-Lavanchy Automation — Version du 09.09.2026
+Lavanchy Automation — Version du 12.10.2026
 
 *Ceci est une traduction libre fournie à titre informatif. Seule la version allemande fait foi et prévaut en cas de divergence.*
 
@@ -14,7 +14,7 @@ Rue du Centre 53<br />
 1025 St-Sulpice VD<br />
 Suisse
 
-E-mail : [lo.lavanchy@gmail.com](mailto:lo.lavanchy@gmail.com)<br />
+E-mail : [info@lavanchyautomation.ch](mailto:info@lavanchyautomation.ch)<br />
 Téléphone : [+41 79 687 81 28](tel:+41796878128)
 
 ## 2. Généralités
@@ -108,7 +108,7 @@ Dans la mesure où les conditions légales sont remplies, les personnes concern�
 
 L'autorité de surveillance compétente en Suisse est le Préposé fédéral à la protection des données et à la transparence (PFPDT) ; dans l'UE, il s'agit de l'autorité de protection des données compétente.
 
-Pour toute question relative à la protection des données ou pour exercer ces droits : [lo.lavanchy@gmail.com](mailto:lo.lavanchy@gmail.com)
+Pour toute question relative à la protection des données ou pour exercer ces droits : [info@lavanchyautomation.ch](mailto:info@lavanchyautomation.ch)
 
 ## 15. Modifications de la présente politique de confidentialité
 

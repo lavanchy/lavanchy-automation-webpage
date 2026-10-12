@@ -3,7 +3,7 @@ title: "Privacy Policy"
 description: "Privacy policy under the Swiss FADP and the GDPR."
 ---
 
-Lavanchy Automation — Version: 09.09.2026
+Lavanchy Automation — Version: 12.10.2026
 
 *This is a free translation for information purposes. Only the German version is legally binding and prevails in case of discrepancies.*
 
@@ -14,7 +14,7 @@ Rue du Centre 53<br />
 1025 St-Sulpice VD<br />
 Switzerland
 
-Email: [lo.lavanchy@gmail.com](mailto:lo.lavanchy@gmail.com)<br />
+Email: [info@lavanchyautomation.ch](mailto:info@lavanchyautomation.ch)<br />
 Phone: [+41 79 687 81 28](tel:+41796878128)
 
 ## 2. General
@@ -108,7 +108,7 @@ Where the statutory requirements are met, data subjects have the following right
 
 The competent supervisory authority in Switzerland is the Federal Data Protection and Information Commissioner (FDPIC); in the EU, it is the respective competent data protection authority.
 
-For data protection questions or to exercise these rights: [lo.lavanchy@gmail.com](mailto:lo.lavanchy@gmail.com)
+For data protection questions or to exercise these rights: [info@lavanchyautomation.ch](mailto:info@lavanchyautomation.ch)
 
 ## 15. Changes to this privacy policy
 
