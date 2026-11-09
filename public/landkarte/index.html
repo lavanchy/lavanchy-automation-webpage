@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Copy-Paste-Landkarte</title>
+<meta name="description" content="12 Fragen, 5 Minuten: Seht euren Betrieb als 3D-Stadt und erfahrt, wo eure Zeit zwischen den Tools verschwindet. Von Lavanchy Automation.">
+<meta name="robots" content="noindex, nofollow">
+<style>
+:root{
+  /* Planungsplan: kühles Papier, Tinte, Petrol als Akzent. Ampelfarben nur für Zustände. */
+  --paper:#EDF1F4;
+  --surface:#FFFFFF;
+  --ink:#132130;
+  --muted:#5B6979;
+  --line:#D2DAE2;
+  --accent:#1C5D7B;
+  --accent-ink:#FFFFFF;
+  --accent-soft:#E2EEF3;
+  --ok:#2F9E6B;
+  --warn:#D99A12;
+  --bad:#D4483B;
+  --island:#EE7A16;
+  --font-display:"Avenir Next","Avenir","Segoe UI Variable Display","Segoe UI","Helvetica Neue",Arial,sans-serif;
+  --font-body:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --font-mono:ui-monospace,"SF Mono","Cascadia Mono",Menlo,Consolas,monospace;
+  --radius:14px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--paper);color:var(--ink);font-family:var(--font-body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--font-display);line-height:1.15;margin:0;text-wrap:balance;letter-spacing:-0.01em}
+p{margin:0}
+a{color:var(--accent)}
+button,input{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:6px}
+[hidden]{display:none !important}
+
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px clamp(16px,4vw,40px);border-bottom:1px solid var(--line);background:var(--surface)}
+.brand{font-family:var(--font-display);font-weight:700;font-size:18px;letter-spacing:-0.01em;display:flex;align-items:center;gap:10px}
+.brand-mark{width:26px;height:26px;border-radius:7px;background:var(--accent);display:grid;place-items:center}
+.brand-mark svg{width:16px;height:16px}
+.brand span{font-weight:500;color:var(--muted)}
+.top a{font-size:14px;text-decoration:none;color:var(--muted)}
+.top a:hover{color:var(--accent)}
+
+main{max-width:1240px;margin:0 auto;padding:clamp(20px,4vw,48px) clamp(16px,4vw,40px) 64px}
+
+.eyebrow{font-family:var(--font-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:600}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:10px;padding:13px 20px;font-weight:600;font-size:16px;cursor:pointer;text-decoration:none;transition:transform .12s ease,background .12s ease,box-shadow .12s ease}
+.btn-primary{background:var(--accent);color:var(--accent-ink);box-shadow:0 1px 0 rgba(0,0,0,.08),0 6px 18px -8px rgba(28,93,123,.7)}
+.btn-primary:hover{background:#174f69;transform:translateY(-1px)}
+.btn-primary:disabled{background:#9DB3BF;box-shadow:none;cursor:not-allowed;transform:none}
+.btn-secondary{background:var(--surface);color:var(--ink);border:1px solid var(--line)}
+.btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
+.btn-ghost{background:transparent;color:var(--muted);padding:13px 12px}
+.btn-ghost:hover{color:var(--ink)}
+
+/* Intro */
+.intro{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,4vw,56px);align-items:center}
+.intro-text{display:grid;gap:22px}
+.intro h1{font-size:clamp(32px,4.4vw,52px);font-weight:700}
+.intro .lead{font-size:18px;color:var(--muted);max-width:52ch}
+.facts{display:flex;flex-wrap:wrap;gap:10px;padding:0;margin:0;list-style:none}
+.facts li{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:14px;font-weight:600}
+.facts li b{font-family:var(--font-mono);color:var(--accent)}
+.privacy{display:flex;gap:12px;align-items:flex-start;font-size:14px;color:var(--muted);max-width:52ch;border-left:3px solid var(--ok);padding:4px 0 4px 14px}
+.intro-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+
+/* City frame */
+.city{position:relative;border-radius:var(--radius);overflow:hidden;background:#E6ECF1;border:1px solid var(--line);min-height:420px}
+.intro .city{aspect-ratio:7/6}
+.result-city{height:min(640px,72vh);min-height:440px}
+.city-stage{position:absolute;inset:0}
+.city-stage canvas{display:block;width:100%;height:100%;cursor:grab;touch-action:none}
+.city-stage canvas:active{cursor:grabbing}
+.labels{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.lbl{position:absolute;left:0;top:0;transform:translate(-50%,-100%);white-space:nowrap;background:rgba(255,255,255,.92);border:1px solid var(--line);border-radius:7px;padding:3px 8px;font-size:12px;line-height:1.3;box-shadow:0 4px 12px -6px rgba(19,33,48,.35);display:flex;gap:6px;align-items:baseline}
+.lbl b{font-weight:650}
+.lbl span{font-family:var(--font-mono);font-size:11px;color:var(--muted)}
+.lbl.island{border-color:var(--island);background:#FFF4EA}
+.lbl.island::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--island);align-self:center}
+.city-fallback{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:24px;color:var(--muted);font-size:15px}
+
+.ov{position:absolute;z-index:2;pointer-events:none}
+.ov-counter{top:16px;left:16px;background:rgba(255,255,255,.94);border:1px solid var(--line);border-radius:12px;padding:12px 16px;max-width:290px;box-shadow:0 10px 30px -18px rgba(19,33,48,.5)}
+.ov-counter .num{font-family:var(--font-display);font-size:clamp(30px,3.6vw,42px);font-weight:700;line-height:1;color:var(--bad);font-variant-numeric:tabular-nums}
+.ov-counter .num small{font-size:.45em;color:var(--ink);font-weight:600;margin-left:4px}
+.ov-counter p{font-size:13px;color:var(--muted);margin-top:6px;line-height:1.4}
+.ov-counter p b{color:var(--ink)}
+.ov-caption{bottom:14px;right:14px;font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;background:var(--ink);color:#fff;padding:5px 10px;border-radius:6px}
+.ov-legend{bottom:14px;left:14px;display:flex;flex-wrap:wrap;gap:6px 14px;background:rgba(255,255,255,.94);border:1px solid var(--line);border-radius:10px;padding:8px 12px;font-size:12px;max-width:calc(100% - 28px)}
+.ov-legend span{display:inline-flex;align-items:center;gap:6px}
+.ov-legend i{display:inline-block;width:18px;height:6px;border-radius:3px}
+.ov-legend i.dot{width:9px;height:9px;border-radius:50%}
+.ov-hint{top:16px;right:16px;font-size:12px;color:var(--muted);background:rgba(255,255,255,.85);border-radius:8px;padding:5px 9px}
+
+/* Quiz */
+.quiz{display:grid;place-items:start center}
+.quiz-card{width:100%;max-width:760px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:clamp(20px,4vw,40px);display:grid;gap:22px;box-shadow:0 20px 50px -35px rgba(19,33,48,.45)}
+.progress{display:grid;gap:10px}
+.progress-meta{display:flex;justify-content:space-between;font-size:13px;color:var(--muted)}
+.progress-meta b{font-family:var(--font-mono);color:var(--ink)}
+.bar{height:6px;background:var(--accent-soft);border-radius:3px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--accent);border-radius:3px;transition:width .3s ease}
+.q-head{display:grid;gap:8px}
+.q-head h2{font-size:clamp(22px,2.6vw,30px);font-weight:700}
+.q-head p{color:var(--muted);font-size:15px}
+.options{display:grid;gap:10px}
+.options.grid{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
+.opt{position:relative;display:flex;gap:12px;align-items:flex-start;text-align:left;width:100%;background:var(--surface);border:1.5px solid var(--line);border-radius:12px;padding:13px 15px;cursor:pointer;transition:border-color .12s ease,background .12s ease}
+.opt:hover{border-color:#9CB4C3}
+.opt[aria-pressed="true"],.opt[aria-checked="true"]{border-color:var(--accent);background:var(--accent-soft)}
+.opt .tick{flex:none;width:20px;height:20px;border-radius:6px;border:1.5px solid #A9B7C4;display:grid;place-items:center;margin-top:1px;background:#fff}
+.opt.radio .tick{border-radius:50%}
+.opt[aria-pressed="true"] .tick,.opt[aria-checked="true"] .tick{background:var(--accent);border-color:var(--accent)}
+.opt[aria-pressed="true"] .tick::after{content:"";width:9px;height:5px;border-left:2px solid #fff;border-bottom:2px solid #fff;transform:translateY(-1px) rotate(-45deg)}
+.opt.radio[aria-checked="true"] .tick::after{content:"";width:8px;height:8px;border-radius:50%;background:#fff}
+.opt .t{display:grid;gap:1px}
+.opt .t b{font-weight:600;font-size:15px}
+.opt .t small{color:var(--muted);font-size:13px;line-height:1.35}
+.sliders{display:grid;gap:14px}
+.slider-row{display:grid;grid-template-columns:minmax(0,1fr) 92px;gap:6px 16px;align-items:center;padding:12px 14px;border:1px solid var(--line);border-radius:12px}
+.slider-row label{font-weight:600;font-size:15px}
+.slider-row output{justify-self:end;font-family:var(--font-mono);font-weight:600;font-size:15px;font-variant-numeric:tabular-nums}
+.slider-row input{grid-column:1/-1}
+input[type=range]{width:100%;accent-color:var(--accent);height:28px}
+.rate-big{font-family:var(--font-display);font-size:44px;font-weight:700;font-variant-numeric:tabular-nums}
+.rate-big small{font-size:18px;color:var(--muted);font-weight:600;margin-left:6px}
+.rate-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.rate-row select{border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;background:#fff;font-weight:600;font-size:15px;cursor:pointer}
+.rate-row select:focus{border-color:var(--accent);outline:none}
+.scale{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);font-family:var(--font-mono)}
+.text-field{display:grid;gap:6px;margin-top:6px}
+.text-field label{font-size:14px;font-weight:600}
+.text-field input{border:1.5px solid var(--line);border-radius:10px;padding:12px 14px;background:#fff;width:100%}
+.text-field input:focus{border-color:var(--accent);outline:none}
+.q-nav{display:flex;justify-content:space-between;align-items:center;gap:12px;border-top:1px solid var(--line);padding-top:18px}
+.q-error{font-size:13px;color:var(--bad);min-height:1.2em}
+
+/* Report */
+.result{display:grid;gap:28px}
+.report{display:grid;gap:28px}
+.report-head{display:grid;gap:8px}
+.report-head h2{font-size:clamp(28px,3.6vw,42px);font-weight:700}
+.report-head .meta{color:var(--muted);font-size:15px}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px;display:grid;gap:6px;align-content:start}
+.stat .v{font-family:var(--font-display);font-size:clamp(28px,3vw,38px);font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
+.stat .l{font-size:14px;color:var(--muted);line-height:1.4}
+.stat.hot{border-top:4px solid var(--bad)}
+.stat.key{background:var(--ink);color:#fff;border-color:var(--ink)}
+.stat.key .l{color:#C6D2DD}
+.section{display:grid;gap:14px}
+.section > h3{font-size:22px;font-weight:700}
+.jams{display:grid;gap:12px}
+.jam{background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--bad);border-radius:var(--radius);padding:18px 20px;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:6px 18px;align-items:start}
+.jam.amber{border-left-color:var(--warn)}
+.jam.green{border-left-color:var(--ok)}
+.jam .rank{font-family:var(--font-mono);font-size:13px;font-weight:700;color:var(--muted);padding-top:3px}
+.jam h4{font-family:var(--font-display);font-size:19px;margin:0;line-height:1.25}
+.jam .route{font-family:var(--font-mono);font-size:13px;color:var(--muted);margin-top:2px}
+.jam .why{grid-column:2/3;font-size:15px;max-width:68ch}
+.jam .nums{grid-column:2/3;font-size:14px;color:var(--muted)}
+.jam .nums b{color:var(--ink);font-variant-numeric:tabular-nums}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;border-radius:999px;padding:5px 11px;white-space:nowrap}
+.pill.api{background:#E3F3EB;color:#1D6E49}
+.pill.ai{background:#E7E9FB;color:#3A43A3}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px;display:grid;gap:8px;align-content:start}
+.box h4{font-family:var(--font-display);font-size:18px;margin:0}
+.box p{font-size:15px}
+.box.start{border:2px solid var(--accent);background:linear-gradient(180deg,var(--accent-soft),#fff 70%)}
+.box.island{border-left:5px solid var(--island)}
+.box.privacy-warn{border-left:5px solid var(--warn)}
+.box .sig{font-size:14px;color:var(--muted);margin-top:4px}
+.cta{background:var(--ink);color:#fff;border-radius:18px;padding:clamp(22px,4vw,36px);display:grid;gap:18px}
+.cta h3{font-size:clamp(22px,2.6vw,30px)}
+.cta p{color:#C6D2DD;max-width:62ch}
+.cta-actions{display:flex;flex-wrap:wrap;gap:10px}
+.cta .btn-primary{background:#fff;color:var(--ink);box-shadow:none}
+.cta .btn-primary:hover{background:#E2EEF3}
+.cta .btn-secondary{background:transparent;color:#fff;border-color:#4A5D70}
+.cta .btn-secondary:hover{border-color:#fff;color:#fff}
+.cta .addr{font-size:14px;color:#C6D2DD}
+.cta .addr b{color:#fff;font-family:var(--font-mono);font-weight:500}
+.cta .status{font-size:14px;color:#9FE0BF;min-height:1.3em}
+.cta-send{display:grid;gap:14px;max-width:520px;margin-top:4px}
+.cta-send .text-field label{color:#C6D2DD}
+.cta-send .text-field input,.cta-send .text-field textarea{background:#0D1823;color:#E6EDF3;border-color:#33465A;border-radius:10px;border-width:1.5px;border-style:solid;padding:12px 14px;width:100%;font-family:inherit;resize:vertical}
+.cta-send .text-field input:focus,.cta-send .text-field textarea:focus{border-color:var(--ok);outline:none}
+.cta-send button{justify-self:start}
+.tools-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.method{font-size:14px;color:var(--muted);border-top:1px solid var(--line);padding-top:16px}
+.method summary{cursor:pointer;font-weight:600;color:var(--ink)}
+.method ul{margin:10px 0 0;padding-left:18px;display:grid;gap:4px;max-width:80ch}
+.signature{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:16px}
+.print-only{display:none}
+
+.btn-book{background:var(--ok);color:#fff;font-size:17px;padding:15px 26px;box-shadow:0 8px 22px -10px rgba(47,158,107,.9)}
+.btn-book:hover{background:#268559;transform:translateY(-1px)}
+.btn-book-xl{display:flex;flex-direction:column;gap:2px;width:100%;max-width:520px;font-size:clamp(20px,2.4vw,26px);padding:20px 28px;border-radius:14px}
+.btn-book-xl small{font-size:14px;font-weight:500;opacity:.9}
+.cta .btn-book{background:var(--ok);color:#fff}
+.cta .or{font-size:14px;color:#C6D2DD}
+.book-banner{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 24px;background:#E3F3EB;border:2px solid var(--ok);border-radius:var(--radius);padding:20px 24px}
+.book-banner h3{font-size:22px}
+.book-banner p{font-size:15px;color:#2D4A3C;max-width:60ch;margin-top:4px}
+.sticky-book{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:20;display:flex;align-items:center;gap:16px;background:var(--ink);color:#fff;border-radius:16px;padding:10px 10px 10px 20px;box-shadow:0 18px 40px -16px rgba(19,33,48,.7);width:max-content;max-width:calc(100% - 24px);font-size:15px}
+.sticky-book .btn-book{padding:12px 20px;font-size:16px;box-shadow:none}
+#view-result{padding-bottom:70px}
+@media (max-width:560px){.sticky-book span{display:none}.sticky-book{padding:8px}}
+footer{max-width:1240px;margin:0 auto;padding:0 clamp(16px,4vw,40px) 100px;font-size:13px;color:var(--muted);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between}
+
+@media (max-width:900px){
+  .intro{grid-template-columns:1fr}
+  .intro .city{aspect-ratio:auto;height:440px}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .two{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  .jam{grid-template-columns:minmax(0,1fr)}
+  .jam .rank{padding:0}
+  .jam .why,.jam .nums{grid-column:auto}
+  .ov-counter{max-width:calc(100% - 32px)}
+  .ov-hint{display:none}
+  .slider-row{grid-template-columns:minmax(0,1fr) 80px}
+  .top{flex-wrap:wrap;row-gap:6px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none !important}
+}
+@media print{
+  @page{margin:14mm}
+  body{background:#fff;font-size:12px}
+  .top a,.no-print,.book-banner,.btn-book-xl,.cta .or,#view-intro,#view-quiz,.result-city,footer,.cta-actions,.cta details,.tools-row,.cta .status{display:none !important}
+  main{padding:0;max-width:none}
+  .print-only{display:block}
+  .print-only img{width:100%;border-radius:10px;border:1px solid var(--line)}
+  .stat,.box,.jam{break-inside:avoid}
+  .cta{background:#fff;color:var(--ink);border:2px solid var(--ink)}
+  .cta p,.cta .addr{color:var(--ink)}
+  .cta .addr b{color:var(--ink)}
+  .method details{display:block}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="brand">
+    <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M2 12 6 4l4 6 2-3 2 5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    Lavanchy <span>Automation</span>
+  </div>
+  <a href="https://lavanchyautomation.ch/de/">lavanchyautomation.ch</a>
+</header>
+
+<main>
+  <!-- INTRO -->
+  <section id="view-intro" class="view intro" aria-labelledby="intro-title">
+    <div class="intro-text">
+      <div class="eyebrow">Copy-Paste-Landkarte</div>
+      <h1 id="intro-title">Wo verschwindet eure Zeit zwischen E‑Mail, Excel und Buchhaltung?</h1>
+      <p class="lead">Beantwortet 12 kurze Fragen. Danach seht ihr euren Betrieb als kleine Stadt: Jedes Tool ist ein Gebäude, jeder Datenfluss eine Strasse. Wo von Hand kopiert wird, steht der Verkehr.</p>
+      <ul class="facts">
+        <li><b>12</b> Fragen</li>
+        <li>ca. <b>5</b> Minuten</li>
+        <li>Report sofort</li>
+      </ul>
+      <div class="intro-actions">
+        <button class="btn btn-primary" id="start-btn" type="button">Test starten</button>
+      </div>
+      <p class="privacy">Eure Antworten bleiben in eurem Browser. Erst wenn ihr am Ende euer Ergebnis aktiv an Loïc sendet, werden eure E-Mail-Adresse und eure Nachricht übermittelt und gespeichert.</p>
+    </div>
+    <div class="city" id="host-intro">
+      <div class="ov ov-counter">
+        <div class="num" id="intro-num">0<small>h</small></div>
+        <p><b>Stunden pro Jahr</b> Handarbeit zwischen den Tools</p>
+      </div>
+      <div class="ov ov-caption">Beispiel: Treuhandbüro, 6 Personen</div>
+    </div>
+  </section>
+
+  <!-- QUIZ -->
+  <section id="view-quiz" class="view quiz" hidden aria-live="polite">
+    <form class="quiz-card" id="quiz-form" novalidate>
+      <div class="progress">
+        <div class="progress-meta"><span>Frage <b id="q-index">1</b> von <b>12</b></span><span id="q-topic"></span></div>
+        <div class="bar"><i id="q-bar" style="width:8%"></i></div>
+      </div>
+      <div class="q-head">
+        <h2 id="q-title"></h2>
+        <p id="q-hint"></p>
+      </div>
+      <div id="q-body"></div>
+      <div class="q-error" id="q-error" role="alert"></div>
+      <div class="q-nav">
+        <button class="btn btn-ghost" type="button" id="q-back">Zurück</button>
+        <button class="btn btn-primary" type="submit" id="q-next">Weiter</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- RESULT -->
+  <section id="view-result" class="view result" hidden>
+    <div class="city result-city" id="host-result">
+      <div class="ov ov-counter">
+        <div class="num" id="res-num">0<small>h</small></div>
+        <p><b>Stunden pro Jahr</b> Handarbeit zwischen euren Tools</p>
+      </div>
+      <div class="ov ov-hint">Ziehen zum Drehen, scrollen zum Zoomen</div>
+      <div class="ov ov-legend">
+        <span><i style="background:var(--ok)"></i>läuft automatisch</span>
+        <span><i style="background:var(--warn)"></i>teils von Hand</span>
+        <span><i style="background:var(--bad)"></i>Handarbeit, Stau</span>
+        <span><i class="dot" style="background:var(--island)"></i>Wissen bei einer Person</span>
+      </div>
+    </div>
+    <div class="report" id="report"></div>
+    <div class="sticky-book no-print">
+      <span>Eure Landkarte mit Loïc besprechen: <b>30 Min., kostenlos</b></span>
+      <a class="btn btn-book" href="https://cal.meetergo.com/loic-lavanchy/30-min-meeting" target="_blank" rel="noopener">Termin buchen</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span>Lavanchy Automation · Rue du Centre 53 · 1025 St-Sulpice VD</span>
+  <span>Alle Werte sind Schätzungen auf Basis eurer Angaben.</span>
+</footer>
+
+<script src="three.min.js"></script>
+<script src="OrbitControls.js"></script>
+<script>
+(function(){
+"use strict";
+
+/* ---------- Konfiguration ---------- */
+const CONTACT = {
+  email: "info@lavanchyautomation.ch",
+  booking: "https://cal.meetergo.com/loic-lavanchy/30-min-meeting",
+  name: "Loïc Lavanchy"
+};
+const RESULT_WEBHOOK_URL = "https://n8n.srv1259734.hstgr.cloud/webhook/landkarte-ergebnis";
+const WEEKS = 46;          // Arbeitswochen pro Jahr
+const FULLTIME = 42;       // Stunden pro Vollzeitwoche
+const COLORS = { ok:"#2F9E6B", warn:"#D99A12", bad:"#D4483B", island:"#EE7A16", accent:"#1C5D7B", ink:"#132130" };
+const reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+const TOOLS = {
+  email:{label:"E-Mail", hint:"Outlook, Gmail, kMail"},
+  excel:{label:"Excel / Sheets", hint:"Listen und Tabellen"},
+  crm:{label:"CRM", hint:"HubSpot, Pipedrive, Kundenliste"},
+  buchhaltung:{label:"Buchhaltung", hint:"Bexio, Abacus, Banana, DATEV"},
+  erp:{label:"ERP / Warenwirtschaft", hint:"joinpoints, Odoo, SAP B1"},
+  kalender:{label:"Kalender", hint:"Outlook, Google, Buchungsseite"},
+  formular:{label:"Website / Formular", hint:"Kontaktformular, Shop"},
+  ablage:{label:"Cloud-Ablage", hint:"kDrive, OneDrive, Dropbox"},
+  chat:{label:"Chat", hint:"Teams, Slack, WhatsApp"},
+  projekt:{label:"Projekt-Tool", hint:"Asana, Trello, Planner"},
+  branche:{label:"Branchensoftware", hint:"Kanzlei-, Praxis-, Handwerkersoftware"},
+  word:{label:"Word & Vorlagen", hint:"Briefe, Angebote, Verträge"},
+  ki:{label:"ChatGPT / KI", hint:"ChatGPT, Copilot, Gemini"},
+  papier:{label:"Papier & Ordner", hint:"Post, Ausdrucke, Notizen"}
+};
+
+/* Regeln je Ablauf: woher, wohin, wie anfällig für Handarbeit (bias), automatisierbarer Anteil (auto), braucht es KI */
+const TASKS = {
+  anfragen:{label:"Anfragen erfassen", hint:"Mails, Formulare, Anrufe ins System übertragen",
+    src:["formular","email","chat"], dst:["crm","excel","projekt"], bias:1.1, auto:0.8,
+    ki:s=>s!=="formular",
+    why:s=> s==="formular"
+      ? "Das Formular liefert schon saubere Felder. Eine Schnittstelle trägt sie direkt ein, ohne dass jemand abtippt."
+      : "Anfragen kommen als freier Text. KI liest Name, Anliegen und Dringlichkeit heraus und legt den Kontakt sauber an. Ein Mensch prüft nur noch."},
+  angebote:{label:"Angebote erstellen", hint:"Kundendaten und Positionen in eine Vorlage bringen",
+    src:["crm","excel","email"], dst:["word","buchhaltung","erp","branche"], bias:1.0, auto:0.55, ki:false,
+    why:"Kundendaten und Positionen fliessen automatisch in eure feste Vorlage. Dafür braucht es keine KI, nur eine saubere Verbindung."},
+  rechnungen:{label:"Rechnungen schreiben", hint:"Leistungen und Positionen in die Buchhaltung übernehmen",
+    src:["projekt","crm","excel","erp"], dst:["buchhaltung","word"], bias:0.95, auto:0.7, ki:false,
+    why:"Geleistete Stunden oder Positionen werden automatisch in die Buchhaltung übernommen. Eine Schnittstelle reicht."},
+  belege:{label:"Belege ablegen und verbuchen", hint:"Rechnungen aus Mail und Post sortieren und erfassen",
+    src:["papier","email"], dst:["buchhaltung","ablage"], bias:1.15, auto:0.75, ki:true,
+    why:"Jeder Beleg sieht anders aus. KI liest Betrag, Datum und Lieferant aus und legt ihn ab. Ein Mensch gibt nur noch frei."},
+  termine:{label:"Termine koordinieren", hint:"Hin und Her per Mail oder Telefon",
+    src:["email","chat"], dst:["kalender"], bias:0.9, auto:0.7, ki:false,
+    why:"Eine Buchungsseite mit Kalenderanbindung ersetzt das Hin und Her. Bestätigung und Erinnerung gehen automatisch raus."},
+  kundendaten:{label:"Kundendaten übertragen", hint:"Dieselben Daten in mehreren Tools pflegen",
+    src:["crm","excel","formular"], dst:["buchhaltung","erp","excel","branche"], bias:1.1, auto:0.85, ki:false,
+    why:"Kundendaten werden an einer Stelle gepflegt, die anderen Tools ziehen automatisch nach. Doppelte Einträge verschwinden."},
+  berichte:{label:"Berichte und Auswertungen", hint:"Zahlen aus mehreren Tools zusammentragen",
+    src:["buchhaltung","crm","erp","projekt"], dst:["excel"], bias:1.05, auto:0.75, ki:false,
+    why:"Die Zahlen werden jede Woche automatisch gezogen und ins gleiche Format gebracht. Eine Schnittstelle reicht."},
+  onboarding:{label:"Onboarding neuer Kunden", hint:"Ordner, Zugänge, Willkommensmail",
+    src:["email","formular","crm"], dst:["ablage","projekt","crm"], bias:1.0, auto:0.6, ki:false,
+    why:"Eine Checkliste, die sich selbst abarbeitet: Ordner anlegen, Zugänge vergeben, Willkommensmail verschicken."},
+  fristen:{label:"Fristen überwachen", hint:"Termine, Abgaben, Verlängerungen im Blick behalten",
+    src:["branche","excel","kalender","papier"], dst:["email","chat","kalender"], bias:1.0, auto:0.8, ki:false,
+    why:"Die Fristen stehen schon irgendwo drin. Eine Automatisierung liest sie aus, erinnert rechtzeitig und protokolliert jeden Schritt."},
+  bestellungen:{label:"Bestellungen abgleichen", hint:"Bestellungen, Lieferungen, Lager",
+    src:["email","formular"], dst:["erp","excel","buchhaltung"], bias:1.0, auto:0.65, ki:false,
+    why:"Bestellungen landen automatisch im ERP. Der Bestand stimmt, ohne dass jemand Listen abgleicht."}
+};
+
+const SINGLE = {
+  team:[["1","Nur ich"],["2-5","2 bis 5"],["6-15","6 bis 15"],["16-50","16 bis 50"],["50+","Mehr als 50"]],
+  branche:[["Treuhand / Buchhaltung"],["Kanzlei / Beratung"],["Handwerk / Bau"],["Handel / E-Commerce"],["Agentur / Dienstleistung"],["Gesundheit / Praxis"],["Andere Branche"]],
+  transfer:[["kopie","Meistens abtippen oder kopieren"],["teils","Teils von Hand, teils automatisch"],["auto","Meistens automatisch"],["unklar","Weiss ich nicht genau"]],
+  errors:[["nie","Praktisch nie"],["selten","Selten"],["monat","Etwa jeden Monat"],["woche","Jede Woche"]],
+  absence:[["0","Alles läuft weiter"],["1","Das meiste läuft weiter"],["2","Einige Abläufe bleiben liegen"],["3","Vieles steht still"]],
+  docs:[["0","Ja, und sie sind aktuell"],["1","Teilweise oder veraltet"],["2","Nein, das ist im Kopf"]],
+  kidata:[["keine","Keine, wir nutzen keine KI-Tools"],["allgemein","Nur allgemeine Texte, keine Kundendaten"],["kunden","Auch Mails oder Dokumente von Kunden"],["unklar","Weiss ich nicht genau"]],
+  goal:[["kunden","Mehr Kunden betreuen"],["wachsen","Wachsen, ohne gleich neu einzustellen"],["feierabend","Früher Feierabend machen"],["fehler","Weniger Fehler und Nacharbeit"]]
+};
+
+const QUESTIONS = [
+  {key:"team", topic:"Betrieb", type:"single", title:"Wie viele Personen arbeiten in eurem Betrieb?", hint:"Inklusive euch selbst."},
+  {key:"branche", topic:"Betrieb", type:"single", title:"In welcher Branche seid ihr unterwegs?", hint:"Wählt das, was am ehesten passt."},
+  {key:"tools", topic:"Tools", type:"tools", title:"Welche Tools nutzt ihr im Alltag?", hint:"Alles, was mindestens einmal pro Woche offen ist. Mindestens 3."},
+  {key:"tasks", topic:"Abläufe", type:"tasks", title:"Welche Abläufe wiederholen sich bei euch jede Woche?", hint:"Wählt alles, was passt."},
+  {key:"hours", topic:"Abläufe", type:"hours", title:"Wie viel Zeit steckt das Team pro Woche in diese Abläufe?", hint:"Eine grobe Schätzung reicht. Zählt alle Personen zusammen."},
+  {key:"transfer", topic:"Datenflüsse", type:"single", title:"Wie kommen Daten von einem Tool ins nächste?", hint:"Zum Beispiel eine Anfrage aus dem Mail ins CRM oder eine Rechnung in die Buchhaltung."},
+  {key:"errors", topic:"Datenflüsse", type:"single", title:"Wie oft passieren Fehler beim Übertragen?", hint:"Falsche Beträge, vergessene Einträge, doppelte Kunden."},
+  {key:"absence", topic:"Wissen", type:"single", title:"Eure wichtigste Person fällt drei Wochen aus. Was passiert?", hint:"Ehrlich ist hier hilfreicher als optimistisch."},
+  {key:"docs", topic:"Wissen", type:"single", title:"Sind eure Abläufe irgendwo aufgeschrieben?", hint:"So, dass jemand Neues sie ohne Nachfragen erledigen könnte."},
+  {key:"kidata", topic:"Datenschutz", type:"single", title:"Welche Daten landen bei euch in KI-Tools wie ChatGPT?", hint:"Auch das, was Mitarbeitende privat nutzen, zählt."},
+  {key:"rate", topic:"Kosten", type:"rate", title:"Was kostet euch eine Arbeitsstunde ungefähr?", hint:"Lohn inklusive Nebenkosten. Wenn ihr es nicht wisst, lasst den Wert einfach stehen."},
+  {key:"goal", topic:"Ziel", type:"goal", title:"Was würdet ihr mit der gewonnenen Zeit am liebsten machen?", hint:"Danach zeigen wir eure Landkarte."}
+];
+
+const EXAMPLE = {
+  team:"6-15", branche:"Treuhand / Buchhaltung",
+  tools:["email","excel","crm","buchhaltung","kalender","ablage","branche","word","ki","papier"],
+  tasks:["belege","rechnungen","fristen","anfragen","kundendaten","berichte","termine"],
+  hours:{belege:6,rechnungen:3,fristen:2.5,anfragen:2,kundendaten:2.5,berichte:3,termine:1.5},
+  transfer:"teils", errors:"monat", absence:"2", docs:"1", kidata:"kunden", rate:85, goal:"wachsen", firma:""
+};
+
+/* ---------- Hilfen ---------- */
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const nf = new Intl.NumberFormat("de-DE");
+function roundNice(n){ if(n>=1000) return Math.round(n/50)*50; if(n>=200) return Math.round(n/10)*10; return Math.round(n); }
+const fmt = n => nf.format(roundNice(n));
+const fmtH = n => { const r = Math.round(n*2)/2; return nf.format(r); };
+const toolName = id => TOOLS[id] ? TOOLS[id].label : id;
+const optLabel = (key,val) => { const o = SINGLE[key].find(x=>x[0]===val); return o ? (o[1]||o[0]) : val; };
+
+/* ---------- Auswertung nach festen Regeln ---------- */
+function compute(a){
+  const mBase = {kopie:0.7, teils:0.45, auto:0.2, unklar:0.55}[a.transfer] ?? 0.5;
+  const err = {nie:0, selten:0.02, monat:0.06, woche:0.12}[a.errors] ?? 0.04;
+  const tools = a.tools.slice();
+  const load = {}; tools.forEach(t=>load[t]=0);
+  const items = [];
+  const roadMap = new Map();
+
+  a.tasks.forEach(id=>{
+    const T = TASKS[id]; const h = Number(a.hours[id] ?? 2);
+    if(!h) return;
+    let s = T.src.find(t=>tools.includes(t)) || ["email","excel","papier"].find(t=>tools.includes(t)) || tools[0];
+    let d = T.dst.find(t=>tools.includes(t) && t!==s) || ["excel","email","ablage"].find(t=>tools.includes(t) && t!==s) || tools.find(t=>t!==s);
+    if(!s || !d) return;
+    let m = mBase*T.bias + (s==="papier" ? 0.15 : 0);
+    m = Math.min(0.92, Math.max(0.08, m));
+    const ki = typeof T.ki === "function" ? T.ki(s) : T.ki;
+    const why = typeof T.why === "function" ? T.why(s) : T.why;
+    const manual = h*WEEKS*m*(1+err);
+    const save = manual*T.auto;
+    items.push({id, label:T.label, h, src:s, dst:d, m, manual, save, ki, why});
+    load[s] += h; load[d] += h;
+    const key = [s,d].sort().join("|");
+    const r = roadMap.get(key) || {a:s, b:d, hours:0, m:0, tasks:[]};
+    r.hours += h; r.m = Math.max(r.m, m); r.tasks.push(T.label);
+    roadMap.set(key, r);
+  });
+
+  items.sort((x,y)=>y.save-x.save);
+  const manualYear = items.reduce((s,i)=>s+i.manual,0);
+  const saveYear = items.reduce((s,i)=>s+i.save,0);
+  const totalH = items.reduce((s,i)=>s+i.h,0) || 1;
+  const autoShare = 1 - items.reduce((s,i)=>s+i.h*i.m,0)/totalH;
+
+  const risk = Number(a.absence) + Number(a.docs);
+  const nIsl = risk>=5 ? 3 : risk>=4 ? 2 : risk>=2 ? 1 : 0;
+  const islands = tools.filter(t=>t!=="ki" && t!=="papier").sort((x,y)=>load[y]-load[x]).slice(0,nIsl).filter(t=>load[t]>0);
+
+  let privacy = null;
+  if(a.kidata==="kunden" || a.kidata==="unklar"){
+    privacy = a.kidata==="kunden"
+      ? "Kundendaten landen in KI-Tools, die ihre Server oft in den USA haben. Nach Schweizer DSG und DSGVO braucht es dafür eine klare Grundlage. Wer Kunden in der EU hat, muss zusätzlich den EU AI Act beachten. Klärt, welche Tools erlaubt sind und welche Daten dort hinein dürfen."
+      : "Ihr wisst nicht genau, welche Daten in KI-Tools landen. Das ist in vielen Betrieben so, weil Mitarbeitende Tools auf eigene Faust nutzen. Ein kurzer Überblick, wer was nutzt, schützt euch und eure Kunden.";
+  }
+
+  return {
+    items, roads:[...roadMap.values()], load, islands, privacy,
+    manualYear, saveYear, chf: saveYear*a.rate, weeks: saveYear/FULLTIME,
+    saveWeek: saveYear/WEEKS, autoShare,
+    kiCount: items.slice(0,3).filter(i=>i.ki).length
+  };
+}
+
+/* ---------- 3D-Stadt ---------- */
+function hash(str){ let h=2166136261; for(let i=0;i<str.length;i++){ h^=str.charCodeAt(i); h=Math.imul(h,16777619);} return (h>>>0)/4294967295; }
+
+function City(){
+  this.ok = !!(window.THREE && THREE.OrbitControls);
+  this.wrap = document.createElement("div");
+  this.wrap.className = "city-stage";
+  if(!this.ok){
+    this.wrap.innerHTML = '<div class="city-fallback">Die 3D-Ansicht konnte nicht geladen werden. Euer Report unten ist trotzdem vollständig.</div>';
+    return;
+  }
+  const r = this.renderer = new THREE.WebGLRenderer({antialias:true, preserveDrawingBuffer:true});
+  r.setPixelRatio(Math.min(window.devicePixelRatio||1, 2));
+  r.shadowMap.enabled = true;
+  r.shadowMap.type = THREE.PCFSoftShadowMap;
+  r.outputEncoding = THREE.sRGBEncoding;
+  this.scene = new THREE.Scene();
+  this.scene.background = new THREE.Color("#E6ECF1");
+  this.scene.fog = new THREE.Fog("#E6ECF1", 60, 120);
+  this.camera = new THREE.PerspectiveCamera(32, 1, 0.1, 300);
+  const c = this.controls = new THREE.OrbitControls(this.camera, r.domElement);
+  c.enableDamping = true; c.dampingFactor = 0.08; c.enablePan = false;
+  c.minPolarAngle = 0.35; c.maxPolarAngle = 1.2;
+  c.autoRotate = !reduceMotion; c.autoRotateSpeed = 0.55;
+  c.addEventListener("start", ()=>{ c.autoRotate = false; });
+
+  this.scene.add(new THREE.HemisphereLight(0xffffff, 0x8E9DAD, 0.8));
+  const sun = new THREE.DirectionalLight(0xffffff, 0.75);
+  sun.position.set(16, 30, 10); sun.castShadow = true;
+  sun.shadow.mapSize.set(2048, 2048);
+  const sc = sun.shadow.camera; sc.left=-30; sc.right=30; sc.top=30; sc.bottom=-30; sc.near=1; sc.far=90;
+  sun.shadow.bias = -0.0005;
+  this.scene.add(sun);
+
+  this.group = new THREE.Group(); this.scene.add(this.group);
+  this.labels = document.createElement("div"); this.labels.className = "labels";
+  this.wrap.appendChild(r.domElement); this.wrap.appendChild(this.labels);
+  this.windowTex = makeWindowTexture();
+  this.buildings = []; this.lanes = []; this.islandMats = [];
+  this.time = 0; this.last = performance.now();
+  this.ro = new ResizeObserver(()=>this.resize());
+  const loop = (now)=>{ this.frame(now); requestAnimationFrame(loop); };
+  requestAnimationFrame(loop);
+}
+
+function makeWindowTexture(){
+  const cv = document.createElement("canvas"); cv.width = 128; cv.height = 128;
+  const g = cv.getContext("2d");
+  g.fillStyle = "#F4F6F8"; g.fillRect(0,0,128,128);
+  for(let row=0; row<4; row++){
+    for(let col=0; col<4; col++){
+      const lit = ((row*7+col*3)%5)===0;
+      g.fillStyle = lit ? "#D7E6F0" : "#9FB2C3";
+      g.fillRect(10+col*29, 10+row*30, 20, 18);
+    }
+  }
+  const t = new THREE.CanvasTexture(cv);
+  t.wrapS = t.wrapT = THREE.RepeatWrapping;
+  t.encoding = THREE.sRGBEncoding;
+  return t;
+}
+
+City.prototype.mount = function(host){
+  host.insertBefore(this.wrap, host.firstChild);
+  if(!this.ok) return;
+  if(this.host) this.ro.unobserve(this.host);
+  this.host = host; this.ro.observe(host); this.resize();
+};
+
+City.prototype.resize = function(){
+  if(!this.ok || !this.host) return;
+  const w = this.host.clientWidth, h = this.host.clientHeight;
+  if(!w || !h) return;
+  this.renderer.setSize(w, h, false);
+  this.camera.aspect = w/h;
+  this.camera.updateProjectionMatrix();
+  this.w = w; this.h = h;
+  this.fitCamera();
+};
+
+City.prototype.fitCamera = function(){
+  if(!this.size) return;
+  const narrow = this.camera.aspect < 1;
+  const d = this.size * (narrow ? 1.75 : 1.32);
+  const dir = this.camDir || new THREE.Vector3(0.68, 0.62, 0.78).normalize();
+  this.camera.position.copy(dir.clone().multiplyScalar(d));
+  this.controls.target.set(0, 1, 0);
+  this.controls.minDistance = d*0.45; this.controls.maxDistance = d*1.6;
+  this.controls.update();
+};
+
+City.prototype.clear = function(){
+  const g = this.group;
+  while(g.children.length){
+    const o = g.children.pop();
+    o.traverse(n=>{ if(n.geometry) n.geometry.dispose(); if(n.material){ (Array.isArray(n.material)?n.material:[n.material]).forEach(m=>{ if(m.map && m.map!==this.windowTex) m.map.dispose(); m.dispose(); }); } });
+  }
+  this.labels.innerHTML = ""; this.buildings = []; this.lanes = []; this.islandMats = [];
+};
+
+City.prototype.build = function(res, tools){
+  if(!this.ok) return;
+  this.clear();
+  const T = THREE;
+  // Werkzeuge nach Verbindungsgrad sortieren, die meistverbundenen in die Mitte
+  const degree = {}; tools.forEach(t=>degree[t]=0);
+  res.roads.forEach(r=>{ degree[r.a]++; degree[r.b]++; });
+  const order = tools.slice().sort((x,y)=> (degree[y]-degree[x]) || (res.load[y]-res.load[x]));
+  const R = Math.ceil(Math.sqrt(order.length)/2) + 1;
+  const sp = 4.8;
+  const spots = [];
+  for(let i=-R;i<=R;i++) for(let j=-R;j<=R;j++){
+    const jx = (hash(i+":"+j)-0.5)*1.2, jz = (hash(j+";"+i)-0.5)*1.2;
+    spots.push({x:i*sp+jx, z:j*sp+jz, d:Math.hypot(i, j*1.05) + hash(i*j+"")*0.3});
+  }
+  spots.sort((a,b)=>a.d-b.d);
+  const pos = {};
+  order.forEach((t,k)=>{ pos[t] = new T.Vector3(spots[k].x, 0, spots[k].z); });
+  let ext = 0; Object.values(pos).forEach(p=>{ ext = Math.max(ext, Math.abs(p.x), Math.abs(p.z)); });
+  const size = (ext + 4) * 2;
+  this.size = size;
+
+  // Boden
+  const slab = new T.Mesh(new T.BoxGeometry(size, 0.5, size), new T.MeshStandardMaterial({color:"#DCE3EA", roughness:0.95}));
+  slab.position.y = -0.25; slab.receiveShadow = true; this.group.add(slab);
+  const grid = new T.GridHelper(size, Math.round(size/1.2), 0xC4CFD9, 0xCDD6DF);
+  grid.position.y = 0.006; grid.material.transparent = true; grid.material.opacity = 0.55; this.group.add(grid);
+
+  // Strassen und Autos
+  const carColors = ["#FFFFFF","#2B3A4A","#8FA3B5","#C9D3DC","#1C5D7B","#E9EEF2"];
+  const carGeo = new T.BoxGeometry(0.26, 0.17, 0.46);
+  res.roads.forEach((rd, idx)=>{
+    const p1 = pos[rd.a], p2 = pos[rd.b];
+    const dir = new T.Vector3().subVectors(p2, p1); const len = dir.length(); dir.normalize();
+    const ang = Math.atan2(dir.x, dir.z);
+    const state = rd.m >= 0.55 ? "bad" : rd.m >= 0.33 ? "warn" : "ok";
+    const width = Math.min(1.5, 0.85 + rd.hours*0.05);
+    const y = 0.02 + idx*0.003;
+    const road = new T.Mesh(new T.BoxGeometry(width, 0.04, len), new T.MeshStandardMaterial({color:COLORS[state], roughness:0.8}));
+    road.position.set((p1.x+p2.x)/2, y, (p1.z+p2.z)/2); road.rotation.y = ang; road.receiveShadow = true;
+    this.group.add(road);
+    const mid = new T.Mesh(new T.BoxGeometry(0.06, 0.045, len-2), new T.MeshBasicMaterial({color:0xffffff, transparent:true, opacity:0.55}));
+    mid.position.set(road.position.x, y+0.004, road.position.z); mid.rotation.y = ang; this.group.add(mid);
+
+    const perp = new T.Vector3(dir.z, 0, -dir.x).multiplyScalar(width*0.23);
+    const perLane = Math.max(2, Math.min(10, Math.round((1 + rd.hours*0.55) * (state==="bad"?1.4:state==="warn"?1.1:0.8))));
+    [0,1].forEach(l=>{
+      const lane = {from: l? p2:p1, to: l? p1:p2, off: l? perp.clone().negate(): perp.clone(), len, ang: l? ang+Math.PI: ang, state, cars:[], phase: hash(rd.a+rd.b+l)*6.28,
+        t0: 1.15/len, t1: 1 - 1.15/len};
+      for(let k=0;k<perLane;k++){
+        const mesh = new T.Mesh(carGeo, new T.MeshStandardMaterial({color:carColors[(k+idx+l)%carColors.length], roughness:0.5}));
+        mesh.castShadow = true; this.group.add(mesh);
+        lane.cars.push({mesh, t: 1 - (k+hash(k+"c"+idx))/perLane});
+      }
+      this.lanes.push(lane);
+    });
+  });
+
+  // Gebäude
+  tools.forEach(t=>{
+    const p = pos[t]; const ld = res.load[t]||0;
+    const h = Math.min(8.5, 1.1 + ld*0.42);
+    const w = 1.9;
+    const tex = this.windowTex.clone(); tex.needsUpdate = true; tex.repeat.set(1, Math.max(1, h/1.3));
+    const isl = res.islands.includes(t);
+    const plinth = new T.Mesh(new T.BoxGeometry(w+0.7, 0.1, w+0.7), new T.MeshStandardMaterial({color:"#EEF2F5", roughness:0.9}));
+    plinth.position.set(p.x, 0.05, p.z); plinth.receiveShadow = true; this.group.add(plinth);
+    const body = new T.Mesh(new T.BoxGeometry(w, h, w), new T.MeshStandardMaterial({map:tex, color:"#FFFFFF", roughness:0.75}));
+    body.position.set(p.x, h/2+0.1, p.z); body.castShadow = true; body.receiveShadow = true; this.group.add(body);
+    const roofMat = new T.MeshStandardMaterial({color: isl ? COLORS.island : COLORS.accent, roughness:0.6, emissive: isl ? new T.Color(COLORS.island) : new T.Color(0x000000), emissiveIntensity: 0});
+    const roof = new T.Mesh(new T.BoxGeometry(w+0.12, 0.16, w+0.12), roofMat);
+    roof.position.set(p.x, h+0.18, p.z); roof.castShadow = true; this.group.add(roof);
+    if(isl){
+      const ringMat = new T.MeshBasicMaterial({color:COLORS.island, transparent:true, opacity:0.5, side:T.DoubleSide});
+      const ring = new T.Mesh(new T.RingGeometry(1.75, 2.05, 48), ringMat);
+      ring.rotation.x = -Math.PI/2; ring.position.set(p.x, 0.12, p.z); this.group.add(ring);
+      this.islandMats.push({roofMat, ringMat, ring});
+    }
+    const el = document.createElement("div");
+    el.className = "lbl" + (isl ? " island" : "");
+    el.innerHTML = "<b>"+esc(toolName(t))+"</b>" + (ld ? "<span>"+fmtH(ld)+" h/Wo</span>" : "");
+    this.labels.appendChild(el);
+    this.buildings.push({el, anchor: new T.Vector3(p.x, h+0.6, p.z)});
+  });
+
+  this.fitCamera();
+  if(reduceMotion){ for(let i=0;i<600;i++) this.step(1/30); }
+};
+
+City.prototype.step = function(dt){
+  this.time += dt;
+  const base = 2.6;
+  this.lanes.forEach(lane=>{
+    const n = lane.cars.length;
+    for(let i=0;i<n;i++){
+      const car = lane.cars[i];
+      let v = base;
+      if(lane.state==="bad") v *= car.t < 0.5 ? 1 : 0.06 + 0.16*Math.max(0, Math.sin(this.time*1.4 + lane.phase));
+      else if(lane.state==="warn") v *= car.t < 0.6 ? 1 : 0.4;
+      if(n>1){
+        const ahead = lane.cars[(i-1+n)%n];
+        let g = ahead.t - car.t; if(g<=0) g += 1;
+        const gap = g*lane.len;
+        if(gap < 0.62) v = 0; else if(gap < 1.1) v *= (gap-0.62)/0.48;
+      }
+      car.t += v*dt/lane.len; if(car.t >= 1) car.t -= 1;
+    }
+  });
+};
+
+City.prototype.place = function(){
+  this.lanes.forEach(lane=>{
+    lane.cars.forEach(car=>{
+      const vis = car.t > lane.t0 && car.t < lane.t1;
+      car.mesh.visible = vis;
+      if(!vis) return;
+      car.mesh.position.set(
+        lane.from.x + (lane.to.x-lane.from.x)*car.t + lane.off.x,
+        0.14,
+        lane.from.z + (lane.to.z-lane.from.z)*car.t + lane.off.z);
+      car.mesh.rotation.y = lane.ang;
+    });
+  });
+};
+
+City.prototype.frame = function(now){
+  if(!this.host || !this.w) { this.last = now; return; }
+  const dt = Math.min(0.05, (now - this.last)/1000); this.last = now;
+  if(!reduceMotion) this.step(dt);
+  this.place();
+  const pulse = reduceMotion ? 0.5 : 0.5 + 0.5*Math.sin(now/260);
+  this.islandMats.forEach(o=>{ o.roofMat.emissiveIntensity = 0.05 + pulse*0.35; o.ringMat.opacity = 0.2 + pulse*0.55; const s = 1 + pulse*0.12; o.ring.scale.set(s,s,s); });
+  this.controls.update();
+  this.renderer.render(this.scene, this.camera);
+  const v = new THREE.Vector3();
+  this.buildings.forEach(b=>{
+    v.copy(b.anchor).project(this.camera);
+    if(v.z > 1){ b.el.style.display = "none"; return; }
+    b.el.style.display = "";
+    b.el.style.transform = "translate(-50%,-100%) translate(" + ((v.x+1)/2*this.w).toFixed(1) + "px," + ((1-v.y)/2*this.h).toFixed(1) + "px)";
+  });
+};
+
+City.prototype.snapshot = function(){
+  if(!this.ok) return null;
+  this.renderer.render(this.scene, this.camera);
+  try { return this.renderer.domElement.toDataURL("image/png"); } catch(e){ return null; }
+};
+
+/* ---------- Zähler ---------- */
+function countUp(el, target){
+  const end = roundNice(target);
+  if(reduceMotion){ el.innerHTML = nf.format(end) + "<small>h</small>"; return; }
+  const t0 = performance.now(), dur = 1600;
+  const tick = now=>{
+    const k = Math.min(1, (now-t0)/dur); const e = 1 - Math.pow(1-k, 3);
+    el.innerHTML = nf.format(Math.round(end*e)) + "<small>h</small>";
+    if(k<1) requestAnimationFrame(tick);
+  };
+  requestAnimationFrame(tick);
+}
+
+/* ---------- Fragebogen ---------- */
+const answers = {team:null, branche:null, tools:[], tasks:[], hours:{}, transfer:null, errors:null, absence:null, docs:null, kidata:null, rate:80, currency:"CHF", goal:null, firma:""};
+let qi = 0;
+
+function optBtn(kind, value, label, sub, on){
+  const role = kind==="radio" ? 'role="radio" aria-checked="'+on+'"' : 'aria-pressed="'+on+'"';
+  return '<button type="button" class="opt '+kind+'" data-v="'+esc(value)+'" '+role+'><span class="tick" aria-hidden="true"></span><span class="t"><b>'+esc(label)+'</b>'+(sub?'<small>'+esc(sub)+'</small>':'')+'</span></button>';
+}
+
+function renderQ(){
+  const q = QUESTIONS[qi];
+  $("#q-index").textContent = qi+1;
+  $("#q-topic").textContent = q.topic;
+  $("#q-bar").style.width = ((qi+1)/QUESTIONS.length*100)+"%";
+  $("#q-title").textContent = q.title;
+  $("#q-hint").textContent = q.hint;
+  $("#q-error").textContent = "";
+  $("#q-back").style.visibility = qi===0 ? "hidden" : "visible";
+  $("#q-next").textContent = qi===QUESTIONS.length-1 ? "Landkarte zeigen" : "Weiter";
+  const body = $("#q-body");
+  let html = "";
+  if(q.type==="single" || q.type==="goal"){
+    html = '<div class="options" role="radiogroup" aria-labelledby="q-title">' + SINGLE[q.key].map(o=>optBtn("radio", o[0], o[1]||o[0], "", answers[q.key]===o[0])).join("") + "</div>";
+    if(q.type==="goal") html += '<div class="text-field"><label for="firma">Name eures Betriebs <span style="font-weight:400;color:var(--muted)">(optional, erscheint im Report)</span></label><input id="firma" type="text" maxlength="60" autocomplete="organization" value="'+esc(answers.firma)+'"></div>';
+  } else if(q.type==="tools"){
+    html = '<div class="options grid">' + Object.keys(TOOLS).map(k=>optBtn("check", k, TOOLS[k].label, TOOLS[k].hint, answers.tools.includes(k))).join("") + "</div>";
+  } else if(q.type==="tasks"){
+    html = '<div class="options grid">' + Object.keys(TASKS).map(k=>optBtn("check", k, TASKS[k].label, TASKS[k].hint, answers.tasks.includes(k))).join("") + "</div>";
+  } else if(q.type==="hours"){
+    html = '<div class="sliders">' + answers.tasks.map(k=>{
+      const v = answers.hours[k] ?? 2;
+      return '<div class="slider-row"><label for="h-'+k+'">'+esc(TASKS[k].label)+'</label><output id="o-'+k+'" for="h-'+k+'">'+fmtH(v)+' h/Wo</output><input type="range" id="h-'+k+'" data-k="'+k+'" min="0.5" max="20" step="0.5" value="'+v+'"></div>';
+    }).join("") + "</div>";
+  } else if(q.type==="rate"){
+    const cur = answers.currency;
+    html = '<div class="sliders"><div class="rate-row"><div class="rate-big" id="rate-out">'+answers.rate+'<small>'+esc(cur)+' pro Stunde</small></div>'+
+      '<select id="rate-currency" aria-label="Währung"><option value="CHF"'+(cur==="CHF"?" selected":"")+'>CHF</option><option value="EUR"'+(cur==="EUR"?" selected":"")+'>EUR</option></select></div>'+
+      '<input type="range" id="rate" min="40" max="200" step="5" value="'+answers.rate+'" aria-label="Kosten pro Arbeitsstunde">'+
+      '<div class="scale"><span>40 '+esc(cur)+'</span><span>120 '+esc(cur)+'</span><span>200 '+esc(cur)+'</span></div></div>';
+  }
+  body.innerHTML = html;
+}
+
+$("#q-body").addEventListener("click", e=>{
+  const b = e.target.closest(".opt"); if(!b) return;
+  const q = QUESTIONS[qi]; const v = b.dataset.v;
+  if(q.type==="single" || q.type==="goal"){
+    answers[q.key] = v;
+    b.parentElement.querySelectorAll(".opt").forEach(o=>o.setAttribute("aria-checked", o===b ? "true":"false"));
+    $("#q-error").textContent = "";
+  } else {
+    const arr = answers[q.key]; const i = arr.indexOf(v);
+    if(i>=0) arr.splice(i,1); else arr.push(v);
+    b.setAttribute("aria-pressed", i>=0 ? "false" : "true");
+    $("#q-error").textContent = "";
+  }
+});
+$("#q-body").addEventListener("input", e=>{
+  const t = e.target;
+  if(t.dataset.k){ answers.hours[t.dataset.k] = Number(t.value); $("#o-"+t.dataset.k).textContent = fmtH(Number(t.value))+" h/Wo"; }
+  else if(t.id==="rate"){ answers.rate = Number(t.value); $("#rate-out").innerHTML = t.value+"<small>"+esc(answers.currency)+" pro Stunde</small>"; }
+  else if(t.id==="firma"){ answers.firma = t.value; }
+});
+$("#q-body").addEventListener("change", e=>{
+  if(e.target.id==="rate-currency"){ answers.currency = e.target.value; renderQ(); }
+});
+
+function validate(){
+  const q = QUESTIONS[qi];
+  if((q.type==="single"||q.type==="goal") && !answers[q.key]) return "Bitte wählt eine Antwort.";
+  if(q.type==="tools" && answers.tools.length<3) return "Bitte wählt mindestens 3 Tools. Aktuell: "+answers.tools.length+".";
+  if(q.type==="tasks" && answers.tasks.length<1) return "Bitte wählt mindestens einen Ablauf.";
+  return "";
+}
+
+$("#quiz-form").addEventListener("submit", e=>{
+  e.preventDefault();
+  const msg = validate(); if(msg){ $("#q-error").textContent = msg; return; }
+  if(QUESTIONS[qi].type==="tasks"){ answers.tasks.forEach(k=>{ if(answers.hours[k]==null) answers.hours[k] = 2; }); }
+  if(qi < QUESTIONS.length-1){ qi++; renderQ(); window.scrollTo({top:0, behavior: reduceMotion?"auto":"smooth"}); }
+  else showResult();
+});
+$("#q-back").addEventListener("click", ()=>{ if(qi>0){ qi--; renderQ(); } });
+
+function show(id){
+  ["#view-intro","#view-quiz","#view-result"].forEach(v=>{ $(v).hidden = (v!==id); });
+  window.scrollTo({top:0});
+}
+
+/* ---------- Report ---------- */
+function goalSentence(goal, saveWeek){
+  const h = fmtH(saveWeek);
+  const fte = Math.round(saveWeek/FULLTIME*100);
+  switch(goal){
+    case "kunden": return "Ihr wollt mehr Kunden betreuen. Die automatisierbaren "+h+" Stunden pro Woche gehen dann in Beratung und Betreuung statt in Übertragungen.";
+    case "wachsen": return "Ihr wollt wachsen, ohne gleich neu einzustellen. "+h+" Stunden pro Woche entsprechen etwa "+fte+" % einer Vollzeitstelle.";
+    case "feierabend": return "Ihr wollt früher Feierabend machen. Das sind "+h+" Stunden pro Woche, die heute zusätzlich zur eigentlichen Arbeit anfallen.";
+    case "fehler": return "Ihr wollt weniger Fehler. Jede Übertragung, die automatisch läuft, wird protokolliert. Abtippfehler fallen weg, und ihr seht jederzeit, was wann passiert ist.";
+  }
+  return "";
+}
+
+function buildMail(a, r){
+  const top = r.items.slice(0,3);
+  const lines = [
+    "Hallo Loïc,", "",
+    "wir haben die Copy-Paste-Landkarte ausgefüllt. Hier unser Ergebnis:", "",
+    "Betrieb: " + (a.firma ? a.firma+", " : "") + a.branche + ", " + optLabel("team", a.team) + " Personen",
+    "Tools: " + a.tools.map(toolName).join(", "), "",
+    "Handarbeit zwischen den Tools: ca. " + fmt(r.manualYear) + " Stunden pro Jahr",
+    "Davon automatisierbar: ca. " + fmt(r.saveYear) + " Stunden (rund " + fmt(r.chf) + " " + a.currency + ")", "",
+    "Die grössten Staus:"
+  ];
+  top.forEach((it,i)=>lines.push((i+1)+". "+it.label+" ("+toolName(it.src)+" → "+toolName(it.dst)+"): "+fmtH(it.h)+" h pro Woche"));
+  if(r.islands.length) lines.push("", "Wissen hängt an wenigen Personen bei: " + r.islands.map(toolName).join(", "));
+  lines.push("", "Ich würde gern wissen, wo wir anfangen sollten.", "", "Grüsse");
+  return {subject: "Unsere Copy-Paste-Landkarte: " + fmt(r.manualYear) + " Stunden pro Jahr", body: lines.join("\r\n")};
+}
+
+function renderReport(a, r){
+  const top = r.items.slice(0,3);
+  const first = r.items[0];
+  const date = new Intl.DateTimeFormat("de-CH",{day:"numeric", month:"long", year:"numeric"}).format(new Date());
+  const mail = buildMail(a, r);
+  const apiCount = top.length - r.kiCount;
+
+  const jams = top.map((it,i)=>{
+    const cls = it.m>=0.55 ? "" : it.m>=0.33 ? " amber" : " green";
+    return '<article class="jam'+cls+'"><div class="rank">'+String(i+1).padStart(2,"0")+'</div>'+
+      '<div><h4>'+esc(it.label)+'</h4><div class="route">'+esc(toolName(it.src))+' → '+esc(toolName(it.dst))+'</div></div>'+
+      '<span class="pill '+(it.ki?"ai":"api")+'">'+(it.ki?"Hier hilft KI":"Reicht eine Schnittstelle")+'</span>'+
+      '<p class="why">'+esc(it.why)+'</p>'+
+      '<p class="nums"><b>'+fmtH(it.h)+' h</b> pro Woche im Team · davon ca. <b>'+fmt(it.save)+' h</b> pro Jahr automatisierbar</p></article>';
+  }).join("");
+
+  const kiLine = top.length
+    ? (apiCount===top.length
+        ? "Keiner eurer "+top.length+" grössten Staus braucht KI. Saubere Schnittstellen zwischen den Tools reichen."
+        : apiCount===0
+          ? "Bei euren grössten Staus hilft KI tatsächlich, weil die Daten als freier Text oder Beleg ankommen. Ein Mensch gibt trotzdem frei."
+          : apiCount+" von "+top.length+" Staus brauchen keine KI. Dort reicht eine saubere Schnittstelle. KI setzen wir nur dort ein, wo Daten als freier Text oder Beleg ankommen.")
+    : "";
+
+  const island = r.islands.length
+    ? '<div class="box island"><h4>Wissen bei einer Person</h4><p>Bei '+esc(r.islands.map(toolName).join(", "))+' hängt das Wissen an wenigen Köpfen. Fällt jemand aus, bleiben diese Abläufe liegen. Bevor hier automatisiert wird, schreibe ich den Ablauf mit euch Schritt für Schritt auf. Danach kann ihn jemand anderes übernehmen, auch ohne Automatisierung.</p></div>'
+    : '<div class="box"><h4>Wissen im Team</h4><p>Eure Abläufe hängen nicht an einer einzelnen Person. Das ist eine gute Grundlage: Was beschrieben ist, lässt sich sauber automatisieren und testen.</p></div>';
+
+  const privacy = r.privacy
+    ? '<div class="box privacy-warn"><h4>Datenschutz-Hinweis</h4><p>'+esc(r.privacy)+'</p></div>'
+    : '<div class="box"><h4>Datenschutz</h4><p>Nach euren Angaben landen keine Kundendaten in KI-Tools. Bei jeder Automatisierung prüfe ich trotzdem, wo die Daten verarbeitet werden, bevorzugt in der Schweiz oder der EU.</p></div>';
+
+  $("#report").innerHTML =
+    '<div class="print-only" id="print-city"></div>'+
+    '<header class="report-head"><div class="eyebrow">Euer Report · '+esc(date)+'</div>'+
+      '<h2>Copy-Paste-Landkarte'+(a.firma ? ' für '+esc(a.firma) : '')+'</h2>'+
+      '<p class="meta">'+esc(a.branche)+' · '+esc(optLabel("team", a.team))+' Personen · '+a.tools.length+' Tools · heute laufen ca. '+Math.round(r.autoShare*100)+' % der Übertragungen automatisch</p></header>'+
+    '<div class="stats">'+
+      '<div class="stat hot"><div class="v">'+fmt(r.manualYear)+'</div><div class="l">Stunden pro Jahr Handarbeit zwischen den Tools</div></div>'+
+      '<div class="stat"><div class="v">'+fmt(r.saveYear)+'</div><div class="l">Stunden davon lassen sich automatisieren</div></div>'+
+      '<div class="stat key"><div class="v">'+fmt(r.chf)+' '+esc(a.currency)+'</div><div class="l">pro Jahr, bei '+a.rate+' '+esc(a.currency)+' pro Arbeitsstunde</div></div>'+
+      '<div class="stat"><div class="v">'+nf.format(Math.round(r.weeks*10)/10)+'</div><div class="l">volle Arbeitswochen à '+FULLTIME+' Stunden</div></div>'+
+    '</div>'+
+    '<section class="book-banner"><div><h3>Eure Landkarte gemeinsam anschauen</h3><p>30 Minuten mit '+esc(CONTACT.name)+', kostenlos und unverbindlich. Ihr erfahrt, wo ihr anfangen solltet und was es ungefähr kostet.</p></div>'+
+      '<a class="btn btn-book" href="'+CONTACT.booking+'" target="_blank" rel="noopener">Termin buchen <span aria-hidden="true">→</span></a></section>'+
+    '<section class="section"><h3>Eure '+(top.length===1?'grösste Baustelle':top.length+' grössten Staus')+'</h3><div class="jams">'+jams+'</div>'+
+      (kiLine ? '<p style="font-size:15px;color:var(--muted);max-width:70ch">'+esc(kiLine)+'</p>' : '')+'</section>'+
+    (first ? '<section class="section"><div class="box start"><div class="eyebrow">Hier würde ich anfangen</div><h4>'+esc(first.label)+': von '+esc(toolName(first.src))+' nach '+esc(toolName(first.dst))+'</h4>'+
+      '<p>Dieser Ablauf spart euch ca. <b>'+fmtH(first.save/WEEKS)+' Stunden pro Woche</b>. Ich baue ihn als Erstes, teste ihn mit euren echten Daten und starte den nächsten Ablauf erst, wenn dieser zuverlässig läuft.</p>'+
+      '<p>'+esc(goalSentence(a.goal, r.saveWeek))+'</p><p class="sig">'+esc(CONTACT.name)+', Lavanchy Automation</p></div></section>' : '')+
+    '<section class="two">'+island+privacy+'</section>'+
+    '<section class="cta"><h3>Wollt ihr sehen, wie euer erster Ablauf konkret aussieht?</h3>'+
+      '<p>In 30 Minuten schauen wir eure Landkarte gemeinsam an. Ihr erfahrt, was sich lohnt, was es ungefähr kostet und was ihr besser so lasst, wie es ist.</p>'+
+      '<a class="btn btn-book btn-book-xl" href="'+CONTACT.booking+'" target="_blank" rel="noopener">Jetzt Termin buchen <small>30 Min. · kostenlos</small></a>'+
+      '<p class="or">Lieber erst schreiben? Schickt Loïc euer Ergebnis, dann ist er im Gespräch schon vorbereitet.</p>'+
+      '<form class="cta-send" id="send-form" novalidate>'+
+        '<div class="text-field"><label for="send-email">Eure E-Mail-Adresse</label><input id="send-email" type="email" required autocomplete="email" placeholder="name@firma.ch"></div>'+
+        '<div class="text-field"><label for="send-message">Nachricht an Loïc <span style="font-weight:400;color:#9FB2C3">(optional)</span></label><textarea id="send-message" rows="3" maxlength="2000" placeholder="Was möchtet ihr noch dazu sagen?"></textarea></div>'+
+        '<button class="btn btn-secondary" type="submit" id="send-btn">Ergebnis an Loïc senden</button>'+
+        '<p class="status" id="send-status" role="status"></p>'+
+      '</form>'+
+    '</section>'+
+    '<div class="tools-row no-print">'+
+      '<button class="btn btn-secondary" type="button" id="print-btn">Report als PDF speichern</button>'+
+      '<button class="btn btn-ghost" type="button" id="edit-btn">Antworten anpassen</button>'+
+      '<button class="btn btn-ghost" type="button" id="restart-btn">Neu starten</button>'+
+    '</div>'+
+    '<details class="method"><summary>So rechnet die Landkarte</summary><ul>'+
+      '<li>Stunden pro Woche × '+WEEKS+' Arbeitswochen × Anteil Handarbeit. Der Anteil kommt aus Frage 6 und wird je Ablauf angepasst, bei Papier zusätzlich erhöht.</li>'+
+      '<li>Fehler beim Übertragen erzeugen Nacharbeit: Zuschlag von 0 bis 12 % je nach Antwort in Frage 7.</li>'+
+      '<li>Der automatisierbare Anteil ist je Ablauf fest hinterlegt, zum Beispiel Kundendaten 85 %, Belege 75 %, Angebote 55 %.</li>'+
+      '<li>KI empfiehlt die Landkarte nur, wenn Daten als freier Text oder Beleg ankommen. Alles andere läuft über Schnittstellen.</li>'+
+      '<li>Alle Werte sind Schätzungen auf Basis eurer Angaben. Genau wird es, wenn wir einen Ablauf Schritt für Schritt anschauen.</li>'+
+    '</ul></details>'+
+    '<div class="signature"><span>Lavanchy Automation · Prozessautomatisierung für KMU in der Schweiz und im DACH-Raum</span><span>'+CONTACT.email+' · lavanchyautomation.ch</span></div>';
+
+  $("#send-form").addEventListener("submit", async e=>{
+    e.preventDefault();
+    const emailEl = $("#send-email"), msgEl = $("#send-message"), btn = $("#send-btn"), status = $("#send-status");
+    const email = emailEl.value.trim();
+    if(!email || !emailEl.checkValidity()){ status.textContent = "Bitte eine gültige E-Mail-Adresse eingeben."; emailEl.focus(); return; }
+    btn.disabled = true; status.textContent = "Wird gesendet…";
+    try {
+      const res = await fetch(RESULT_WEBHOOK_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, message: msgEl.value.trim(), firma: a.firma, mailSubject: mail.subject, mailBody: mail.body })
+      });
+      if(!res.ok) throw new Error("status " + res.status);
+      status.textContent = "Danke! Loïc hat euer Ergebnis erhalten und meldet sich.";
+      emailEl.disabled = true; msgEl.disabled = true; btn.remove();
+    } catch(err) {
+      status.textContent = "Senden hat nicht geklappt. Schreibt stattdessen direkt an " + CONTACT.email + ".";
+      btn.disabled = false;
+    }
+  });
+  $("#print-btn").addEventListener("click", ()=>{
+    const src = city.snapshot();
+    $("#print-city").innerHTML = src ? '<img alt="Eure Copy-Paste-Landkarte als 3D-Stadt" src="'+src+'">' : "";
+    try { window.print(); } catch(e){}
+  });
+  $("#edit-btn").addEventListener("click", ()=>{ qi = 0; renderQ(); show("#view-quiz"); });
+  $("#restart-btn").addEventListener("click", ()=>{
+    Object.assign(answers, {team:null, branche:null, tools:[], tasks:[], hours:{}, transfer:null, errors:null, absence:null, docs:null, kidata:null, rate:80, goal:null, firma:""});
+    qi = 0; showIntro();
+  });
+}
+
+/* ---------- Ansichten ---------- */
+const city = new City();
+
+function showIntro(){
+  show("#view-intro");
+  const r = compute(EXAMPLE);
+  city.mount($("#host-intro"));
+  city.build(r, EXAMPLE.tools);
+  countUp($("#intro-num"), r.manualYear);
+}
+
+function showResult(){
+  const a = JSON.parse(JSON.stringify(answers));
+  a.tasks = a.tasks.filter(k=>TASKS[k]);
+  const r = compute(a);
+  show("#view-result");
+  city.mount($("#host-result"));
+  city.build(r, a.tools);
+  countUp($("#res-num"), r.manualYear);
+  renderReport(a, r);
+}
+
+$("#start-btn").addEventListener("click", ()=>{ qi = 0; renderQ(); show("#view-quiz"); });
+window.addEventListener("beforeprint", ()=>{
+  const holder = $("#print-city");
+  if(holder && !holder.innerHTML){ const src = city.snapshot(); if(src) holder.innerHTML = '<img alt="Eure Copy-Paste-Landkarte als 3D-Stadt" src="'+src+'">'; }
+});
+
+showIntro();
+})();
+</script>
+</body>
+</html>

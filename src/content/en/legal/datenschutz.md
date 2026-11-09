@@ -3,7 +3,7 @@ title: "Privacy Policy"
 description: "Privacy policy under the Swiss FADP and the GDPR."
 ---
 
-Lavanchy Automation — Version: 12.10.2026
+Lavanchy Automation — Version: 09.11.2026
 
 *This is a free translation for information purposes. Only the German version is legally binding and prevails in case of discrepancies.*
 
@@ -34,7 +34,7 @@ The personal data processed is that which is required to provide the offering in
 - Usage data (e.g. pages visited, time of access)
 - Contract and payment data within client projects
 
-Personal data is processed for the period required for the respective purpose or by law. Data whose processing is no longer required is anonymised or deleted (see also section 11).
+Personal data is processed for the period required for the respective purpose or by law. Data whose processing is no longer required is anonymised or deleted (see also section 12).
 
 ## 4. Server and hosting
 
@@ -64,37 +64,47 @@ meetergo, an appointment booking tool with servers located in Germany, is used t
 
 When booking an appointment, name, email address, appointment details and other information you enter may be processed. The basis for this is arranging the initial call as a pre-contractual measure (Art. 31 para. 2 lit. a FADP or Art. 6 para. 1 lit. b GDPR). meetergo's privacy provisions apply in addition.
 
-## 8. Data processing within automation projects
+## 8. Copy-Paste-Landkarte tool (n8n and Joinpoint)
+
+For the interactive self-assessment tool "Copy-Paste-Landkarte" (currently not publicly linked and not intended to be indexed by search engines), your answers are processed exclusively locally in your browser. No automatic transmission or storage takes place.
+
+If you choose, at the end of the tool, to actively send your result to Loïc Lavanchy, the email address you entered, your message, and a summary of your quiz answers are processed via a self-operated n8n workflow (hosting as under section 4, VPS at Hostinger, Germany). Loïc Lavanchy is notified by email, and a contact with this information is created or updated in the CRM system Joinpoint. Joinpoint is operated by Joinpoints GmbH (Graz, Austria); the data is processed exclusively in Austrian data centres.
+
+The basis for this processing is making contact and arranging a consultation call as a pre-contractual measure (Art. 31 para. 2 lit. a FADP or Art. 6 para. 1 lit. b GDPR).
+
+This data is deleted as soon as it is no longer required for making contact, but no later than after 24 months without further contact, unless statutory retention obligations prevent this (see section 12).
+
+## 9. Data processing within automation projects
 
 Within specific automation projects (e.g. setting up n8n workflows), Lavanchy Automation may access clients' systems on their behalf (e.g. Excel files, third-party CRM or project management tools) and process data there. This processing takes place exclusively on the instructions of the respective client and within the scope of the agreed engagement.
 
 Insofar as personal data of the client or its end clients is processed, the respective client is responsible for the lawfulness of this data processing towards its own end clients. Lavanchy Automation processes this data as a processor or vicarious agent within the meaning of Art. 9 FADP or Art. 28 GDPR, where applicable.
 
-If AI services are used within a project (see section 9), no client, personal or project data is transmitted to these AI services unless this has been expressly agreed in writing for the specific project.
+If AI services are used within a project (see section 10), no client, personal or project data is transmitted to these AI services unless this has been expressly agreed in writing for the specific project.
 
-## 9. Use of AI tools in project implementation
+## 10. Use of AI tools in project implementation
 
 AI-assisted tools may be used to support the technical development when building automation processes. As a matter of principle, no data from client systems is passed on to these AI tools. Any existing connection to AI tools is disconnected again once setup is complete.
 
-## 10. Managed AI consulting (e.g. headwAI)
+## 11. Managed AI consulting (e.g. headwAI)
 
 Within managed AI consulting, third-party solutions such as headwAI may be used, depending on the project and by express agreement with the client. Data protection, the GDPR and the requirements of the EU AI Act are taken into account when selecting and setting up such solutions. The specific data processing is governed by the agreement made for the respective project and the privacy provisions of the respective third-party provider.
 
-## 11. Retention period
+## 12. Retention period
 
 Personal data is only retained for as long as necessary for the respective purposes or as required by statutory retention periods (e.g. commercial and tax retention obligations of generally 10 years for business correspondence and accounting records).
 
-## 12. Links to other websites
+## 13. Links to other websites
 
 References and links to third-party websites lie outside our own area of responsibility and control. No liability whatsoever is accepted for such websites. Access to and use of such websites is at the visitor's own risk. There is no separate notice when users leave this website. In the event of a redirect to another website, the privacy policy of the respective provider applies.
 
-## 13. Data security
+## 14. Data security
 
 For visits to this website, the widely used SSL/TLS method (Secure Socket Layers or Transport Layer Security) is used in conjunction with the highest level of encryption supported by the browser in use.
 
 In addition, appropriate technical and organisational security measures are taken to protect data against accidental or intentional manipulation, partial or complete loss, destruction or unauthorised access by third parties. These security measures are continuously reviewed and improved in line with technological developments.
 
-## 14. Rights of data subjects
+## 15. Rights of data subjects
 
 Where the statutory requirements are met, data subjects have the following rights:
 
@@ -110,6 +120,6 @@ The competent supervisory authority in Switzerland is the Federal Data Protectio
 
 For data protection questions or to exercise these rights: [info@lavanchyautomation.ch](mailto:info@lavanchyautomation.ch)
 
-## 15. Changes to this privacy policy
+## 16. Changes to this privacy policy
 
 This privacy policy may be amended to adapt it to changes in the legal situation or to changes to the website or the services offered. The version published on the website at any given time applies.

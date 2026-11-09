@@ -3,7 +3,7 @@ title: "Datenschutzerklärung"
 description: "Datenschutzerklärung nach Schweizer DSG und DSGVO."
 ---
 
-Lavanchy Automation — Stand: 12.10.2026
+Lavanchy Automation — Stand: 09.11.2026
 
 ## 1. Verantwortlicher
 
@@ -32,7 +32,7 @@ Es werden jene Personendaten bearbeitet, die erforderlich sind, um das Angebot d
 - Nutzungsdaten (z. B. besuchte Seiten, Zugriffszeitpunkt)
 - Vertrags- und Zahlungsdaten im Rahmen von Kundenprojekten
 
-Personendaten werden während jener Dauer bearbeitet, die für den jeweiligen Zweck oder gesetzlich erforderlich ist. Daten, deren Bearbeitung nicht mehr erforderlich ist, werden anonymisiert oder gelöscht (siehe auch Ziff. 11).
+Personendaten werden während jener Dauer bearbeitet, die für den jeweiligen Zweck oder gesetzlich erforderlich ist. Daten, deren Bearbeitung nicht mehr erforderlich ist, werden anonymisiert oder gelöscht (siehe auch Ziff. 12).
 
 ## 4. Server und Hosting
 
@@ -62,37 +62,47 @@ Für die Buchung eines Erstgesprächs wird meetergo verwendet, ein Terminbuchung
 
 Bei der Terminbuchung können Name, E-Mail-Adresse, Terminangaben und weitere von Ihnen eingegebene Informationen verarbeitet werden. Grundlage dafür ist die Vereinbarung des Erstgesprächs als vorvertragliche Massnahme (Art. 31 Abs. 2 lit. a DSG bzw. Art. 6 Abs. 1 lit. b DSGVO). Es gelten ergänzend die Datenschutzbestimmungen von meetergo.
 
-## 8. Datenverarbeitung im Rahmen von Automatisierungsprojekten
+## 8. Copy-Paste-Landkarte (n8n und Joinpoint)
+
+Für das interaktive Selbsttest-Tool «Copy-Paste-Landkarte» (aktuell nicht öffentlich verlinkt und nicht für die Indexierung durch Suchmaschinen bestimmt) werden Ihre Antworten ausschliesslich lokal in Ihrem Browser verarbeitet. Es erfolgt keine automatische Übermittlung oder Speicherung.
+
+Entscheiden Sie sich am Ende des Tools, das Ergebnis aktiv an Loïc Lavanchy zu senden, werden die von Ihnen eingegebene E-Mail-Adresse, Ihre Nachricht sowie eine Zusammenfassung Ihrer Quiz-Antworten über einen selbst betriebenen n8n-Workflow verarbeitet (Hosting wie unter Ziff. 4, VPS bei Hostinger, Deutschland). Dabei wird Loïc Lavanchy per E-Mail benachrichtigt, und es wird ein Kontakt mit diesen Angaben im CRM-System Joinpoint angelegt oder aktualisiert. Joinpoint wird von der Joinpoints GmbH (Graz, Österreich) betrieben; die Daten werden ausschliesslich in österreichischen Rechenzentren verarbeitet.
+
+Grundlage dieser Bearbeitung ist die Kontaktaufnahme bzw. die Anbahnung eines Beratungsgesprächs als vorvertragliche Massnahme (Art. 31 Abs. 2 lit. a DSG bzw. Art. 6 Abs. 1 lit. b DSGVO).
+
+Diese Daten werden gelöscht, sobald sie für die Kontaktaufnahme nicht mehr erforderlich sind, spätestens jedoch nach 24 Monaten ohne weiteren Kontakt, soweit keine gesetzlichen Aufbewahrungspflichten entgegenstehen (siehe Ziff. 12).
+
+## 9. Datenverarbeitung im Rahmen von Automatisierungsprojekten
 
 Im Rahmen konkreter Automatisierungsprojekte (z. B. Einrichtung von n8n-Workflows) kann Lavanchy Automation im Auftrag von Kunden auf deren Systeme (z. B. Excel-Dateien, CRM- oder Projektmanagement-Tools Dritter) zugreifen und dort Daten bearbeiten. Diese Bearbeitung erfolgt ausschliesslich nach Weisung des jeweiligen Kunden und im Umfang des vereinbarten Auftrags.
 
 Soweit dabei personenbezogene Daten des Kunden oder von dessen Endkunden bearbeitet werden, ist der jeweilige Kunde für die datenschutzrechtliche Zulässigkeit dieser Datenverarbeitung gegenüber seinen eigenen Endkunden verantwortlich. Lavanchy Automation bearbeitet diese Daten als Auftragsbearbeiter bzw. Erfüllungsgehilfe im Sinne von Art. 9 DSG bzw. Art. 28 DSGVO, soweit einschlägig.
 
-Werden im Rahmen eines Projekts KI-Dienste eingesetzt (siehe Ziff. 9), werden keine Kunden-, Personen- oder Projektdaten an diese KI-Dienste übermittelt, ausser dies wurde für das konkrete Projekt ausdrücklich und schriftlich vereinbart.
+Werden im Rahmen eines Projekts KI-Dienste eingesetzt (siehe Ziff. 10), werden keine Kunden-, Personen- oder Projektdaten an diese KI-Dienste übermittelt, ausser dies wurde für das konkrete Projekt ausdrücklich und schriftlich vereinbart.
 
-## 9. Einsatz von KI-Werkzeugen bei der Projektumsetzung
+## 10. Einsatz von KI-Werkzeugen bei der Projektumsetzung
 
 Für den Aufbau von Automatisierungsprozessen können KI-gestützte Werkzeuge zur Unterstützung der technischen Entwicklung eingesetzt werden. Dabei werden grundsätzlich keine Daten aus Kundensystemen an diese KI-Werkzeuge weitergegeben. Eine bestehende Verbindung zu KI-Werkzeugen wird nach Abschluss der Einrichtung, sofern vorhanden, wieder getrennt.
 
-## 10. Managed KI Beratung (z. B. headwAI)
+## 11. Managed KI Beratung (z. B. headwAI)
 
 Im Rahmen der Managed-KI-Beratung können, je nach Projekt und ausdrücklicher Vereinbarung mit dem Kunden, Drittlösungen wie headwAI eingesetzt werden. Datenschutz, DSGVO und die Anforderungen des EU AI Act werden bei der Auswahl und Einrichtung solcher Lösungen berücksichtigt. Die konkrete Datenbearbeitung richtet sich nach der für das jeweilige Projekt getroffenen Vereinbarung sowie den Datenschutzbestimmungen des jeweiligen Drittanbieters.
 
-## 11. Aufbewahrungsdauer
+## 12. Aufbewahrungsdauer
 
 Personenbezogene Daten werden nur so lange aufbewahrt, wie dies für die jeweiligen Zwecke erforderlich ist oder gesetzliche Aufbewahrungsfristen bestehen (z. B. handels- und steuerrechtliche Aufbewahrungspflichten von in der Regel 10 Jahren für geschäftliche Korrespondenz und Buchhaltungsunterlagen).
 
-## 12. Weiterleitung auf andere Websites
+## 13. Weiterleitung auf andere Websites
 
 Verweise und Links auf Websites Dritter liegen ausserhalb des eigenen Verantwortungs- und Kontrollbereichs. Es wird keinerlei Haftung für solche Websites übernommen. Der Zugang und die Benutzung solcher Websites erfolgt auf eigene Gefahr der besuchenden Person. Es erfolgt kein gesonderter Hinweis, wenn Nutzerinnen und Nutzer diese Website verlassen. Im Falle einer Weiterleitung auf eine andere Website ist die Datenschutzerklärung des entsprechenden Anbieters massgebend.
 
-## 13. Datensicherheit
+## 14. Datensicherheit
 
 Für den Besuch dieser Website wird das verbreitete SSL/TLS-Verfahren (Secure Socket Layers bzw. Transport Layer Security) in Verbindung mit der jeweils höchsten Verschlüsselungsstufe, die vom verwendeten Browser unterstützt wird, eingesetzt.
 
 Im Übrigen werden geeignete technische und organisatorische Sicherheitsmassnahmen getroffen, um Daten gegen zufällige oder vorsätzliche Manipulation, teilweisen oder vollständigen Verlust, Zerstörung oder gegen den unbefugten Zugriff Dritter zu schützen. Diese Sicherheitsmassnahmen werden entsprechend der technologischen Entwicklung fortlaufend überprüft und verbessert.
 
-## 14. Rechte der betroffenen Personen
+## 15. Rechte der betroffenen Personen
 
 Betroffene Personen haben, soweit die gesetzlichen Voraussetzungen erfüllt sind, folgende Rechte:
 
@@ -108,6 +118,6 @@ Zuständige Aufsichtsbehörde in der Schweiz ist der Eidgenössische Datenschutz
 
 Für Datenschutzfragen oder zur Ausübung dieser Rechte: [info@lavanchyautomation.ch](mailto:info@lavanchyautomation.ch)
 
-## 15. Änderungen dieser Datenschutzerklärung
+## 16. Änderungen dieser Datenschutzerklärung
 
 Diese Datenschutzerklärung kann angepasst werden, um sie an geänderte Rechtslagen oder an Änderungen der Website bzw. der angebotenen Leistungen anzupassen. Massgebend ist die jeweils auf der Website veröffentlichte Fassung.

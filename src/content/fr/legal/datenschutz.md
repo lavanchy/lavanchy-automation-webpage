@@ -3,7 +3,7 @@ title: "Politique de confidentialité"
 description: "Politique de confidentialité selon la LPD suisse et le RGPD."
 ---
 
-Lavanchy Automation — Version du 12.10.2026
+Lavanchy Automation — Version du 09.11.2026
 
 *Ceci est une traduction libre fournie à titre informatif. Seule la version allemande fait foi et prévaut en cas de divergence.*
 
@@ -34,7 +34,7 @@ Sont traitées les données personnelles nécessaires pour fournir l'offre de ma
 - Données d'utilisation (p. ex. pages visitées, moment de l'accès)
 - Données contractuelles et de paiement dans le cadre de projets clients
 
-Les données personnelles sont traitées pendant la durée nécessaire à la finalité concernée ou exigée par la loi. Les données dont le traitement n'est plus nécessaire sont anonymisées ou supprimées (voir aussi ch. 11).
+Les données personnelles sont traitées pendant la durée nécessaire à la finalité concernée ou exigée par la loi. Les données dont le traitement n'est plus nécessaire sont anonymisées ou supprimées (voir aussi ch. 12).
 
 ## 4. Serveur et hébergement
 
@@ -64,37 +64,47 @@ Pour la réservation d'un premier entretien, meetergo est utilisé, un outil de 
 
 Lors de la prise de rendez-vous, le nom, l'adresse e-mail, les indications relatives au rendez-vous et d'autres informations que vous saisissez peuvent être traités. Le fondement en est l'organisation du premier entretien en tant que mesure précontractuelle (art. 31 al. 2 let. a LPD ou art. 6 par. 1 let. b RGPD). Les dispositions de protection des données de meetergo s'appliquent à titre complémentaire.
 
-## 8. Traitement de données dans le cadre de projets d'automatisation
+## 8. Outil Copy-Paste-Landkarte (n8n et Joinpoint)
+
+Pour l'outil interactif d'auto-évaluation « Copy-Paste-Landkarte » (actuellement non lié publiquement et non destiné à être indexé par les moteurs de recherche), vos réponses sont traitées exclusivement localement dans votre navigateur. Aucune transmission ou sauvegarde automatique n'a lieu.
+
+Si vous décidez, à la fin de l'outil, d'envoyer activement votre résultat à Loïc Lavanchy, l'adresse e-mail que vous avez saisie, votre message ainsi qu'un résumé de vos réponses au questionnaire sont traités via un workflow n8n auto-hébergé (hébergement comme au ch. 4, VPS chez Hostinger, Allemagne). Loïc Lavanchy est alors notifié par e-mail, et un contact comportant ces informations est créé ou mis à jour dans le système CRM Joinpoint. Joinpoint est exploité par Joinpoints GmbH (Graz, Autriche) ; les données sont traitées exclusivement dans des centres de données autrichiens.
+
+Le fondement de ce traitement est la prise de contact, respectivement l'organisation d'un entretien-conseil, en tant que mesure précontractuelle (art. 31 al. 2 let. a LPD ou art. 6 par. 1 let. b RGPD).
+
+Ces données sont supprimées dès qu'elles ne sont plus nécessaires à la prise de contact, mais au plus tard après 24 mois sans autre contact, sous réserve d'obligations légales de conservation (voir ch. 12).
+
+## 9. Traitement de données dans le cadre de projets d'automatisation
 
 Dans le cadre de projets d'automatisation concrets (p. ex. mise en place de workflows n8n), Lavanchy Automation peut, sur mandat de clients, accéder à leurs systèmes (p. ex. fichiers Excel, outils CRM ou de gestion de projet de tiers) et y traiter des données. Ce traitement a lieu exclusivement sur instruction du client concerné et dans les limites du mandat convenu.
 
 Dans la mesure où des données personnelles du client ou de ses clients finaux sont traitées, le client concerné est responsable de la licéité de ce traitement vis-à-vis de ses propres clients finaux. Lavanchy Automation traite ces données en tant que sous-traitant ou auxiliaire au sens de l'art. 9 LPD ou de l'art. 28 RGPD, le cas échéant.
 
-Si des services d'IA sont utilisés dans le cadre d'un projet (voir ch. 9), aucune donnée de client, donnée personnelle ou donnée de projet n'est transmise à ces services d'IA, sauf convention expresse et écrite pour le projet concret.
+Si des services d'IA sont utilisés dans le cadre d'un projet (voir ch. 10), aucune donnée de client, donnée personnelle ou donnée de projet n'est transmise à ces services d'IA, sauf convention expresse et écrite pour le projet concret.
 
-## 9. Utilisation d'outils d'IA lors de la mise en œuvre des projets
+## 10. Utilisation d'outils d'IA lors de la mise en œuvre des projets
 
 Des outils assistés par l'IA peuvent être utilisés pour soutenir le développement technique lors de la mise en place de processus d'automatisation. En principe, aucune donnée issue des systèmes des clients n'est transmise à ces outils d'IA. Toute connexion existante à des outils d'IA est à nouveau coupée une fois la mise en place terminée, le cas échéant.
 
-## 10. Conseil en IA managée (p. ex. headwAI)
+## 11. Conseil en IA managée (p. ex. headwAI)
 
 Dans le cadre du conseil en IA managée, des solutions tierces telles que headwAI peuvent être utilisées selon le projet et moyennant accord exprès avec le client. La protection des données, le RGPD et les exigences de l'AI Act de l'UE sont pris en compte lors du choix et de la mise en place de telles solutions. Le traitement concret des données est régi par l'accord conclu pour le projet concerné ainsi que par les dispositions de protection des données du fournisseur tiers concerné.
 
-## 11. Durée de conservation
+## 12. Durée de conservation
 
 Les données personnelles ne sont conservées que le temps nécessaire aux finalités concernées ou selon les délais légaux de conservation (p. ex. obligations de conservation commerciales et fiscales de 10 ans en règle générale pour la correspondance commerciale et les pièces comptables).
 
-## 12. Liens vers d'autres sites web
+## 13. Liens vers d'autres sites web
 
 Les références et liens vers des sites web de tiers se situent en dehors de notre propre domaine de responsabilité et de contrôle. Aucune responsabilité n'est assumée pour de tels sites web. L'accès à ces sites et leur utilisation se font aux propres risques de la personne qui les visite. Il n'y a pas d'avertissement particulier lorsque les utilisatrices et utilisateurs quittent ce site web. En cas de redirection vers un autre site web, la politique de confidentialité du fournisseur concerné fait foi.
 
-## 13. Sécurité des données
+## 14. Sécurité des données
 
 Pour la visite de ce site web, le procédé répandu SSL/TLS (Secure Socket Layers ou Transport Layer Security) est utilisé, en combinaison avec le niveau de chiffrement le plus élevé pris en charge par le navigateur utilisé.
 
 Par ailleurs, des mesures de sécurité techniques et organisationnelles appropriées sont prises afin de protéger les données contre la manipulation accidentelle ou intentionnelle, la perte partielle ou totale, la destruction ou l'accès non autorisé de tiers. Ces mesures de sécurité sont continuellement réexaminées et améliorées en fonction de l'évolution technologique.
 
-## 14. Droits des personnes concernées
+## 15. Droits des personnes concernées
 
 Dans la mesure où les conditions légales sont remplies, les personnes concernées disposent des droits suivants :
 
@@ -110,6 +120,6 @@ L'autorité de surveillance compétente en Suisse est le Préposé fédéral à 
 
 Pour toute question relative à la protection des données ou pour exercer ces droits : [info@lavanchyautomation.ch](mailto:info@lavanchyautomation.ch)
 
-## 15. Modifications de la présente politique de confidentialité
+## 16. Modifications de la présente politique de confidentialité
 
 La présente politique de confidentialité peut être modifiée afin de l'adapter à l'évolution de la situation juridique ou à des modifications du site web ou des prestations proposées. La version publiée sur le site web fait foi.
