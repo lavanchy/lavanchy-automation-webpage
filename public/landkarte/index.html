@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Copy-Paste-Landkarte</title>
-<meta name="description" content="12 Fragen, 5 Minuten: Seht euren Betrieb als 3D-Stadt und erfahrt, wo eure Zeit zwischen den Tools verschwindet. Von Lavanchy Automation.">
+<meta name="description" content="12 Fragen, 5 Minuten: Sieh deinen Betrieb als 3D-Stadt und erfahre, wo deine Zeit zwischen den Tools verschwindet. Von Lavanchy Automation.">
 <meta name="robots" content="noindex, nofollow">
 <style>
 :root{
@@ -234,17 +234,40 @@ footer{max-width:1240px;margin:0 auto;padding:0 clamp(16px,4vw,40px) 100px;font-
   *{transition:none !important}
 }
 @media print{
-  @page{margin:14mm}
-  body{background:#fff;font-size:12px}
-  .top a,.no-print,.book-banner,.btn-book-xl,.cta .or,#view-intro,#view-quiz,.result-city,footer,.cta-actions,.cta details,.tools-row,.cta .status{display:none !important}
-  main{padding:0;max-width:none}
+  @page{size:A4;margin:12mm 14mm}
+  html,body{background:#fff}
+  body{font-size:11.5px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .top{padding:0 0 8px;border-bottom:2px solid var(--ink)}
+  .top a,.no-print,.book-banner,.btn-book-xl,.cta .or,#view-intro,#view-quiz,.result-city,footer,.cta-actions,.tools-row,.cta .status,#send-form{display:none !important}
+  main{padding:14px 0 0;max-width:none}
+  #view-result{padding-bottom:0}
+  .result,.report{display:block}
+  .report > *{margin:0 0 16px}
+  .report-head{gap:4px}
+  .report-head h2{font-size:26px}
+  .report-head .meta{font-size:12.5px}
   .print-only{display:block}
-  .print-only img{width:100%;border-radius:10px;border:1px solid var(--line)}
-  .stat,.box,.jam{break-inside:avoid}
-  .cta{background:#fff;color:var(--ink);border:2px solid var(--ink)}
-  .cta p,.cta .addr{color:var(--ink)}
-  .cta .addr b{color:var(--ink)}
-  .method details{display:block}
+  .print-only img{display:block;width:100%;height:80mm;object-fit:cover;border-radius:10px;border:1px solid var(--line)}
+  .stats{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+  .stat{padding:12px}
+  .stat .v{font-size:22px}
+  .stat .l{font-size:11px}
+  .section{gap:10px}
+  .section > h3{font-size:17px;break-after:avoid}
+  .jams{gap:8px}
+  .jam{padding:12px 14px;grid-template-columns:auto minmax(0,1fr) auto}
+  .jam h4{font-size:15px}
+  .jam .why{font-size:12px}
+  .jam .nums{font-size:11.5px}
+  .two{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px}
+  .box{padding:14px}
+  .box p{font-size:12px}
+  .stat,.box,.jam,.cta,.report-head,.stats,.method{break-inside:avoid}
+  .cta{background:#fff;color:var(--ink);border:2px solid var(--ink);padding:16px 18px;gap:8px}
+  .cta h3{font-size:17px}
+  .cta p,.cta .addr{color:var(--ink);font-size:12px}
+  .method ul{font-size:11px}
+  .signature{font-size:10.5px}
 }
 </style>
 </head>
@@ -263,8 +286,8 @@ footer{max-width:1240px;margin:0 auto;padding:0 clamp(16px,4vw,40px) 100px;font-
   <section id="view-intro" class="view intro" aria-labelledby="intro-title">
     <div class="intro-text">
       <div class="eyebrow">Copy-Paste-Landkarte</div>
-      <h1 id="intro-title">Wo verschwindet eure Zeit zwischen E‑Mail, Excel und Buchhaltung?</h1>
-      <p class="lead">Beantwortet 12 kurze Fragen. Danach seht ihr euren Betrieb als kleine Stadt: Jedes Tool ist ein Gebäude, jeder Datenfluss eine Strasse. Wo von Hand kopiert wird, steht der Verkehr.</p>
+      <h1 id="intro-title">Wo verschwindet deine Zeit zwischen E‑Mail, Excel und Buchhaltung?</h1>
+      <p class="lead">Beantworte 12 kurze Fragen. Danach siehst du deinen Betrieb als kleine Stadt: Jedes Tool ist ein Gebäude, jeder Datenfluss eine Strasse. Wo von Hand kopiert wird, steht der Verkehr.</p>
       <ul class="facts">
         <li><b>12</b> Fragen</li>
         <li>ca. <b>5</b> Minuten</li>
@@ -273,7 +296,7 @@ footer{max-width:1240px;margin:0 auto;padding:0 clamp(16px,4vw,40px) 100px;font-
       <div class="intro-actions">
         <button class="btn btn-primary" id="start-btn" type="button">Test starten</button>
       </div>
-      <p class="privacy">Eure Antworten bleiben in eurem Browser. Erst wenn ihr am Ende euer Ergebnis aktiv an Loïc sendet, werden eure E-Mail-Adresse und eure Nachricht übermittelt und gespeichert.</p>
+      <p class="privacy"><span>Deine Antworten bleiben während des Tests in deinem Browser. Sobald die Auswertung erscheint, wird das Ergebnis ohne Namen und Kontaktdaten anonym gespeichert. Deine E-Mail-Adresse und Nachricht werden nur übermittelt, wenn du sie am Ende aktiv an Loïc sendest. <a href="https://lavanchyautomation.ch/de/datenschutz/" target="_blank" rel="noopener">Datenschutzerklärung</a></span></p>
     </div>
     <div class="city" id="host-intro">
       <div class="ov ov-counter">
@@ -309,7 +332,7 @@ footer{max-width:1240px;margin:0 auto;padding:0 clamp(16px,4vw,40px) 100px;font-
     <div class="city result-city" id="host-result">
       <div class="ov ov-counter">
         <div class="num" id="res-num">0<small>h</small></div>
-        <p><b>Stunden pro Jahr</b> Handarbeit zwischen euren Tools</p>
+        <p><b>Stunden pro Jahr</b> Handarbeit zwischen deinen Tools</p>
       </div>
       <div class="ov ov-hint">Ziehen zum Drehen, scrollen zum Zoomen</div>
       <div class="ov ov-legend">
@@ -321,7 +344,7 @@ footer{max-width:1240px;margin:0 auto;padding:0 clamp(16px,4vw,40px) 100px;font-
     </div>
     <div class="report" id="report"></div>
     <div class="sticky-book no-print">
-      <span>Eure Landkarte mit Loïc besprechen: <b>30 Min., kostenlos</b></span>
+      <span>Deine Landkarte mit Loïc besprechen: <b>30 Min., kostenlos</b></span>
       <a class="btn btn-book" href="https://cal.meetergo.com/loic-lavanchy/30-min-meeting" target="_blank" rel="noopener">Termin buchen</a>
     </div>
   </section>
@@ -329,7 +352,7 @@ footer{max-width:1240px;margin:0 auto;padding:0 clamp(16px,4vw,40px) 100px;font-
 
 <footer>
   <span>Lavanchy Automation · Rue du Centre 53 · 1025 St-Sulpice VD</span>
-  <span>Alle Werte sind Schätzungen auf Basis eurer Angaben.</span>
+  <span>Alle Werte sind Schätzungen auf Basis deiner Angaben. · <a href="https://lavanchyautomation.ch/de/datenschutz/" target="_blank" rel="noopener">Datenschutz</a> · <a href="https://lavanchyautomation.ch/de/impressum/" target="_blank" rel="noopener">Impressum</a></span>
 </footer>
 
 <script src="three.min.js"></script>
@@ -381,7 +404,7 @@ const TASKS = {
       : "Anfragen kommen als freier Text. KI liest Name, Anliegen und Dringlichkeit heraus und legt den Kontakt sauber an. Ein Mensch prüft nur noch."},
   angebote:{label:"Angebote erstellen", hint:"Kundendaten und Positionen in eine Vorlage bringen",
     src:["crm","excel","email"], dst:["word","buchhaltung","erp","branche"], bias:1.0, auto:0.55, ki:false,
-    why:"Kundendaten und Positionen fliessen automatisch in eure feste Vorlage. Dafür braucht es keine KI, nur eine saubere Verbindung."},
+    why:"Kundendaten und Positionen fliessen automatisch in deine feste Vorlage. Dafür braucht es keine KI, nur eine saubere Verbindung."},
   rechnungen:{label:"Rechnungen schreiben", hint:"Leistungen und Positionen in die Buchhaltung übernehmen",
     src:["projekt","crm","excel","erp"], dst:["buchhaltung","word"], bias:0.95, auto:0.7, ki:false,
     why:"Geleistete Stunden oder Positionen werden automatisch in die Buchhaltung übernommen. Eine Schnittstelle reicht."},
@@ -420,18 +443,18 @@ const SINGLE = {
 };
 
 const QUESTIONS = [
-  {key:"team", topic:"Betrieb", type:"single", title:"Wie viele Personen arbeiten in eurem Betrieb?", hint:"Inklusive euch selbst."},
-  {key:"branche", topic:"Betrieb", type:"single", title:"In welcher Branche seid ihr unterwegs?", hint:"Wählt das, was am ehesten passt."},
-  {key:"tools", topic:"Tools", type:"tools", title:"Welche Tools nutzt ihr im Alltag?", hint:"Alles, was mindestens einmal pro Woche offen ist. Mindestens 3."},
-  {key:"tasks", topic:"Abläufe", type:"tasks", title:"Welche Abläufe wiederholen sich bei euch jede Woche?", hint:"Wählt alles, was passt."},
-  {key:"hours", topic:"Abläufe", type:"hours", title:"Wie viel Zeit steckt das Team pro Woche in diese Abläufe?", hint:"Eine grobe Schätzung reicht. Zählt alle Personen zusammen."},
+  {key:"team", topic:"Betrieb", type:"single", title:"Wie viele Personen arbeiten in deinem Betrieb?", hint:"Inklusive dir selbst."},
+  {key:"branche", topic:"Betrieb", type:"single", title:"In welcher Branche bist du unterwegs?", hint:"Wähle das, was am ehesten passt."},
+  {key:"tools", topic:"Tools", type:"tools", title:"Welche Tools nutzt du im Alltag?", hint:"Alles, was mindestens einmal pro Woche offen ist. Mindestens 3."},
+  {key:"tasks", topic:"Abläufe", type:"tasks", title:"Welche Abläufe wiederholen sich bei dir jede Woche?", hint:"Wähle alles, was passt."},
+  {key:"hours", topic:"Abläufe", type:"hours", title:"Wie viel Zeit steckt das Team pro Woche in diese Abläufe?", hint:"Eine grobe Schätzung reicht. Zähle alle Personen zusammen."},
   {key:"transfer", topic:"Datenflüsse", type:"single", title:"Wie kommen Daten von einem Tool ins nächste?", hint:"Zum Beispiel eine Anfrage aus dem Mail ins CRM oder eine Rechnung in die Buchhaltung."},
   {key:"errors", topic:"Datenflüsse", type:"single", title:"Wie oft passieren Fehler beim Übertragen?", hint:"Falsche Beträge, vergessene Einträge, doppelte Kunden."},
-  {key:"absence", topic:"Wissen", type:"single", title:"Eure wichtigste Person fällt drei Wochen aus. Was passiert?", hint:"Ehrlich ist hier hilfreicher als optimistisch."},
-  {key:"docs", topic:"Wissen", type:"single", title:"Sind eure Abläufe irgendwo aufgeschrieben?", hint:"So, dass jemand Neues sie ohne Nachfragen erledigen könnte."},
-  {key:"kidata", topic:"Datenschutz", type:"single", title:"Welche Daten landen bei euch in KI-Tools wie ChatGPT?", hint:"Auch das, was Mitarbeitende privat nutzen, zählt."},
-  {key:"rate", topic:"Kosten", type:"rate", title:"Was kostet euch eine Arbeitsstunde ungefähr?", hint:"Lohn inklusive Nebenkosten. Wenn ihr es nicht wisst, lasst den Wert einfach stehen."},
-  {key:"goal", topic:"Ziel", type:"goal", title:"Was würdet ihr mit der gewonnenen Zeit am liebsten machen?", hint:"Danach zeigen wir eure Landkarte."}
+  {key:"absence", topic:"Wissen", type:"single", title:"Deine wichtigste Person fällt drei Wochen aus. Was passiert?", hint:"Ehrlich ist hier hilfreicher als optimistisch."},
+  {key:"docs", topic:"Wissen", type:"single", title:"Sind deine Abläufe irgendwo aufgeschrieben?", hint:"So, dass jemand Neues sie ohne Nachfragen erledigen könnte."},
+  {key:"kidata", topic:"Datenschutz", type:"single", title:"Welche Daten landen bei dir in KI-Tools wie ChatGPT?", hint:"Auch das, was Mitarbeitende privat nutzen, zählt."},
+  {key:"rate", topic:"Kosten", type:"rate", title:"Was kostet dich eine Arbeitsstunde ungefähr?", hint:"Lohn inklusive Nebenkosten. Wenn du es nicht weisst, lass den Wert einfach stehen."},
+  {key:"goal", topic:"Ziel", type:"goal", title:"Was würdest du mit der gewonnenen Zeit am liebsten machen?", hint:"Danach siehst du deine Landkarte."}
 ];
 
 const EXAMPLE = {
@@ -494,8 +517,8 @@ function compute(a){
   let privacy = null;
   if(a.kidata==="kunden" || a.kidata==="unklar"){
     privacy = a.kidata==="kunden"
-      ? "Kundendaten landen in KI-Tools, die ihre Server oft in den USA haben. Nach Schweizer DSG und DSGVO braucht es dafür eine klare Grundlage. Wer Kunden in der EU hat, muss zusätzlich den EU AI Act beachten. Klärt, welche Tools erlaubt sind und welche Daten dort hinein dürfen."
-      : "Ihr wisst nicht genau, welche Daten in KI-Tools landen. Das ist in vielen Betrieben so, weil Mitarbeitende Tools auf eigene Faust nutzen. Ein kurzer Überblick, wer was nutzt, schützt euch und eure Kunden.";
+      ? "Kundendaten landen in KI-Tools, die ihre Server oft in den USA haben. Nach Schweizer DSG und DSGVO braucht es dafür eine klare Grundlage. Wer Kunden in der EU hat, muss zusätzlich den EU AI Act beachten. Kläre, welche Tools erlaubt sind und welche Daten dort hinein dürfen."
+      : "Du weisst nicht genau, welche Daten in KI-Tools landen. Das ist in vielen Betrieben so, weil Mitarbeitende Tools auf eigene Faust nutzen. Ein kurzer Überblick, wer was nutzt, schützt dich und deine Kunden.";
   }
 
   return {
@@ -514,7 +537,7 @@ function City(){
   this.wrap = document.createElement("div");
   this.wrap.className = "city-stage";
   if(!this.ok){
-    this.wrap.innerHTML = '<div class="city-fallback">Die 3D-Ansicht konnte nicht geladen werden. Euer Report unten ist trotzdem vollständig.</div>';
+    this.wrap.innerHTML = '<div class="city-fallback">Die 3D-Ansicht konnte nicht geladen werden. Dein Report unten ist trotzdem vollständig.</div>';
     return;
   }
   const r = this.renderer = new THREE.WebGLRenderer({antialias:true, preserveDrawingBuffer:true});
@@ -791,7 +814,7 @@ function renderQ(){
   let html = "";
   if(q.type==="single" || q.type==="goal"){
     html = '<div class="options" role="radiogroup" aria-labelledby="q-title">' + SINGLE[q.key].map(o=>optBtn("radio", o[0], o[1]||o[0], "", answers[q.key]===o[0])).join("") + "</div>";
-    if(q.type==="goal") html += '<div class="text-field"><label for="firma">Name eures Betriebs <span style="font-weight:400;color:var(--muted)">(optional, erscheint im Report)</span></label><input id="firma" type="text" maxlength="60" autocomplete="organization" value="'+esc(answers.firma)+'"></div>';
+    if(q.type==="goal") html += '<div class="text-field"><label for="firma">Name deines Betriebs <span style="font-weight:400;color:var(--muted)">(optional, erscheint im Report)</span></label><input id="firma" type="text" maxlength="60" autocomplete="organization" value="'+esc(answers.firma)+'"></div>';
   } else if(q.type==="tools"){
     html = '<div class="options grid">' + Object.keys(TOOLS).map(k=>optBtn("check", k, TOOLS[k].label, TOOLS[k].hint, answers.tools.includes(k))).join("") + "</div>";
   } else if(q.type==="tasks"){
@@ -837,9 +860,9 @@ $("#q-body").addEventListener("change", e=>{
 
 function validate(){
   const q = QUESTIONS[qi];
-  if((q.type==="single"||q.type==="goal") && !answers[q.key]) return "Bitte wählt eine Antwort.";
-  if(q.type==="tools" && answers.tools.length<3) return "Bitte wählt mindestens 3 Tools. Aktuell: "+answers.tools.length+".";
-  if(q.type==="tasks" && answers.tasks.length<1) return "Bitte wählt mindestens einen Ablauf.";
+  if((q.type==="single"||q.type==="goal") && !answers[q.key]) return "Bitte wähle eine Antwort.";
+  if(q.type==="tools" && answers.tools.length<3) return "Bitte wähle mindestens 3 Tools. Aktuell: "+answers.tools.length+".";
+  if(q.type==="tasks" && answers.tasks.length<1) return "Bitte wähle mindestens einen Ablauf.";
   return "";
 }
 
@@ -862,10 +885,10 @@ function goalSentence(goal, saveWeek){
   const h = fmtH(saveWeek);
   const fte = Math.round(saveWeek/FULLTIME*100);
   switch(goal){
-    case "kunden": return "Ihr wollt mehr Kunden betreuen. Die automatisierbaren "+h+" Stunden pro Woche gehen dann in Beratung und Betreuung statt in Übertragungen.";
-    case "wachsen": return "Ihr wollt wachsen, ohne gleich neu einzustellen. "+h+" Stunden pro Woche entsprechen etwa "+fte+" % einer Vollzeitstelle.";
-    case "feierabend": return "Ihr wollt früher Feierabend machen. Das sind "+h+" Stunden pro Woche, die heute zusätzlich zur eigentlichen Arbeit anfallen.";
-    case "fehler": return "Ihr wollt weniger Fehler. Jede Übertragung, die automatisch läuft, wird protokolliert. Abtippfehler fallen weg, und ihr seht jederzeit, was wann passiert ist.";
+    case "kunden": return "Du willst mehr Kunden betreuen. Die automatisierbaren "+h+" Stunden pro Woche gehen dann in Beratung und Betreuung statt in Übertragungen.";
+    case "wachsen": return "Du willst wachsen, ohne gleich neu einzustellen. "+h+" Stunden pro Woche entsprechen etwa "+fte+" % einer Vollzeitstelle.";
+    case "feierabend": return "Du willst früher Feierabend machen. Das sind "+h+" Stunden pro Woche, die heute zusätzlich zur eigentlichen Arbeit anfallen.";
+    case "fehler": return "Du willst weniger Fehler. Jede Übertragung, die automatisch läuft, wird protokolliert. Abtippfehler fallen weg, und du siehst jederzeit, was wann passiert ist.";
   }
   return "";
 }
@@ -874,7 +897,7 @@ function buildMail(a, r){
   const top = r.items.slice(0,3);
   const lines = [
     "Hallo Loïc,", "",
-    "wir haben die Copy-Paste-Landkarte ausgefüllt. Hier unser Ergebnis:", "",
+    "ich habe die Copy-Paste-Landkarte ausgefüllt. Hier mein Ergebnis:", "",
     "Betrieb: " + (a.firma ? a.firma+", " : "") + a.branche + ", " + optLabel("team", a.team) + " Personen",
     "Tools: " + a.tools.map(toolName).join(", "), "",
     "Handarbeit zwischen den Tools: ca. " + fmt(r.manualYear) + " Stunden pro Jahr",
@@ -883,8 +906,8 @@ function buildMail(a, r){
   ];
   top.forEach((it,i)=>lines.push((i+1)+". "+it.label+" ("+toolName(it.src)+" → "+toolName(it.dst)+"): "+fmtH(it.h)+" h pro Woche"));
   if(r.islands.length) lines.push("", "Wissen hängt an wenigen Personen bei: " + r.islands.map(toolName).join(", "));
-  lines.push("", "Ich würde gern wissen, wo wir anfangen sollten.", "", "Grüsse");
-  return {subject: "Unsere Copy-Paste-Landkarte: " + fmt(r.manualYear) + " Stunden pro Jahr", body: lines.join("\r\n")};
+  lines.push("", "Ich würde gern wissen, wo ich anfangen sollte.", "", "Grüsse");
+  return {subject: "Copy-Paste-Landkarte: " + fmt(r.manualYear) + " Stunden pro Jahr", body: lines.join("\r\n")};
 }
 
 function renderReport(a, r){
@@ -905,46 +928,47 @@ function renderReport(a, r){
 
   const kiLine = top.length
     ? (apiCount===top.length
-        ? "Keiner eurer "+top.length+" grössten Staus braucht KI. Saubere Schnittstellen zwischen den Tools reichen."
+        ? "Keiner deiner "+top.length+" grössten Staus braucht KI. Saubere Schnittstellen zwischen den Tools reichen."
         : apiCount===0
-          ? "Bei euren grössten Staus hilft KI tatsächlich, weil die Daten als freier Text oder Beleg ankommen. Ein Mensch gibt trotzdem frei."
+          ? "Bei deinen grössten Staus hilft KI tatsächlich, weil die Daten als freier Text oder Beleg ankommen. Ein Mensch gibt trotzdem frei."
           : apiCount+" von "+top.length+" Staus brauchen keine KI. Dort reicht eine saubere Schnittstelle. KI setzen wir nur dort ein, wo Daten als freier Text oder Beleg ankommen.")
     : "";
 
   const island = r.islands.length
-    ? '<div class="box island"><h4>Wissen bei einer Person</h4><p>Bei '+esc(r.islands.map(toolName).join(", "))+' hängt das Wissen an wenigen Köpfen. Fällt jemand aus, bleiben diese Abläufe liegen. Bevor hier automatisiert wird, schreibe ich den Ablauf mit euch Schritt für Schritt auf. Danach kann ihn jemand anderes übernehmen, auch ohne Automatisierung.</p></div>'
-    : '<div class="box"><h4>Wissen im Team</h4><p>Eure Abläufe hängen nicht an einer einzelnen Person. Das ist eine gute Grundlage: Was beschrieben ist, lässt sich sauber automatisieren und testen.</p></div>';
+    ? '<div class="box island"><h4>Wissen bei einer Person</h4><p>Bei '+esc(r.islands.map(toolName).join(", "))+' hängt das Wissen an wenigen Köpfen. Fällt jemand aus, bleiben diese Abläufe liegen. Bevor hier automatisiert wird, schreibe ich den Ablauf mit dir Schritt für Schritt auf. Danach kann ihn jemand anderes übernehmen, auch ohne Automatisierung.</p></div>'
+    : '<div class="box"><h4>Wissen im Team</h4><p>Deine Abläufe hängen nicht an einer einzelnen Person. Das ist eine gute Grundlage: Was beschrieben ist, lässt sich sauber automatisieren und testen.</p></div>';
 
   const privacy = r.privacy
     ? '<div class="box privacy-warn"><h4>Datenschutz-Hinweis</h4><p>'+esc(r.privacy)+'</p></div>'
-    : '<div class="box"><h4>Datenschutz</h4><p>Nach euren Angaben landen keine Kundendaten in KI-Tools. Bei jeder Automatisierung prüfe ich trotzdem, wo die Daten verarbeitet werden, bevorzugt in der Schweiz oder der EU.</p></div>';
+    : '<div class="box"><h4>Datenschutz</h4><p>Nach deinen Angaben landen keine Kundendaten in KI-Tools. Bei jeder Automatisierung prüfe ich trotzdem, wo die Daten verarbeitet werden, bevorzugt in der Schweiz oder der EU.</p></div>';
 
   $("#report").innerHTML =
-    '<div class="print-only" id="print-city"></div>'+
-    '<header class="report-head"><div class="eyebrow">Euer Report · '+esc(date)+'</div>'+
+    '<header class="report-head"><div class="eyebrow">Dein Report · '+esc(date)+'</div>'+
       '<h2>Copy-Paste-Landkarte'+(a.firma ? ' für '+esc(a.firma) : '')+'</h2>'+
       '<p class="meta">'+esc(a.branche)+' · '+esc(optLabel("team", a.team))+' Personen · '+a.tools.length+' Tools · heute laufen ca. '+Math.round(r.autoShare*100)+' % der Übertragungen automatisch</p></header>'+
+    '<div class="print-only" id="print-city"></div>'+
     '<div class="stats">'+
       '<div class="stat hot"><div class="v">'+fmt(r.manualYear)+'</div><div class="l">Stunden pro Jahr Handarbeit zwischen den Tools</div></div>'+
       '<div class="stat"><div class="v">'+fmt(r.saveYear)+'</div><div class="l">Stunden davon lassen sich automatisieren</div></div>'+
       '<div class="stat key"><div class="v">'+fmt(r.chf)+' '+esc(a.currency)+'</div><div class="l">pro Jahr, bei '+a.rate+' '+esc(a.currency)+' pro Arbeitsstunde</div></div>'+
       '<div class="stat"><div class="v">'+nf.format(Math.round(r.weeks*10)/10)+'</div><div class="l">volle Arbeitswochen à '+FULLTIME+' Stunden</div></div>'+
     '</div>'+
-    '<section class="book-banner"><div><h3>Eure Landkarte gemeinsam anschauen</h3><p>30 Minuten mit '+esc(CONTACT.name)+', kostenlos und unverbindlich. Ihr erfahrt, wo ihr anfangen solltet und was es ungefähr kostet.</p></div>'+
+    '<section class="book-banner"><div><h3>Deine Landkarte gemeinsam anschauen</h3><p>30 Minuten mit '+esc(CONTACT.name)+', kostenlos und unverbindlich. Du erfährst, wo du anfangen solltest und was es ungefähr kostet.</p></div>'+
       '<a class="btn btn-book" href="'+CONTACT.booking+'" target="_blank" rel="noopener">Termin buchen <span aria-hidden="true">→</span></a></section>'+
-    '<section class="section"><h3>Eure '+(top.length===1?'grösste Baustelle':top.length+' grössten Staus')+'</h3><div class="jams">'+jams+'</div>'+
+    '<section class="section"><h3>Deine '+(top.length===1?'grösste Baustelle':top.length+' grössten Staus')+'</h3><div class="jams">'+jams+'</div>'+
       (kiLine ? '<p style="font-size:15px;color:var(--muted);max-width:70ch">'+esc(kiLine)+'</p>' : '')+'</section>'+
     (first ? '<section class="section"><div class="box start"><div class="eyebrow">Hier würde ich anfangen</div><h4>'+esc(first.label)+': von '+esc(toolName(first.src))+' nach '+esc(toolName(first.dst))+'</h4>'+
-      '<p>Dieser Ablauf spart euch ca. <b>'+fmtH(first.save/WEEKS)+' Stunden pro Woche</b>. Ich baue ihn als Erstes, teste ihn mit euren echten Daten und starte den nächsten Ablauf erst, wenn dieser zuverlässig läuft.</p>'+
+      '<p>Dieser Ablauf spart dir ca. <b>'+fmtH(first.save/WEEKS)+' Stunden pro Woche</b>. Ich baue ihn als Erstes, teste ihn mit deinen echten Daten und starte den nächsten Ablauf erst, wenn dieser zuverlässig läuft.</p>'+
       '<p>'+esc(goalSentence(a.goal, r.saveWeek))+'</p><p class="sig">'+esc(CONTACT.name)+', Lavanchy Automation</p></div></section>' : '')+
     '<section class="two">'+island+privacy+'</section>'+
-    '<section class="cta"><h3>Wollt ihr sehen, wie euer erster Ablauf konkret aussieht?</h3>'+
-      '<p>In 30 Minuten schauen wir eure Landkarte gemeinsam an. Ihr erfahrt, was sich lohnt, was es ungefähr kostet und was ihr besser so lasst, wie es ist.</p>'+
+    '<section class="cta"><h3>Willst du sehen, wie dein erster Ablauf konkret aussieht?</h3>'+
+      '<p>In 30 Minuten schauen wir deine Landkarte gemeinsam an. Du erfährst, was sich lohnt, was es ungefähr kostet und was du besser so lässt, wie es ist.</p>'+
       '<a class="btn btn-book btn-book-xl" href="'+CONTACT.booking+'" target="_blank" rel="noopener">Jetzt Termin buchen <small>30 Min. · kostenlos</small></a>'+
-      '<p class="or">Lieber erst schreiben? Schickt Loïc euer Ergebnis, dann ist er im Gespräch schon vorbereitet.</p>'+
+      '<p class="or">Lieber erst schreiben? Schick Loïc dein Ergebnis, dann ist er im Gespräch schon vorbereitet. Du erhältst eine Bestätigung per E-Mail.</p>'+
+      '<p class="print-only print-cta"><b>Termin buchen (30 Min., kostenlos):</b> cal.meetergo.com/loic-lavanchy/30-min-meeting<br><b>E-Mail:</b> '+CONTACT.email+'</p>'+
       '<form class="cta-send" id="send-form" novalidate>'+
-        '<div class="text-field"><label for="send-email">Eure E-Mail-Adresse</label><input id="send-email" type="email" required autocomplete="email" placeholder="name@firma.ch"></div>'+
-        '<div class="text-field"><label for="send-message">Nachricht an Loïc <span style="font-weight:400;color:#9FB2C3">(optional)</span></label><textarea id="send-message" rows="3" maxlength="2000" placeholder="Was möchtet ihr noch dazu sagen?"></textarea></div>'+
+        '<div class="text-field"><label for="send-email">Deine E-Mail-Adresse</label><input id="send-email" type="email" required autocomplete="email" placeholder="name@firma.ch"></div>'+
+        '<div class="text-field"><label for="send-message">Nachricht an Loïc <span style="font-weight:400;color:#9FB2C3">(optional)</span></label><textarea id="send-message" rows="3" maxlength="2000" placeholder="Was möchtest du noch dazu sagen?"></textarea></div>'+
         '<button class="btn btn-secondary" type="submit" id="send-btn">Ergebnis an Loïc senden</button>'+
         '<p class="status" id="send-status" role="status"></p>'+
       '</form>'+
@@ -959,7 +983,7 @@ function renderReport(a, r){
       '<li>Fehler beim Übertragen erzeugen Nacharbeit: Zuschlag von 0 bis 12 % je nach Antwort in Frage 7.</li>'+
       '<li>Der automatisierbare Anteil ist je Ablauf fest hinterlegt, zum Beispiel Kundendaten 85 %, Belege 75 %, Angebote 55 %.</li>'+
       '<li>KI empfiehlt die Landkarte nur, wenn Daten als freier Text oder Beleg ankommen. Alles andere läuft über Schnittstellen.</li>'+
-      '<li>Alle Werte sind Schätzungen auf Basis eurer Angaben. Genau wird es, wenn wir einen Ablauf Schritt für Schritt anschauen.</li>'+
+      '<li>Alle Werte sind Schätzungen auf Basis deiner Angaben. Genau wird es, wenn wir einen Ablauf Schritt für Schritt anschauen.</li>'+
     '</ul></details>'+
     '<div class="signature"><span>Lavanchy Automation · Prozessautomatisierung für KMU in der Schweiz und im DACH-Raum</span><span>'+CONTACT.email+' · lavanchyautomation.ch</span></div>';
 
@@ -985,21 +1009,21 @@ function renderReport(a, r){
         mailSubject: mail.subject, mailBody: mail.body
       });
       if(!res.ok) throw new Error("status " + res.status);
-      status.textContent = "Danke! Loïc hat euer Ergebnis erhalten und meldet sich.";
+      status.textContent = "Danke fürs Ausfüllen! Du erhältst gleich eine Bestätigung mit deinem Ergebnis per E-Mail. Loïc meldet sich bei dir.";
       emailEl.disabled = true; msgEl.disabled = true; btn.remove();
     } catch(err) {
-      status.textContent = "Senden hat nicht geklappt. Schreibt stattdessen direkt an " + CONTACT.email + ".";
+      status.textContent = "Senden hat nicht geklappt. Schreib stattdessen direkt an " + CONTACT.email + ".";
       btn.disabled = false;
     }
   });
   $("#print-btn").addEventListener("click", ()=>{
     const src = city.snapshot();
-    $("#print-city").innerHTML = src ? '<img alt="Eure Copy-Paste-Landkarte als 3D-Stadt" src="'+src+'">' : "";
+    $("#print-city").innerHTML = src ? '<img alt="Deine Copy-Paste-Landkarte als 3D-Stadt" src="'+src+'">' : "";
     try { window.print(); } catch(e){}
   });
   $("#edit-btn").addEventListener("click", ()=>{ qi = 0; renderQ(); show("#view-quiz"); });
   $("#restart-btn").addEventListener("click", ()=>{
-    Object.assign(answers, {team:null, branche:null, tools:[], tasks:[], hours:{}, transfer:null, errors:null, absence:null, docs:null, kidata:null, rate:80, goal:null, firma:""});
+    Object.assign(answers, {team:null, branche:null, tools:[], tasks:[], hours:{}, transfer:null, errors:null, absence:null, docs:null, kidata:null, rate:80, currency:"CHF", goal:null, firma:""});
     qi = 0; showIntro();
   });
 }
@@ -1052,8 +1076,13 @@ document.addEventListener("click", e => {
 
 $("#start-btn").addEventListener("click", ()=>{ qi = 0; renderQ(); show("#view-quiz"); });
 window.addEventListener("beforeprint", ()=>{
+  document.querySelectorAll("details.method").forEach(d=>{ d.dataset.wasOpen = d.open ? "1" : ""; d.open = true; });
   const holder = $("#print-city");
-  if(holder && !holder.innerHTML){ const src = city.snapshot(); if(src) holder.innerHTML = '<img alt="Eure Copy-Paste-Landkarte als 3D-Stadt" src="'+src+'">'; }
+  if(holder && !holder.innerHTML){ const src = city.snapshot(); if(src) holder.innerHTML = '<img alt="Deine Copy-Paste-Landkarte als 3D-Stadt" src="'+src+'">'; }
+});
+
+window.addEventListener("afterprint", ()=>{
+  document.querySelectorAll("details.method").forEach(d=>{ d.open = d.dataset.wasOpen === "1"; });
 });
 
 showIntro();

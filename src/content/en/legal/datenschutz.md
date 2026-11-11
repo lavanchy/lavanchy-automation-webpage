@@ -70,7 +70,7 @@ For the interactive self-assessment tool "Copy-Paste-Landkarte" (currently not p
 
 As soon as the result is generated, the quiz results (e.g. industry, team size, tools used, estimated savings) are automatically transmitted, without your name or contact details, to a self-operated n8n workflow (hosting as under section 4, VPS at Hostinger, Germany) and stored there as an anonymous record in the CRM system Joinpoint, in order to statistically evaluate use of the tool (e.g. by industry or company size). Joinpoint is operated by Joinpoints GmbH (Graz, Austria); the data is processed exclusively in Austrian data centres.
 
-If you click the booking link, or choose to actively send your result to Loïc Lavanchy, this record is supplemented: in the first case with a note that the booking link was clicked, in the second case with the email address you entered and your message. In the second case, Loïc Lavanchy is additionally notified by email.
+If you click the booking link, or choose to actively send your result to Loïc Lavanchy, this record is supplemented: in the first case with a note that the booking link was clicked, in the second case with the email address you entered and your message. In the second case, Loïc Lavanchy is additionally notified by email, and you receive a confirmation with a summary of your result at the email address you entered.
 
 The basis for the automatic, anonymous usage evaluation is the legitimate interest in improving and further developing the offering (Art. 31 para. 1 FADP or Art. 6 para. 1 lit. f GDPR). The basis for processing upon active contact is making contact and arranging a consultation call as a pre-contractual measure (Art. 31 para. 2 lit. a FADP or Art. 6 para. 1 lit. b GDPR).
 
