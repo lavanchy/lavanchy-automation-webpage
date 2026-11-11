@@ -345,6 +345,10 @@ const CONTACT = {
   name: "Loïc Lavanchy"
 };
 const RESULT_WEBHOOK_URL = "https://n8n.srv1259734.hstgr.cloud/webhook/landkarte-ergebnis";
+let landkarteJoinpointId = null;
+function postToWebhook(payload){
+  return fetch(RESULT_WEBHOOK_URL, { method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify(payload) });
+}
 const WEEKS = 46;          // Arbeitswochen pro Jahr
 const FULLTIME = 42;       // Stunden pro Vollzeitwoche
 const COLORS = { ok:"#2F9E6B", warn:"#D99A12", bad:"#D4483B", island:"#EE7A16", accent:"#1C5D7B", ink:"#132130" };
@@ -966,10 +970,19 @@ function renderReport(a, r){
     if(!email || !emailEl.checkValidity()){ status.textContent = "Bitte eine gültige E-Mail-Adresse eingeben."; emailEl.focus(); return; }
     btn.disabled = true; status.textContent = "Wird gesendet…";
     try {
-      const res = await fetch(RESULT_WEBHOOK_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, message: msgEl.value.trim(), firma: a.firma, mailSubject: mail.subject, mailBody: mail.body })
+      const res = await postToWebhook({
+        action: "send", joinpointId: landkarteJoinpointId,
+        email, message: msgEl.value.trim(), firma: a.firma,
+        team: a.team, teamLabel: optLabel("team", a.team),
+        branche: a.branche,
+        tools: a.tools.map(toolName),
+        tasksHours: r.items.map(it => ({ label: it.label, hours: fmtH(it.h) })),
+        transfer: a.transfer, errors: a.errors, absence: a.absence, docs: a.docs, kidata: a.kidata,
+        rate: a.rate, currency: a.currency, goal: a.goal,
+        manualYear: fmt(r.manualYear), saveYear: fmt(r.saveYear), chf: fmt(r.chf),
+        topStaus: r.items.slice(0, 3).map(it => it.label + " (" + toolName(it.src) + " -> " + toolName(it.dst) + "): " + fmtH(it.h) + " h/Wo"),
+        islands: r.islands.map(toolName),
+        mailSubject: mail.subject, mailBody: mail.body
       });
       if(!res.ok) throw new Error("status " + res.status);
       status.textContent = "Danke! Loïc hat euer Ergebnis erhalten und meldet sich.";
@@ -1011,7 +1024,31 @@ function showResult(){
   city.build(r, a.tools);
   countUp($("#res-num"), r.manualYear);
   renderReport(a, r);
+
+  landkarteJoinpointId = null;
+  postToWebhook({
+    action: "create",
+    team: a.team, teamLabel: optLabel("team", a.team),
+    branche: a.branche,
+    tools: a.tools.map(toolName),
+    tasksHours: r.items.map(it => ({ label: it.label, hours: fmtH(it.h) })),
+    transfer: a.transfer, errors: a.errors, absence: a.absence, docs: a.docs, kidata: a.kidata,
+    rate: a.rate, currency: a.currency, goal: a.goal,
+    manualYear: fmt(r.manualYear), saveYear: fmt(r.saveYear), chf: fmt(r.chf),
+    topStaus: r.items.slice(0, 3).map(it => it.label + " (" + toolName(it.src) + " -> " + toolName(it.dst) + "): " + fmtH(it.h) + " h/Wo"),
+    islands: r.islands.map(toolName),
+    firma: a.firma
+  }).then(res => res.ok ? res.json() : null).then(data => {
+    if(data && data.joinpointId) landkarteJoinpointId = data.joinpointId;
+  }).catch(()=>{});
 }
+
+document.addEventListener("click", e => {
+  const btn = e.target.closest(".btn-book");
+  const resultView = $("#view-result");
+  if(!btn || !resultView || !resultView.contains(btn)) return;
+  postToWebhook({ action: "book", joinpointId: landkarteJoinpointId }).catch(()=>{});
+});
 
 $("#start-btn").addEventListener("click", ()=>{ qi = 0; renderQ(); show("#view-quiz"); });
 window.addEventListener("beforeprint", ()=>{
