@@ -3,7 +3,7 @@ title: "Datenschutzerklärung"
 description: "Datenschutzerklärung nach Schweizer DSG und DSGVO."
 ---
 
-Lavanchy Automation — Stand: 09.11.2026
+Lavanchy Automation — Stand: 11.11.2026
 
 ## 1. Verantwortlicher
 
@@ -64,13 +64,15 @@ Bei der Terminbuchung können Name, E-Mail-Adresse, Terminangaben und weitere vo
 
 ## 8. Copy-Paste-Landkarte (n8n und Joinpoint)
 
-Für das interaktive Selbsttest-Tool «Copy-Paste-Landkarte» (aktuell nicht öffentlich verlinkt und nicht für die Indexierung durch Suchmaschinen bestimmt) werden Ihre Antworten ausschliesslich lokal in Ihrem Browser verarbeitet. Es erfolgt keine automatische Übermittlung oder Speicherung.
+Für das interaktive Selbsttest-Tool «Copy-Paste-Landkarte» (aktuell nicht öffentlich verlinkt und nicht für die Indexierung durch Suchmaschinen bestimmt) werden Ihre Antworten während des Quiz ausschliesslich lokal in Ihrem Browser verarbeitet.
 
-Entscheiden Sie sich am Ende des Tools, das Ergebnis aktiv an Loïc Lavanchy zu senden, werden die von Ihnen eingegebene E-Mail-Adresse, Ihre Nachricht sowie eine Zusammenfassung Ihrer Quiz-Antworten über einen selbst betriebenen n8n-Workflow verarbeitet (Hosting wie unter Ziff. 4, VPS bei Hostinger, Deutschland). Dabei wird Loïc Lavanchy per E-Mail benachrichtigt, und es wird ein Kontakt mit diesen Angaben im CRM-System Joinpoint angelegt oder aktualisiert. Joinpoint wird von der Joinpoints GmbH (Graz, Österreich) betrieben; die Daten werden ausschliesslich in österreichischen Rechenzentren verarbeitet.
+Sobald die Auswertung erstellt wird, werden die Quiz-Ergebnisse (z. B. Branche, Teamgrösse, genutzte Tools, geschätzte Einsparung) ohne Namen oder Kontaktdaten automatisch an einen selbst betriebenen n8n-Workflow übermittelt (Hosting wie unter Ziff. 4, VPS bei Hostinger, Deutschland) und dort als anonymer Eintrag im CRM-System Joinpoint gespeichert, um die Nutzung des Tools statistisch auszuwerten (z. B. nach Branche oder Firmengrösse). Joinpoint wird von der Joinpoints GmbH (Graz, Österreich) betrieben; die Daten werden ausschliesslich in österreichischen Rechenzentren verarbeitet.
 
-Grundlage dieser Bearbeitung ist die Kontaktaufnahme bzw. die Anbahnung eines Beratungsgesprächs als vorvertragliche Massnahme (Art. 31 Abs. 2 lit. a DSG bzw. Art. 6 Abs. 1 lit. b DSGVO).
+Klicken Sie auf den Buchungslink oder entscheiden Sie sich, das Ergebnis aktiv an Loïc Lavanchy zu senden, wird dieser Eintrag ergänzt: im ersten Fall mit dem Hinweis, dass der Buchungslink angeklickt wurde, im zweiten Fall mit der von Ihnen eingegebenen E-Mail-Adresse und Ihrer Nachricht. Im zweiten Fall wird Loïc Lavanchy zusätzlich per E-Mail benachrichtigt.
 
-Diese Daten werden gelöscht, sobald sie für die Kontaktaufnahme nicht mehr erforderlich sind, spätestens jedoch nach 24 Monaten ohne weiteren Kontakt, soweit keine gesetzlichen Aufbewahrungspflichten entgegenstehen (siehe Ziff. 12).
+Grundlage für die automatische, anonyme Nutzungsauswertung ist das berechtigte Interesse an der Verbesserung und Weiterentwicklung des Angebots (Art. 31 Abs. 1 DSG bzw. Art. 6 Abs. 1 lit. f DSGVO). Grundlage für die Bearbeitung bei aktiver Kontaktaufnahme ist die Kontaktaufnahme bzw. die Anbahnung eines Beratungsgesprächs als vorvertragliche Massnahme (Art. 31 Abs. 2 lit. a DSG bzw. Art. 6 Abs. 1 lit. b DSGVO).
+
+Die anonymen Nutzungsdaten werden spätestens nach 12 Monaten gelöscht oder anonymisiert. Mit Kontaktdaten ergänzte Einträge werden gelöscht, sobald sie für die Kontaktaufnahme nicht mehr erforderlich sind, spätestens jedoch nach 24 Monaten ohne weiteren Kontakt, soweit keine gesetzlichen Aufbewahrungspflichten entgegenstehen (siehe Ziff. 12).
 
 ## 9. Datenverarbeitung im Rahmen von Automatisierungsprojekten
 

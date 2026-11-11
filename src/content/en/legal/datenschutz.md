@@ -3,7 +3,7 @@ title: "Privacy Policy"
 description: "Privacy policy under the Swiss FADP and the GDPR."
 ---
 
-Lavanchy Automation — Version: 09.11.2026
+Lavanchy Automation — Version: 11.11.2026
 
 *This is a free translation for information purposes. Only the German version is legally binding and prevails in case of discrepancies.*
 
@@ -66,13 +66,15 @@ When booking an appointment, name, email address, appointment details and other 
 
 ## 8. Copy-Paste-Landkarte tool (n8n and Joinpoint)
 
-For the interactive self-assessment tool "Copy-Paste-Landkarte" (currently not publicly linked and not intended to be indexed by search engines), your answers are processed exclusively locally in your browser. No automatic transmission or storage takes place.
+For the interactive self-assessment tool "Copy-Paste-Landkarte" (currently not publicly linked and not intended to be indexed by search engines), your answers are processed exclusively locally in your browser while you work through the quiz.
 
-If you choose, at the end of the tool, to actively send your result to Loïc Lavanchy, the email address you entered, your message, and a summary of your quiz answers are processed via a self-operated n8n workflow (hosting as under section 4, VPS at Hostinger, Germany). Loïc Lavanchy is notified by email, and a contact with this information is created or updated in the CRM system Joinpoint. Joinpoint is operated by Joinpoints GmbH (Graz, Austria); the data is processed exclusively in Austrian data centres.
+As soon as the result is generated, the quiz results (e.g. industry, team size, tools used, estimated savings) are automatically transmitted, without your name or contact details, to a self-operated n8n workflow (hosting as under section 4, VPS at Hostinger, Germany) and stored there as an anonymous record in the CRM system Joinpoint, in order to statistically evaluate use of the tool (e.g. by industry or company size). Joinpoint is operated by Joinpoints GmbH (Graz, Austria); the data is processed exclusively in Austrian data centres.
 
-The basis for this processing is making contact and arranging a consultation call as a pre-contractual measure (Art. 31 para. 2 lit. a FADP or Art. 6 para. 1 lit. b GDPR).
+If you click the booking link, or choose to actively send your result to Loïc Lavanchy, this record is supplemented: in the first case with a note that the booking link was clicked, in the second case with the email address you entered and your message. In the second case, Loïc Lavanchy is additionally notified by email.
 
-This data is deleted as soon as it is no longer required for making contact, but no later than after 24 months without further contact, unless statutory retention obligations prevent this (see section 12).
+The basis for the automatic, anonymous usage evaluation is the legitimate interest in improving and further developing the offering (Art. 31 para. 1 FADP or Art. 6 para. 1 lit. f GDPR). The basis for processing upon active contact is making contact and arranging a consultation call as a pre-contractual measure (Art. 31 para. 2 lit. a FADP or Art. 6 para. 1 lit. b GDPR).
+
+The anonymous usage data is deleted or anonymised no later than after 12 months. Records supplemented with contact details are deleted as soon as they are no longer required for making contact, but no later than after 24 months without further contact, unless statutory retention obligations prevent this (see section 12).
 
 ## 9. Data processing within automation projects
 

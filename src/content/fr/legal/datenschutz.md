@@ -3,7 +3,7 @@ title: "Politique de confidentialité"
 description: "Politique de confidentialité selon la LPD suisse et le RGPD."
 ---
 
-Lavanchy Automation — Version du 09.11.2026
+Lavanchy Automation — Version du 11.11.2026
 
 *Ceci est une traduction libre fournie à titre informatif. Seule la version allemande fait foi et prévaut en cas de divergence.*
 
@@ -66,13 +66,15 @@ Lors de la prise de rendez-vous, le nom, l'adresse e-mail, les indications relat
 
 ## 8. Outil Copy-Paste-Landkarte (n8n et Joinpoint)
 
-Pour l'outil interactif d'auto-évaluation « Copy-Paste-Landkarte » (actuellement non lié publiquement et non destiné à être indexé par les moteurs de recherche), vos réponses sont traitées exclusivement localement dans votre navigateur. Aucune transmission ou sauvegarde automatique n'a lieu.
+Pour l'outil interactif d'auto-évaluation « Copy-Paste-Landkarte » (actuellement non lié publiquement et non destiné à être indexé par les moteurs de recherche), vos réponses sont traitées exclusivement localement dans votre navigateur pendant que vous remplissez le questionnaire.
 
-Si vous décidez, à la fin de l'outil, d'envoyer activement votre résultat à Loïc Lavanchy, l'adresse e-mail que vous avez saisie, votre message ainsi qu'un résumé de vos réponses au questionnaire sont traités via un workflow n8n auto-hébergé (hébergement comme au ch. 4, VPS chez Hostinger, Allemagne). Loïc Lavanchy est alors notifié par e-mail, et un contact comportant ces informations est créé ou mis à jour dans le système CRM Joinpoint. Joinpoint est exploité par Joinpoints GmbH (Graz, Autriche) ; les données sont traitées exclusivement dans des centres de données autrichiens.
+Dès que le résultat est généré, les résultats du questionnaire (p. ex. secteur, taille de l'équipe, outils utilisés, économie estimée) sont transmis automatiquement, sans votre nom ni vos coordonnées, à un workflow n8n auto-hébergé (hébergement comme au ch. 4, VPS chez Hostinger, Allemagne) et enregistrés sous forme d'entrée anonyme dans le système CRM Joinpoint, afin d'évaluer statistiquement l'utilisation de l'outil (p. ex. par secteur ou taille d'entreprise). Joinpoint est exploité par Joinpoints GmbH (Graz, Autriche) ; les données sont traitées exclusivement dans des centres de données autrichiens.
 
-Le fondement de ce traitement est la prise de contact, respectivement l'organisation d'un entretien-conseil, en tant que mesure précontractuelle (art. 31 al. 2 let. a LPD ou art. 6 par. 1 let. b RGPD).
+Si vous cliquez sur le lien de réservation, ou si vous décidez d'envoyer activement votre résultat à Loïc Lavanchy, cette entrée est complétée : dans le premier cas par la mention que le lien de réservation a été cliqué, dans le second cas par l'adresse e-mail que vous avez saisie et votre message. Dans le second cas, Loïc Lavanchy est en outre notifié par e-mail.
 
-Ces données sont supprimées dès qu'elles ne sont plus nécessaires à la prise de contact, mais au plus tard après 24 mois sans autre contact, sous réserve d'obligations légales de conservation (voir ch. 12).
+Le fondement de l'évaluation d'utilisation automatique et anonyme est l'intérêt légitime à l'amélioration et au développement de l'offre (art. 31 al. 1 LPD ou art. 6 par. 1 let. f RGPD). Le fondement du traitement lors d'une prise de contact active est la prise de contact, respectivement l'organisation d'un entretien-conseil, en tant que mesure précontractuelle (art. 31 al. 2 let. a LPD ou art. 6 par. 1 let. b RGPD).
+
+Les données d'utilisation anonymes sont supprimées ou anonymisées au plus tard après 12 mois. Les entrées complétées par des coordonnées sont supprimées dès qu'elles ne sont plus nécessaires à la prise de contact, mais au plus tard après 24 mois sans autre contact, sous réserve d'obligations légales de conservation (voir ch. 12).
 
 ## 9. Traitement de données dans le cadre de projets d'automatisation
 
