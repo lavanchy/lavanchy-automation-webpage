@@ -1035,17 +1035,16 @@ function renderReport(a, r){
     '<section class="cta"><h3>Willst du sehen, wie dein erster Ablauf konkret aussieht?</h3>'+
       '<p>In 30 Minuten schauen wir deine Landkarte gemeinsam an. Du erfährst, was sich lohnt, was es ungefähr kostet und was du besser so lässt, wie es ist.</p>'+
       '<a class="btn btn-book btn-book-xl" href="'+CONTACT.booking+'" target="_blank" rel="noopener">Jetzt Termin buchen <small>30 Min. · kostenlos</small></a>'+
-      '<p class="or">Lieber erst schreiben? Schick Loïc dein Ergebnis, dann ist er im Gespräch schon vorbereitet. Du erhältst eine Bestätigung per E-Mail.</p>'+
+      '<p class="or">Lieber zuerst in Ruhe lesen? Hol dir deinen Report als PDF per E-Mail. Loïc erhält dein Ergebnis ebenfalls und meldet sich persönlich bei dir.</p>'+
       '<p class="print-only print-cta"><b>Termin buchen (30 Min., kostenlos):</b> cal.meetergo.com/loic-lavanchy/30-min-meeting<br><b>E-Mail:</b> '+CONTACT.email+'</p>'+
       '<form class="cta-send" id="send-form" novalidate>'+
         '<div class="text-field"><label for="send-email">Deine E-Mail-Adresse</label><input id="send-email" type="email" required autocomplete="email" placeholder="name@firma.ch"></div>'+
         '<div class="text-field"><label for="send-message">Nachricht an Loïc <span style="font-weight:400;color:#9FB2C3">(optional)</span></label><textarea id="send-message" rows="3" maxlength="2000" placeholder="Was möchtest du noch dazu sagen?"></textarea></div>'+
-        '<button class="btn btn-secondary" type="submit" id="send-btn">Ergebnis an Loïc senden</button>'+
+        '<button class="btn btn-secondary" type="submit" id="send-btn">PDF via Mail erhalten</button>'+
         '<p class="status" id="send-status" role="status"></p>'+
       '</form>'+
     '</section>'+
     '<div class="tools-row no-print">'+
-      '<button class="btn btn-secondary" type="button" id="print-btn">Report als PDF speichern</button>'+
       '<button class="btn btn-ghost" type="button" id="edit-btn">Antworten anpassen</button>'+
       '<button class="btn btn-ghost" type="button" id="restart-btn">Neu starten</button>'+
     '</div>'+
@@ -1095,11 +1094,6 @@ function renderReport(a, r){
       status.textContent = "Senden hat nicht geklappt. Schreib stattdessen direkt an " + CONTACT.email + ".";
       btn.disabled = false;
     }
-  });
-  $("#print-btn").addEventListener("click", ()=>{
-    const src = city.snapshot();
-    $("#print-city").innerHTML = src ? '<img alt="Deine Copy-Paste-Landkarte als 3D-Stadt" src="'+src+'">' : "";
-    try { window.print(); } catch(e){}
   });
   $("#edit-btn").addEventListener("click", ()=>{ qi = 0; renderQ(); show("#view-quiz"); });
   $("#restart-btn").addEventListener("click", ()=>{
