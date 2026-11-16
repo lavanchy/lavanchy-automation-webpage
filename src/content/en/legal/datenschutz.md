@@ -3,7 +3,7 @@ title: "Privacy Policy"
 description: "Privacy policy under the Swiss FADP and the GDPR."
 ---
 
-Lavanchy Automation — Version: 13.11.2026
+Lavanchy Automation — Version: 16.11.2026
 
 *This is a free translation for information purposes. Only the German version is legally binding and prevails in case of discrepancies.*
 
@@ -70,7 +70,7 @@ For the interactive self-assessment tool "Copy-Paste-Landkarte" (currently not p
 
 As soon as the result is generated, the quiz results (e.g. industry, team size, tools used, estimated savings) are automatically transmitted, without your name or contact details, to a self-operated n8n workflow (hosting as under section 4, VPS at Hostinger, Germany) and stored there as an anonymous record in the CRM system Joinpoint, in order to statistically evaluate use of the tool (e.g. by industry or company size). Joinpoint is operated by Joinpoints GmbH (Graz, Austria); the data is processed exclusively in Austrian data centres.
 
-If you click the booking link, or request your result as a PDF by email (in which case your result is also sent to Loïc Lavanchy so that he can get in touch with you), this record is supplemented: in the first case with a note that the booking link was clicked, in the second case with the email address you entered and your message. In the second case, Loïc Lavanchy is additionally notified by email, and you receive a confirmation with your result as a PDF report and a summary at the email address you entered.
+If you click the booking link, or request your result as a PDF by email (in which case your result is also sent to Loïc Lavanchy so that he can get in touch with you), this record is supplemented: in the first case with a note that the booking link was clicked, in the second case with the email address you entered and your message. In the second case, Loïc Lavanchy is additionally notified by email, and you receive a confirmation with your result as a PDF report and a summary at the email address you entered. Emails are sent via the email service of Infomaniak Network SA (Geneva, Switzerland); the data is processed in data centres in Switzerland.
 
 The basis for the automatic, anonymous usage evaluation is the legitimate interest in improving and further developing the offering (Art. 31 para. 1 FADP or Art. 6 para. 1 lit. f GDPR). The basis for processing upon active contact is making contact and arranging a consultation call as a pre-contractual measure (Art. 31 para. 2 lit. a FADP or Art. 6 para. 1 lit. b GDPR).
 
