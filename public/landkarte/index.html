@@ -6,6 +6,7 @@
 <title>Copy-Paste-Landkarte</title>
 <meta name="description" content="12 Fragen, 5 Minuten: Sieh deinen Betrieb als 3D-Stadt und erfahre, wo deine Zeit zwischen den Tools verschwindet. Von Lavanchy Automation.">
 <meta name="robots" content="noindex, nofollow">
+<script>(function(){var m=location.pathname.match(/^\/(en|fr)\//),q=null;try{q=new URLSearchParams(location.search).get("lang");}catch(e){}var l=(q&&/^(de|en|fr)$/.test(q))?q:(m?m[1]:"de");window.__LK_LANG=l;var d=document.documentElement;d.lang=(l==="de"?"de-CH":l);if(l!=="de")d.className+=" i18n-pending";})();</script>
 <style>
 :root{
   /* Planungsplan: kühles Papier, Tinte, Petrol als Akzent. Ampelfarben nur für Zustände. */
@@ -36,6 +37,7 @@ a{color:var(--accent)}
 button,input{font:inherit;color:inherit}
 :focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:6px}
 [hidden]{display:none !important}
+.i18n-pending body{visibility:hidden}
 
 .top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px clamp(16px,4vw,40px);border-bottom:1px solid var(--line);background:var(--surface)}
 .brand{font-family:var(--font-display);font-weight:700;font-size:18px;letter-spacing:-0.01em;display:flex;align-items:center;gap:10px}
@@ -310,32 +312,32 @@ footer{max-width:1240px;margin:0 auto;padding:0 clamp(16px,4vw,40px) 100px;font-
     <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M2 12 6 4l4 6 2-3 2 5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
     Lavanchy <span>Automation</span>
   </div>
-  <a href="https://lavanchyautomation.ch/de/">lavanchyautomation.ch</a>
+  <a href="https://lavanchyautomation.ch/de/" data-href="home">lavanchyautomation.ch</a>
 </header>
 
 <main>
   <!-- INTRO -->
   <section id="view-intro" class="view intro" aria-labelledby="intro-title">
     <div class="intro-text">
-      <div class="eyebrow">Copy-Paste-Landkarte</div>
-      <h1 id="intro-title">Wo verschwindet deine Zeit zwischen E‑Mail, Excel und Buchhaltung?</h1>
-      <p class="lead">Beantworte 12 kurze Fragen. Danach siehst du deinen Betrieb als kleine Stadt: Jedes Tool ist ein Gebäude, jeder Datenfluss eine Strasse. Wo von Hand kopiert wird, steht der Verkehr.</p>
+      <div class="eyebrow" data-i18n="title">Copy-Paste-Landkarte</div>
+      <h1 id="intro-title" data-i18n="introTitle">Wo verschwindet deine Zeit zwischen E‑Mail, Excel und Buchhaltung?</h1>
+      <p class="lead" data-i18n="introLead"></p>
       <ul class="facts">
-        <li><b>12</b> Fragen</li>
-        <li>ca. <b>5</b> Minuten</li>
-        <li>Report sofort</li>
+        <li data-i18n-html="fact1"></li>
+        <li data-i18n-html="fact2"></li>
+        <li data-i18n="fact3"></li>
       </ul>
       <div class="intro-actions">
-        <button class="btn btn-primary" id="start-btn" type="button">Test starten</button>
+        <button class="btn btn-primary" id="start-btn" type="button" data-i18n="startBtn">Test starten</button>
       </div>
-      <p class="privacy"><span>Deine Antworten bleiben während des Tests in deinem Browser. Sobald die Auswertung erscheint, wird das Ergebnis ohne Namen und Kontaktdaten anonym gespeichert. Deine E-Mail-Adresse und Nachricht werden nur übermittelt, wenn du sie am Ende aktiv an Loïc sendest. <a href="https://lavanchyautomation.ch/de/datenschutz/" target="_blank" rel="noopener">Datenschutzerklärung</a></span></p>
+      <p class="privacy"><span data-i18n-html="privacyIntro"></span></p>
     </div>
     <div class="city" id="host-intro">
       <div class="ov ov-counter">
         <div class="num" id="intro-num">0<small>h</small></div>
-        <p><b>Stunden pro Jahr</b> Handarbeit zwischen den Tools</p>
+        <p data-i18n-html="counterIntro"></p>
       </div>
-      <div class="ov ov-caption">Beispiel: Treuhandbüro, 6 Personen</div>
+      <div class="ov ov-caption" data-i18n="exampleCaption"></div>
     </div>
   </section>
 
@@ -343,7 +345,7 @@ footer{max-width:1240px;margin:0 auto;padding:0 clamp(16px,4vw,40px) 100px;font-
   <section id="view-quiz" class="view quiz" hidden aria-live="polite">
     <form class="quiz-card" id="quiz-form" novalidate>
       <div class="progress">
-        <div class="progress-meta"><span>Frage <b id="q-index">1</b> von <b>12</b></span><span id="q-topic"></span></div>
+        <div class="progress-meta"><span data-i18n-html="progress">Frage <b id="q-index">1</b> von <b>12</b></span><span id="q-topic"></span></div>
         <div class="bar"><i id="q-bar" style="width:8%"></i></div>
       </div>
       <div class="q-head">
@@ -353,8 +355,8 @@ footer{max-width:1240px;margin:0 auto;padding:0 clamp(16px,4vw,40px) 100px;font-
       <div id="q-body"></div>
       <div class="q-error" id="q-error" role="alert"></div>
       <div class="q-nav">
-        <button class="btn btn-ghost" type="button" id="q-back">Zurück</button>
-        <button class="btn btn-primary" type="submit" id="q-next">Weiter</button>
+        <button class="btn btn-ghost" type="button" id="q-back" data-i18n="back">Zurück</button>
+        <button class="btn btn-primary" type="submit" id="q-next" data-i18n="next">Weiter</button>
       </div>
     </form>
   </section>
@@ -364,31 +366,31 @@ footer{max-width:1240px;margin:0 auto;padding:0 clamp(16px,4vw,40px) 100px;font-
     <div class="city result-city" id="host-result">
       <div class="ov ov-counter">
         <div class="num" id="res-num">0<small>h</small></div>
-        <p><b>Stunden pro Jahr</b> Handarbeit zwischen deinen Tools</p>
+        <p data-i18n-html="counterResult"></p>
       </div>
-      <div class="ov ov-hint">Ziehen zum Drehen, scrollen zum Zoomen</div>
+      <div class="ov ov-hint" data-i18n="hint3d"></div>
       <div class="ov ov-legend">
-        <span><i style="background:var(--ok)"></i>läuft automatisch</span>
-        <span><i style="background:var(--warn)"></i>teils von Hand</span>
-        <span><i style="background:var(--bad)"></i>Handarbeit, Stau</span>
-        <span><i class="dot" style="background:var(--island)"></i>Wissen bei einer Person</span>
+        <span><i style="background:var(--ok)"></i><span data-i18n="legOk"></span></span>
+        <span><i style="background:var(--warn)"></i><span data-i18n="legWarn"></span></span>
+        <span><i style="background:var(--bad)"></i><span data-i18n="legBad"></span></span>
+        <span><i class="dot" style="background:var(--island)"></i><span data-i18n="legIsland"></span></span>
       </div>
     </div>
     <div class="report" id="report"></div>
     <div class="sticky-book no-print">
-      <span>Deine Landkarte mit Loïc besprechen: <b>30 Min., kostenlos</b></span>
-      <a class="btn btn-book" href="https://cal.meetergo.com/loic-lavanchy/30-min-meeting" target="_blank" rel="noopener">Termin buchen</a>
+      <span data-i18n-html="stickyText"></span>
+      <a class="btn btn-book" href="https://cal.meetergo.com/loic-lavanchy/30-min-meeting" target="_blank" rel="noopener" data-i18n="bookBtn">Termin buchen</a>
     </div>
   </section>
 </main>
 
 <footer>
   <span>Lavanchy Automation · Rue du Centre 53 · 1025 St-Sulpice VD</span>
-  <span>Alle Werte sind Schätzungen auf Basis deiner Angaben. · <a href="https://lavanchyautomation.ch/de/datenschutz/" target="_blank" rel="noopener">Datenschutz</a> · <a href="https://lavanchyautomation.ch/de/impressum/" target="_blank" rel="noopener">Impressum</a></span>
+  <span data-i18n-html="footerNote"></span>
 </footer>
 
-<script src="three.min.js"></script>
-<script src="OrbitControls.js"></script>
+<script src="/landkarte/three.min.js"></script>
+<script src="/landkarte/OrbitControls.js"></script>
 <script>
 (function(){
 "use strict";
@@ -407,7 +409,7 @@ function loadHtml2pdf(){
   if(!html2pdfLoading){
     html2pdfLoading = new Promise((resolve, reject)=>{
       const s = document.createElement("script");
-      s.src = "html2pdf.bundle.min.js";
+      s.src = "/landkarte/html2pdf.bundle.min.js";
       s.onload = resolve;
       s.onerror = ()=>{ html2pdfLoading = null; reject(new Error("html2pdf konnte nicht geladen werden")); };
       document.head.appendChild(s);
@@ -423,85 +425,442 @@ const FULLTIME = 42;       // Stunden pro Vollzeitwoche
 const COLORS = { ok:"#2F9E6B", warn:"#D99A12", bad:"#D4483B", island:"#EE7A16", accent:"#1C5D7B", ink:"#132130" };
 const reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-const TOOLS = {
-  email:{label:"E-Mail", hint:"Outlook, Gmail, kMail"},
-  excel:{label:"Excel / Sheets", hint:"Listen und Tabellen"},
-  crm:{label:"CRM", hint:"HubSpot, Pipedrive, Kundenliste"},
-  buchhaltung:{label:"Buchhaltung", hint:"Bexio, Abacus, Banana, DATEV"},
-  erp:{label:"ERP / Warenwirtschaft", hint:"joinpoints, Odoo, SAP B1"},
-  kalender:{label:"Kalender", hint:"Outlook, Google, Buchungsseite"},
-  formular:{label:"Website / Formular", hint:"Kontaktformular, Shop"},
-  ablage:{label:"Cloud-Ablage", hint:"kDrive, OneDrive, Dropbox"},
-  chat:{label:"Chat", hint:"Teams, Slack, WhatsApp"},
-  projekt:{label:"Projekt-Tool", hint:"Asana, Trello, Planner"},
-  branche:{label:"Branchensoftware", hint:"Kanzlei-, Praxis-, Handwerkersoftware"},
-  word:{label:"Word & Vorlagen", hint:"Briefe, Angebote, Verträge"},
-  ki:{label:"ChatGPT / KI", hint:"ChatGPT, Copilot, Gemini"},
-  papier:{label:"Papier & Ordner", hint:"Post, Ausdrucke, Notizen"}
-};
+/* ---------- Sprache ---------- */
+/* Die Seite liegt identisch unter /landkarte/, /en/landkarte/ und /fr/landkarte/.
+   Die Sprache kommt aus dem Pfad (oder ?lang=xx zum Testen), siehe Skript im <head>.
+   An n8n/Joinpoint gehen Werte immer auf Deutsch, damit die Auswertung einheitlich bleibt. */
+const LANG = window.__LK_LANG || "de";
+const DATE_LOCALE = {de:"de-CH", en:"en-GB", fr:"fr-CH"}[LANG];
+const NUM_LOCALE = {de:"de-DE", en:"en-GB", fr:"fr-CH"}[LANG];
 
 /* Regeln je Ablauf: woher, wohin, wie anfällig für Handarbeit (bias), automatisierbarer Anteil (auto), braucht es KI */
-const TASKS = {
-  anfragen:{label:"Anfragen erfassen", hint:"Mails, Formulare, Anrufe ins System übertragen",
-    src:["formular","email","chat"], dst:["crm","excel","projekt"], bias:1.1, auto:0.8,
-    ki:s=>s!=="formular",
-    why:s=> s==="formular"
-      ? "Das Formular liefert schon saubere Felder. Eine Schnittstelle trägt sie direkt ein, ohne dass jemand abtippt."
-      : "Anfragen kommen als freier Text. KI liest Name, Anliegen und Dringlichkeit heraus und legt den Kontakt sauber an. Ein Mensch prüft nur noch."},
-  angebote:{label:"Angebote erstellen", hint:"Kundendaten und Positionen in eine Vorlage bringen",
-    src:["crm","excel","email"], dst:["word","buchhaltung","erp","branche"], bias:1.0, auto:0.55, ki:false,
-    why:"Kundendaten und Positionen fliessen automatisch in deine feste Vorlage. Dafür braucht es keine KI, nur eine saubere Verbindung."},
-  rechnungen:{label:"Rechnungen schreiben", hint:"Leistungen und Positionen in die Buchhaltung übernehmen",
-    src:["projekt","crm","excel","erp"], dst:["buchhaltung","word"], bias:0.95, auto:0.7, ki:false,
-    why:"Geleistete Stunden oder Positionen werden automatisch in die Buchhaltung übernommen. Eine Schnittstelle reicht."},
-  belege:{label:"Belege ablegen und verbuchen", hint:"Rechnungen aus Mail und Post sortieren und erfassen",
-    src:["papier","email"], dst:["buchhaltung","ablage"], bias:1.15, auto:0.75, ki:true,
-    why:"Jeder Beleg sieht anders aus. KI liest Betrag, Datum und Lieferant aus und legt ihn ab. Ein Mensch gibt nur noch frei."},
-  termine:{label:"Termine koordinieren", hint:"Hin und Her per Mail oder Telefon",
-    src:["email","chat"], dst:["kalender"], bias:0.9, auto:0.7, ki:false,
-    why:"Eine Buchungsseite mit Kalenderanbindung ersetzt das Hin und Her. Bestätigung und Erinnerung gehen automatisch raus."},
-  kundendaten:{label:"Kundendaten übertragen", hint:"Dieselben Daten in mehreren Tools pflegen",
-    src:["crm","excel","formular"], dst:["buchhaltung","erp","excel","branche"], bias:1.1, auto:0.85, ki:false,
-    why:"Kundendaten werden an einer Stelle gepflegt, die anderen Tools ziehen automatisch nach. Doppelte Einträge verschwinden."},
-  berichte:{label:"Berichte und Auswertungen", hint:"Zahlen aus mehreren Tools zusammentragen",
-    src:["buchhaltung","crm","erp","projekt"], dst:["excel"], bias:1.05, auto:0.75, ki:false,
-    why:"Die Zahlen werden jede Woche automatisch gezogen und ins gleiche Format gebracht. Eine Schnittstelle reicht."},
-  onboarding:{label:"Onboarding neuer Kunden", hint:"Ordner, Zugänge, Willkommensmail",
-    src:["email","formular","crm"], dst:["ablage","projekt","crm"], bias:1.0, auto:0.6, ki:false,
-    why:"Eine Checkliste, die sich selbst abarbeitet: Ordner anlegen, Zugänge vergeben, Willkommensmail verschicken."},
-  fristen:{label:"Fristen überwachen", hint:"Termine, Abgaben, Verlängerungen im Blick behalten",
-    src:["branche","excel","kalender","papier"], dst:["email","chat","kalender"], bias:1.0, auto:0.8, ki:false,
-    why:"Die Fristen stehen schon irgendwo drin. Eine Automatisierung liest sie aus, erinnert rechtzeitig und protokolliert jeden Schritt."},
-  bestellungen:{label:"Bestellungen abgleichen", hint:"Bestellungen, Lieferungen, Lager",
-    src:["email","formular"], dst:["erp","excel","buchhaltung"], bias:1.0, auto:0.65, ki:false,
-    why:"Bestellungen landen automatisch im ERP. Der Bestand stimmt, ohne dass jemand Listen abgleicht."}
+const TASK_RULES = {
+  anfragen:{src:["formular","email","chat"], dst:["crm","excel","projekt"], bias:1.1, auto:0.8, ki:s=>s!=="formular", whyKey:s=>s==="formular"?"form":"text"},
+  angebote:{src:["crm","excel","email"], dst:["word","buchhaltung","erp","branche"], bias:1.0, auto:0.55, ki:false},
+  rechnungen:{src:["projekt","crm","excel","erp"], dst:["buchhaltung","word"], bias:0.95, auto:0.7, ki:false},
+  belege:{src:["papier","email"], dst:["buchhaltung","ablage"], bias:1.15, auto:0.75, ki:true},
+  termine:{src:["email","chat"], dst:["kalender"], bias:0.9, auto:0.7, ki:false},
+  kundendaten:{src:["crm","excel","formular"], dst:["buchhaltung","erp","excel","branche"], bias:1.1, auto:0.85, ki:false},
+  berichte:{src:["buchhaltung","crm","erp","projekt"], dst:["excel"], bias:1.05, auto:0.75, ki:false},
+  onboarding:{src:["email","formular","crm"], dst:["ablage","projekt","crm"], bias:1.0, auto:0.6, ki:false},
+  fristen:{src:["branche","excel","kalender","papier"], dst:["email","chat","kalender"], bias:1.0, auto:0.8, ki:false},
+  bestellungen:{src:["email","formular"], dst:["erp","excel","buchhaltung"], bias:1.0, auto:0.65, ki:false}
 };
-
-const SINGLE = {
-  team:[["1","Nur ich"],["2-5","2 bis 5"],["6-15","6 bis 15"],["16-50","16 bis 50"],["50+","Mehr als 50"]],
-  branche:[["Treuhand / Buchhaltung"],["Kanzlei / Beratung"],["Handwerk / Bau"],["Handel / E-Commerce"],["Agentur / Dienstleistung"],["Gesundheit / Praxis"],["Andere Branche"]],
-  transfer:[["kopie","Meistens abtippen oder kopieren"],["teils","Teils von Hand, teils automatisch"],["auto","Meistens automatisch"],["unklar","Weiss ich nicht genau"]],
-  errors:[["nie","Praktisch nie"],["selten","Selten"],["monat","Etwa jeden Monat"],["woche","Jede Woche"]],
-  absence:[["0","Alles läuft weiter"],["1","Das meiste läuft weiter"],["2","Einige Abläufe bleiben liegen"],["3","Vieles steht still"]],
-  docs:[["0","Ja, und sie sind aktuell"],["1","Teilweise oder veraltet"],["2","Nein, das ist im Kopf"]],
-  kidata:[["keine","Keine, wir nutzen keine KI-Tools"],["allgemein","Nur allgemeine Texte, keine Kundendaten"],["kunden","Auch Mails oder Dokumente von Kunden"],["unklar","Weiss ich nicht genau"]],
-  goal:[["kunden","Mehr Kunden betreuen"],["wachsen","Wachsen, ohne gleich neu einzustellen"],["feierabend","Früher Feierabend machen"],["fehler","Weniger Fehler und Nacharbeit"]]
+const TOOL_IDS = ["email","excel","crm","buchhaltung","erp","kalender","formular","ablage","chat","projekt","branche","word","ki","papier"];
+/* Werte bleiben sprachunabhängig (Branche: deutscher Name als Schlüssel, so erwartet ihn n8n) */
+const SINGLE_VALUES = {
+  team:["1","2-5","6-15","16-50","50+"],
+  branche:["Treuhand / Buchhaltung","Kanzlei / Beratung","Handwerk / Bau","Handel / E-Commerce","Agentur / Dienstleistung","Gesundheit / Praxis","Andere Branche"],
+  transfer:["kopie","teils","auto","unklar"],
+  errors:["nie","selten","monat","woche"],
+  absence:["0","1","2","3"],
+  docs:["0","1","2"],
+  kidata:["keine","allgemein","kunden","unklar"],
+  goal:["kunden","wachsen","feierabend","fehler"]
 };
-
 const QUESTIONS = [
-  {key:"team", topic:"Betrieb", type:"single", title:"Wie viele Personen arbeiten in deinem Betrieb?", hint:"Inklusive dir selbst."},
-  {key:"branche", topic:"Betrieb", type:"single", title:"In welcher Branche bist du unterwegs?", hint:"Wähle das, was am ehesten passt."},
-  {key:"tools", topic:"Tools", type:"tools", title:"Welche Tools nutzt du im Alltag?", hint:"Alles, was mindestens einmal pro Woche offen ist. Mindestens 3."},
-  {key:"tasks", topic:"Abläufe", type:"tasks", title:"Welche Abläufe wiederholen sich bei dir jede Woche?", hint:"Wähle alles, was passt."},
-  {key:"hours", topic:"Abläufe", type:"hours", title:"Wie viel Zeit steckt das Team pro Woche in diese Abläufe?", hint:"Eine grobe Schätzung reicht. Zähle alle Personen zusammen."},
-  {key:"transfer", topic:"Datenflüsse", type:"single", title:"Wie kommen Daten von einem Tool ins nächste?", hint:"Zum Beispiel eine Anfrage aus dem Mail ins CRM oder eine Rechnung in die Buchhaltung."},
-  {key:"errors", topic:"Datenflüsse", type:"single", title:"Wie oft passieren Fehler beim Übertragen?", hint:"Falsche Beträge, vergessene Einträge, doppelte Kunden."},
-  {key:"absence", topic:"Wissen", type:"single", title:"Deine wichtigste Person fällt drei Wochen aus. Was passiert?", hint:"Ehrlich ist hier hilfreicher als optimistisch."},
-  {key:"docs", topic:"Wissen", type:"single", title:"Sind deine Abläufe irgendwo aufgeschrieben?", hint:"So, dass jemand Neues sie ohne Nachfragen erledigen könnte."},
-  {key:"kidata", topic:"Datenschutz", type:"single", title:"Welche Daten landen bei dir in KI-Tools wie ChatGPT?", hint:"Auch das, was Mitarbeitende privat nutzen, zählt."},
-  {key:"rate", topic:"Kosten", type:"rate", title:"Was kostet dich eine Arbeitsstunde ungefähr?", hint:"Lohn inklusive Nebenkosten. Wenn du es nicht weisst, lass den Wert einfach stehen."},
-  {key:"goal", topic:"Ziel", type:"goal", title:"Was würdest du mit der gewonnenen Zeit am liebsten machen?", hint:"Danach siehst du deine Landkarte."}
+  {key:"team", type:"single"}, {key:"branche", type:"single"}, {key:"tools", type:"tools"}, {key:"tasks", type:"tasks"},
+  {key:"hours", type:"hours"}, {key:"transfer", type:"single"}, {key:"errors", type:"single"}, {key:"absence", type:"single"},
+  {key:"docs", type:"single"}, {key:"kidata", type:"single"}, {key:"rate", type:"rate"}, {key:"goal", type:"goal"}
 ];
+
+const TX = {
+de:{
+  title:"Copy-Paste-Landkarte",
+  desc:"12 Fragen, 5 Minuten: Sieh deinen Betrieb als 3D-Stadt und erfahre, wo deine Zeit zwischen den Tools verschwindet. Von Lavanchy Automation.",
+  urls:{home:"https://lavanchyautomation.ch/de/", privacy:"https://lavanchyautomation.ch/de/datenschutz/", imprint:"https://lavanchyautomation.ch/de/impressum/"},
+  introTitle:"Wo verschwindet deine Zeit zwischen E‑Mail, Excel und Buchhaltung?",
+  introLead:"Beantworte 12 kurze Fragen. Danach siehst du deinen Betrieb als kleine Stadt: Jedes Tool ist ein Gebäude, jeder Datenfluss eine Strasse. Wo von Hand kopiert wird, steht der Verkehr.",
+  fact1:"<b>12</b> Fragen", fact2:"ca. <b>5</b> Minuten", fact3:"Report sofort",
+  startBtn:"Test starten",
+  privacyIntro:"Deine Antworten bleiben während des Tests in deinem Browser. Sobald die Auswertung erscheint, wird das Ergebnis ohne Namen und Kontaktdaten anonym gespeichert. Deine E-Mail-Adresse, Telefonnummer und Nachricht werden nur übermittelt, wenn du am Ende den Report per E-Mail anforderst. <a href='https://lavanchyautomation.ch/de/datenschutz/' target='_blank' rel='noopener'>Datenschutzerklärung</a>",
+  counterIntro:"<b>Stunden pro Jahr</b> Handarbeit zwischen den Tools",
+  exampleCaption:"Beispiel: Treuhandbüro, 6 Personen",
+  progress:"Frage <b id='q-index'>1</b> von <b>12</b>",
+  back:"Zurück", next:"Weiter", showMap:"Landkarte zeigen",
+  counterResult:"<b>Stunden pro Jahr</b> Handarbeit zwischen deinen Tools",
+  hint3d:"Ziehen zum Drehen, scrollen zum Zoomen",
+  legOk:"läuft automatisch", legWarn:"teils von Hand", legBad:"Handarbeit, Stau", legIsland:"Wissen bei einer Person",
+  stickyText:"Deine Landkarte mit Loïc besprechen: <b>30 Min., kostenlos</b>",
+  bookBtn:"Termin buchen",
+  footerNote:"Alle Werte sind Schätzungen auf Basis deiner Angaben. · <a href='https://lavanchyautomation.ch/de/datenschutz/' target='_blank' rel='noopener'>Datenschutz</a> · <a href='https://lavanchyautomation.ch/de/impressum/' target='_blank' rel='noopener'>Impressum</a>",
+  fallback3d:"Die 3D-Ansicht konnte nicht geladen werden. Dein Report unten ist trotzdem vollständig.",
+  hWeek:"h/Wo", perHour:"pro Stunde", currencyAria:"Währung", rateAria:"Kosten pro Arbeitsstunde",
+  firmaLabel:"Name deines Betriebs <span style='font-weight:400;color:var(--muted)'>(optional, erscheint im Report)</span>",
+  errChoose:"Bitte wähle eine Antwort.",
+  errTools:n=>"Bitte wähle mindestens 3 Tools. Aktuell: "+n+".",
+  errTasks:"Bitte wähle mindestens einen Ablauf.",
+  tools:{
+    email:["E-Mail","Outlook, Gmail, kMail"], excel:["Excel / Sheets","Listen und Tabellen"], crm:["CRM","HubSpot, Pipedrive, Kundenliste"],
+    buchhaltung:["Buchhaltung","Bexio, Abacus, Banana, DATEV"], erp:["ERP / Warenwirtschaft","joinpoints, Odoo, SAP B1"],
+    kalender:["Kalender","Outlook, Google, Buchungsseite"], formular:["Website / Formular","Kontaktformular, Shop"],
+    ablage:["Cloud-Ablage","kDrive, OneDrive, Dropbox"], chat:["Chat","Teams, Slack, WhatsApp"], projekt:["Projekt-Tool","Asana, Trello, Planner"],
+    branche:["Branchensoftware","Kanzlei-, Praxis-, Handwerkersoftware"], word:["Word & Vorlagen","Briefe, Angebote, Verträge"],
+    ki:["ChatGPT / KI","ChatGPT, Copilot, Gemini"], papier:["Papier & Ordner","Post, Ausdrucke, Notizen"]
+  },
+  tasks:{
+    anfragen:{label:"Anfragen erfassen", hint:"Mails, Formulare, Anrufe ins System übertragen", why:{form:"Das Formular liefert schon saubere Felder. Eine Schnittstelle trägt sie direkt ein, ohne dass jemand abtippt.", text:"Anfragen kommen als freier Text. KI liest Name, Anliegen und Dringlichkeit heraus und legt den Kontakt sauber an. Ein Mensch prüft nur noch."}},
+    angebote:{label:"Angebote erstellen", hint:"Kundendaten und Positionen in eine Vorlage bringen", why:"Kundendaten und Positionen fliessen automatisch in deine feste Vorlage. Dafür braucht es keine KI, nur eine saubere Verbindung."},
+    rechnungen:{label:"Rechnungen schreiben", hint:"Leistungen und Positionen in die Buchhaltung übernehmen", why:"Geleistete Stunden oder Positionen werden automatisch in die Buchhaltung übernommen. Eine Schnittstelle reicht."},
+    belege:{label:"Belege ablegen und verbuchen", hint:"Rechnungen aus Mail und Post sortieren und erfassen", why:"Jeder Beleg sieht anders aus. KI liest Betrag, Datum und Lieferant aus und legt ihn ab. Ein Mensch gibt nur noch frei."},
+    termine:{label:"Termine koordinieren", hint:"Hin und Her per Mail oder Telefon", why:"Eine Buchungsseite mit Kalenderanbindung ersetzt das Hin und Her. Bestätigung und Erinnerung gehen automatisch raus."},
+    kundendaten:{label:"Kundendaten übertragen", hint:"Dieselben Daten in mehreren Tools pflegen", why:"Kundendaten werden an einer Stelle gepflegt, die anderen Tools ziehen automatisch nach. Doppelte Einträge verschwinden."},
+    berichte:{label:"Berichte und Auswertungen", hint:"Zahlen aus mehreren Tools zusammentragen", why:"Die Zahlen werden jede Woche automatisch gezogen und ins gleiche Format gebracht. Eine Schnittstelle reicht."},
+    onboarding:{label:"Onboarding neuer Kunden", hint:"Ordner, Zugänge, Willkommensmail", why:"Eine Checkliste, die sich selbst abarbeitet: Ordner anlegen, Zugänge vergeben, Willkommensmail verschicken."},
+    fristen:{label:"Fristen überwachen", hint:"Termine, Abgaben, Verlängerungen im Blick behalten", why:"Die Fristen stehen schon irgendwo drin. Eine Automatisierung liest sie aus, erinnert rechtzeitig und protokolliert jeden Schritt."},
+    bestellungen:{label:"Bestellungen abgleichen", hint:"Bestellungen, Lieferungen, Lager", why:"Bestellungen landen automatisch im ERP. Der Bestand stimmt, ohne dass jemand Listen abgleicht."}
+  },
+  single:{
+    team:{"1":"Nur ich","2-5":"2 bis 5","6-15":"6 bis 15","16-50":"16 bis 50","50+":"Mehr als 50"},
+    branche:{"Treuhand / Buchhaltung":"Treuhand / Buchhaltung","Kanzlei / Beratung":"Kanzlei / Beratung","Handwerk / Bau":"Handwerk / Bau","Handel / E-Commerce":"Handel / E-Commerce","Agentur / Dienstleistung":"Agentur / Dienstleistung","Gesundheit / Praxis":"Gesundheit / Praxis","Andere Branche":"Andere Branche"},
+    transfer:{kopie:"Meistens abtippen oder kopieren", teils:"Teils von Hand, teils automatisch", auto:"Meistens automatisch", unklar:"Weiss ich nicht genau"},
+    errors:{nie:"Praktisch nie", selten:"Selten", monat:"Etwa jeden Monat", woche:"Jede Woche"},
+    absence:{"0":"Alles läuft weiter","1":"Das meiste läuft weiter","2":"Einige Abläufe bleiben liegen","3":"Vieles steht still"},
+    docs:{"0":"Ja, und sie sind aktuell","1":"Teilweise oder veraltet","2":"Nein, das ist im Kopf"},
+    kidata:{keine:"Keine, wir nutzen keine KI-Tools", allgemein:"Nur allgemeine Texte, keine Kundendaten", kunden:"Auch Mails oder Dokumente von Kunden", unklar:"Weiss ich nicht genau"},
+    goal:{kunden:"Mehr Kunden betreuen", wachsen:"Wachsen, ohne gleich neu einzustellen", feierabend:"Früher Feierabend machen", fehler:"Weniger Fehler und Nacharbeit"}
+  },
+  questions:{
+    team:{topic:"Betrieb", title:"Wie viele Personen arbeiten in deinem Betrieb?", hint:"Inklusive dir selbst."},
+    branche:{topic:"Betrieb", title:"In welcher Branche bist du unterwegs?", hint:"Wähle das, was am ehesten passt."},
+    tools:{topic:"Tools", title:"Welche Tools nutzt du im Alltag?", hint:"Alles, was mindestens einmal pro Woche offen ist. Mindestens 3."},
+    tasks:{topic:"Abläufe", title:"Welche Abläufe wiederholen sich bei dir jede Woche?", hint:"Wähle alles, was passt."},
+    hours:{topic:"Abläufe", title:"Wie viel Zeit steckt das Team pro Woche in diese Abläufe?", hint:"Eine grobe Schätzung reicht. Zähle alle Personen zusammen."},
+    transfer:{topic:"Datenflüsse", title:"Wie kommen Daten von einem Tool ins nächste?", hint:"Zum Beispiel eine Anfrage aus dem Mail ins CRM oder eine Rechnung in die Buchhaltung."},
+    errors:{topic:"Datenflüsse", title:"Wie oft passieren Fehler beim Übertragen?", hint:"Falsche Beträge, vergessene Einträge, doppelte Kunden."},
+    absence:{topic:"Wissen", title:"Deine wichtigste Person fällt drei Wochen aus. Was passiert?", hint:"Ehrlich ist hier hilfreicher als optimistisch."},
+    docs:{topic:"Wissen", title:"Sind deine Abläufe irgendwo aufgeschrieben?", hint:"So, dass jemand Neues sie ohne Nachfragen erledigen könnte."},
+    kidata:{topic:"Datenschutz", title:"Welche Daten landen bei dir in KI-Tools wie ChatGPT?", hint:"Auch das, was Mitarbeitende privat nutzen, zählt."},
+    rate:{topic:"Kosten", title:"Was kostet dich eine Arbeitsstunde ungefähr?", hint:"Lohn inklusive Nebenkosten. Wenn du es nicht weisst, lass den Wert einfach stehen."},
+    goal:{topic:"Ziel", title:"Was würdest du mit der gewonnenen Zeit am liebsten machen?", hint:"Danach siehst du deine Landkarte."}
+  },
+  team:v=>v==="1" ? "1 Person" : TX.de.single.team[v]+" Personen",
+  privacy_kunden:"Kundendaten landen in KI-Tools, die ihre Server oft in den USA haben. Nach Schweizer DSG und DSGVO braucht es dafür eine klare Grundlage. Wer Kunden in der EU hat, muss zusätzlich den EU AI Act beachten. Kläre, welche Tools erlaubt sind und welche Daten dort hinein dürfen.",
+  privacy_unklar:"Du weisst nicht genau, welche Daten in KI-Tools landen. Das ist in vielen Betrieben so, weil Mitarbeitende Tools auf eigene Faust nutzen. Ein kurzer Überblick, wer was nutzt, schützt dich und deine Kunden.",
+  goal:{
+    kunden:(h,f)=>"Du willst mehr Kunden betreuen. Die automatisierbaren "+h+" Stunden pro Woche gehen dann in Beratung und Betreuung statt in Übertragungen.",
+    wachsen:(h,f)=>"Du willst wachsen, ohne gleich neu einzustellen. "+h+" Stunden pro Woche entsprechen etwa "+f+" % einer Vollzeitstelle.",
+    feierabend:(h,f)=>"Du willst früher Feierabend machen. Das sind "+h+" Stunden pro Woche, die heute zusätzlich zur eigentlichen Arbeit anfallen.",
+    fehler:(h,f)=>"Du willst weniger Fehler. Jede Übertragung, die automatisch läuft, wird protokolliert. Abtippfehler fallen weg, und du siehst jederzeit, was wann passiert ist."
+  },
+  reportEyebrow:"Dein Report",
+  reportTitle:f=>"Copy-Paste-Landkarte"+(f ? " für "+f : ""),
+  reportMeta:(n,p)=>n+" Tools · heute laufen ca. "+p+" % der Übertragungen automatisch",
+  stat1:"Stunden pro Jahr Handarbeit zwischen den Tools",
+  stat2:"Stunden davon lassen sich automatisieren",
+  stat3:(r,c)=>"pro Jahr, bei "+r+" "+c+" pro Arbeitsstunde",
+  stat4:"volle Arbeitswochen à "+FULLTIME+" Stunden",
+  bannerTitle:"Deine Landkarte gemeinsam anschauen",
+  bannerText:n=>"30 Minuten mit "+n+", kostenlos und unverbindlich. Du erfährst, wo du anfangen solltest und was es ungefähr kostet.",
+  jamsTitle:n=>n===1 ? "Deine grösste Baustelle" : "Deine "+n+" grössten Staus",
+  pillAi:"Hier hilft KI", pillApi:"Reicht eine Schnittstelle",
+  jamNums:(h,s)=>"<b>"+h+" h</b> pro Woche im Team · davon ca. <b>"+s+" h</b> pro Jahr automatisierbar",
+  kiAll:n=>"Keiner deiner "+n+" grössten Staus braucht KI. Saubere Schnittstellen zwischen den Tools reichen.",
+  kiNone:"Bei deinen grössten Staus hilft KI tatsächlich, weil die Daten als freier Text oder Beleg ankommen. Ein Mensch gibt trotzdem frei.",
+  kiMixed:(a,n)=>a+" von "+n+" Staus brauchen keine KI. Dort reicht eine saubere Schnittstelle. KI setzen wir nur dort ein, wo Daten als freier Text oder Beleg ankommen.",
+  startEyebrow:"Hier würde ich anfangen",
+  startTitle:(l,s,d)=>l+": von "+s+" nach "+d,
+  startText:h=>"Dieser Ablauf spart dir ca. <b>"+h+" Stunden pro Woche</b>. Ich baue ihn als Erstes, teste ihn mit deinen echten Daten und starte den nächsten Ablauf erst, wenn dieser zuverlässig läuft.",
+  islandTitle:"Wissen bei einer Person",
+  islandText:x=>"Bei "+x+" hängt das Wissen an wenigen Köpfen. Fällt jemand aus, bleiben diese Abläufe liegen. Bevor hier automatisiert wird, schreibe ich den Ablauf mit dir Schritt für Schritt auf. Danach kann ihn jemand anderes übernehmen, auch ohne Automatisierung.",
+  teamKnowTitle:"Wissen im Team",
+  teamKnowText:"Deine Abläufe hängen nicht an einer einzelnen Person. Das ist eine gute Grundlage: Was beschrieben ist, lässt sich sauber automatisieren und testen.",
+  privWarnTitle:"Datenschutz-Hinweis", privOkTitle:"Datenschutz",
+  privOkText:"Nach deinen Angaben landen keine Kundendaten in KI-Tools. Bei jeder Automatisierung prüfe ich trotzdem, wo die Daten verarbeitet werden, bevorzugt in der Schweiz oder der EU.",
+  ctaTitle:"Willst du sehen, wie dein erster Ablauf konkret aussieht?",
+  ctaText:"In 30 Minuten schauen wir deine Landkarte gemeinsam an. Du erfährst, was sich lohnt, was es ungefähr kostet und was du besser so lässt, wie es ist.",
+  ctaBookXl:"Jetzt Termin buchen <small>30 Min. · kostenlos</small>",
+  ctaOr:"Lieber zuerst in Ruhe lesen? Hol dir deinen Report als PDF per E-Mail. Loïc erhält dein Ergebnis ebenfalls und meldet sich persönlich bei dir.",
+  printCta:e=>"<b>Termin buchen (30 Min., kostenlos):</b> cal.meetergo.com/loic-lavanchy/30-min-meeting<br><b>E-Mail:</b> "+e,
+  emailLabel:"Deine E-Mail-Adresse", emailPh:"name@firma.ch",
+  phoneLabel:"Telefonnummer <span style='font-weight:400;color:#9FB2C3'>(optional)</span>", phonePh:"+41 79 123 45 67",
+  msgLabel:"Nachricht an Loïc <span style='font-weight:400;color:#9FB2C3'>(optional)</span>", msgPh:"Was möchtest du noch dazu sagen?",
+  sendBtn:"PDF via Mail erhalten",
+  editBtn:"Antworten anpassen", restartBtn:"Neu starten",
+  methodTitle:"So rechnet die Landkarte",
+  method:[
+    "Stunden pro Woche × "+WEEKS+" Arbeitswochen × Anteil Handarbeit. Der Anteil kommt aus Frage 6 und wird je Ablauf angepasst, bei Papier zusätzlich erhöht.",
+    "Fehler beim Übertragen erzeugen Nacharbeit: Zuschlag von 0 bis 12 % je nach Antwort in Frage 7.",
+    "Der automatisierbare Anteil ist je Ablauf fest hinterlegt, zum Beispiel Kundendaten 85 %, Belege 75 %, Angebote 55 %.",
+    "KI empfiehlt die Landkarte nur, wenn Daten als freier Text oder Beleg ankommen. Alles andere läuft über Schnittstellen.",
+    "Alle Werte sind Schätzungen auf Basis deiner Angaben. Genau wird es, wenn wir einen Ablauf Schritt für Schritt anschauen."
+  ],
+  signature:"Lavanchy Automation · Prozessautomatisierung für KMU in der Schweiz und im DACH-Raum",
+  stInvalidEmail:"Bitte eine gültige E-Mail-Adresse eingeben.",
+  stInvalidPhone:"Bitte eine gültige Telefonnummer eingeben oder das Feld leer lassen.",
+  stBuilding:"Dein Report wird erstellt…", stSending:"Wird gesendet…",
+  stDone:"Danke fürs Ausfüllen! Du erhältst gleich eine Bestätigung mit deinem Ergebnis per E-Mail. Loïc meldet sich bei dir.",
+  stFail:e=>"Senden hat nicht geklappt. Schreib stattdessen direkt an "+e+".",
+  altCity:"Deine Copy-Paste-Landkarte als 3D-Stadt",
+  pdfName:"Copy-Paste-Landkarte.pdf"
+},
+
+en:{
+  title:"Copy-Paste Map",
+  desc:"12 questions, 5 minutes: see your business as a 3D city and find out where your time disappears between tools. By Lavanchy Automation.",
+  urls:{home:"https://lavanchyautomation.ch/en/", privacy:"https://lavanchyautomation.ch/en/datenschutz/", imprint:"https://lavanchyautomation.ch/en/impressum/"},
+  introTitle:"Where does your time disappear between email, Excel and accounting?",
+  introLead:"Answer 12 short questions. Then you’ll see your business as a small city: every tool is a building, every data flow a street. Wherever data is copied by hand, traffic jams up.",
+  fact1:"<b>12</b> questions", fact2:"approx. <b>5</b> minutes", fact3:"Instant report",
+  startBtn:"Start the test",
+  privacyIntro:"Your answers stay in your browser while you take the test. As soon as the results appear, the result is stored anonymously, without name or contact details. Your email address, phone number and message are only transmitted if you request the report by email at the end. <a href='https://lavanchyautomation.ch/en/datenschutz/' target='_blank' rel='noopener'>Privacy policy</a>",
+  counterIntro:"<b>hours per year</b> of manual work between tools",
+  exampleCaption:"Example: fiduciary office, 6 people",
+  progress:"Question <b id='q-index'>1</b> of <b>12</b>",
+  back:"Back", next:"Next", showMap:"Show my map",
+  counterResult:"<b>hours per year</b> of manual work between your tools",
+  hint3d:"Drag to rotate, scroll to zoom",
+  legOk:"runs automatically", legWarn:"partly manual", legBad:"manual work, jam", legIsland:"knowledge held by one person",
+  stickyText:"Discuss your map with Loïc: <b>30 min, free</b>",
+  bookBtn:"Book a call",
+  footerNote:"All figures are estimates based on your answers. · <a href='https://lavanchyautomation.ch/en/datenschutz/' target='_blank' rel='noopener'>Privacy</a> · <a href='https://lavanchyautomation.ch/en/impressum/' target='_blank' rel='noopener'>Legal notice</a>",
+  fallback3d:"The 3D view could not be loaded. Your report below is still complete.",
+  hWeek:"h/wk", perHour:"per hour", currencyAria:"Currency", rateAria:"Cost per working hour",
+  firmaLabel:"Name of your business <span style='font-weight:400;color:var(--muted)'>(optional, shown in the report)</span>",
+  errChoose:"Please choose an answer.",
+  errTools:n=>"Please choose at least 3 tools. Currently: "+n+".",
+  errTasks:"Please choose at least one process.",
+  tools:{
+    email:["Email","Outlook, Gmail, kMail"], excel:["Excel / Sheets","Lists and spreadsheets"], crm:["CRM","HubSpot, Pipedrive, customer list"],
+    buchhaltung:["Accounting","Bexio, Abacus, Banana, DATEV"], erp:["ERP / Inventory","joinpoints, Odoo, SAP B1"],
+    kalender:["Calendar","Outlook, Google, booking page"], formular:["Website / Form","Contact form, shop"],
+    ablage:["Cloud storage","kDrive, OneDrive, Dropbox"], chat:["Chat","Teams, Slack, WhatsApp"], projekt:["Project tool","Asana, Trello, Planner"],
+    branche:["Industry software","Software for law firms, practices, trades"], word:["Word & templates","Letters, quotes, contracts"],
+    ki:["ChatGPT / AI","ChatGPT, Copilot, Gemini"], papier:["Paper & folders","Mail, printouts, notes"]
+  },
+  tasks:{
+    anfragen:{label:"Capturing enquiries", hint:"Transferring emails, forms and calls into the system", why:{form:"The form already delivers clean fields. An interface enters them directly, without anyone retyping.", text:"Enquiries arrive as free text. AI extracts name, request and urgency and creates the contact cleanly. A person only checks."}},
+    angebote:{label:"Creating quotes", hint:"Putting customer data and line items into a template", why:"Customer data and line items flow automatically into your fixed template. No AI needed, just a clean connection."},
+    rechnungen:{label:"Writing invoices", hint:"Transferring services and line items into accounting", why:"Hours worked or line items are transferred to accounting automatically. An interface is enough."},
+    belege:{label:"Filing and booking receipts", hint:"Sorting and recording invoices from email and post", why:"Every receipt looks different. AI reads amount, date and supplier and files it. A person only approves."},
+    termine:{label:"Coordinating appointments", hint:"Back and forth by email or phone", why:"A booking page connected to your calendar replaces the back and forth. Confirmation and reminder go out automatically."},
+    kundendaten:{label:"Transferring customer data", hint:"Maintaining the same data in several tools", why:"Customer data is maintained in one place, the other tools update automatically. Duplicate entries disappear."},
+    berichte:{label:"Reports and analyses", hint:"Gathering figures from several tools", why:"The figures are pulled automatically every week and brought into the same format. An interface is enough."},
+    onboarding:{label:"Onboarding new customers", hint:"Folders, access, welcome email", why:"A checklist that works through itself: create folders, grant access, send the welcome email."},
+    fristen:{label:"Monitoring deadlines", hint:"Keeping track of dates, filings and renewals", why:"The deadlines are already stored somewhere. An automation reads them, reminds you in time and logs every step."},
+    bestellungen:{label:"Reconciling orders", hint:"Orders, deliveries, stock", why:"Orders land in the ERP automatically. Stock levels are correct without anyone reconciling lists."}
+  },
+  single:{
+    team:{"1":"Just me","2-5":"2 to 5","6-15":"6 to 15","16-50":"16 to 50","50+":"More than 50"},
+    branche:{"Treuhand / Buchhaltung":"Fiduciary / Accounting","Kanzlei / Beratung":"Law firm / Consulting","Handwerk / Bau":"Trades / Construction","Handel / E-Commerce":"Retail / E-commerce","Agentur / Dienstleistung":"Agency / Services","Gesundheit / Praxis":"Healthcare / Practice","Andere Branche":"Other industry"},
+    transfer:{kopie:"Mostly typed or copied", teils:"Partly manual, partly automatic", auto:"Mostly automatic", unklar:"Not sure"},
+    errors:{nie:"Practically never", selten:"Rarely", monat:"About once a month", woche:"Every week"},
+    absence:{"0":"Everything keeps running","1":"Most things keep running","2":"Some processes stall","3":"A lot comes to a halt"},
+    docs:{"0":"Yes, and they’re up to date","1":"Partly or outdated","2":"No, it’s all in our heads"},
+    kidata:{keine:"None, we don’t use AI tools", allgemein:"Only general texts, no customer data", kunden:"Also emails or documents from customers", unklar:"Not sure"},
+    goal:{kunden:"Serve more customers", wachsen:"Grow without hiring right away", feierabend:"Finish work earlier", fehler:"Fewer errors and less rework"}
+  },
+  questions:{
+    team:{topic:"Business", title:"How many people work in your business?", hint:"Including yourself."},
+    branche:{topic:"Business", title:"Which industry are you in?", hint:"Pick the closest match."},
+    tools:{topic:"Tools", title:"Which tools do you use day to day?", hint:"Everything that’s open at least once a week. At least 3."},
+    tasks:{topic:"Processes", title:"Which processes repeat every week for you?", hint:"Choose all that apply."},
+    hours:{topic:"Processes", title:"How much time does the team spend on these processes per week?", hint:"A rough estimate is enough. Add up all people."},
+    transfer:{topic:"Data flows", title:"How does data get from one tool to the next?", hint:"For example an enquiry from email into the CRM, or an invoice into accounting."},
+    errors:{topic:"Data flows", title:"How often do transfer errors happen?", hint:"Wrong amounts, forgotten entries, duplicate customers."},
+    absence:{topic:"Knowledge", title:"Your most important person is out for three weeks. What happens?", hint:"Honest is more helpful than optimistic here."},
+    docs:{topic:"Knowledge", title:"Are your processes written down anywhere?", hint:"So that someone new could do them without asking."},
+    kidata:{topic:"Data protection", title:"Which data ends up in AI tools like ChatGPT?", hint:"What employees use privately counts too."},
+    rate:{topic:"Costs", title:"Roughly what does a working hour cost you?", hint:"Wages including social charges. If you don’t know, just leave the value as it is."},
+    goal:{topic:"Goal", title:"What would you most like to do with the time saved?", hint:"Then you’ll see your map."}
+  },
+  team:v=>v==="1" ? "1 person" : TX.en.single.team[v]+" people",
+  privacy_kunden:"Customer data ends up in AI tools whose servers are often in the US. Under the Swiss FADP and the GDPR, this requires a clear legal basis. If you have customers in the EU, the EU AI Act also applies. Clarify which tools are allowed and which data may go into them.",
+  privacy_unklar:"You don’t know exactly which data ends up in AI tools. That’s common, because employees use tools on their own initiative. A quick overview of who uses what protects you and your customers.",
+  goal:{
+    kunden:(h,f)=>"You want to serve more customers. The automatable "+h+" hours per week then go into advice and support instead of transfers.",
+    wachsen:(h,f)=>"You want to grow without hiring right away. "+h+" hours per week correspond to about "+f+" % of a full-time position.",
+    feierabend:(h,f)=>"You want to finish work earlier. That’s "+h+" hours per week that currently come on top of the actual work.",
+    fehler:(h,f)=>"You want fewer errors. Every transfer that runs automatically is logged. Typing errors disappear, and you can see at any time what happened when."
+  },
+  reportEyebrow:"Your report",
+  reportTitle:f=>"Copy-Paste Map"+(f ? " for "+f : ""),
+  reportMeta:(n,p)=>n+" tools · today about "+p+" % of transfers run automatically",
+  stat1:"hours per year of manual work between tools",
+  stat2:"of those hours can be automated",
+  stat3:(r,c)=>"per year, at "+r+" "+c+" per working hour",
+  stat4:"full working weeks of "+FULLTIME+" hours",
+  bannerTitle:"Go through your map together",
+  bannerText:n=>"30 minutes with "+n+", free and without obligation. You’ll find out where to start and roughly what it costs.",
+  jamsTitle:n=>n===1 ? "Your biggest bottleneck" : "Your "+n+" biggest bottlenecks",
+  pillAi:"AI helps here", pillApi:"An interface is enough",
+  jamNums:(h,s)=>"<b>"+h+" h</b> per week across the team · approx. <b>"+s+" h</b> per year can be automated",
+  kiAll:n=>"None of your "+n+" biggest bottlenecks needs AI. Clean interfaces between the tools are enough.",
+  kiNone:"For your biggest bottlenecks, AI really does help, because the data arrives as free text or receipts. A person still gives the final approval.",
+  kiMixed:(a,n)=>a+" of "+n+" bottlenecks need no AI. A clean interface is enough there. We only use AI where data arrives as free text or receipts.",
+  startEyebrow:"This is where I’d start",
+  startTitle:(l,s,d)=>l+": from "+s+" to "+d,
+  startText:h=>"This process saves you approx. <b>"+h+" hours per week</b>. I build it first, test it with your real data and only start the next process once this one runs reliably.",
+  islandTitle:"Knowledge held by one person",
+  islandText:x=>"For "+x+", the knowledge sits with only a few people. If someone is absent, these processes stall. Before automating anything here, I document the process with you step by step. After that, someone else can take it over, even without automation.",
+  teamKnowTitle:"Knowledge in the team",
+  teamKnowText:"Your processes don’t depend on a single person. That’s a good foundation: what is documented can be cleanly automated and tested.",
+  privWarnTitle:"Data protection note", privOkTitle:"Data protection",
+  privOkText:"According to your answers, no customer data ends up in AI tools. With every automation, I still check where the data is processed, preferably in Switzerland or the EU.",
+  ctaTitle:"Want to see what your first process would look like?",
+  ctaText:"In 30 minutes, we go through your map together. You’ll find out what’s worth it, roughly what it costs and what you’re better off leaving as it is.",
+  ctaBookXl:"Book a call now <small>30 min · free</small>",
+  ctaOr:"Prefer to read it first? Get your report as a PDF by email. Loïc also receives your result and will get in touch with you personally.",
+  printCta:e=>"<b>Book a call (30 min, free):</b> cal.meetergo.com/loic-lavanchy/30-min-meeting<br><b>Email:</b> "+e,
+  emailLabel:"Your email address", emailPh:"name@company.com",
+  phoneLabel:"Phone number <span style='font-weight:400;color:#9FB2C3'>(optional)</span>", phonePh:"+41 79 123 45 67",
+  msgLabel:"Message to Loïc <span style='font-weight:400;color:#9FB2C3'>(optional)</span>", msgPh:"Anything you’d like to add?",
+  sendBtn:"Get the PDF by email",
+  editBtn:"Edit answers", restartBtn:"Start over",
+  methodTitle:"How the map calculates",
+  method:[
+    "Hours per week × "+WEEKS+" working weeks × share of manual work. The share comes from question 6, is adjusted per process and increased further for paper.",
+    "Transfer errors cause rework: a surcharge of 0 to 12 % depending on your answer to question 7.",
+    "The automatable share is fixed per process, for example customer data 85 %, receipts 75 %, quotes 55 %.",
+    "The map only recommends AI when data arrives as free text or receipts. Everything else runs via interfaces.",
+    "All figures are estimates based on your answers. It gets precise once we go through a process step by step."
+  ],
+  signature:"Lavanchy Automation · Process automation for SMEs in Switzerland and the DACH region",
+  stInvalidEmail:"Please enter a valid email address.",
+  stInvalidPhone:"Please enter a valid phone number or leave the field empty.",
+  stBuilding:"Creating your report…", stSending:"Sending…",
+  stDone:"Thanks for taking the test! You’ll shortly receive a confirmation with your result by email. Loïc will get in touch with you.",
+  stFail:e=>"Sending didn’t work. Please write directly to "+e+" instead.",
+  altCity:"Your Copy-Paste Map as a 3D city",
+  pdfName:"Copy-Paste-Map.pdf"
+},
+
+fr:{
+  title:"Carte du copier-coller",
+  desc:"12 questions, 5 minutes : visualisez votre entreprise comme une ville en 3D et découvrez où votre temps se perd entre vos outils. Par Lavanchy Automation.",
+  urls:{home:"https://lavanchyautomation.ch/fr/", privacy:"https://lavanchyautomation.ch/fr/datenschutz/", imprint:"https://lavanchyautomation.ch/fr/impressum/"},
+  introTitle:"Où votre temps se perd-il entre e‑mail, Excel et comptabilité ?",
+  introLead:"Répondez à 12 courtes questions. Vous verrez ensuite votre entreprise comme une petite ville : chaque outil est un bâtiment, chaque flux de données une rue. Là où l’on copie à la main, la circulation se bloque.",
+  fact1:"<b>12</b> questions", fact2:"env. <b>5</b> minutes", fact3:"Rapport immédiat",
+  startBtn:"Commencer le test",
+  privacyIntro:"Vos réponses restent dans votre navigateur pendant le test. Dès que l’évaluation s’affiche, le résultat est enregistré de manière anonyme, sans nom ni coordonnées. Votre adresse e-mail, votre numéro de téléphone et votre message ne sont transmis que si vous demandez le rapport par e-mail à la fin. <a href='https://lavanchyautomation.ch/fr/datenschutz/' target='_blank' rel='noopener'>Déclaration de protection des données</a>",
+  counterIntro:"<b>heures par an</b> de travail manuel entre les outils",
+  exampleCaption:"Exemple : fiduciaire, 6 personnes",
+  progress:"Question <b id='q-index'>1</b> sur <b>12</b>",
+  back:"Retour", next:"Suivant", showMap:"Afficher ma carte",
+  counterResult:"<b>heures par an</b> de travail manuel entre vos outils",
+  hint3d:"Glissez pour pivoter, faites défiler pour zoomer",
+  legOk:"automatisé", legWarn:"en partie manuel", legBad:"travail manuel, bouchon", legIsland:"savoir détenu par une personne",
+  stickyText:"Discuter de votre carte avec Loïc : <b>30 min, gratuit</b>",
+  bookBtn:"Réserver un appel",
+  footerNote:"Toutes les valeurs sont des estimations basées sur vos réponses. · <a href='https://lavanchyautomation.ch/fr/datenschutz/' target='_blank' rel='noopener'>Protection des données</a> · <a href='https://lavanchyautomation.ch/fr/impressum/' target='_blank' rel='noopener'>Mentions légales</a>",
+  fallback3d:"La vue 3D n’a pas pu être chargée. Votre rapport ci-dessous reste complet.",
+  hWeek:"h/sem.", perHour:"par heure", currencyAria:"Devise", rateAria:"Coût par heure de travail",
+  firmaLabel:"Nom de votre entreprise <span style='font-weight:400;color:var(--muted)'>(facultatif, apparaît dans le rapport)</span>",
+  errChoose:"Veuillez choisir une réponse.",
+  errTools:n=>"Veuillez choisir au moins 3 outils. Actuellement : "+n+".",
+  errTasks:"Veuillez choisir au moins un processus.",
+  tools:{
+    email:["E-mail","Outlook, Gmail, kMail"], excel:["Excel / Sheets","Listes et tableaux"], crm:["CRM","HubSpot, Pipedrive, liste clients"],
+    buchhaltung:["Comptabilité","Bexio, Abacus, Banana, DATEV"], erp:["ERP / Gestion des stocks","joinpoints, Odoo, SAP B1"],
+    kalender:["Agenda","Outlook, Google, page de réservation"], formular:["Site web / Formulaire","Formulaire de contact, boutique"],
+    ablage:["Stockage cloud","kDrive, OneDrive, Dropbox"], chat:["Chat","Teams, Slack, WhatsApp"], projekt:["Outil de projet","Asana, Trello, Planner"],
+    branche:["Logiciel métier","Logiciels pour études, cabinets, artisans"], word:["Word & modèles","Lettres, offres, contrats"],
+    ki:["ChatGPT / IA","ChatGPT, Copilot, Gemini"], papier:["Papier & classeurs","Courrier, impressions, notes"]
+  },
+  tasks:{
+    anfragen:{label:"Saisir les demandes", hint:"Transférer e-mails, formulaires et appels dans le système", why:{form:"Le formulaire fournit déjà des champs propres. Une interface les saisit directement, sans que personne ne ressaisisse.", text:"Les demandes arrivent sous forme de texte libre. L’IA extrait le nom, la demande et l’urgence et crée le contact proprement. Une personne ne fait plus que vérifier."}},
+    angebote:{label:"Établir des offres", hint:"Reporter données clients et positions dans un modèle", why:"Les données clients et les positions alimentent automatiquement votre modèle. Pas besoin d’IA, juste une connexion propre."},
+    rechnungen:{label:"Établir des factures", hint:"Reporter prestations et positions dans la comptabilité", why:"Les heures effectuées ou les positions sont reprises automatiquement dans la comptabilité. Une interface suffit."},
+    belege:{label:"Classer et comptabiliser les justificatifs", hint:"Trier et saisir les factures reçues par e-mail et par courrier", why:"Chaque justificatif est différent. L’IA lit le montant, la date et le fournisseur et le classe. Une personne ne fait plus que valider."},
+    termine:{label:"Coordonner les rendez-vous", hint:"Allers-retours par e-mail ou téléphone", why:"Une page de réservation reliée à l’agenda remplace les allers-retours. Confirmation et rappel partent automatiquement."},
+    kundendaten:{label:"Transférer les données clients", hint:"Gérer les mêmes données dans plusieurs outils", why:"Les données clients sont gérées à un seul endroit, les autres outils se mettent à jour automatiquement. Les doublons disparaissent."},
+    berichte:{label:"Rapports et analyses", hint:"Rassembler des chiffres de plusieurs outils", why:"Les chiffres sont extraits automatiquement chaque semaine et mis au même format. Une interface suffit."},
+    onboarding:{label:"Intégrer de nouveaux clients", hint:"Dossiers, accès, e-mail de bienvenue", why:"Une checklist qui s’exécute toute seule : créer les dossiers, attribuer les accès, envoyer l’e-mail de bienvenue."},
+    fristen:{label:"Surveiller les échéances", hint:"Garder un œil sur les dates, dépôts et renouvellements", why:"Les échéances sont déjà enregistrées quelque part. Une automatisation les lit, vous rappelle à temps et journalise chaque étape."},
+    bestellungen:{label:"Rapprocher les commandes", hint:"Commandes, livraisons, stock", why:"Les commandes arrivent automatiquement dans l’ERP. Le stock est juste sans que personne ne compare des listes."}
+  },
+  single:{
+    team:{"1":"Moi uniquement","2-5":"2 à 5","6-15":"6 à 15","16-50":"16 à 50","50+":"Plus de 50"},
+    branche:{"Treuhand / Buchhaltung":"Fiduciaire / Comptabilité","Kanzlei / Beratung":"Étude / Conseil","Handwerk / Bau":"Artisanat / Construction","Handel / E-Commerce":"Commerce / E-commerce","Agentur / Dienstleistung":"Agence / Services","Gesundheit / Praxis":"Santé / Cabinet","Andere Branche":"Autre secteur"},
+    transfer:{kopie:"Surtout ressaisi ou copié", teils:"En partie à la main, en partie automatique", auto:"Surtout automatique", unklar:"Je ne sais pas exactement"},
+    errors:{nie:"Pratiquement jamais", selten:"Rarement", monat:"Environ une fois par mois", woche:"Chaque semaine"},
+    absence:{"0":"Tout continue de tourner","1":"L’essentiel continue","2":"Certains processus restent en suspens","3":"Beaucoup de choses s’arrêtent"},
+    docs:{"0":"Oui, et ils sont à jour","1":"En partie ou obsolètes","2":"Non, tout est dans la tête"},
+    kidata:{keine:"Aucune, nous n’utilisons pas d’outils d’IA", allgemein:"Seulement des textes généraux, pas de données clients", kunden:"Aussi des e-mails ou documents de clients", unklar:"Je ne sais pas exactement"},
+    goal:{kunden:"Servir plus de clients", wachsen:"Croître sans embaucher tout de suite", feierabend:"Terminer plus tôt", fehler:"Moins d’erreurs et de reprises"}
+  },
+  questions:{
+    team:{topic:"Entreprise", title:"Combien de personnes travaillent dans votre entreprise ?", hint:"Vous y compris."},
+    branche:{topic:"Entreprise", title:"Dans quel secteur êtes-vous actif ?", hint:"Choisissez ce qui correspond le mieux."},
+    tools:{topic:"Outils", title:"Quels outils utilisez-vous au quotidien ?", hint:"Tout ce qui est ouvert au moins une fois par semaine. Au moins 3."},
+    tasks:{topic:"Processus", title:"Quels processus se répètent chaque semaine chez vous ?", hint:"Choisissez tout ce qui s’applique."},
+    hours:{topic:"Processus", title:"Combien de temps l’équipe consacre-t-elle à ces processus par semaine ?", hint:"Une estimation approximative suffit. Additionnez toutes les personnes."},
+    transfer:{topic:"Flux de données", title:"Comment les données passent-elles d’un outil à l’autre ?", hint:"Par exemple une demande de l’e-mail vers le CRM, ou une facture vers la comptabilité."},
+    errors:{topic:"Flux de données", title:"À quelle fréquence des erreurs de transfert se produisent-elles ?", hint:"Montants erronés, saisies oubliées, clients en double."},
+    absence:{topic:"Savoir", title:"Votre personne clé est absente pendant trois semaines. Que se passe-t-il ?", hint:"Ici, l’honnêteté est plus utile que l’optimisme."},
+    docs:{topic:"Savoir", title:"Vos processus sont-ils documentés quelque part ?", hint:"De sorte qu’une nouvelle personne puisse les exécuter sans poser de questions."},
+    kidata:{topic:"Protection des données", title:"Quelles données se retrouvent dans des outils d’IA comme ChatGPT ?", hint:"Ce que les collaborateurs utilisent à titre privé compte aussi."},
+    rate:{topic:"Coûts", title:"Combien vous coûte environ une heure de travail ?", hint:"Salaire charges sociales comprises. Si vous ne savez pas, laissez simplement la valeur."},
+    goal:{topic:"Objectif", title:"Que feriez-vous de préférence avec le temps gagné ?", hint:"Ensuite, vous verrez votre carte."}
+  },
+  team:v=>v==="1" ? "1 personne" : TX.fr.single.team[v]+" personnes",
+  privacy_kunden:"Des données clients se retrouvent dans des outils d’IA dont les serveurs sont souvent aux États-Unis. Selon la LPD suisse et le RGPD, cela nécessite une base juridique claire. Si vous avez des clients dans l’UE, l’AI Act européen s’applique en plus. Clarifiez quels outils sont autorisés et quelles données peuvent y être saisies.",
+  privacy_unklar:"Vous ne savez pas exactement quelles données se retrouvent dans des outils d’IA. C’est fréquent, car les collaborateurs utilisent des outils de leur propre initiative. Un bref état des lieux de qui utilise quoi vous protège, vous et vos clients.",
+  goal:{
+    kunden:(h,f)=>"Vous voulez servir plus de clients. Les "+h+" heures automatisables par semaine vont alors au conseil et au suivi plutôt qu’aux transferts.",
+    wachsen:(h,f)=>"Vous voulez croître sans embaucher tout de suite. "+h+" heures par semaine correspondent à environ "+f+" % d’un poste à plein temps.",
+    feierabend:(h,f)=>"Vous voulez terminer plus tôt. Ce sont "+h+" heures par semaine qui s’ajoutent aujourd’hui au travail proprement dit.",
+    fehler:(h,f)=>"Vous voulez moins d’erreurs. Chaque transfert automatisé est journalisé. Les fautes de frappe disparaissent et vous voyez à tout moment ce qui s’est passé et quand."
+  },
+  reportEyebrow:"Votre rapport",
+  reportTitle:f=>"Carte du copier-coller"+(f ? " pour "+f : ""),
+  reportMeta:(n,p)=>n+" outils · aujourd’hui, env. "+p+" % des transferts sont automatisés",
+  stat1:"heures par an de travail manuel entre les outils",
+  stat2:"de ces heures peuvent être automatisées",
+  stat3:(r,c)=>"par an, à "+r+" "+c+" par heure de travail",
+  stat4:"semaines complètes de "+FULLTIME+" heures",
+  bannerTitle:"Parcourir votre carte ensemble",
+  bannerText:n=>"30 minutes avec "+n+", gratuit et sans engagement. Vous saurez par où commencer et ce que cela coûte environ.",
+  jamsTitle:n=>n===1 ? "Votre plus gros bouchon" : "Vos "+n+" plus gros bouchons",
+  pillAi:"Ici, l’IA aide", pillApi:"Une interface suffit",
+  jamNums:(h,s)=>"<b>"+h+" h</b> par semaine dans l’équipe · dont env. <b>"+s+" h</b> par an automatisables",
+  kiAll:n=>"Aucun de vos "+n+" plus gros bouchons n’a besoin d’IA. Des interfaces propres entre les outils suffisent.",
+  kiNone:"Pour vos plus gros bouchons, l’IA aide vraiment, car les données arrivent sous forme de texte libre ou de justificatifs. Une personne valide tout de même.",
+  kiMixed:(a,n)=>a+" bouchons sur "+n+" n’ont pas besoin d’IA. Une interface propre y suffit. Nous n’utilisons l’IA que là où les données arrivent sous forme de texte libre ou de justificatifs.",
+  startEyebrow:"Voici par où je commencerais",
+  startTitle:(l,s,d)=>l+" : "+s+" → "+d,
+  startText:h=>"Ce processus vous fait gagner env. <b>"+h+" heures par semaine</b>. Je le construis en premier, je le teste avec vos données réelles et je ne passe au suivant que lorsqu’il fonctionne de manière fiable.",
+  islandTitle:"Savoir détenu par une personne",
+  islandText:x=>"Pour "+x+", le savoir repose sur peu de personnes. Si quelqu’un est absent, ces processus restent en suspens. Avant d’automatiser quoi que ce soit, je documente le processus avec vous, étape par étape. Ensuite, quelqu’un d’autre peut le reprendre, même sans automatisation.",
+  teamKnowTitle:"Savoir partagé dans l’équipe",
+  teamKnowText:"Vos processus ne dépendent pas d’une seule personne. C’est une bonne base : ce qui est documenté peut être automatisé et testé proprement.",
+  privWarnTitle:"Remarque sur la protection des données", privOkTitle:"Protection des données",
+  privOkText:"D’après vos réponses, aucune donnée client ne se retrouve dans des outils d’IA. Pour chaque automatisation, je vérifie tout de même où les données sont traitées, de préférence en Suisse ou dans l’UE.",
+  ctaTitle:"Vous voulez voir à quoi ressemblerait concrètement votre premier processus ?",
+  ctaText:"En 30 minutes, nous parcourons votre carte ensemble. Vous saurez ce qui vaut la peine, ce que cela coûte environ et ce qu’il vaut mieux laisser tel quel.",
+  ctaBookXl:"Réserver un appel <small>30 min · gratuit</small>",
+  ctaOr:"Vous préférez d’abord le lire tranquillement ? Recevez votre rapport en PDF par e-mail. Loïc reçoit également votre résultat et vous contactera personnellement.",
+  printCta:e=>"<b>Réserver un appel (30 min, gratuit) :</b> cal.meetergo.com/loic-lavanchy/30-min-meeting<br><b>E-mail :</b> "+e,
+  emailLabel:"Votre adresse e-mail", emailPh:"nom@entreprise.ch",
+  phoneLabel:"Numéro de téléphone <span style='font-weight:400;color:#9FB2C3'>(facultatif)</span>", phonePh:"+41 79 123 45 67",
+  msgLabel:"Message à Loïc <span style='font-weight:400;color:#9FB2C3'>(facultatif)</span>", msgPh:"Souhaitez-vous ajouter quelque chose ?",
+  sendBtn:"Recevoir le PDF par e-mail",
+  editBtn:"Modifier les réponses", restartBtn:"Recommencer",
+  methodTitle:"Comment la carte calcule",
+  method:[
+    "Heures par semaine × "+WEEKS+" semaines de travail × part de travail manuel. La part provient de la question 6, est ajustée par processus et augmentée pour le papier.",
+    "Les erreurs de transfert entraînent des reprises : majoration de 0 à 12 % selon votre réponse à la question 7.",
+    "La part automatisable est fixée par processus, par exemple données clients 85 %, justificatifs 75 %, offres 55 %.",
+    "La carte ne recommande l’IA que lorsque les données arrivent sous forme de texte libre ou de justificatifs. Tout le reste passe par des interfaces.",
+    "Toutes les valeurs sont des estimations basées sur vos réponses. Cela devient précis lorsque nous examinons un processus étape par étape."
+  ],
+  signature:"Lavanchy Automation · Automatisation des processus pour PME en Suisse et dans la région DACH",
+  stInvalidEmail:"Veuillez saisir une adresse e-mail valide.",
+  stInvalidPhone:"Veuillez saisir un numéro de téléphone valide ou laisser le champ vide.",
+  stBuilding:"Création de votre rapport…", stSending:"Envoi en cours…",
+  stDone:"Merci d’avoir répondu ! Vous recevrez sous peu une confirmation avec votre résultat par e-mail. Loïc vous contactera.",
+  stFail:e=>"L’envoi n’a pas fonctionné. Écrivez plutôt directement à "+e+".",
+  altCity:"Votre carte du copier-coller sous forme de ville 3D",
+  pdfName:"Carte-copier-coller.pdf"
+}
+};
+
+const L = TX[LANG] || TX.de;
+const D = TX.de;
+/* Französische Typografie: geschütztes Leerzeichen vor ? ! : ; */
+function tr(s){ return LANG==="fr" ? String(s).replace(/ ([?!:;»])/g, " $1").replace(/« /g, "« ") : String(s); }
+function t(key, ...args){ const v = L[key]; return tr(typeof v === "function" ? v(...args) : v); }
 
 const EXAMPLE = {
   team:"6-15", branche:"Treuhand / Buchhaltung",
@@ -514,12 +873,23 @@ const EXAMPLE = {
 /* ---------- Hilfen ---------- */
 const $ = s => document.querySelector(s);
 const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const nf = new Intl.NumberFormat("de-DE");
+const nf = new Intl.NumberFormat(NUM_LOCALE);
+const nfDe = new Intl.NumberFormat("de-DE");
 function roundNice(n){ if(n>=1000) return Math.round(n/50)*50; if(n>=200) return Math.round(n/10)*10; return Math.round(n); }
 const fmt = n => nf.format(roundNice(n));
 const fmtH = n => { const r = Math.round(n*2)/2; return nf.format(r); };
-const toolName = id => TOOLS[id] ? TOOLS[id].label : id;
-const optLabel = (key,val) => { const o = SINGLE[key].find(x=>x[0]===val); return o ? (o[1]||o[0]) : val; };
+const fmtDe = n => nfDe.format(roundNice(n));
+const fmtHDe = n => nfDe.format(Math.round(n*2)/2);
+const toolName = id => tr((L.tools[id] || [id])[0]);
+const toolHint = id => tr((L.tools[id] || ["",""])[1]);
+const toolNameDe = id => (D.tools[id] || [id])[0];
+const taskLabel = id => tr(L.tasks[id].label);
+const taskHint = id => tr(L.tasks[id].hint);
+const taskLabelDe = id => D.tasks[id].label;
+function taskWhy(id, src){ const w = L.tasks[id].why; return tr(typeof w === "string" ? w : w[TASK_RULES[id].whyKey(src)]); }
+const optLabel = (key,val) => tr((L.single[key] || {})[val] ?? val);
+const optLabelDe = (key,val) => (D.single[key] || {})[val] ?? val;
+const teamText = v => tr(L.team(v));
 
 /* ---------- Auswertung nach festen Regeln ---------- */
 function compute(a){
@@ -531,7 +901,7 @@ function compute(a){
   const roadMap = new Map();
 
   a.tasks.forEach(id=>{
-    const T = TASKS[id]; const h = Number(a.hours[id] ?? 2);
+    const T = TASK_RULES[id]; const h = Number(a.hours[id] ?? 2);
     if(!h) return;
     let s = T.src.find(t=>tools.includes(t)) || ["email","excel","papier"].find(t=>tools.includes(t)) || tools[0];
     let d = T.dst.find(t=>tools.includes(t) && t!==s) || ["excel","email","ablage"].find(t=>tools.includes(t) && t!==s) || tools.find(t=>t!==s);
@@ -539,14 +909,13 @@ function compute(a){
     let m = mBase*T.bias + (s==="papier" ? 0.15 : 0);
     m = Math.min(0.92, Math.max(0.08, m));
     const ki = typeof T.ki === "function" ? T.ki(s) : T.ki;
-    const why = typeof T.why === "function" ? T.why(s) : T.why;
     const manual = h*WEEKS*m*(1+err);
     const save = manual*T.auto;
-    items.push({id, label:T.label, h, src:s, dst:d, m, manual, save, ki, why});
+    items.push({id, h, src:s, dst:d, m, manual, save, ki});
     load[s] += h; load[d] += h;
     const key = [s,d].sort().join("|");
     const r = roadMap.get(key) || {a:s, b:d, hours:0, m:0, tasks:[]};
-    r.hours += h; r.m = Math.max(r.m, m); r.tasks.push(T.label);
+    r.hours += h; r.m = Math.max(r.m, m); r.tasks.push(id);
     roadMap.set(key, r);
   });
 
@@ -560,12 +929,7 @@ function compute(a){
   const nIsl = risk>=5 ? 3 : risk>=4 ? 2 : risk>=2 ? 1 : 0;
   const islands = tools.filter(t=>t!=="ki" && t!=="papier").sort((x,y)=>load[y]-load[x]).slice(0,nIsl).filter(t=>load[t]>0);
 
-  let privacy = null;
-  if(a.kidata==="kunden" || a.kidata==="unklar"){
-    privacy = a.kidata==="kunden"
-      ? "Kundendaten landen in KI-Tools, die ihre Server oft in den USA haben. Nach Schweizer DSG und DSGVO braucht es dafür eine klare Grundlage. Wer Kunden in der EU hat, muss zusätzlich den EU AI Act beachten. Kläre, welche Tools erlaubt sind und welche Daten dort hinein dürfen."
-      : "Du weisst nicht genau, welche Daten in KI-Tools landen. Das ist in vielen Betrieben so, weil Mitarbeitende Tools auf eigene Faust nutzen. Ein kurzer Überblick, wer was nutzt, schützt dich und deine Kunden.";
-  }
+  const privacy = (a.kidata==="kunden" || a.kidata==="unklar") ? t("privacy_"+a.kidata) : null;
 
   return {
     items, roads:[...roadMap.values()], load, islands, privacy,
@@ -583,7 +947,7 @@ function City(){
   this.wrap = document.createElement("div");
   this.wrap.className = "city-stage";
   if(!this.ok){
-    this.wrap.innerHTML = '<div class="city-fallback">Die 3D-Ansicht konnte nicht geladen werden. Dein Report unten ist trotzdem vollständig.</div>';
+    this.wrap.innerHTML = '<div class="city-fallback">'+esc(t("fallback3d"))+'</div>';
     return;
   }
   const r = this.renderer = new THREE.WebGLRenderer({antialias:true, preserveDrawingBuffer:true});
@@ -755,7 +1119,7 @@ City.prototype.build = function(res, tools){
     }
     const el = document.createElement("div");
     el.className = "lbl" + (isl ? " island" : "");
-    el.innerHTML = "<b>"+esc(toolName(t))+"</b>" + (ld ? "<span>"+fmtH(ld)+" h/Wo</span>" : "");
+    el.innerHTML = "<b>"+esc(toolName(t))+"</b>" + (ld ? "<span>"+fmtH(ld)+" "+esc(L.hWeek)+"</span>" : "");
     this.labels.appendChild(el);
     this.buildings.push({el, anchor: new T.Vector3(p.x, h+0.6, p.z)});
   });
@@ -848,33 +1212,34 @@ function optBtn(kind, value, label, sub, on){
 
 function renderQ(){
   const q = QUESTIONS[qi];
+  const qt = L.questions[q.key];
   $("#q-index").textContent = qi+1;
-  $("#q-topic").textContent = q.topic;
+  $("#q-topic").textContent = tr(qt.topic);
   $("#q-bar").style.width = ((qi+1)/QUESTIONS.length*100)+"%";
-  $("#q-title").textContent = q.title;
-  $("#q-hint").textContent = q.hint;
+  $("#q-title").textContent = tr(qt.title);
+  $("#q-hint").textContent = tr(qt.hint);
   $("#q-error").textContent = "";
   $("#q-back").style.visibility = qi===0 ? "hidden" : "visible";
-  $("#q-next").textContent = qi===QUESTIONS.length-1 ? "Landkarte zeigen" : "Weiter";
+  $("#q-next").textContent = qi===QUESTIONS.length-1 ? t("showMap") : t("next");
   const body = $("#q-body");
   let html = "";
   if(q.type==="single" || q.type==="goal"){
-    html = '<div class="options" role="radiogroup" aria-labelledby="q-title">' + SINGLE[q.key].map(o=>optBtn("radio", o[0], o[1]||o[0], "", answers[q.key]===o[0])).join("") + "</div>";
-    if(q.type==="goal") html += '<div class="text-field"><label for="firma">Name deines Betriebs <span style="font-weight:400;color:var(--muted)">(optional, erscheint im Report)</span></label><input id="firma" type="text" maxlength="60" autocomplete="organization" value="'+esc(answers.firma)+'"></div>';
+    html = '<div class="options" role="radiogroup" aria-labelledby="q-title">' + SINGLE_VALUES[q.key].map(v=>optBtn("radio", v, optLabel(q.key, v), "", answers[q.key]===v)).join("") + "</div>";
+    if(q.type==="goal") html += '<div class="text-field"><label for="firma">'+t("firmaLabel")+'</label><input id="firma" type="text" maxlength="60" autocomplete="organization" value="'+esc(answers.firma)+'"></div>';
   } else if(q.type==="tools"){
-    html = '<div class="options grid">' + Object.keys(TOOLS).map(k=>optBtn("check", k, TOOLS[k].label, TOOLS[k].hint, answers.tools.includes(k))).join("") + "</div>";
+    html = '<div class="options grid">' + TOOL_IDS.map(k=>optBtn("check", k, toolName(k), toolHint(k), answers.tools.includes(k))).join("") + "</div>";
   } else if(q.type==="tasks"){
-    html = '<div class="options grid">' + Object.keys(TASKS).map(k=>optBtn("check", k, TASKS[k].label, TASKS[k].hint, answers.tasks.includes(k))).join("") + "</div>";
+    html = '<div class="options grid">' + Object.keys(TASK_RULES).map(k=>optBtn("check", k, taskLabel(k), taskHint(k), answers.tasks.includes(k))).join("") + "</div>";
   } else if(q.type==="hours"){
     html = '<div class="sliders">' + answers.tasks.map(k=>{
       const v = answers.hours[k] ?? 2;
-      return '<div class="slider-row"><label for="h-'+k+'">'+esc(TASKS[k].label)+'</label><output id="o-'+k+'" for="h-'+k+'">'+fmtH(v)+' h/Wo</output><input type="range" id="h-'+k+'" data-k="'+k+'" min="0.5" max="20" step="0.5" value="'+v+'"></div>';
+      return '<div class="slider-row"><label for="h-'+k+'">'+esc(taskLabel(k))+'</label><output id="o-'+k+'" for="h-'+k+'">'+fmtH(v)+' '+esc(t("hWeek"))+'</output><input type="range" id="h-'+k+'" data-k="'+k+'" min="0.5" max="20" step="0.5" value="'+v+'"></div>';
     }).join("") + "</div>";
   } else if(q.type==="rate"){
     const cur = answers.currency;
-    html = '<div class="sliders"><div class="rate-row"><div class="rate-big" id="rate-out">'+answers.rate+'<small>'+esc(cur)+' pro Stunde</small></div>'+
-      '<select id="rate-currency" aria-label="Währung"><option value="CHF"'+(cur==="CHF"?" selected":"")+'>CHF</option><option value="EUR"'+(cur==="EUR"?" selected":"")+'>EUR</option></select></div>'+
-      '<input type="range" id="rate" min="40" max="200" step="5" value="'+answers.rate+'" aria-label="Kosten pro Arbeitsstunde">'+
+    html = '<div class="sliders"><div class="rate-row"><div class="rate-big" id="rate-out">'+answers.rate+'<small>'+esc(cur)+' '+esc(t("perHour"))+'</small></div>'+
+      '<select id="rate-currency" aria-label="'+esc(t("currencyAria"))+'"><option value="CHF"'+(cur==="CHF"?" selected":"")+'>CHF</option><option value="EUR"'+(cur==="EUR"?" selected":"")+'>EUR</option></select></div>'+
+      '<input type="range" id="rate" min="40" max="200" step="5" value="'+answers.rate+'" aria-label="'+esc(t("rateAria"))+'">'+
       '<div class="scale"><span>40 '+esc(cur)+'</span><span>120 '+esc(cur)+'</span><span>200 '+esc(cur)+'</span></div></div>';
   }
   body.innerHTML = html;
@@ -895,10 +1260,10 @@ $("#q-body").addEventListener("click", e=>{
   }
 });
 $("#q-body").addEventListener("input", e=>{
-  const t = e.target;
-  if(t.dataset.k){ answers.hours[t.dataset.k] = Number(t.value); $("#o-"+t.dataset.k).textContent = fmtH(Number(t.value))+" h/Wo"; }
-  else if(t.id==="rate"){ answers.rate = Number(t.value); $("#rate-out").innerHTML = t.value+"<small>"+esc(answers.currency)+" pro Stunde</small>"; }
-  else if(t.id==="firma"){ answers.firma = t.value; }
+  const el = e.target;
+  if(el.dataset.k){ answers.hours[el.dataset.k] = Number(el.value); $("#o-"+el.dataset.k).textContent = fmtH(Number(el.value))+" "+t("hWeek"); }
+  else if(el.id==="rate"){ answers.rate = Number(el.value); $("#rate-out").innerHTML = el.value+"<small>"+esc(answers.currency)+" "+esc(t("perHour"))+"</small>"; }
+  else if(el.id==="firma"){ answers.firma = el.value; }
 });
 $("#q-body").addEventListener("change", e=>{
   if(e.target.id==="rate-currency"){ answers.currency = e.target.value; renderQ(); }
@@ -906,9 +1271,9 @@ $("#q-body").addEventListener("change", e=>{
 
 function validate(){
   const q = QUESTIONS[qi];
-  if((q.type==="single"||q.type==="goal") && !answers[q.key]) return "Bitte wähle eine Antwort.";
-  if(q.type==="tools" && answers.tools.length<3) return "Bitte wähle mindestens 3 Tools. Aktuell: "+answers.tools.length+".";
-  if(q.type==="tasks" && answers.tasks.length<1) return "Bitte wähle mindestens einen Ablauf.";
+  if((q.type==="single"||q.type==="goal") && !answers[q.key]) return t("errChoose");
+  if(q.type==="tools" && answers.tools.length<3) return t("errTools", answers.tools.length);
+  if(q.type==="tasks" && answers.tasks.length<1) return t("errTasks");
   return "";
 }
 
@@ -928,32 +1293,51 @@ function show(id){
 
 /* ---------- Report ---------- */
 function goalSentence(goal, saveWeek){
-  const h = fmtH(saveWeek);
-  const fte = Math.round(saveWeek/FULLTIME*100);
-  switch(goal){
-    case "kunden": return "Du willst mehr Kunden betreuen. Die automatisierbaren "+h+" Stunden pro Woche gehen dann in Beratung und Betreuung statt in Übertragungen.";
-    case "wachsen": return "Du willst wachsen, ohne gleich neu einzustellen. "+h+" Stunden pro Woche entsprechen etwa "+fte+" % einer Vollzeitstelle.";
-    case "feierabend": return "Du willst früher Feierabend machen. Das sind "+h+" Stunden pro Woche, die heute zusätzlich zur eigentlichen Arbeit anfallen.";
-    case "fehler": return "Du willst weniger Fehler. Jede Übertragung, die automatisch läuft, wird protokolliert. Abtippfehler fallen weg, und du siehst jederzeit, was wann passiert ist.";
-  }
-  return "";
+  const fn = L.goal[goal];
+  return fn ? tr(fn(fmtH(saveWeek), Math.round(saveWeek/FULLTIME*100))) : "";
 }
 
+/* Text-Zusammenfassung für die Mail an Loïc: immer Deutsch */
 function buildMail(a, r){
   const top = r.items.slice(0,3);
   const lines = [
     "Hallo Loïc,", "",
     "ich habe die Copy-Paste-Landkarte ausgefüllt. Hier mein Ergebnis:", "",
-    "Betrieb: " + (a.firma ? a.firma+", " : "") + a.branche + ", " + optLabel("team", a.team) + " Personen",
-    "Tools: " + a.tools.map(toolName).join(", "), "",
-    "Handarbeit zwischen den Tools: ca. " + fmt(r.manualYear) + " Stunden pro Jahr",
-    "Davon automatisierbar: ca. " + fmt(r.saveYear) + " Stunden (rund " + fmt(r.chf) + " " + a.currency + ")", "",
+    "Betrieb: " + (a.firma ? a.firma+", " : "") + a.branche + ", " + optLabelDe("team", a.team) + " Personen",
+    "Tools: " + a.tools.map(toolNameDe).join(", "), "",
+    "Handarbeit zwischen den Tools: ca. " + fmtDe(r.manualYear) + " Stunden pro Jahr",
+    "Davon automatisierbar: ca. " + fmtDe(r.saveYear) + " Stunden (rund " + fmtDe(r.chf) + " " + a.currency + ")", "",
     "Die grössten Staus:"
   ];
-  top.forEach((it,i)=>lines.push((i+1)+". "+it.label+" ("+toolName(it.src)+" → "+toolName(it.dst)+"): "+fmtH(it.h)+" h pro Woche"));
-  if(r.islands.length) lines.push("", "Wissen hängt an wenigen Personen bei: " + r.islands.map(toolName).join(", "));
+  top.forEach((it,i)=>lines.push((i+1)+". "+taskLabelDe(it.id)+" ("+toolNameDe(it.src)+" → "+toolNameDe(it.dst)+"): "+fmtHDe(it.h)+" h pro Woche"));
+  if(r.islands.length) lines.push("", "Wissen hängt an wenigen Personen bei: " + r.islands.map(toolNameDe).join(", "));
   lines.push("", "Ich würde gern wissen, wo ich anfangen sollte.", "", "Grüsse");
-  return {subject: "Copy-Paste-Landkarte: " + fmt(r.manualYear) + " Stunden pro Jahr", body: lines.join("\r\n")};
+  return {subject: "Copy-Paste-Landkarte: " + fmtDe(r.manualYear) + " Stunden pro Jahr", body: lines.join("\r\n")};
+}
+
+/* Daten für n8n: deutsche Werte für Joinpoint und die Mail an Loïc, dazu "local" für die Mail an die Person */
+function resultPayload(a, r){
+  const top = r.items.slice(0, 3);
+  return {
+    lang: LANG,
+    team: a.team, teamLabel: optLabelDe("team", a.team),
+    branche: a.branche,
+    tools: a.tools.map(toolNameDe),
+    tasksHours: r.items.map(it => ({ label: taskLabelDe(it.id), hours: fmtHDe(it.h) })),
+    transfer: a.transfer, errors: a.errors, absence: a.absence, docs: a.docs, kidata: a.kidata,
+    rate: a.rate, currency: a.currency, goal: a.goal,
+    manualYear: fmtDe(r.manualYear), saveYear: fmtDe(r.saveYear), chf: fmtDe(r.chf),
+    topStaus: top.map(it => taskLabelDe(it.id) + " (" + toolNameDe(it.src) + " -> " + toolNameDe(it.dst) + "): " + fmtHDe(it.h) + " h/Wo"),
+    islands: r.islands.map(toolNameDe),
+    firma: a.firma,
+    local: {
+      branche: optLabel("branche", a.branche),
+      team: teamText(a.team),
+      manualYear: fmt(r.manualYear), saveYear: fmt(r.saveYear), chf: fmt(r.chf), rate: String(a.rate),
+      topStaus: top.map(it => taskLabel(it.id) + " (" + toolName(it.src) + " → " + toolName(it.dst) + ")" + (LANG==="fr" ? " : " : ": ") + fmtH(it.h) + " " + t("hWeek")),
+      islands: r.islands.map(toolName)
+    }
+  };
 }
 
 /* Report als PDF (Base64) im Browser erzeugen, für den Anhang der Bestätigungsmail */
@@ -972,7 +1356,7 @@ async function buildReportPdf(){
   wrap.appendChild(clone);
   const uri = await window.html2pdf().set({
     margin:[10,0,12,0],
-    filename:"Copy-Paste-Landkarte.pdf",
+    filename:L.pdfName,
     image:{type:"jpeg", quality:0.9},
     html2canvas:{scale:2, backgroundColor:"#ffffff", logging:false, scrollX:0, scrollY:0},
     jsPDF:{unit:"mm", format:"a4", orientation:"portrait"},
@@ -984,85 +1368,80 @@ async function buildReportPdf(){
 function renderReport(a, r){
   const top = r.items.slice(0,3);
   const first = r.items[0];
-  const date = new Intl.DateTimeFormat("de-CH",{day:"numeric", month:"long", year:"numeric"}).format(new Date());
+  const date = new Intl.DateTimeFormat(DATE_LOCALE,{day:"numeric", month:"long", year:"numeric"}).format(new Date());
   const mail = buildMail(a, r);
   const apiCount = top.length - r.kiCount;
 
   const jams = top.map((it,i)=>{
     const cls = it.m>=0.55 ? "" : it.m>=0.33 ? " amber" : " green";
     return '<article class="jam'+cls+'"><div class="rank">'+String(i+1).padStart(2,"0")+'</div>'+
-      '<div><h4>'+esc(it.label)+'</h4><div class="route">'+esc(toolName(it.src))+' → '+esc(toolName(it.dst))+'</div></div>'+
-      '<span class="pill '+(it.ki?"ai":"api")+'">'+(it.ki?"Hier hilft KI":"Reicht eine Schnittstelle")+'</span>'+
-      '<p class="why">'+esc(it.why)+'</p>'+
-      '<p class="nums"><b>'+fmtH(it.h)+' h</b> pro Woche im Team · davon ca. <b>'+fmt(it.save)+' h</b> pro Jahr automatisierbar</p></article>';
+      '<div><h4>'+esc(taskLabel(it.id))+'</h4><div class="route">'+esc(toolName(it.src))+' → '+esc(toolName(it.dst))+'</div></div>'+
+      '<span class="pill '+(it.ki?"ai":"api")+'">'+esc(it.ki ? t("pillAi") : t("pillApi"))+'</span>'+
+      '<p class="why">'+esc(taskWhy(it.id, it.src))+'</p>'+
+      '<p class="nums">'+t("jamNums", fmtH(it.h), fmt(it.save))+'</p></article>';
   }).join("");
 
   const kiLine = top.length
-    ? (apiCount===top.length
-        ? "Keiner deiner "+top.length+" grössten Staus braucht KI. Saubere Schnittstellen zwischen den Tools reichen."
-        : apiCount===0
-          ? "Bei deinen grössten Staus hilft KI tatsächlich, weil die Daten als freier Text oder Beleg ankommen. Ein Mensch gibt trotzdem frei."
-          : apiCount+" von "+top.length+" Staus brauchen keine KI. Dort reicht eine saubere Schnittstelle. KI setzen wir nur dort ein, wo Daten als freier Text oder Beleg ankommen.")
+    ? (apiCount===top.length ? t("kiAll", top.length) : apiCount===0 ? t("kiNone") : t("kiMixed", apiCount, top.length))
     : "";
 
   const island = r.islands.length
-    ? '<div class="box island"><h4>Wissen bei einer Person</h4><p>Bei '+esc(r.islands.map(toolName).join(", "))+' hängt das Wissen an wenigen Köpfen. Fällt jemand aus, bleiben diese Abläufe liegen. Bevor hier automatisiert wird, schreibe ich den Ablauf mit dir Schritt für Schritt auf. Danach kann ihn jemand anderes übernehmen, auch ohne Automatisierung.</p></div>'
-    : '<div class="box"><h4>Wissen im Team</h4><p>Deine Abläufe hängen nicht an einer einzelnen Person. Das ist eine gute Grundlage: Was beschrieben ist, lässt sich sauber automatisieren und testen.</p></div>';
+    ? '<div class="box island"><h4>'+esc(t("islandTitle"))+'</h4><p>'+esc(t("islandText", r.islands.map(toolName).join(", ")))+'</p></div>'
+    : '<div class="box"><h4>'+esc(t("teamKnowTitle"))+'</h4><p>'+esc(t("teamKnowText"))+'</p></div>';
 
   const privacy = r.privacy
-    ? '<div class="box privacy-warn"><h4>Datenschutz-Hinweis</h4><p>'+esc(r.privacy)+'</p></div>'
-    : '<div class="box"><h4>Datenschutz</h4><p>Nach deinen Angaben landen keine Kundendaten in KI-Tools. Bei jeder Automatisierung prüfe ich trotzdem, wo die Daten verarbeitet werden, bevorzugt in der Schweiz oder der EU.</p></div>';
+    ? '<div class="box privacy-warn"><h4>'+esc(t("privWarnTitle"))+'</h4><p>'+esc(r.privacy)+'</p></div>'
+    : '<div class="box"><h4>'+esc(t("privOkTitle"))+'</h4><p>'+esc(t("privOkText"))+'</p></div>';
 
   $("#report").innerHTML =
-    '<header class="report-head"><div class="eyebrow">Dein Report · '+esc(date)+'</div>'+
-      '<h2>Copy-Paste-Landkarte'+(a.firma ? ' für '+esc(a.firma) : '')+'</h2>'+
-      '<p class="meta">'+esc(a.branche)+' · '+esc(optLabel("team", a.team))+' Personen · '+a.tools.length+' Tools · heute laufen ca. '+Math.round(r.autoShare*100)+' % der Übertragungen automatisch</p></header>'+
+    '<header class="report-head"><div class="eyebrow">'+esc(t("reportEyebrow"))+' · '+esc(date)+'</div>'+
+      '<h2>'+esc(t("reportTitle", a.firma))+'</h2>'+
+      '<p class="meta">'+esc(optLabel("branche", a.branche))+' · '+esc(teamText(a.team))+' · '+esc(t("reportMeta", a.tools.length, Math.round(r.autoShare*100)))+'</p></header>'+
     '<div class="print-only" id="print-city"></div>'+
     '<div class="stats">'+
-      '<div class="stat hot"><div class="v">'+fmt(r.manualYear)+'</div><div class="l">Stunden pro Jahr Handarbeit zwischen den Tools</div></div>'+
-      '<div class="stat"><div class="v">'+fmt(r.saveYear)+'</div><div class="l">Stunden davon lassen sich automatisieren</div></div>'+
-      '<div class="stat key"><div class="v">'+fmt(r.chf)+' '+esc(a.currency)+'</div><div class="l">pro Jahr, bei '+a.rate+' '+esc(a.currency)+' pro Arbeitsstunde</div></div>'+
-      '<div class="stat"><div class="v">'+nf.format(Math.round(r.weeks*10)/10)+'</div><div class="l">volle Arbeitswochen à '+FULLTIME+' Stunden</div></div>'+
+      '<div class="stat hot"><div class="v">'+fmt(r.manualYear)+'</div><div class="l">'+esc(t("stat1"))+'</div></div>'+
+      '<div class="stat"><div class="v">'+fmt(r.saveYear)+'</div><div class="l">'+esc(t("stat2"))+'</div></div>'+
+      '<div class="stat key"><div class="v">'+fmt(r.chf)+' '+esc(a.currency)+'</div><div class="l">'+esc(t("stat3", a.rate, a.currency))+'</div></div>'+
+      '<div class="stat"><div class="v">'+nf.format(Math.round(r.weeks*10)/10)+'</div><div class="l">'+esc(t("stat4"))+'</div></div>'+
     '</div>'+
-    '<section class="book-banner"><div><h3>Deine Landkarte gemeinsam anschauen</h3><p>30 Minuten mit '+esc(CONTACT.name)+', kostenlos und unverbindlich. Du erfährst, wo du anfangen solltest und was es ungefähr kostet.</p></div>'+
-      '<a class="btn btn-book" href="'+CONTACT.booking+'" target="_blank" rel="noopener">Termin buchen <span aria-hidden="true">→</span></a></section>'+
-    '<section class="section"><h3>Deine '+(top.length===1?'grösste Baustelle':top.length+' grössten Staus')+'</h3><div class="jams">'+jams+'</div>'+
+    '<section class="book-banner"><div><h3>'+esc(t("bannerTitle"))+'</h3><p>'+esc(t("bannerText", CONTACT.name))+'</p></div>'+
+      '<a class="btn btn-book" href="'+CONTACT.booking+'" target="_blank" rel="noopener">'+esc(t("bookBtn"))+' <span aria-hidden="true">→</span></a></section>'+
+    '<section class="section"><h3>'+esc(t("jamsTitle", top.length))+'</h3><div class="jams">'+jams+'</div>'+
       (kiLine ? '<p style="font-size:15px;color:var(--muted);max-width:70ch">'+esc(kiLine)+'</p>' : '')+'</section>'+
-    (first ? '<section class="section"><div class="box start"><div class="eyebrow">Hier würde ich anfangen</div><h4>'+esc(first.label)+': von '+esc(toolName(first.src))+' nach '+esc(toolName(first.dst))+'</h4>'+
-      '<p>Dieser Ablauf spart dir ca. <b>'+fmtH(first.save/WEEKS)+' Stunden pro Woche</b>. Ich baue ihn als Erstes, teste ihn mit deinen echten Daten und starte den nächsten Ablauf erst, wenn dieser zuverlässig läuft.</p>'+
+    (first ? '<section class="section"><div class="box start"><div class="eyebrow">'+esc(t("startEyebrow"))+'</div><h4>'+esc(t("startTitle", taskLabel(first.id), toolName(first.src), toolName(first.dst)))+'</h4>'+
+      '<p>'+t("startText", fmtH(first.save/WEEKS))+'</p>'+
       '<p>'+esc(goalSentence(a.goal, r.saveWeek))+'</p><p class="sig">'+esc(CONTACT.name)+', Lavanchy Automation</p></div></section>' : '')+
     '<section class="two">'+island+privacy+'</section>'+
-    '<section class="cta"><h3>Willst du sehen, wie dein erster Ablauf konkret aussieht?</h3>'+
-      '<p>In 30 Minuten schauen wir deine Landkarte gemeinsam an. Du erfährst, was sich lohnt, was es ungefähr kostet und was du besser so lässt, wie es ist.</p>'+
-      '<a class="btn btn-book btn-book-xl" href="'+CONTACT.booking+'" target="_blank" rel="noopener">Jetzt Termin buchen <small>30 Min. · kostenlos</small></a>'+
-      '<p class="or">Lieber zuerst in Ruhe lesen? Hol dir deinen Report als PDF per E-Mail. Loïc erhält dein Ergebnis ebenfalls und meldet sich persönlich bei dir.</p>'+
-      '<p class="print-only print-cta"><b>Termin buchen (30 Min., kostenlos):</b> cal.meetergo.com/loic-lavanchy/30-min-meeting<br><b>E-Mail:</b> '+CONTACT.email+'</p>'+
+    '<section class="cta"><h3>'+esc(t("ctaTitle"))+'</h3>'+
+      '<p>'+esc(t("ctaText"))+'</p>'+
+      '<a class="btn btn-book btn-book-xl" href="'+CONTACT.booking+'" target="_blank" rel="noopener">'+t("ctaBookXl")+'</a>'+
+      '<p class="or">'+esc(t("ctaOr"))+'</p>'+
+      '<p class="print-only print-cta">'+t("printCta", CONTACT.email)+'</p>'+
       '<form class="cta-send" id="send-form" novalidate>'+
-        '<div class="text-field"><label for="send-email">Deine E-Mail-Adresse</label><input id="send-email" type="email" required autocomplete="email" placeholder="name@firma.ch"></div>'+
-        '<div class="text-field"><label for="send-message">Nachricht an Loïc <span style="font-weight:400;color:#9FB2C3">(optional)</span></label><textarea id="send-message" rows="3" maxlength="2000" placeholder="Was möchtest du noch dazu sagen?"></textarea></div>'+
-        '<button class="btn btn-secondary" type="submit" id="send-btn">PDF via Mail erhalten</button>'+
+        '<div class="text-field"><label for="send-email">'+esc(t("emailLabel"))+'</label><input id="send-email" type="email" required autocomplete="email" placeholder="'+esc(t("emailPh"))+'"></div>'+
+        '<div class="text-field"><label for="send-phone">'+t("phoneLabel")+'</label><input id="send-phone" type="tel" autocomplete="tel" maxlength="30" placeholder="'+esc(t("phonePh"))+'"></div>'+
+        '<div class="text-field"><label for="send-message">'+t("msgLabel")+'</label><textarea id="send-message" rows="3" maxlength="2000" placeholder="'+esc(t("msgPh"))+'"></textarea></div>'+
+        '<button class="btn btn-secondary" type="submit" id="send-btn">'+esc(t("sendBtn"))+'</button>'+
         '<p class="status" id="send-status" role="status"></p>'+
       '</form>'+
     '</section>'+
     '<div class="tools-row no-print">'+
-      '<button class="btn btn-ghost" type="button" id="edit-btn">Antworten anpassen</button>'+
-      '<button class="btn btn-ghost" type="button" id="restart-btn">Neu starten</button>'+
+      '<button class="btn btn-ghost" type="button" id="edit-btn">'+esc(t("editBtn"))+'</button>'+
+      '<button class="btn btn-ghost" type="button" id="restart-btn">'+esc(t("restartBtn"))+'</button>'+
     '</div>'+
-    '<details class="method"><summary>So rechnet die Landkarte</summary><ul>'+
-      '<li>Stunden pro Woche × '+WEEKS+' Arbeitswochen × Anteil Handarbeit. Der Anteil kommt aus Frage 6 und wird je Ablauf angepasst, bei Papier zusätzlich erhöht.</li>'+
-      '<li>Fehler beim Übertragen erzeugen Nacharbeit: Zuschlag von 0 bis 12 % je nach Antwort in Frage 7.</li>'+
-      '<li>Der automatisierbare Anteil ist je Ablauf fest hinterlegt, zum Beispiel Kundendaten 85 %, Belege 75 %, Angebote 55 %.</li>'+
-      '<li>KI empfiehlt die Landkarte nur, wenn Daten als freier Text oder Beleg ankommen. Alles andere läuft über Schnittstellen.</li>'+
-      '<li>Alle Werte sind Schätzungen auf Basis deiner Angaben. Genau wird es, wenn wir einen Ablauf Schritt für Schritt anschauen.</li>'+
+    '<details class="method"><summary>'+esc(t("methodTitle"))+'</summary><ul>'+
+      L.method.map(m=>'<li>'+esc(tr(m))+'</li>').join("")+
     '</ul></details>'+
-    '<div class="signature"><span>Lavanchy Automation · Prozessautomatisierung für KMU in der Schweiz und im DACH-Raum</span><span>'+CONTACT.email+' · lavanchyautomation.ch</span></div>';
+    '<div class="signature"><span>'+esc(t("signature"))+'</span><span>'+CONTACT.email+' · lavanchyautomation.ch</span></div>';
 
   $("#send-form").addEventListener("submit", async e=>{
     e.preventDefault();
-    const emailEl = $("#send-email"), msgEl = $("#send-message"), btn = $("#send-btn"), status = $("#send-status");
+    const emailEl = $("#send-email"), phoneEl = $("#send-phone"), msgEl = $("#send-message"), btn = $("#send-btn"), status = $("#send-status");
     const email = emailEl.value.trim();
-    if(!email || !emailEl.checkValidity()){ status.textContent = "Bitte eine gültige E-Mail-Adresse eingeben."; emailEl.focus(); return; }
-    btn.disabled = true; status.textContent = "Dein Report wird erstellt…";
+    const phone = phoneEl.value.trim();
+    if(!email || !emailEl.checkValidity()){ status.textContent = t("stInvalidEmail"); emailEl.focus(); return; }
+    if(phone && !/^[+0-9 ()\/.\-]{6,30}$/.test(phone)){ status.textContent = t("stInvalidPhone"); phoneEl.focus(); return; }
+    btn.disabled = true; status.textContent = t("stBuilding");
     let pdfBase64 = "";
     try {
       pdfBase64 = await Promise.race([
@@ -1070,28 +1449,18 @@ function renderReport(a, r){
         new Promise((_, reject)=>setTimeout(()=>reject(new Error("timeout")), 20000))
       ]);
     } catch(pdfErr) { pdfBase64 = ""; }
-    status.textContent = "Wird gesendet…";
+    status.textContent = t("stSending");
     try {
-      const res = await postToWebhook({
-        pdfBase64,
+      const res = await postToWebhook(Object.assign(resultPayload(a, r), {
         action: "send", joinpointId: landkarteJoinpointId,
-        email, message: msgEl.value.trim(), firma: a.firma,
-        team: a.team, teamLabel: optLabel("team", a.team),
-        branche: a.branche,
-        tools: a.tools.map(toolName),
-        tasksHours: r.items.map(it => ({ label: it.label, hours: fmtH(it.h) })),
-        transfer: a.transfer, errors: a.errors, absence: a.absence, docs: a.docs, kidata: a.kidata,
-        rate: a.rate, currency: a.currency, goal: a.goal,
-        manualYear: fmt(r.manualYear), saveYear: fmt(r.saveYear), chf: fmt(r.chf),
-        topStaus: r.items.slice(0, 3).map(it => it.label + " (" + toolName(it.src) + " -> " + toolName(it.dst) + "): " + fmtH(it.h) + " h/Wo"),
-        islands: r.islands.map(toolName),
+        pdfBase64, email, phone, message: msgEl.value.trim(),
         mailSubject: mail.subject, mailBody: mail.body
-      });
+      }));
       if(!res.ok) throw new Error("status " + res.status);
-      status.textContent = "Danke fürs Ausfüllen! Du erhältst gleich eine Bestätigung mit deinem Ergebnis per E-Mail. Loïc meldet sich bei dir.";
-      emailEl.disabled = true; msgEl.disabled = true; btn.remove();
+      status.textContent = t("stDone");
+      emailEl.disabled = true; phoneEl.disabled = true; msgEl.disabled = true; btn.remove();
     } catch(err) {
-      status.textContent = "Senden hat nicht geklappt. Schreib stattdessen direkt an " + CONTACT.email + ".";
+      status.textContent = t("stFail", CONTACT.email);
       btn.disabled = false;
     }
   });
@@ -1100,6 +1469,16 @@ function renderReport(a, r){
     Object.assign(answers, {team:null, branche:null, tools:[], tasks:[], hours:{}, transfer:null, errors:null, absence:null, docs:null, kidata:null, rate:80, currency:"CHF", goal:null, firma:""});
     qi = 0; showIntro();
   });
+}
+
+/* ---------- Statische Texte übersetzen ---------- */
+function applyStatic(){
+  document.querySelectorAll("[data-i18n]").forEach(el=>{ el.textContent = t(el.dataset.i18n); });
+  document.querySelectorAll("[data-i18n-html]").forEach(el=>{ el.innerHTML = t(el.dataset.i18nHtml); });
+  document.querySelectorAll("[data-href]").forEach(el=>{ el.setAttribute("href", L.urls[el.dataset.href]); });
+  document.title = t("title");
+  const md = document.querySelector('meta[name="description"]'); if(md) md.setAttribute("content", t("desc"));
+  document.documentElement.classList.remove("i18n-pending");
 }
 
 /* ---------- Ansichten ---------- */
@@ -1115,7 +1494,7 @@ function showIntro(){
 
 function showResult(){
   const a = JSON.parse(JSON.stringify(answers));
-  a.tasks = a.tasks.filter(k=>TASKS[k]);
+  a.tasks = a.tasks.filter(k=>TASK_RULES[k]);
   const r = compute(a);
   show("#view-result");
   city.mount($("#host-result"));
@@ -1124,21 +1503,10 @@ function showResult(){
   renderReport(a, r);
 
   landkarteJoinpointId = null;
-  postToWebhook({
-    action: "create",
-    team: a.team, teamLabel: optLabel("team", a.team),
-    branche: a.branche,
-    tools: a.tools.map(toolName),
-    tasksHours: r.items.map(it => ({ label: it.label, hours: fmtH(it.h) })),
-    transfer: a.transfer, errors: a.errors, absence: a.absence, docs: a.docs, kidata: a.kidata,
-    rate: a.rate, currency: a.currency, goal: a.goal,
-    manualYear: fmt(r.manualYear), saveYear: fmt(r.saveYear), chf: fmt(r.chf),
-    topStaus: r.items.slice(0, 3).map(it => it.label + " (" + toolName(it.src) + " -> " + toolName(it.dst) + "): " + fmtH(it.h) + " h/Wo"),
-    islands: r.islands.map(toolName),
-    firma: a.firma
-  }).then(res => res.ok ? res.json() : null).then(data => {
-    if(data && data.joinpointId) landkarteJoinpointId = data.joinpointId;
-  }).catch(()=>{});
+  postToWebhook(Object.assign(resultPayload(a, r), { action: "create" }))
+    .then(res => res.ok ? res.json() : null).then(data => {
+      if(data && data.joinpointId) landkarteJoinpointId = data.joinpointId;
+    }).catch(()=>{});
 }
 
 document.addEventListener("click", e => {
@@ -1152,13 +1520,14 @@ $("#start-btn").addEventListener("click", ()=>{ qi = 0; renderQ(); show("#view-q
 window.addEventListener("beforeprint", ()=>{
   document.querySelectorAll("details.method").forEach(d=>{ d.dataset.wasOpen = d.open ? "1" : ""; d.open = true; });
   const holder = $("#print-city");
-  if(holder && !holder.innerHTML){ const src = city.snapshot(); if(src) holder.innerHTML = '<img alt="Deine Copy-Paste-Landkarte als 3D-Stadt" src="'+src+'">'; }
+  if(holder && !holder.innerHTML){ const src = city.snapshot(); if(src) holder.innerHTML = '<img alt="'+esc(t("altCity"))+'" src="'+src+'">'; }
 });
 
 window.addEventListener("afterprint", ()=>{
   document.querySelectorAll("details.method").forEach(d=>{ d.open = d.dataset.wasOpen === "1"; });
 });
 
+applyStatic();
 showIntro();
 })();
 </script>

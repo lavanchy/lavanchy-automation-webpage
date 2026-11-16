@@ -25,3 +25,7 @@ deploy/htpasswd
 
 # jetbrains setting folder
 .idea/
+
+# Kopien der Copy-Paste-Landkarte, erzeugt von scripts/sync-landkarte-i18n.mjs (prebuild)
+public/en/landkarte/
+public/fr/landkarte/
