@@ -3,9 +3,33 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Zeitfresser-Landkarte</title>
+<title>Zeitfresser-Landkarte · Lavanchy Automation</title>
 <meta name="description" content="12 Fragen, 5 Minuten: Sieh deinen Betrieb als 3D-Stadt und erfahre, wo deine Zeit zwischen den Tools verschwindet. Von Lavanchy Automation.">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://lavanchyautomation.ch/landkarte/">
+<link rel="alternate" hreflang="de" href="https://lavanchyautomation.ch/landkarte/">
+<link rel="alternate" hreflang="en" href="https://lavanchyautomation.ch/en/landkarte/">
+<link rel="alternate" hreflang="fr" href="https://lavanchyautomation.ch/fr/landkarte/">
+<link rel="alternate" hreflang="x-default" href="https://lavanchyautomation.ch/landkarte/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Lavanchy Automation">
+<meta property="og:title" content="Zeitfresser-Landkarte · Lavanchy Automation">
+<meta property="og:description" content="12 Fragen, 5 Minuten: Sieh deinen Betrieb als 3D-Stadt und erfahre, wo deine Zeit zwischen den Tools verschwindet.">
+<meta property="og:url" content="https://lavanchyautomation.ch/landkarte/">
+<meta property="og:image" content="https://lavanchyautomation.ch/landkarte/og-de.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="de_CH">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Zeitfresser-Landkarte · Lavanchy Automation">
+<meta name="twitter:description" content="12 Fragen, 5 Minuten: Sieh deinen Betrieb als 3D-Stadt und erfahre, wo deine Zeit zwischen den Tools verschwindet.">
+<meta name="twitter:image" content="https://lavanchyautomation.ch/landkarte/og-de.jpg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<!-- Plausible (self-hosted, Datenschutzerklärung Ziff. 5), gleiche Einbindung wie src/components/Analytics.astro -->
+<script src="/js/analytics-init.js"></script>
+<script async src="https://analytics.lavanchyautomation.ch/js/pa-Xex5KYHBg7ual4y0-sKhq.js"></script>
 <script>(function(){var m=location.pathname.match(/^\/(en|fr)\//),q=null;try{q=new URLSearchParams(location.search).get("lang");}catch(e){}var l=(q&&/^(de|en|fr)$/.test(q))?q:(m?m[1]:"de");window.__LK_LANG=l;var d=document.documentElement;d.lang=(l==="de"?"de-CH":l);if(l!=="de")d.className+=" i18n-pending";})();</script>
 <style>
 :root{
@@ -1458,6 +1482,7 @@ function renderReport(a, r){
       }));
       if(!res.ok) throw new Error("status " + res.status);
       status.textContent = t("stDone");
+      track("Landkarte PDF angefordert");
       emailEl.disabled = true; phoneEl.disabled = true; msgEl.disabled = true; btn.remove();
     } catch(err) {
       status.textContent = t("stFail", CONTACT.email);
@@ -1472,12 +1497,15 @@ function renderReport(a, r){
   });
 }
 
+/* ---------- Plausible-Ziele (Trichter) ---------- */
+function track(name){ try { if(window.plausible) window.plausible(name, { props: { sprache: LANG } }); } catch(e){} }
+
 /* ---------- Statische Texte übersetzen ---------- */
 function applyStatic(){
   document.querySelectorAll("[data-i18n]").forEach(el=>{ el.textContent = t(el.dataset.i18n); });
   document.querySelectorAll("[data-i18n-html]").forEach(el=>{ el.innerHTML = t(el.dataset.i18nHtml); });
   document.querySelectorAll("[data-href]").forEach(el=>{ el.setAttribute("href", L.urls[el.dataset.href]); });
-  document.title = t("title");
+  document.title = t("title") + " · Lavanchy Automation";
   const md = document.querySelector('meta[name="description"]'); if(md) md.setAttribute("content", t("desc"));
   document.documentElement.classList.remove("i18n-pending");
 }
@@ -1502,6 +1530,7 @@ function showResult(){
   city.build(r, a.tools);
   countUp($("#res-num"), r.manualYear);
   renderReport(a, r);
+  track("Landkarte ausgewertet");
 
   const previousJoinpointId = landkarteJoinpointId || "";
   landkarteJoinpointId = null;
@@ -1518,7 +1547,7 @@ document.addEventListener("click", e => {
   postToWebhook({ action: "book", joinpointId: landkarteJoinpointId }).catch(()=>{});
 });
 
-$("#start-btn").addEventListener("click", ()=>{ qi = 0; renderQ(); show("#view-quiz"); });
+$("#start-btn").addEventListener("click", ()=>{ track("Landkarte gestartet"); qi = 0; renderQ(); show("#view-quiz"); });
 window.addEventListener("beforeprint", ()=>{
   document.querySelectorAll("details.method").forEach(d=>{ d.dataset.wasOpen = d.open ? "1" : ""; d.open = true; });
   const holder = $("#print-city");

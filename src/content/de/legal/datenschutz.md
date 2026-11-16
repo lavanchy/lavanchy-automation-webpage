@@ -64,7 +64,7 @@ Bei der Terminbuchung können Name, E-Mail-Adresse, Terminangaben und weitere vo
 
 ## 8. Zeitfresser-Landkarte (n8n und Joinpoint)
 
-Für das interaktive Selbsttest-Tool «Zeitfresser-Landkarte» (auch auf Englisch und Französisch verfügbar; aktuell nicht öffentlich verlinkt und nicht für die Indexierung durch Suchmaschinen bestimmt) werden Ihre Antworten während des Quiz ausschliesslich lokal in Ihrem Browser verarbeitet.
+Für das interaktive Selbsttest-Tool «Zeitfresser-Landkarte» (auch auf Englisch und Französisch verfügbar) werden Ihre Antworten während des Quiz ausschliesslich lokal in Ihrem Browser verarbeitet. Die Website-Statistik (Plausible, siehe Ziff. 5) erfasst dabei nur, ob das Tool gestartet, abgeschlossen und der Report angefordert wurde, nicht aber Ihre Antworten.
 
 Sobald die Auswertung erstellt wird, werden die Quiz-Ergebnisse (z. B. Branche, Teamgrösse, genutzte Tools, geschätzte Einsparung, gewählte Sprache) ohne Namen oder Kontaktdaten automatisch an einen selbst betriebenen n8n-Workflow übermittelt (Hosting wie unter Ziff. 4, VPS bei Hostinger, Deutschland) und dort als anonymer Eintrag im CRM-System Joinpoint gespeichert, um die Nutzung des Tools statistisch auszuwerten (z. B. nach Branche oder Firmengrösse). Joinpoint wird von der Joinpoints GmbH (Graz, Österreich) betrieben; die Daten werden ausschliesslich in österreichischen Rechenzentren verarbeitet.
 

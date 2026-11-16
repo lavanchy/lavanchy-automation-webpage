@@ -66,7 +66,7 @@ Lors de la prise de rendez-vous, le nom, l'adresse e-mail, les indications relat
 
 ## 8. Outil Zeitfresser-Landkarte (n8n et Joinpoint)
 
-Pour l'outil interactif d'auto-évaluation « Zeitfresser-Landkarte » (en français « Carte des pertes de temps » ; actuellement non lié publiquement et non destiné à être indexé par les moteurs de recherche), vos réponses sont traitées exclusivement localement dans votre navigateur pendant que vous remplissez le questionnaire.
+Pour l'outil interactif d'auto-évaluation « Zeitfresser-Landkarte » (en français « Carte des pertes de temps »), vos réponses sont traitées exclusivement localement dans votre navigateur pendant que vous remplissez le questionnaire. Les statistiques du site (Plausible, voir ch. 5) enregistrent uniquement si l'outil a été lancé, terminé et si le rapport a été demandé, mais pas vos réponses.
 
 Dès que le résultat est généré, les résultats du questionnaire (p. ex. secteur, taille de l'équipe, outils utilisés, économie estimée, langue choisie) sont transmis automatiquement, sans votre nom ni vos coordonnées, à un workflow n8n auto-hébergé (hébergement comme au ch. 4, VPS chez Hostinger, Allemagne) et enregistrés sous forme d'entrée anonyme dans le système CRM Joinpoint, afin d'évaluer statistiquement l'utilisation de l'outil (p. ex. par secteur ou taille d'entreprise). Joinpoint est exploité par Joinpoints GmbH (Graz, Autriche) ; les données sont traitées exclusivement dans des centres de données autrichiens.
 

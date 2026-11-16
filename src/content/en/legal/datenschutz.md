@@ -66,7 +66,7 @@ When booking an appointment, name, email address, appointment details and other 
 
 ## 8. Zeitfresser-Landkarte tool (n8n and Joinpoint)
 
-For the interactive self-assessment tool "Zeitfresser-Landkarte" (in English "Time-Drain Map"; currently not publicly linked and not intended to be indexed by search engines), your answers are processed exclusively locally in your browser while you work through the quiz.
+For the interactive self-assessment tool "Zeitfresser-Landkarte" (in English "Time-Drain Map"), your answers are processed exclusively locally in your browser while you work through the quiz. The website statistics (Plausible, see section 5) only record whether the tool was started, completed and the report requested, but not your answers.
 
 As soon as the result is generated, the quiz results (e.g. industry, team size, tools used, estimated savings, selected language) are automatically transmitted, without your name or contact details, to a self-operated n8n workflow (hosting as under section 4, VPS at Hostinger, Germany) and stored there as an anonymous record in the CRM system Joinpoint, in order to statistically evaluate use of the tool (e.g. by industry or company size). Joinpoint is operated by Joinpoints GmbH (Graz, Austria); the data is processed exclusively in Austrian data centres.
 

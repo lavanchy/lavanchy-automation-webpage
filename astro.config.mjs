@@ -10,6 +10,12 @@ export default defineConfig({
   integrations: [
     sitemap({
       filter: (page) => !/\/blog\//.test(page),
+      // Zeitfresser-Landkarte: statische Seiten in public/ (nicht von Astro gerendert)
+      customPages: [
+        'https://lavanchyautomation.ch/landkarte/',
+        'https://lavanchyautomation.ch/en/landkarte/',
+        'https://lavanchyautomation.ch/fr/landkarte/',
+      ],
     }),
   ],
   redirects: {
