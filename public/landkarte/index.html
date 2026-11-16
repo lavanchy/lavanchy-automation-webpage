@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Copy-Paste-Landkarte</title>
+<title>Zeitfresser-Landkarte</title>
 <meta name="description" content="12 Fragen, 5 Minuten: Sieh deinen Betrieb als 3D-Stadt und erfahre, wo deine Zeit zwischen den Tools verschwindet. Von Lavanchy Automation.">
 <meta name="robots" content="noindex, nofollow">
 <script>(function(){var m=location.pathname.match(/^\/(en|fr)\//),q=null;try{q=new URLSearchParams(location.search).get("lang");}catch(e){}var l=(q&&/^(de|en|fr)$/.test(q))?q:(m?m[1]:"de");window.__LK_LANG=l;var d=document.documentElement;d.lang=(l==="de"?"de-CH":l);if(l!=="de")d.className+=" i18n-pending";})();</script>
@@ -319,7 +319,7 @@ footer{max-width:1240px;margin:0 auto;padding:0 clamp(16px,4vw,40px) 100px;font-
   <!-- INTRO -->
   <section id="view-intro" class="view intro" aria-labelledby="intro-title">
     <div class="intro-text">
-      <div class="eyebrow" data-i18n="title">Copy-Paste-Landkarte</div>
+      <div class="eyebrow" data-i18n="title">Zeitfresser-Landkarte</div>
       <h1 id="intro-title" data-i18n="introTitle">Wo verschwindet deine Zeit zwischen E‑Mail, Excel und Buchhaltung?</h1>
       <p class="lead" data-i18n="introLead"></p>
       <ul class="facts">
@@ -466,7 +466,7 @@ const QUESTIONS = [
 
 const TX = {
 de:{
-  title:"Copy-Paste-Landkarte",
+  title:"Zeitfresser-Landkarte",
   desc:"12 Fragen, 5 Minuten: Sieh deinen Betrieb als 3D-Stadt und erfahre, wo deine Zeit zwischen den Tools verschwindet. Von Lavanchy Automation.",
   urls:{home:"https://lavanchyautomation.ch/de/", privacy:"https://lavanchyautomation.ch/de/datenschutz/", imprint:"https://lavanchyautomation.ch/de/impressum/"},
   introTitle:"Wo verschwindet deine Zeit zwischen E‑Mail, Excel und Buchhaltung?",
@@ -544,7 +544,7 @@ de:{
     fehler:(h,f)=>"Du willst weniger Fehler. Jede Übertragung, die automatisch läuft, wird protokolliert. Abtippfehler fallen weg, und du siehst jederzeit, was wann passiert ist."
   },
   reportEyebrow:"Dein Report",
-  reportTitle:f=>"Copy-Paste-Landkarte"+(f ? " für "+f : ""),
+  reportTitle:f=>"Zeitfresser-Landkarte"+(f ? " für "+f : ""),
   reportMeta:(n,p)=>n+" Tools · heute laufen ca. "+p+" % der Übertragungen automatisch",
   stat1:"Stunden pro Jahr Handarbeit zwischen den Tools",
   stat2:"Stunden davon lassen sich automatisieren",
@@ -591,12 +591,12 @@ de:{
   stBuilding:"Dein Report wird erstellt…", stSending:"Wird gesendet…",
   stDone:"Danke fürs Ausfüllen! Du erhältst gleich eine Bestätigung mit deinem Ergebnis per E-Mail. Loïc meldet sich bei dir.",
   stFail:e=>"Senden hat nicht geklappt. Schreib stattdessen direkt an "+e+".",
-  altCity:"Deine Copy-Paste-Landkarte als 3D-Stadt",
-  pdfName:"Copy-Paste-Landkarte.pdf"
+  altCity:"Deine Zeitfresser-Landkarte als 3D-Stadt",
+  pdfName:"Zeitfresser-Landkarte.pdf"
 },
 
 en:{
-  title:"Copy-Paste Map",
+  title:"Time-Drain Map",
   desc:"12 questions, 5 minutes: see your business as a 3D city and find out where your time disappears between tools. By Lavanchy Automation.",
   urls:{home:"https://lavanchyautomation.ch/en/", privacy:"https://lavanchyautomation.ch/en/datenschutz/", imprint:"https://lavanchyautomation.ch/en/impressum/"},
   introTitle:"Where does your time disappear between email, Excel and accounting?",
@@ -674,7 +674,7 @@ en:{
     fehler:(h,f)=>"You want fewer errors. Every transfer that runs automatically is logged. Typing errors disappear, and you can see at any time what happened when."
   },
   reportEyebrow:"Your report",
-  reportTitle:f=>"Copy-Paste Map"+(f ? " for "+f : ""),
+  reportTitle:f=>"Time-Drain Map"+(f ? " for "+f : ""),
   reportMeta:(n,p)=>n+" tools · today about "+p+" % of transfers run automatically",
   stat1:"hours per year of manual work between tools",
   stat2:"of those hours can be automated",
@@ -721,12 +721,12 @@ en:{
   stBuilding:"Creating your report…", stSending:"Sending…",
   stDone:"Thanks for taking the test! You’ll shortly receive a confirmation with your result by email. Loïc will get in touch with you.",
   stFail:e=>"Sending didn’t work. Please write directly to "+e+" instead.",
-  altCity:"Your Copy-Paste Map as a 3D city",
-  pdfName:"Copy-Paste-Map.pdf"
+  altCity:"Your Time-Drain Map as a 3D city",
+  pdfName:"Time-Drain-Map.pdf"
 },
 
 fr:{
-  title:"Carte du copier-coller",
+  title:"Carte des pertes de temps",
   desc:"12 questions, 5 minutes : visualisez votre entreprise comme une ville en 3D et découvrez où votre temps se perd entre vos outils. Par Lavanchy Automation.",
   urls:{home:"https://lavanchyautomation.ch/fr/", privacy:"https://lavanchyautomation.ch/fr/datenschutz/", imprint:"https://lavanchyautomation.ch/fr/impressum/"},
   introTitle:"Où votre temps se perd-il entre e‑mail, Excel et comptabilité ?",
@@ -804,7 +804,7 @@ fr:{
     fehler:(h,f)=>"Vous voulez moins d’erreurs. Chaque transfert automatisé est journalisé. Les fautes de frappe disparaissent et vous voyez à tout moment ce qui s’est passé et quand."
   },
   reportEyebrow:"Votre rapport",
-  reportTitle:f=>"Carte du copier-coller"+(f ? " pour "+f : ""),
+  reportTitle:f=>"Carte des pertes de temps"+(f ? " pour "+f : ""),
   reportMeta:(n,p)=>n+" outils · aujourd’hui, env. "+p+" % des transferts sont automatisés",
   stat1:"heures par an de travail manuel entre les outils",
   stat2:"de ces heures peuvent être automatisées",
@@ -851,8 +851,8 @@ fr:{
   stBuilding:"Création de votre rapport…", stSending:"Envoi en cours…",
   stDone:"Merci d’avoir répondu ! Vous recevrez sous peu une confirmation avec votre résultat par e-mail. Loïc vous contactera.",
   stFail:e=>"L’envoi n’a pas fonctionné. Écrivez plutôt directement à "+e+".",
-  altCity:"Votre carte du copier-coller sous forme de ville 3D",
-  pdfName:"Carte-copier-coller.pdf"
+  altCity:"Votre carte des pertes de temps sous forme de ville 3D",
+  pdfName:"Carte-pertes-de-temps.pdf"
 }
 };
 
@@ -1302,7 +1302,7 @@ function buildMail(a, r){
   const top = r.items.slice(0,3);
   const lines = [
     "Hallo Loïc,", "",
-    "ich habe die Copy-Paste-Landkarte ausgefüllt. Hier mein Ergebnis:", "",
+    "ich habe die Zeitfresser-Landkarte ausgefüllt. Hier mein Ergebnis:", "",
     "Betrieb: " + (a.firma ? a.firma+", " : "") + a.branche + ", " + optLabelDe("team", a.team) + " Personen",
     "Tools: " + a.tools.map(toolNameDe).join(", "), "",
     "Handarbeit zwischen den Tools: ca. " + fmtDe(r.manualYear) + " Stunden pro Jahr",
@@ -1312,7 +1312,7 @@ function buildMail(a, r){
   top.forEach((it,i)=>lines.push((i+1)+". "+taskLabelDe(it.id)+" ("+toolNameDe(it.src)+" → "+toolNameDe(it.dst)+"): "+fmtHDe(it.h)+" h pro Woche"));
   if(r.islands.length) lines.push("", "Wissen hängt an wenigen Personen bei: " + r.islands.map(toolNameDe).join(", "));
   lines.push("", "Ich würde gern wissen, wo ich anfangen sollte.", "", "Grüsse");
-  return {subject: "Copy-Paste-Landkarte: " + fmtDe(r.manualYear) + " Stunden pro Jahr", body: lines.join("\r\n")};
+  return {subject: "Zeitfresser-Landkarte: " + fmtDe(r.manualYear) + " Stunden pro Jahr", body: lines.join("\r\n")};
 }
 
 /* Daten für n8n: deutsche Werte für Joinpoint und die Mail an Loïc, dazu "local" für die Mail an die Person */
@@ -1467,6 +1467,7 @@ function renderReport(a, r){
   $("#edit-btn").addEventListener("click", ()=>{ qi = 0; renderQ(); show("#view-quiz"); });
   $("#restart-btn").addEventListener("click", ()=>{
     Object.assign(answers, {team:null, branche:null, tools:[], tasks:[], hours:{}, transfer:null, errors:null, absence:null, docs:null, kidata:null, rate:80, currency:"CHF", goal:null, firma:""});
+    landkarteJoinpointId = null;
     qi = 0; showIntro();
   });
 }
@@ -1502,8 +1503,9 @@ function showResult(){
   countUp($("#res-num"), r.manualYear);
   renderReport(a, r);
 
+  const previousJoinpointId = landkarteJoinpointId || "";
   landkarteJoinpointId = null;
-  postToWebhook(Object.assign(resultPayload(a, r), { action: "create" }))
+  postToWebhook(Object.assign(resultPayload(a, r), { action: "create", previousJoinpointId }))
     .then(res => res.ok ? res.json() : null).then(data => {
       if(data && data.joinpointId) landkarteJoinpointId = data.joinpointId;
     }).catch(()=>{});

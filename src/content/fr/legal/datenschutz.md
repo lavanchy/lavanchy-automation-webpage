@@ -64,9 +64,9 @@ Pour la réservation d'un premier entretien, meetergo est utilisé, un outil de 
 
 Lors de la prise de rendez-vous, le nom, l'adresse e-mail, les indications relatives au rendez-vous et d'autres informations que vous saisissez peuvent être traités. Le fondement en est l'organisation du premier entretien en tant que mesure précontractuelle (art. 31 al. 2 let. a LPD ou art. 6 par. 1 let. b RGPD). Les dispositions de protection des données de meetergo s'appliquent à titre complémentaire.
 
-## 8. Outil Copy-Paste-Landkarte (n8n et Joinpoint)
+## 8. Outil Zeitfresser-Landkarte (n8n et Joinpoint)
 
-Pour l'outil interactif d'auto-évaluation « Copy-Paste-Landkarte » (en français « Carte du copier-coller » ; actuellement non lié publiquement et non destiné à être indexé par les moteurs de recherche), vos réponses sont traitées exclusivement localement dans votre navigateur pendant que vous remplissez le questionnaire.
+Pour l'outil interactif d'auto-évaluation « Zeitfresser-Landkarte » (en français « Carte des pertes de temps » ; actuellement non lié publiquement et non destiné à être indexé par les moteurs de recherche), vos réponses sont traitées exclusivement localement dans votre navigateur pendant que vous remplissez le questionnaire.
 
 Dès que le résultat est généré, les résultats du questionnaire (p. ex. secteur, taille de l'équipe, outils utilisés, économie estimée, langue choisie) sont transmis automatiquement, sans votre nom ni vos coordonnées, à un workflow n8n auto-hébergé (hébergement comme au ch. 4, VPS chez Hostinger, Allemagne) et enregistrés sous forme d'entrée anonyme dans le système CRM Joinpoint, afin d'évaluer statistiquement l'utilisation de l'outil (p. ex. par secteur ou taille d'entreprise). Joinpoint est exploité par Joinpoints GmbH (Graz, Autriche) ; les données sont traitées exclusivement dans des centres de données autrichiens.
 

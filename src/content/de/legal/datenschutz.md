@@ -62,9 +62,9 @@ Für die Buchung eines Erstgesprächs wird meetergo verwendet, ein Terminbuchung
 
 Bei der Terminbuchung können Name, E-Mail-Adresse, Terminangaben und weitere von Ihnen eingegebene Informationen verarbeitet werden. Grundlage dafür ist die Vereinbarung des Erstgesprächs als vorvertragliche Massnahme (Art. 31 Abs. 2 lit. a DSG bzw. Art. 6 Abs. 1 lit. b DSGVO). Es gelten ergänzend die Datenschutzbestimmungen von meetergo.
 
-## 8. Copy-Paste-Landkarte (n8n und Joinpoint)
+## 8. Zeitfresser-Landkarte (n8n und Joinpoint)
 
-Für das interaktive Selbsttest-Tool «Copy-Paste-Landkarte» (aktuell nicht öffentlich verlinkt und nicht für die Indexierung durch Suchmaschinen bestimmt) werden Ihre Antworten während des Quiz ausschliesslich lokal in Ihrem Browser verarbeitet.
+Für das interaktive Selbsttest-Tool «Zeitfresser-Landkarte» (auch auf Englisch und Französisch verfügbar; aktuell nicht öffentlich verlinkt und nicht für die Indexierung durch Suchmaschinen bestimmt) werden Ihre Antworten während des Quiz ausschliesslich lokal in Ihrem Browser verarbeitet.
 
 Sobald die Auswertung erstellt wird, werden die Quiz-Ergebnisse (z. B. Branche, Teamgrösse, genutzte Tools, geschätzte Einsparung, gewählte Sprache) ohne Namen oder Kontaktdaten automatisch an einen selbst betriebenen n8n-Workflow übermittelt (Hosting wie unter Ziff. 4, VPS bei Hostinger, Deutschland) und dort als anonymer Eintrag im CRM-System Joinpoint gespeichert, um die Nutzung des Tools statistisch auszuwerten (z. B. nach Branche oder Firmengrösse). Joinpoint wird von der Joinpoints GmbH (Graz, Österreich) betrieben; die Daten werden ausschliesslich in österreichischen Rechenzentren verarbeitet.
 
