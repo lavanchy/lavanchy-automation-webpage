@@ -107,6 +107,7 @@ main{max-width:1240px;margin:0 auto;padding:clamp(20px,4vw,48px) clamp(16px,4vw,
 .lbl{position:absolute;left:0;top:0;transform:translate(-50%,-100%);white-space:nowrap;background:rgba(255,255,255,.92);border:1px solid var(--line);border-radius:7px;padding:3px 8px;font-size:12px;line-height:1.3;box-shadow:0 4px 12px -6px rgba(19,33,48,.35);display:flex;gap:6px;align-items:baseline}
 .lbl b{font-weight:650}
 .lbl span{font-family:var(--font-mono);font-size:11px;color:var(--muted)}
+.lbl span.none{font-family:inherit;font-style:italic;opacity:.8}
 .lbl.island{border-color:var(--island);background:#FFF4EA}
 .lbl.island::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--island);align-self:center}
 .city-fallback{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:24px;color:var(--muted);font-size:15px}
@@ -191,10 +192,45 @@ input[type=range]{width:100%;accent-color:var(--accent);height:28px}
 .jam .route{font-family:var(--font-mono);font-size:13px;color:var(--muted);margin-top:2px}
 .jam .why{grid-column:2/3;font-size:15px;max-width:68ch}
 .jam .nums{grid-column:2/3;font-size:14px;color:var(--muted)}
+.jam-side{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+.ba{grid-column:2/4;display:grid;gap:6px;margin-top:4px}
+.ba-row{display:grid;grid-template-columns:96px minmax(0,1fr);gap:10px;align-items:start}
+.ba-tag{font-family:var(--font-mono);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;padding-top:5px}
+.ba-row.before .ba-tag{color:var(--bad)}
+.ba-row.after .ba-tag{color:var(--ok)}
+.ba-flow{display:flex;flex-wrap:wrap;align-items:center;gap:4px 6px}
+.ba-tool{font-size:12.5px;font-weight:650;background:var(--ink);color:#fff;border-radius:6px;padding:3px 8px}
+.ba-step{font-size:13px;border-radius:6px;padding:3px 8px}
+.ba-row.before .ba-step{background:#FBE9E7;color:#7A2A22}
+.ba-row.after .ba-step{background:#E3F4EC;color:#1D5E40}
+.ba-arrow{color:var(--muted);font-size:13px}
+@media (max-width:640px){.ba{grid-column:1/4}.ba-row{grid-template-columns:1fr;gap:4px}}
+.ki-line{font-size:15px;color:var(--muted);max-width:70ch}
+.jam .next{grid-column:2/3;font-size:14.5px;max-width:68ch;background:var(--accent-soft);border-radius:8px;padding:8px 12px}
+.jam .next b{color:var(--accent)}
+.findings{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.findings li{background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--ok);border-radius:var(--radius);padding:12px 16px;font-size:15px}
+.findings li.warn-island{border-left-color:var(--island)}
+.findings li.warn-priv{border-left-color:var(--warn)}
+.more-hint{font-size:14px;color:var(--muted)}
+.pdf-teaser{border:1px solid #33465A;border-radius:12px;padding:16px 18px;max-width:620px}
+.pdf-teaser h4{font-family:var(--font-display);font-size:17px;margin:0 0 8px;color:#fff}
+.pdf-teaser ul{margin:0;padding-left:20px;display:grid;gap:4px;color:#C6D2DD;font-size:15px}
 .jam .nums b{color:var(--ink);font-variant-numeric:tabular-nums}
 .pill{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;border-radius:999px;padding:5px 11px;white-space:nowrap}
 .pill.api{background:#E3F3EB;color:#1D6E49}
 .pill.ai{background:#E7E9FB;color:#3A43A3}
+.pill.ocr{background:#FFF1DC;color:#8A5300}
+.overview{display:block}
+.overview > h3{margin:0 0 12px}
+.overview .ki-line{margin-top:10px}
+.ovt{width:100%;max-width:100%;border-collapse:collapse;font-size:14px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius)}
+.ovt th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);padding:8px 10px;border-bottom:1px solid var(--line)}
+.ovt td{padding:7px 10px;border-bottom:1px solid var(--line);vertical-align:middle}
+.ovt td.n{color:var(--muted);font-variant-numeric:tabular-nums}
+.ovt td.h{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.ovt tfoot td{border-bottom:0;border-top:2px solid var(--line)}
+.ovt .pill{font-size:11px;padding:3px 9px}
 .two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
 .box{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px;display:grid;gap:8px;align-content:start}
 .box h4{font-family:var(--font-display);font-size:18px;margin:0}
@@ -250,7 +286,8 @@ footer{max-width:1240px;margin:0 auto;padding:0 clamp(16px,4vw,40px) 100px;font-
 @media (max-width:560px){
   .jam{grid-template-columns:minmax(0,1fr)}
   .jam .rank{padding:0}
-  .jam .why,.jam .nums{grid-column:auto}
+  .jam .why,.jam .nums,.jam .next,.jam .ba{grid-column:auto}
+  .jam-side{align-items:flex-start}
   .ov-counter{max-width:calc(100% - 32px)}
   .ov-hint{display:none}
   .slider-row{grid-template-columns:minmax(0,1fr) 80px}
@@ -271,6 +308,7 @@ footer{max-width:1240px;margin:0 auto;padding:0 clamp(16px,4vw,40px) 100px;font-
 .pdf-export .report-head .meta{font-size:12.5px}
 .pdf-export .print-only{display:block}
 .pdf-export .print-only img{display:block;width:100%;height:300px;object-fit:cover;border-radius:10px;border:1px solid var(--line)}
+.pdf-export .print-only.compact img{height:200px}
 .pdf-export .stats{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
 .pdf-export .stat{padding:12px}
 .pdf-export .stat .v{font-size:22px}
@@ -282,7 +320,22 @@ footer{max-width:1240px;margin:0 auto;padding:0 clamp(16px,4vw,40px) 100px;font-
 .pdf-export .jam h4{font-size:15px}
 .pdf-export .jam .why{font-size:12px;grid-column:2/3}
 .pdf-export .jam .nums{font-size:11.5px;grid-column:2/3}
-.pdf-export .two{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px}
+.pdf-export .two{display:block}
+.pdf-export .two .box{margin-bottom:10px}
+.pdf-export .jam .next{font-size:12px;padding:6px 10px}
+.pdf-export .overview{display:block}
+.pdf-export .overview > h3{margin:0 0 10px}
+.pdf-export .ovt{font-size:11px;table-layout:fixed}
+.pdf-export .ovt td{overflow-wrap:anywhere}
+.pdf-export .ovt th{letter-spacing:.03em}
+.pdf-export .jams-detail{break-before:page;page-break-before:always}
+.pdf-export .ovt td{padding:5px 8px}
+.pdf-export .ovt th{font-size:9.5px;padding:6px 8px}
+.pdf-export .ki-line{font-size:12px}
+.pdf-export .ba-step,.pdf-export .ba-tool{font-size:10.5px;padding:2px 6px}
+.pdf-export .ba-tag{font-size:9.5px;padding-top:3px}
+.pdf-export .ba-row{grid-template-columns:80px minmax(0,1fr)}
+.pdf-export .box h4{font-size:15px}
 .pdf-export .box{padding:14px}
 .pdf-export .box p{font-size:12px}
 .pdf-export .cta{background:#fff;color:var(--ink);border:2px solid var(--ink);padding:16px 18px;gap:8px}
@@ -462,7 +515,7 @@ const TASK_RULES = {
   anfragen:{src:["formular","email","chat"], dst:["crm","excel","projekt"], bias:1.1, auto:0.8, ki:s=>s!=="formular", whyKey:s=>s==="formular"?"form":"text"},
   angebote:{src:["crm","excel","email"], dst:["word","buchhaltung","erp","branche"], bias:1.0, auto:0.55, ki:false},
   rechnungen:{src:["projekt","crm","excel","erp"], dst:["buchhaltung","word"], bias:0.95, auto:0.7, ki:false},
-  belege:{src:["papier","email"], dst:["buchhaltung","ablage"], bias:1.15, auto:0.75, ki:true},
+  belege:{src:["papier","email"], dst:["buchhaltung","ablage"], bias:1.15, auto:0.75, ki:"ocr"},
   termine:{src:["email","chat"], dst:["kalender"], bias:0.9, auto:0.7, ki:false},
   kundendaten:{src:["crm","excel","formular"], dst:["buchhaltung","erp","excel","branche"], bias:1.1, auto:0.85, ki:false},
   berichte:{src:["buchhaltung","crm","erp","projekt"], dst:["excel"], bias:1.05, auto:0.75, ki:false},
@@ -509,7 +562,7 @@ de:{
   bookBtn:"Termin buchen",
   footerNote:"Alle Werte sind Schätzungen auf Basis deiner Angaben. · <a href='https://lavanchyautomation.ch/de/datenschutz/' target='_blank' rel='noopener'>Datenschutz</a> · <a href='https://lavanchyautomation.ch/de/impressum/' target='_blank' rel='noopener'>Impressum</a>",
   fallback3d:"Die 3D-Ansicht konnte nicht geladen werden. Dein Report unten ist trotzdem vollständig.",
-  hWeek:"h/Wo", perHour:"pro Stunde", currencyAria:"Währung", rateAria:"Kosten pro Arbeitsstunde",
+  hWeek:"h/Wo", noFlow:"kein Ablauf erfasst", perHour:"pro Stunde", currencyAria:"Währung", rateAria:"Kosten pro Arbeitsstunde",
   firmaLabel:"Name deines Betriebs <span style='font-weight:400;color:var(--muted)'>(optional, erscheint im Report)</span>",
   errChoose:"Bitte wähle eine Antwort.",
   errTools:n=>"Bitte wähle mindestens 3 Tools. Aktuell: "+n+".",
@@ -526,7 +579,7 @@ de:{
     anfragen:{label:"Anfragen erfassen", hint:"Mails, Formulare, Anrufe ins System übertragen", why:{form:"Das Formular liefert schon saubere Felder. Eine Schnittstelle trägt sie direkt ein, ohne dass jemand abtippt.", text:"Anfragen kommen als freier Text. KI liest Name, Anliegen und Dringlichkeit heraus und legt den Kontakt sauber an. Ein Mensch prüft nur noch."}},
     angebote:{label:"Angebote erstellen", hint:"Kundendaten und Positionen in eine Vorlage bringen", why:"Kundendaten und Positionen fliessen automatisch in deine feste Vorlage. Dafür braucht es keine KI, nur eine saubere Verbindung."},
     rechnungen:{label:"Rechnungen schreiben", hint:"Leistungen und Positionen in die Buchhaltung übernehmen", why:"Geleistete Stunden oder Positionen werden automatisch in die Buchhaltung übernommen. Eine Schnittstelle reicht."},
-    belege:{label:"Belege ablegen und verbuchen", hint:"Rechnungen aus Mail und Post sortieren und erfassen", why:"Jeder Beleg sieht anders aus. KI liest Betrag, Datum und Lieferant aus und legt ihn ab. Ein Mensch gibt nur noch frei."},
+    belege:{label:"Belege ablegen und verbuchen", hint:"Rechnungen aus Mail und Post sortieren und erfassen", why:"Jeder Beleg sieht anders aus. Eine Dokumenterkennung (OCR) liest Betrag, Datum und Lieferant aus und legt ihn ab. Ein Mensch gibt nur noch frei."},
     termine:{label:"Termine koordinieren", hint:"Hin und Her per Mail oder Telefon", why:"Eine Buchungsseite mit Kalenderanbindung ersetzt das Hin und Her. Bestätigung und Erinnerung gehen automatisch raus."},
     kundendaten:{label:"Kundendaten übertragen", hint:"Dieselben Daten in mehreren Tools pflegen", why:"Kundendaten werden an einer Stelle gepflegt, die anderen Tools ziehen automatisch nach. Doppelte Einträge verschwinden."},
     berichte:{label:"Berichte und Auswertungen", hint:"Zahlen aus mehreren Tools zusammentragen", why:"Die Zahlen werden jede Woche automatisch gezogen und ins gleiche Format gebracht. Eine Schnittstelle reicht."},
@@ -545,16 +598,16 @@ de:{
     goal:{kunden:"Mehr Kunden betreuen", wachsen:"Wachsen, ohne gleich neu einzustellen", feierabend:"Früher Feierabend machen", fehler:"Weniger Fehler und Nacharbeit"}
   },
   questions:{
-    team:{topic:"Betrieb", title:"Wie viele Personen arbeiten in deinem Betrieb?", hint:"Inklusive dir selbst."},
+    team:{topic:"Betrieb", title:"Wie viele Personen arbeiten in deinem Betrieb?", hint:"Inklusive dir selbst. Feste externe Unterstützung wie eine Assistenz zählt mit."},
     branche:{topic:"Betrieb", title:"In welcher Branche bist du unterwegs?", hint:"Wähle das, was am ehesten passt."},
     tools:{topic:"Tools", title:"Welche Tools nutzt du im Alltag?", hint:"Alles, was mindestens einmal pro Woche offen ist. Mindestens 3."},
-    tasks:{topic:"Abläufe", title:"Welche Abläufe wiederholen sich bei dir jede Woche?", hint:"Wähle alles, was passt."},
-    hours:{topic:"Abläufe", title:"Wie viel Zeit steckt das Team pro Woche in diese Abläufe?", hint:"Eine grobe Schätzung reicht. Zähle alle Personen zusammen."},
+    tasks:{topic:"Abläufe", title:"Welche Abläufe wiederholen sich bei dir regelmässig?", hint:"Wähle alles, was mindestens jeden Monat anfällt."},
+    hours:{topic:"Abläufe", title:"Wie viel Zeit fliesst pro Woche in diese Abläufe?", hint:"Eine grobe Schätzung reicht. Zähle alle mit, die daran arbeiten, auch externe Hilfe wie eine Assistenz. Fällt etwas nur monatlich an, teile die Zeit durch 4."},
     transfer:{topic:"Datenflüsse", title:"Wie kommen Daten von einem Tool ins nächste?", hint:"Zum Beispiel eine Anfrage aus dem Mail ins CRM oder eine Rechnung in die Buchhaltung."},
     errors:{topic:"Datenflüsse", title:"Wie oft passieren Fehler beim Übertragen?", hint:"Falsche Beträge, vergessene Einträge, doppelte Kunden."},
-    absence:{topic:"Wissen", title:"Deine wichtigste Person fällt drei Wochen aus. Was passiert?", hint:"Ehrlich ist hier hilfreicher als optimistisch."},
+    absence:{topic:"Wissen", title:"Deine wichtigste Person fällt drei Wochen aus. Was passiert?", titleSolo:"Du fällst drei Wochen aus. Was passiert?", hint:"Ehrlich ist hier hilfreicher als optimistisch."},
     docs:{topic:"Wissen", title:"Sind deine Abläufe irgendwo aufgeschrieben?", hint:"So, dass jemand Neues sie ohne Nachfragen erledigen könnte."},
-    kidata:{topic:"Datenschutz", title:"Welche Daten landen bei dir in KI-Tools wie ChatGPT?", hint:"Auch das, was Mitarbeitende privat nutzen, zählt."},
+    kidata:{topic:"Datenschutz", title:"Welche Daten landen bei dir in KI-Tools wie ChatGPT?", hint:"Auch das, was Mitarbeitende privat nutzen, zählt.", hintSolo:"Auch das, was externe Hilfen für dich nutzen, zählt."},
     rate:{topic:"Kosten", title:"Was kostet dich eine Arbeitsstunde ungefähr?", hint:"Lohn inklusive Nebenkosten. Wenn du es nicht weisst, lass den Wert einfach stehen."},
     goal:{topic:"Ziel", title:"Was würdest du mit der gewonnenen Zeit am liebsten machen?", hint:"Danach siehst du deine Landkarte."}
   },
@@ -567,21 +620,59 @@ de:{
     feierabend:(h,f)=>"Du willst früher Feierabend machen. Das sind "+h+" Stunden pro Woche, die heute zusätzlich zur eigentlichen Arbeit anfallen.",
     fehler:(h,f)=>"Du willst weniger Fehler. Jede Übertragung, die automatisch läuft, wird protokolliert. Abtippfehler fallen weg, und du siehst jederzeit, was wann passiert ist."
   },
+  ba:{
+    anfragen:{b:["Anfrage lesen","Angaben von Hand abtippen"], a:["KI liest Name, Anliegen und Dringlichkeit aus"], aForm:["Felder werden direkt übernommen"], end:"du prüfst kurz"},
+    angebote:{b:["Kundendaten und Positionen zusammensuchen","in die Vorlage kopieren"], a:["Angebot entsteht automatisch aus der Vorlage"], end:"du prüfst und verschickst"},
+    rechnungen:{b:["Leistungen zusammensuchen","Positionen abtippen"], a:["Positionen werden automatisch übernommen"], end:"du gibst frei"},
+    belege:{b:["Beleg öffnen","Betrag, Datum und Lieferant abtippen","ablegen"], a:["Dokumenterkennung (OCR) liest den Beleg aus und legt ihn ab"], end:"du gibst frei"},
+    termine:{b:["Mails hin und her","Termin von Hand eintragen"], a:["Kunde bucht selbst über die Buchungsseite"], end:"Bestätigung und Erinnerung gehen automatisch"},
+    kundendaten:{b:["Änderung erfassen","in jedem Tool nochmals eintragen"], a:["einmal ändern, die anderen Tools ziehen nach"]},
+    berichte:{b:["Zahlen aus mehreren Tools exportieren","von Hand zusammenkopieren"], a:["Zahlen werden jede Woche automatisch gezogen"], end:"Bericht liegt bereit"},
+    onboarding:{b:["Ordner anlegen","Zugänge vergeben","Willkommensmail schreiben"], a:["Checkliste läuft automatisch ab"], end:"du begrüsst nur noch persönlich"},
+    fristen:{b:["Fristen in Listen suchen","von Hand nachtragen","hoffen, dass nichts vergessen geht"], a:["Fristen werden automatisch ausgelesen","Erinnerung kommt rechtzeitig"]},
+    bestellungen:{b:["Bestellung lesen","von Hand ins System eintragen","Bestand abgleichen"], a:["Bestellung landet automatisch im System","Bestand stimmt"]}
+  },
+  baBefore:"Heute", baAfter:"Automatisiert",
+  numsMonth:(m,s)=>"<b>"+m+" h</b> pro Monat · davon ca. <b>"+s+" h</b> automatisierbar",
+  stat1m:"Stunden pro Monat Handarbeit zwischen den Tools",
+  stat2m:"Stunden davon lassen sich jeden Monat automatisieren",
+  next:{
+    anfragen:"Leg fest, welche Angaben jede Anfrage braucht (zum Beispiel Name, Anliegen, Dringlichkeit). Damit kann die Übernahme ins System automatisch laufen.",
+    angebote:"Nimm drei typische Angebote und markiere, welche Teile immer gleich sind. Das ist die Grundlage für die automatische Vorlage.",
+    rechnungen:"Prüfe, wo Leistungen heute erfasst werden (Projekt-Tool, Excel oder Notizen). Eine einzige Quelle ist die Voraussetzung für automatische Rechnungen.",
+    belege:"Richte eine eigene Mailadresse nur für Belege ein. So landet alles an einem Ort und kann automatisch ausgelesen werden.",
+    termine:"Leg fest, welche Terminarten du anbietest und wie lange sie dauern. Damit lässt sich eine Buchungsseite einrichten.",
+    kundendaten:"Bestimme ein führendes Tool für Kundendaten. Alle anderen Tools übernehmen die Daten dann von dort.",
+    berichte:"Schreib auf, welche fünf Zahlen du jede Woche wirklich brauchst. Nur diese werden automatisch zusammengetragen.",
+    onboarding:"Schreib die Schritte für einen neuen Kunden einmal als Checkliste auf. Jeder Punkt ist ein Kandidat für die Automatisierung.",
+    fristen:"Trag zusammen, wo deine Fristen heute stehen. Eine einfache Liste reicht für den Anfang.",
+    bestellungen:"Prüfe, in welchem Format Bestellungen ankommen (Mail, Formular, PDF). Je einheitlicher, desto einfacher der automatische Abgleich."
+  },
+  nextLabel:"Erster Schritt:",
+  allJamsTitle:n=>n===1 ? "Dein Ablauf im Detail" : "Alle "+n+" Abläufe im Detail",
+  moreTitle:"Weitere Befunde",
+  islandShort:x=>"Bei "+x+" hängt das Wissen an wenigen Köpfen.",
+  teamKnowShort:"Deine Abläufe hängen nicht an einer einzelnen Person.",
+  privShort_kunden:"Kundendaten landen in KI-Tools. Dafür braucht es eine klare Grundlage nach DSG und DSGVO.",
+  privShort_unklar:"Unklar, welche Daten in KI-Tools landen.",
+  privOkShort:"Nach deinen Angaben landen keine Kundendaten in KI-Tools.",
+  moreHint:"Ausführlich mit Empfehlung im PDF-Bericht.",
+  pdfTeaserTitle:"Im vollständigen Bericht (PDF)",
+  pdfTeaser:n=>[(n===1 ? "Dein Ablauf" : "Alle "+n+" Abläufe")+" mit Weg zwischen den Tools und Stunden", "Pro Ablauf: warum er sich automatisieren lässt und ein konkreter erster Schritt", "Wissen im Team und KI-Datenschutz, jeweils mit Empfehlung", "Deine 3D-Landkarte, zum Ablegen oder Weitergeben ans Team"],
   reportEyebrow:"Dein Report",
   reportTitle:f=>"Zeitfresser-Landkarte"+(f ? " für "+f : ""),
   reportMeta:(n,p)=>n+" Tools · heute laufen ca. "+p+" % der Übertragungen automatisch",
-  stat1:"Stunden pro Jahr Handarbeit zwischen den Tools",
-  stat2:"Stunden davon lassen sich automatisieren",
   stat3:(r,c)=>"pro Jahr, bei "+r+" "+c+" pro Arbeitsstunde",
   stat4:"volle Arbeitswochen à "+FULLTIME+" Stunden",
   bannerTitle:"Deine Landkarte gemeinsam anschauen",
   bannerText:n=>"30 Minuten mit "+n+", kostenlos und unverbindlich. Du erfährst, wo du anfangen solltest und was es ungefähr kostet.",
   jamsTitle:n=>n===1 ? "Deine grösste Baustelle" : "Deine "+n+" grössten Staus",
-  pillAi:"Hier hilft KI", pillApi:"Reicht eine Schnittstelle",
-  jamNums:(h,s)=>"<b>"+h+" h</b> pro Woche im Team · davon ca. <b>"+s+" h</b> pro Jahr automatisierbar",
+  pillAi:"Hier hilft KI", pillApi:"Reicht eine Schnittstelle", pillOcr:"Dokumenterkennung (OCR)",
+  ocrNote:"Belege liest eine Dokumenterkennung (OCR) aus, dafür braucht es keine KI.",
+  ovTitle:n=>"Übersicht: alle "+n+" Abläufe", ovCols:["Ablauf","Weg","Handarbeit / Monat","automatisierbar","Lösung"], ovSol:{ki:"KI",api:"Schnittstelle",ocr:"OCR"}, ovTotal:"Total",
   kiAll:n=>"Keiner deiner "+n+" grössten Staus braucht KI. Saubere Schnittstellen zwischen den Tools reichen.",
-  kiNone:"Bei deinen grössten Staus hilft KI tatsächlich, weil die Daten als freier Text oder Beleg ankommen. Ein Mensch gibt trotzdem frei.",
-  kiMixed:(a,n)=>a+" von "+n+" Staus brauchen keine KI. Dort reicht eine saubere Schnittstelle. KI setzen wir nur dort ein, wo Daten als freier Text oder Beleg ankommen.",
+  kiNone:"Bei deinen grössten Staus hilft KI tatsächlich, weil die Daten als freier Text ankommen. Ein Mensch gibt trotzdem frei.",
+  kiMixed:(a,n)=>a+" von "+n+" Staus brauchen keine KI. Dort reicht eine saubere Schnittstelle. KI setzen wir nur dort ein, wo Daten als freier Text ankommen.",
   startEyebrow:"Hier würde ich anfangen",
   startTitle:(l,s,d)=>l+": von "+s+" nach "+d,
   startText:h=>"Dieser Ablauf spart dir ca. <b>"+h+" Stunden pro Woche</b>. Ich baue ihn als Erstes, teste ihn mit deinen echten Daten und starte den nächsten Ablauf erst, wenn dieser zuverlässig läuft.",
@@ -594,7 +685,7 @@ de:{
   ctaTitle:"Willst du sehen, wie dein erster Ablauf konkret aussieht?",
   ctaText:"In 30 Minuten schauen wir deine Landkarte gemeinsam an. Du erfährst, was sich lohnt, was es ungefähr kostet und was du besser so lässt, wie es ist.",
   ctaBookXl:"Jetzt Termin buchen <small>30 Min. · kostenlos</small>",
-  ctaOr:"Lieber zuerst in Ruhe lesen? Hol dir deinen Report als PDF per E-Mail. Loïc erhält dein Ergebnis ebenfalls und meldet sich persönlich bei dir.",
+  ctaOr:"Lieber zuerst in Ruhe lesen? Hol dir den vollständigen Bericht als PDF per E-Mail. Loïc erhält dein Ergebnis ebenfalls und meldet sich persönlich bei dir.",
   printCta:e=>"<b>Termin buchen (30 Min., kostenlos):</b> cal.meetergo.com/loic-lavanchy/30-min-meeting<br><b>E-Mail:</b> "+e,
   emailLabel:"Deine E-Mail-Adresse", emailPh:"name@firma.ch",
   phoneLabel:"Telefonnummer <span style='font-weight:400;color:#9FB2C3'>(optional)</span>", phonePh:"+41 79 123 45 67",
@@ -606,7 +697,7 @@ de:{
     "Stunden pro Woche × "+WEEKS+" Arbeitswochen × Anteil Handarbeit. Der Anteil kommt aus Frage 6 und wird je Ablauf angepasst, bei Papier zusätzlich erhöht.",
     "Fehler beim Übertragen erzeugen Nacharbeit: Zuschlag von 0 bis 12 % je nach Antwort in Frage 7.",
     "Der automatisierbare Anteil ist je Ablauf fest hinterlegt, zum Beispiel Kundendaten 85 %, Belege 75 %, Angebote 55 %.",
-    "KI empfiehlt die Landkarte nur, wenn Daten als freier Text oder Beleg ankommen. Alles andere läuft über Schnittstellen.",
+    "KI empfiehlt die Landkarte nur, wenn Daten als freier Text ankommen. Belege liest eine Dokumenterkennung (OCR) aus, alles andere läuft über Schnittstellen.",
     "Alle Werte sind Schätzungen auf Basis deiner Angaben. Genau wird es, wenn wir einen Ablauf Schritt für Schritt anschauen."
   ],
   signature:"Lavanchy Automation · Prozessautomatisierung für KMU in der Schweiz und im DACH-Raum",
@@ -639,7 +730,7 @@ en:{
   bookBtn:"Book a call",
   footerNote:"All figures are estimates based on your answers. · <a href='https://lavanchyautomation.ch/en/datenschutz/' target='_blank' rel='noopener'>Privacy</a> · <a href='https://lavanchyautomation.ch/en/impressum/' target='_blank' rel='noopener'>Legal notice</a>",
   fallback3d:"The 3D view could not be loaded. Your report below is still complete.",
-  hWeek:"h/wk", perHour:"per hour", currencyAria:"Currency", rateAria:"Cost per working hour",
+  hWeek:"h/wk", noFlow:"no process entered", perHour:"per hour", currencyAria:"Currency", rateAria:"Cost per working hour",
   firmaLabel:"Name of your business <span style='font-weight:400;color:var(--muted)'>(optional, shown in the report)</span>",
   errChoose:"Please choose an answer.",
   errTools:n=>"Please choose at least 3 tools. Currently: "+n+".",
@@ -656,7 +747,7 @@ en:{
     anfragen:{label:"Capturing enquiries", hint:"Transferring emails, forms and calls into the system", why:{form:"The form already delivers clean fields. An interface enters them directly, without anyone retyping.", text:"Enquiries arrive as free text. AI extracts name, request and urgency and creates the contact cleanly. A person only checks."}},
     angebote:{label:"Creating quotes", hint:"Putting customer data and line items into a template", why:"Customer data and line items flow automatically into your fixed template. No AI needed, just a clean connection."},
     rechnungen:{label:"Writing invoices", hint:"Transferring services and line items into accounting", why:"Hours worked or line items are transferred to accounting automatically. An interface is enough."},
-    belege:{label:"Filing and booking receipts", hint:"Sorting and recording invoices from email and post", why:"Every receipt looks different. AI reads amount, date and supplier and files it. A person only approves."},
+    belege:{label:"Filing and booking receipts", hint:"Sorting and recording invoices from email and post", why:"Every receipt looks different. Document recognition (OCR) reads amount, date and supplier and files it. A person only approves."},
     termine:{label:"Coordinating appointments", hint:"Back and forth by email or phone", why:"A booking page connected to your calendar replaces the back and forth. Confirmation and reminder go out automatically."},
     kundendaten:{label:"Transferring customer data", hint:"Maintaining the same data in several tools", why:"Customer data is maintained in one place, the other tools update automatically. Duplicate entries disappear."},
     berichte:{label:"Reports and analyses", hint:"Gathering figures from several tools", why:"The figures are pulled automatically every week and brought into the same format. An interface is enough."},
@@ -675,16 +766,16 @@ en:{
     goal:{kunden:"Serve more customers", wachsen:"Grow without hiring right away", feierabend:"Finish work earlier", fehler:"Fewer errors and less rework"}
   },
   questions:{
-    team:{topic:"Business", title:"How many people work in your business?", hint:"Including yourself."},
+    team:{topic:"Business", title:"How many people work in your business?", hint:"Including yourself. Regular external help such as an assistant counts too."},
     branche:{topic:"Business", title:"Which industry are you in?", hint:"Pick the closest match."},
     tools:{topic:"Tools", title:"Which tools do you use day to day?", hint:"Everything that’s open at least once a week. At least 3."},
-    tasks:{topic:"Processes", title:"Which processes repeat every week for you?", hint:"Choose all that apply."},
-    hours:{topic:"Processes", title:"How much time does the team spend on these processes per week?", hint:"A rough estimate is enough. Add up all people."},
+    tasks:{topic:"Processes", title:"Which processes come up regularly for you?", hint:"Choose everything that happens at least once a month."},
+    hours:{topic:"Processes", title:"How much time goes into these processes per week?", hint:"A rough estimate is enough. Count everyone who works on them, including external help such as an assistant. If something only happens monthly, divide the time by 4."},
     transfer:{topic:"Data flows", title:"How does data get from one tool to the next?", hint:"For example an enquiry from email into the CRM, or an invoice into accounting."},
     errors:{topic:"Data flows", title:"How often do transfer errors happen?", hint:"Wrong amounts, forgotten entries, duplicate customers."},
-    absence:{topic:"Knowledge", title:"Your most important person is out for three weeks. What happens?", hint:"Honest is more helpful than optimistic here."},
+    absence:{topic:"Knowledge", title:"Your most important person is out for three weeks. What happens?", titleSolo:"You are out for three weeks. What happens?", hint:"Honest is more helpful than optimistic here."},
     docs:{topic:"Knowledge", title:"Are your processes written down anywhere?", hint:"So that someone new could do them without asking."},
-    kidata:{topic:"Data protection", title:"Which data ends up in AI tools like ChatGPT?", hint:"What employees use privately counts too."},
+    kidata:{topic:"Data protection", title:"Which data ends up in AI tools like ChatGPT?", hint:"What employees use privately counts too.", hintSolo:"What external helpers use on your behalf counts too."},
     rate:{topic:"Costs", title:"Roughly what does a working hour cost you?", hint:"Wages including social charges. If you don’t know, just leave the value as it is."},
     goal:{topic:"Goal", title:"What would you most like to do with the time saved?", hint:"Then you’ll see your map."}
   },
@@ -697,21 +788,59 @@ en:{
     feierabend:(h,f)=>"You want to finish work earlier. That’s "+h+" hours per week that currently come on top of the actual work.",
     fehler:(h,f)=>"You want fewer errors. Every transfer that runs automatically is logged. Typing errors disappear, and you can see at any time what happened when."
   },
+  ba:{
+    anfragen:{b:["read the enquiry","type the details by hand"], a:["AI extracts name, request and urgency"], aForm:["fields are taken over directly"], end:"you take a quick look"},
+    angebote:{b:["gather customer data and items","copy into the template"], a:["the quote is generated from the template"], end:"you check and send"},
+    rechnungen:{b:["gather the work done","type the line items"], a:["line items are transferred automatically"], end:"you approve"},
+    belege:{b:["open the receipt","type amount, date and supplier","file it"], a:["document recognition (OCR) reads the receipt and files it"], end:"you approve"},
+    termine:{b:["emails back and forth","enter the appointment by hand"], a:["the client books via the booking page"], end:"confirmation and reminder go out automatically"},
+    kundendaten:{b:["record the change","enter it again in every tool"], a:["change it once, the other tools follow"]},
+    berichte:{b:["export figures from several tools","copy them together by hand"], a:["figures are pulled automatically every week"], end:"the report is ready"},
+    onboarding:{b:["create folders","grant access","write the welcome email"], a:["the checklist runs by itself"], end:"you only add the personal welcome"},
+    fristen:{b:["look up deadlines in lists","enter them by hand","hope nothing is missed"], a:["deadlines are read automatically","the reminder arrives in time"]},
+    bestellungen:{b:["read the order","enter it into the system by hand","reconcile stock"], a:["the order lands in the system automatically","stock is correct"]}
+  },
+  baBefore:"Today", baAfter:"Automated",
+  numsMonth:(m,s)=>"<b>"+m+" h</b> per month · approx. <b>"+s+" h</b> can be automated",
+  stat1m:"hours per month of manual work between tools",
+  stat2m:"hours of it can be automated every month",
+  next:{
+    anfragen:"Decide which details every enquiry needs (for example name, request, urgency). Then the transfer into your system can run automatically.",
+    angebote:"Take three typical quotes and mark which parts are always the same. That is the basis for the automated template.",
+    rechnungen:"Check where work is recorded today (project tool, Excel or notes). A single source is the prerequisite for automated invoices.",
+    belege:"Set up a dedicated email address just for receipts. Everything lands in one place and can be read automatically.",
+    termine:"Decide which types of appointments you offer and how long they take. With that, a booking page can be set up.",
+    kundendaten:"Choose one leading tool for customer data. All other tools then take the data from there.",
+    berichte:"Write down the five figures you really need every week. Only those are collected automatically.",
+    onboarding:"Write down the steps for a new client once as a checklist. Every item is a candidate for automation.",
+    fristen:"Gather where your deadlines are recorded today. A simple list is enough to start.",
+    bestellungen:"Check in which format orders arrive (email, form, PDF). The more uniform, the easier the automated matching."
+  },
+  nextLabel:"First step:",
+  allJamsTitle:n=>n===1 ? "Your process in detail" : "All "+n+" processes in detail",
+  moreTitle:"Further findings",
+  islandShort:x=>"With "+x+", the knowledge sits with very few people.",
+  teamKnowShort:"Your processes don’t depend on a single person.",
+  privShort_kunden:"Customer data ends up in AI tools. That requires a clear legal basis under Swiss FADP and GDPR.",
+  privShort_unklar:"It’s unclear which data ends up in AI tools.",
+  privOkShort:"According to your answers, no customer data ends up in AI tools.",
+  moreHint:"In detail, with recommendations, in the PDF report.",
+  pdfTeaserTitle:"In the full report (PDF)",
+  pdfTeaser:n=>[(n===1 ? "Your process" : "All "+n+" processes")+" with the route between tools and hours", "For each process: why it can be automated and a concrete first step", "Team knowledge and AI data protection, each with a recommendation", "Your 3D map, to file or share with your team"],
   reportEyebrow:"Your report",
   reportTitle:f=>"Time-Drain Map"+(f ? " for "+f : ""),
   reportMeta:(n,p)=>n+" tools · today about "+p+" % of transfers run automatically",
-  stat1:"hours per year of manual work between tools",
-  stat2:"of those hours can be automated",
   stat3:(r,c)=>"per year, at "+r+" "+c+" per working hour",
   stat4:"full working weeks of "+FULLTIME+" hours",
   bannerTitle:"Go through your map together",
   bannerText:n=>"30 minutes with "+n+", free and without obligation. You’ll find out where to start and roughly what it costs.",
   jamsTitle:n=>n===1 ? "Your biggest bottleneck" : "Your "+n+" biggest bottlenecks",
-  pillAi:"AI helps here", pillApi:"An interface is enough",
-  jamNums:(h,s)=>"<b>"+h+" h</b> per week across the team · approx. <b>"+s+" h</b> per year can be automated",
+  pillAi:"AI helps here", pillApi:"An interface is enough", pillOcr:"Document recognition (OCR)",
+  ocrNote:"Receipts are read by document recognition (OCR), no AI needed.",
+  ovTitle:n=>"Overview: all "+n+" processes", ovCols:["Process","Route","Manual / month","automatable","Solution"], ovSol:{ki:"AI",api:"Interface",ocr:"OCR"}, ovTotal:"Total",
   kiAll:n=>"None of your "+n+" biggest bottlenecks needs AI. Clean interfaces between the tools are enough.",
-  kiNone:"For your biggest bottlenecks, AI really does help, because the data arrives as free text or receipts. A person still gives the final approval.",
-  kiMixed:(a,n)=>a+" of "+n+" bottlenecks need no AI. A clean interface is enough there. We only use AI where data arrives as free text or receipts.",
+  kiNone:"For your biggest bottlenecks, AI really does help, because the data arrives as free text. A person still gives the final approval.",
+  kiMixed:(a,n)=>a+" of "+n+" bottlenecks need no AI. A clean interface is enough there. We only use AI where data arrives as free text.",
   startEyebrow:"This is where I’d start",
   startTitle:(l,s,d)=>l+": from "+s+" to "+d,
   startText:h=>"This process saves you approx. <b>"+h+" hours per week</b>. I build it first, test it with your real data and only start the next process once this one runs reliably.",
@@ -724,7 +853,7 @@ en:{
   ctaTitle:"Want to see what your first process would look like?",
   ctaText:"In 30 minutes, we go through your map together. You’ll find out what’s worth it, roughly what it costs and what you’re better off leaving as it is.",
   ctaBookXl:"Book a call now <small>30 min · free</small>",
-  ctaOr:"Prefer to read it first? Get your report as a PDF by email. Loïc also receives your result and will get in touch with you personally.",
+  ctaOr:"Prefer to read it first? Get the full report as a PDF by email. Loïc also receives your result and will get in touch with you personally.",
   printCta:e=>"<b>Book a call (30 min, free):</b> cal.meetergo.com/loic-lavanchy/30-min-meeting<br><b>Email:</b> "+e,
   emailLabel:"Your email address", emailPh:"name@company.com",
   phoneLabel:"Phone number <span style='font-weight:400;color:#9FB2C3'>(optional)</span>", phonePh:"+41 79 123 45 67",
@@ -736,7 +865,7 @@ en:{
     "Hours per week × "+WEEKS+" working weeks × share of manual work. The share comes from question 6, is adjusted per process and increased further for paper.",
     "Transfer errors cause rework: a surcharge of 0 to 12 % depending on your answer to question 7.",
     "The automatable share is fixed per process, for example customer data 85 %, receipts 75 %, quotes 55 %.",
-    "The map only recommends AI when data arrives as free text or receipts. Everything else runs via interfaces.",
+    "The map only recommends AI when data arrives as free text. Receipts are read by document recognition (OCR), everything else runs via interfaces.",
     "All figures are estimates based on your answers. It gets precise once we go through a process step by step."
   ],
   signature:"Lavanchy Automation · Process automation for SMEs in Switzerland and the DACH region",
@@ -769,7 +898,7 @@ fr:{
   bookBtn:"Réserver un appel",
   footerNote:"Toutes les valeurs sont des estimations basées sur vos réponses. · <a href='https://lavanchyautomation.ch/fr/datenschutz/' target='_blank' rel='noopener'>Protection des données</a> · <a href='https://lavanchyautomation.ch/fr/impressum/' target='_blank' rel='noopener'>Mentions légales</a>",
   fallback3d:"La vue 3D n’a pas pu être chargée. Votre rapport ci-dessous reste complet.",
-  hWeek:"h/sem.", perHour:"par heure", currencyAria:"Devise", rateAria:"Coût par heure de travail",
+  hWeek:"h/sem.", noFlow:"aucun processus saisi", perHour:"par heure", currencyAria:"Devise", rateAria:"Coût par heure de travail",
   firmaLabel:"Nom de votre entreprise <span style='font-weight:400;color:var(--muted)'>(facultatif, apparaît dans le rapport)</span>",
   errChoose:"Veuillez choisir une réponse.",
   errTools:n=>"Veuillez choisir au moins 3 outils. Actuellement : "+n+".",
@@ -786,7 +915,7 @@ fr:{
     anfragen:{label:"Saisir les demandes", hint:"Transférer e-mails, formulaires et appels dans le système", why:{form:"Le formulaire fournit déjà des champs propres. Une interface les saisit directement, sans que personne ne ressaisisse.", text:"Les demandes arrivent sous forme de texte libre. L’IA extrait le nom, la demande et l’urgence et crée le contact proprement. Une personne ne fait plus que vérifier."}},
     angebote:{label:"Établir des offres", hint:"Reporter données clients et positions dans un modèle", why:"Les données clients et les positions alimentent automatiquement votre modèle. Pas besoin d’IA, juste une connexion propre."},
     rechnungen:{label:"Établir des factures", hint:"Reporter prestations et positions dans la comptabilité", why:"Les heures effectuées ou les positions sont reprises automatiquement dans la comptabilité. Une interface suffit."},
-    belege:{label:"Classer et comptabiliser les justificatifs", hint:"Trier et saisir les factures reçues par e-mail et par courrier", why:"Chaque justificatif est différent. L’IA lit le montant, la date et le fournisseur et le classe. Une personne ne fait plus que valider."},
+    belege:{label:"Classer et comptabiliser les justificatifs", hint:"Trier et saisir les factures reçues par e-mail et par courrier", why:"Chaque justificatif est différent. La reconnaissance de documents (OCR) lit le montant, la date et le fournisseur et le classe. Une personne ne fait plus que valider."},
     termine:{label:"Coordonner les rendez-vous", hint:"Allers-retours par e-mail ou téléphone", why:"Une page de réservation reliée à l’agenda remplace les allers-retours. Confirmation et rappel partent automatiquement."},
     kundendaten:{label:"Transférer les données clients", hint:"Gérer les mêmes données dans plusieurs outils", why:"Les données clients sont gérées à un seul endroit, les autres outils se mettent à jour automatiquement. Les doublons disparaissent."},
     berichte:{label:"Rapports et analyses", hint:"Rassembler des chiffres de plusieurs outils", why:"Les chiffres sont extraits automatiquement chaque semaine et mis au même format. Une interface suffit."},
@@ -805,16 +934,16 @@ fr:{
     goal:{kunden:"Servir plus de clients", wachsen:"Croître sans embaucher tout de suite", feierabend:"Terminer plus tôt", fehler:"Moins d’erreurs et de reprises"}
   },
   questions:{
-    team:{topic:"Entreprise", title:"Combien de personnes travaillent dans votre entreprise ?", hint:"Vous y compris."},
+    team:{topic:"Entreprise", title:"Combien de personnes travaillent dans votre entreprise ?", hint:"Vous y compris. Un soutien externe régulier, comme une assistante, compte aussi."},
     branche:{topic:"Entreprise", title:"Dans quel secteur êtes-vous actif ?", hint:"Choisissez ce qui correspond le mieux."},
     tools:{topic:"Outils", title:"Quels outils utilisez-vous au quotidien ?", hint:"Tout ce qui est ouvert au moins une fois par semaine. Au moins 3."},
-    tasks:{topic:"Processus", title:"Quels processus se répètent chaque semaine chez vous ?", hint:"Choisissez tout ce qui s’applique."},
-    hours:{topic:"Processus", title:"Combien de temps l’équipe consacre-t-elle à ces processus par semaine ?", hint:"Une estimation approximative suffit. Additionnez toutes les personnes."},
+    tasks:{topic:"Processus", title:"Quels processus reviennent régulièrement chez vous ?", hint:"Choisissez tout ce qui revient au moins une fois par mois."},
+    hours:{topic:"Processus", title:"Combien de temps ces processus prennent-ils par semaine ?", hint:"Une estimation approximative suffit. Comptez toutes les personnes qui s’en occupent, y compris l’aide externe comme une assistante. Si une tâche ne revient qu’une fois par mois, divisez le temps par 4."},
     transfer:{topic:"Flux de données", title:"Comment les données passent-elles d’un outil à l’autre ?", hint:"Par exemple une demande de l’e-mail vers le CRM, ou une facture vers la comptabilité."},
     errors:{topic:"Flux de données", title:"À quelle fréquence des erreurs de transfert se produisent-elles ?", hint:"Montants erronés, saisies oubliées, clients en double."},
-    absence:{topic:"Savoir", title:"Votre personne clé est absente pendant trois semaines. Que se passe-t-il ?", hint:"Ici, l’honnêteté est plus utile que l’optimisme."},
+    absence:{topic:"Savoir", title:"Votre personne clé est absente pendant trois semaines. Que se passe-t-il ?", titleSolo:"Vous ne pouvez pas travailler pendant trois semaines. Que se passe-t-il ?", hint:"Ici, l’honnêteté est plus utile que l’optimisme."},
     docs:{topic:"Savoir", title:"Vos processus sont-ils documentés quelque part ?", hint:"De sorte qu’une nouvelle personne puisse les exécuter sans poser de questions."},
-    kidata:{topic:"Protection des données", title:"Quelles données se retrouvent dans des outils d’IA comme ChatGPT ?", hint:"Ce que les collaborateurs utilisent à titre privé compte aussi."},
+    kidata:{topic:"Protection des données", title:"Quelles données se retrouvent dans des outils d’IA comme ChatGPT ?", hint:"Ce que les collaborateurs utilisent à titre privé compte aussi.", hintSolo:"Ce que des aides externes utilisent pour vous compte aussi."},
     rate:{topic:"Coûts", title:"Combien vous coûte environ une heure de travail ?", hint:"Salaire charges sociales comprises. Si vous ne savez pas, laissez simplement la valeur."},
     goal:{topic:"Objectif", title:"Que feriez-vous de préférence avec le temps gagné ?", hint:"Ensuite, vous verrez votre carte."}
   },
@@ -827,21 +956,59 @@ fr:{
     feierabend:(h,f)=>"Vous voulez terminer plus tôt. Ce sont "+h+" heures par semaine qui s’ajoutent aujourd’hui au travail proprement dit.",
     fehler:(h,f)=>"Vous voulez moins d’erreurs. Chaque transfert automatisé est journalisé. Les fautes de frappe disparaissent et vous voyez à tout moment ce qui s’est passé et quand."
   },
+  ba:{
+    anfragen:{b:["lire la demande","saisir les informations à la main"], a:["l’IA extrait nom, objet et urgence"], aForm:["les champs sont repris directement"], end:"vous vérifiez rapidement"},
+    angebote:{b:["rassembler données client et positions","copier dans le modèle"], a:["l’offre est générée à partir du modèle"], end:"vous vérifiez et envoyez"},
+    rechnungen:{b:["rassembler les prestations","saisir les positions"], a:["les positions sont reprises automatiquement"], end:"vous validez"},
+    belege:{b:["ouvrir le justificatif","saisir montant, date et fournisseur","classer"], a:["la reconnaissance de documents (OCR) lit le justificatif et le classe"], end:"vous validez"},
+    termine:{b:["e-mails aller-retour","saisir le rendez-vous à la main"], a:["le client réserve lui-même via la page de réservation"], end:"confirmation et rappel partent automatiquement"},
+    kundendaten:{b:["noter la modification","la ressaisir dans chaque outil"], a:["modifier une fois, les autres outils suivent"]},
+    berichte:{b:["exporter les chiffres de plusieurs outils","les assembler à la main"], a:["les chiffres sont récupérés automatiquement chaque semaine"], end:"le rapport est prêt"},
+    onboarding:{b:["créer les dossiers","donner les accès","rédiger l’e-mail de bienvenue"], a:["la check-list se déroule toute seule"], end:"vous ne faites plus que l’accueil personnel"},
+    fristen:{b:["chercher les échéances dans des listes","les reporter à la main","espérer ne rien oublier"], a:["les échéances sont lues automatiquement","le rappel arrive à temps"]},
+    bestellungen:{b:["lire la commande","la saisir à la main dans le système","contrôler le stock"], a:["la commande arrive automatiquement dans le système","le stock est juste"]}
+  },
+  baBefore:"Aujourd’hui", baAfter:"Automatisé",
+  numsMonth:(m,s)=>"<b>"+m+" h</b> par mois · dont env. <b>"+s+" h</b> automatisables",
+  stat1m:"heures par mois de travail manuel entre les outils",
+  stat2m:"heures automatisables chaque mois",
+  next:{
+    anfragen:"Définissez les informations dont chaque demande a besoin (par exemple nom, objet, urgence). Le transfert dans votre système peut alors se faire automatiquement.",
+    angebote:"Prenez trois offres typiques et marquez les parties qui sont toujours identiques. C’est la base du modèle automatisé.",
+    rechnungen:"Vérifiez où les prestations sont saisies aujourd’hui (outil de projet, Excel ou notes). Une source unique est la condition pour des factures automatiques.",
+    belege:"Créez une adresse e-mail réservée aux justificatifs. Tout arrive au même endroit et peut être lu automatiquement.",
+    termine:"Définissez quels types de rendez-vous vous proposez et leur durée. Une page de réservation peut alors être mise en place.",
+    kundendaten:"Choisissez un outil de référence pour les données clients. Tous les autres outils reprennent ensuite les données depuis celui-ci.",
+    berichte:"Notez les cinq chiffres dont vous avez vraiment besoin chaque semaine. Seuls ceux-ci sont collectés automatiquement.",
+    onboarding:"Rédigez une fois les étapes pour un nouveau client sous forme de check-list. Chaque point est un candidat à l’automatisation.",
+    fristen:"Rassemblez où vos échéances sont notées aujourd’hui. Une simple liste suffit pour commencer.",
+    bestellungen:"Vérifiez sous quel format les commandes arrivent (e-mail, formulaire, PDF). Plus c’est uniforme, plus le rapprochement automatique est simple."
+  },
+  nextLabel:"Première étape :",
+  allJamsTitle:n=>n===1 ? "Votre processus en détail" : "Les "+n+" processus en détail",
+  moreTitle:"Autres constats",
+  islandShort:x=>"Pour "+x+", le savoir repose sur très peu de personnes.",
+  teamKnowShort:"Vos processus ne dépendent pas d’une seule personne.",
+  privShort_kunden:"Des données clients se retrouvent dans des outils d’IA. Cela exige une base claire selon la LPD et le RGPD.",
+  privShort_unklar:"On ne sait pas exactement quelles données se retrouvent dans des outils d’IA.",
+  privOkShort:"D’après vos réponses, aucune donnée client ne se retrouve dans des outils d’IA.",
+  moreHint:"En détail, avec recommandations, dans le rapport PDF.",
+  pdfTeaserTitle:"Dans le rapport complet (PDF)",
+  pdfTeaser:n=>[(n===1 ? "Votre processus" : "Les "+n+" processus")+" avec le trajet entre les outils et les heures", "Pour chaque processus : pourquoi il peut être automatisé et une première étape concrète", "Savoir dans l’équipe et protection des données IA, avec recommandations", "Votre carte 3D, à archiver ou à transmettre à votre équipe"],
   reportEyebrow:"Votre rapport",
   reportTitle:f=>"Carte des pertes de temps"+(f ? " pour "+f : ""),
   reportMeta:(n,p)=>n+" outils · aujourd’hui, env. "+p+" % des transferts sont automatisés",
-  stat1:"heures par an de travail manuel entre les outils",
-  stat2:"de ces heures peuvent être automatisées",
   stat3:(r,c)=>"par an, à "+r+" "+c+" par heure de travail",
   stat4:"semaines complètes de "+FULLTIME+" heures",
   bannerTitle:"Parcourir votre carte ensemble",
   bannerText:n=>"30 minutes avec "+n+", gratuit et sans engagement. Vous saurez par où commencer et ce que cela coûte environ.",
   jamsTitle:n=>n===1 ? "Votre plus gros bouchon" : "Vos "+n+" plus gros bouchons",
-  pillAi:"Ici, l’IA aide", pillApi:"Une interface suffit",
-  jamNums:(h,s)=>"<b>"+h+" h</b> par semaine dans l’équipe · dont env. <b>"+s+" h</b> par an automatisables",
+  pillAi:"Ici, l’IA aide", pillApi:"Une interface suffit", pillOcr:"Reconnaissance de documents (OCR)",
+  ocrNote:"Les justificatifs sont lus par reconnaissance de documents (OCR), sans IA.",
+  ovTitle:n=>"Vue d’ensemble : les "+n+" processus", ovCols:["Processus","Trajet","Manuel / mois","automatisable","Solution"], ovSol:{ki:"IA",api:"Interface",ocr:"OCR"}, ovTotal:"Total",
   kiAll:n=>"Aucun de vos "+n+" plus gros bouchons n’a besoin d’IA. Des interfaces propres entre les outils suffisent.",
-  kiNone:"Pour vos plus gros bouchons, l’IA aide vraiment, car les données arrivent sous forme de texte libre ou de justificatifs. Une personne valide tout de même.",
-  kiMixed:(a,n)=>a+" bouchons sur "+n+" n’ont pas besoin d’IA. Une interface propre y suffit. Nous n’utilisons l’IA que là où les données arrivent sous forme de texte libre ou de justificatifs.",
+  kiNone:"Pour vos plus gros bouchons, l’IA aide vraiment, car les données arrivent sous forme de texte libre. Une personne valide tout de même.",
+  kiMixed:(a,n)=>a+" bouchons sur "+n+" n’ont pas besoin d’IA. Une interface propre y suffit. Nous n’utilisons l’IA que là où les données arrivent sous forme de texte libre.",
   startEyebrow:"Voici par où je commencerais",
   startTitle:(l,s,d)=>l+" : "+s+" → "+d,
   startText:h=>"Ce processus vous fait gagner env. <b>"+h+" heures par semaine</b>. Je le construis en premier, je le teste avec vos données réelles et je ne passe au suivant que lorsqu’il fonctionne de manière fiable.",
@@ -854,7 +1021,7 @@ fr:{
   ctaTitle:"Vous voulez voir à quoi ressemblerait concrètement votre premier processus ?",
   ctaText:"En 30 minutes, nous parcourons votre carte ensemble. Vous saurez ce qui vaut la peine, ce que cela coûte environ et ce qu’il vaut mieux laisser tel quel.",
   ctaBookXl:"Réserver un appel <small>30 min · gratuit</small>",
-  ctaOr:"Vous préférez d’abord le lire tranquillement ? Recevez votre rapport en PDF par e-mail. Loïc reçoit également votre résultat et vous contactera personnellement.",
+  ctaOr:"Vous préférez d’abord le lire tranquillement ? Recevez le rapport complet en PDF par e-mail. Loïc reçoit également votre résultat et vous contactera personnellement.",
   printCta:e=>"<b>Réserver un appel (30 min, gratuit) :</b> cal.meetergo.com/loic-lavanchy/30-min-meeting<br><b>E-mail :</b> "+e,
   emailLabel:"Votre adresse e-mail", emailPh:"nom@entreprise.ch",
   phoneLabel:"Numéro de téléphone <span style='font-weight:400;color:#9FB2C3'>(facultatif)</span>", phonePh:"+41 79 123 45 67",
@@ -866,7 +1033,7 @@ fr:{
     "Heures par semaine × "+WEEKS+" semaines de travail × part de travail manuel. La part provient de la question 6, est ajustée par processus et augmentée pour le papier.",
     "Les erreurs de transfert entraînent des reprises : majoration de 0 à 12 % selon votre réponse à la question 7.",
     "La part automatisable est fixée par processus, par exemple données clients 85 %, justificatifs 75 %, offres 55 %.",
-    "La carte ne recommande l’IA que lorsque les données arrivent sous forme de texte libre ou de justificatifs. Tout le reste passe par des interfaces.",
+    "La carte ne recommande l’IA que lorsque les données arrivent sous forme de texte libre. Les justificatifs sont lus par reconnaissance de documents (OCR), tout le reste passe par des interfaces.",
     "Toutes les valeurs sont des estimations basées sur vos réponses. Cela devient précis lorsque nous examinons un processus étape par étape."
   ],
   signature:"Lavanchy Automation · Automatisation des processus pour PME en Suisse et dans la région DACH",
@@ -959,7 +1126,7 @@ function compute(a){
     items, roads:[...roadMap.values()], load, islands, privacy,
     manualYear, saveYear, chf: saveYear*a.rate, weeks: saveYear/FULLTIME,
     saveWeek: saveYear/WEEKS, autoShare,
-    kiCount: items.slice(0,3).filter(i=>i.ki).length
+    kiCount: items.slice(0,3).filter(i=>i.ki===true).length
   };
 }
 
@@ -1063,7 +1230,7 @@ City.prototype.clear = function(){
   this.labels.innerHTML = ""; this.buildings = []; this.lanes = []; this.islandMats = [];
 };
 
-City.prototype.build = function(res, tools){
+City.prototype.build = function(res, tools, opts){
   if(!this.ok) return;
   this.clear();
   const T = THREE;
@@ -1143,7 +1310,7 @@ City.prototype.build = function(res, tools){
     }
     const el = document.createElement("div");
     el.className = "lbl" + (isl ? " island" : "");
-    el.innerHTML = "<b>"+esc(toolName(t))+"</b>" + (ld ? "<span>"+fmtH(ld)+" "+esc(L.hWeek)+"</span>" : "");
+    el.innerHTML = "<b>"+esc(toolName(t))+"</b>" + (ld ? "<span>"+fmtH(ld)+" "+esc(L.hWeek)+"</span>" : (opts && opts.emptyLabels ? "<span class='none'>"+esc(tr(L.noFlow))+"</span>" : ""));
     this.labels.appendChild(el);
     this.buildings.push({el, anchor: new T.Vector3(p.x, h+0.6, p.z)});
   });
@@ -1240,8 +1407,9 @@ function renderQ(){
   $("#q-index").textContent = qi+1;
   $("#q-topic").textContent = tr(qt.topic);
   $("#q-bar").style.width = ((qi+1)/QUESTIONS.length*100)+"%";
-  $("#q-title").textContent = tr(qt.title);
-  $("#q-hint").textContent = tr(qt.hint);
+  const solo = answers.team==="1";
+  $("#q-title").textContent = tr(solo && qt.titleSolo ? qt.titleSolo : qt.title);
+  $("#q-hint").textContent = tr(solo && qt.hintSolo ? qt.hintSolo : qt.hint);
   $("#q-error").textContent = "";
   $("#q-back").style.visibility = qi===0 ? "hidden" : "visible";
   $("#q-next").textContent = qi===QUESTIONS.length-1 ? t("showMap") : t("next");
@@ -1370,93 +1538,146 @@ async function buildReportPdf(){
   const wrap = document.createElement("div");
   wrap.className = "pdf-export";
   wrap.innerHTML = '<div class="pdf-brand"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M2 12 6 4l4 6 2-3 2 5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Lavanchy <span>Automation</span></div>';
-  const clone = $("#report").cloneNode(true);
-  clone.querySelectorAll("form, .tools-row, .book-banner").forEach(n=>n.remove());
+  const full = document.createElement("div");
+  full.className = "report";
+  full.innerHTML = reportBody(lastReport.a, lastReport.r, true);
   const snap = city.snapshot();
-  const holder = clone.querySelector("#print-city");
+  const holder = full.querySelector("#print-city");
   if(holder) holder.innerHTML = snap ? '<img alt="" src="'+snap+'">' : "";
-  clone.querySelectorAll("details").forEach(d=>{ d.open = true; });
-  clone.querySelectorAll("[id]").forEach(n=>n.removeAttribute("id"));
-  wrap.appendChild(clone);
+  full.querySelectorAll("[id]").forEach(n=>n.removeAttribute("id"));
+  wrap.appendChild(full);
   const uri = await window.html2pdf().set({
     margin:[10,0,12,0],
     filename:L.pdfName,
     image:{type:"jpeg", quality:0.9},
     html2canvas:{scale:2, backgroundColor:"#ffffff", logging:false, scrollX:0, scrollY:0},
     jsPDF:{unit:"mm", format:"a4", orientation:"portrait"},
-    pagebreak:{mode:["css","legacy"], avoid:[".stat",".jam",".box",".cta",".report-head",".stats",".method",".signature"]}
+    pagebreak:{mode:["css","legacy"], avoid:[".stat",".jam",".box",".overview",".cta",".report-head",".stats",".method",".signature"]}
   }).from(wrap).outputPdf("datauristring");
   return String(uri).split(",")[1] || "";
 }
 
-function renderReport(a, r){
+let lastReport = null;
+
+/* Bildschirm (full=false): kompakt, Top 3 ohne Begründung, Befunde als Kurzfassung, Hinweis auf den Bericht.
+   PDF (full=true): alle Abläufe mit Begründung und erstem Schritt, Befunde ausführlich, Methode. */
+function reportBody(a, r, full){
   const top = r.items.slice(0,3);
+  const list = full ? r.items : top;
   const first = r.items[0];
   const date = new Intl.DateTimeFormat(DATE_LOCALE,{day:"numeric", month:"long", year:"numeric"}).format(new Date());
-  const mail = buildMail(a, r);
   const apiCount = top.length - r.kiCount;
 
-  const jams = top.map((it,i)=>{
+  const solKey = it => it.ki===true ? "ai" : it.ki==="ocr" ? "ocr" : "api";
+  const chip = k => '<span class="ba-tool">'+esc(toolName(k))+'</span>';
+  const step = x => '<span class="ba-step">'+esc(tr(x))+'</span>';
+  const arrow = '<span class="ba-arrow" aria-hidden="true">→</span>';
+  const baBlock = it => {
+    const B = L.ba[it.id]; if(!B) return "";
+    const after = (it.id==="anfragen" && it.src==="formular" && B.aForm) ? B.aForm : B.a;
+    const before = [chip(it.src)].concat(B.b.map(step), [chip(it.dst)]).join(arrow);
+    const aft = [chip(it.src)].concat(after.map(step), [chip(it.dst)], B.end ? [step(B.end)] : []).join(arrow);
+    return '<div class="ba"><div class="ba-row before"><span class="ba-tag">'+esc(t("baBefore"))+'</span><div class="ba-flow">'+before+'</div></div>'+
+      '<div class="ba-row after"><span class="ba-tag">'+esc(t("baAfter"))+'</span><div class="ba-flow">'+aft+'</div></div></div>';
+  };
+  const numsLine = it => {
+    return '<p class="nums">'+t("numsMonth", fmtH(Math.round(it.manual/12)), fmtH(Math.round(it.save/12)))+'</p>';
+  };
+  const jams = list.map((it,i)=>{
     const cls = it.m>=0.55 ? "" : it.m>=0.33 ? " amber" : " green";
     return '<article class="jam'+cls+'"><div class="rank">'+String(i+1).padStart(2,"0")+'</div>'+
       '<div><h4>'+esc(taskLabel(it.id))+'</h4><div class="route">'+esc(toolName(it.src))+' → '+esc(toolName(it.dst))+'</div></div>'+
-      '<span class="pill '+(it.ki?"ai":"api")+'">'+esc(it.ki ? t("pillAi") : t("pillApi"))+'</span>'+
-      '<p class="why">'+esc(taskWhy(it.id, it.src))+'</p>'+
-      '<p class="nums">'+t("jamNums", fmtH(it.h), fmt(it.save))+'</p></article>';
+      '<div class="jam-side"><span class="pill '+solKey(it)+'">'+esc(t(solKey(it)==="ai" ? "pillAi" : solKey(it)==="ocr" ? "pillOcr" : "pillApi"))+'</span></div>'+
+      (full ? '<p class="why">'+esc(taskWhy(it.id, it.src))+'</p>' : '')+
+      (full && L.next[it.id] ? '<p class="next"><b>'+esc(t("nextLabel"))+'</b> '+esc(tr(L.next[it.id]))+'</p>' : '')+
+      numsLine(it)+baBlock(it)+'</article>';
   }).join("");
 
   const kiLine = top.length
     ? (apiCount===top.length ? t("kiAll", top.length) : apiCount===0 ? t("kiNone") : t("kiMixed", apiCount, top.length))
     : "";
+  const kiLineFull = kiLine && top.some(it=>it.ki==="ocr") ? kiLine+" "+t("ocrNote") : kiLine;
+  const overview = (full && list.length > 3)
+    ? '<section class="section overview"><h3>'+esc(t("ovTitle", list.length))+'</h3><table class="ovt"><colgroup><col style="width:5%"><col style="width:27%"><col style="width:27%"><col style="width:11%"><col style="width:14%"><col style="width:16%"></colgroup><thead><tr><th>#</th>'+
+        L.ovCols.map(c=>'<th>'+esc(tr(c))+'</th>').join("")+'</tr></thead><tbody>'+
+        list.map((it,i)=>'<tr><td class="n">'+String(i+1).padStart(2,"0")+'</td><td><b>'+esc(taskLabel(it.id))+'</b></td>'+
+          '<td>'+esc(toolName(it.src))+' → '+esc(toolName(it.dst))+'</td>'+
+          '<td class="h">'+esc(fmtH(Math.round(it.manual/12)))+' h</td><td class="h">'+esc(fmtH(Math.round(it.save/12)))+' h</td>'+
+          '<td><span class="pill '+solKey(it)+'">'+esc(L.ovSol[solKey(it)==="ai" ? "ki" : solKey(it)])+'</span></td></tr>').join("")+
+        '</tbody><tfoot><tr><td></td><td colspan="2"><b>'+esc(t("ovTotal"))+'</b></td><td class="h"><b>'+esc(fmtH(Math.round(r.manualYear/12)))+' h</b></td><td class="h"><b>'+esc(fmtH(Math.round(r.saveYear/12)))+' h</b></td><td></td></tr></tfoot></table>'+(kiLineFull ? '<p class="ki-line">'+esc(kiLineFull)+'</p>' : '')+'</section>'
+    : "";
+  const kiInOverview = !!overview;
 
-  const island = r.islands.length
-    ? '<div class="box island"><h4>'+esc(t("islandTitle"))+'</h4><p>'+esc(t("islandText", r.islands.map(toolName).join(", ")))+'</p></div>'
-    : '<div class="box"><h4>'+esc(t("teamKnowTitle"))+'</h4><p>'+esc(t("teamKnowText"))+'</p></div>';
+  let findings;
+  if(full){
+    const island = r.islands.length
+      ? '<div class="box island"><h4>'+esc(t("islandTitle"))+'</h4><p>'+esc(t("islandText", r.islands.map(toolName).join(", ")))+'</p></div>'
+      : '<div class="box"><h4>'+esc(t("teamKnowTitle"))+'</h4><p>'+esc(t("teamKnowText"))+'</p></div>';
+    const privacy = r.privacy
+      ? '<div class="box privacy-warn"><h4>'+esc(t("privWarnTitle"))+'</h4><p>'+esc(r.privacy)+'</p></div>'
+      : '<div class="box"><h4>'+esc(t("privOkTitle"))+'</h4><p>'+esc(t("privOkText"))+'</p></div>';
+    findings = '<section class="two">'+island+privacy+'</section>';
+  } else {
+    const islandLine = r.islands.length
+      ? '<li class="warn-island"><b>'+esc(t("islandTitle"))+(LANG==="fr" ? "\u00a0:" : ":")+'</b> '+esc(t("islandShort", r.islands.map(toolName).join(", ")))+'</li>'
+      : '<li><b>'+esc(t("teamKnowTitle"))+(LANG==="fr" ? "\u00a0:" : ":")+'</b> '+esc(t("teamKnowShort"))+'</li>';
+    const privLine = r.privacy
+      ? '<li class="warn-priv"><b>'+esc(t("privWarnTitle"))+(LANG==="fr" ? "\u00a0:" : ":")+'</b> '+esc(t("privShort_"+a.kidata))+'</li>'
+      : '<li><b>'+esc(t("privOkTitle"))+(LANG==="fr" ? "\u00a0:" : ":")+'</b> '+esc(t("privOkShort"))+'</li>';
+    findings = '<section class="section"><h3>'+esc(t("moreTitle"))+'</h3><ul class="findings">'+islandLine+privLine+'</ul>'+
+      '<p class="more-hint">'+esc(t("moreHint"))+'</p></section>';
+  }
 
-  const privacy = r.privacy
-    ? '<div class="box privacy-warn"><h4>'+esc(t("privWarnTitle"))+'</h4><p>'+esc(r.privacy)+'</p></div>'
-    : '<div class="box"><h4>'+esc(t("privOkTitle"))+'</h4><p>'+esc(t("privOkText"))+'</p></div>';
+  const teaser = '<div class="pdf-teaser"><h4>'+esc(t("pdfTeaserTitle"))+'</h4><ul>'+
+    L.pdfTeaser(r.items.length).map(x=>'<li>'+esc(tr(x))+'</li>').join("")+'</ul></div>';
 
-  $("#report").innerHTML =
-    '<header class="report-head"><div class="eyebrow">'+esc(t("reportEyebrow"))+' · '+esc(date)+'</div>'+
+  return '<header class="report-head"><div class="eyebrow">'+esc(t("reportEyebrow"))+' · '+esc(date)+'</div>'+
       '<h2>'+esc(t("reportTitle", a.firma))+'</h2>'+
       '<p class="meta">'+esc(optLabel("branche", a.branche))+' · '+esc(teamText(a.team))+' · '+esc(t("reportMeta", a.tools.length, Math.round(r.autoShare*100)))+'</p></header>'+
-    '<div class="print-only" id="print-city"></div>'+
+    (full ? '<div class="print-only'+(list.length > 3 ? ' compact' : '')+'" id="print-city"></div>' : '')+
     '<div class="stats">'+
-      '<div class="stat hot"><div class="v">'+fmt(r.manualYear)+'</div><div class="l">'+esc(t("stat1"))+'</div></div>'+
-      '<div class="stat"><div class="v">'+fmt(r.saveYear)+'</div><div class="l">'+esc(t("stat2"))+'</div></div>'+
+      '<div class="stat hot"><div class="v">'+fmt(r.manualYear/12)+'</div><div class="l">'+esc(t("stat1m"))+'</div></div>'+
+      '<div class="stat"><div class="v">'+fmt(r.saveYear/12)+'</div><div class="l">'+esc(t("stat2m"))+'</div></div>'+
       '<div class="stat key"><div class="v">'+fmt(r.chf)+' '+esc(a.currency)+'</div><div class="l">'+esc(t("stat3", a.rate, a.currency))+'</div></div>'+
       '<div class="stat"><div class="v">'+nf.format(Math.round(r.weeks*10)/10)+'</div><div class="l">'+esc(t("stat4"))+'</div></div>'+
     '</div>'+
-    '<section class="book-banner"><div><h3>'+esc(t("bannerTitle"))+'</h3><p>'+esc(t("bannerText", CONTACT.name))+'</p></div>'+
-      '<a class="btn btn-book" href="'+CONTACT.booking+'" target="_blank" rel="noopener">'+esc(t("bookBtn"))+' <span aria-hidden="true">→</span></a></section>'+
-    '<section class="section"><h3>'+esc(t("jamsTitle", top.length))+'</h3><div class="jams">'+jams+'</div>'+
-      (kiLine ? '<p style="font-size:15px;color:var(--muted);max-width:70ch">'+esc(kiLine)+'</p>' : '')+'</section>'+
+    (full ? '' : '<section class="book-banner"><div><h3>'+esc(t("bannerTitle"))+'</h3><p>'+esc(t("bannerText", CONTACT.name))+'</p></div>'+
+      '<a class="btn btn-book" href="'+CONTACT.booking+'" target="_blank" rel="noopener">'+esc(t("bookBtn"))+' <span aria-hidden="true">→</span></a></section>')+
+    overview+
+    '<section class="section'+(overview ? ' jams-detail' : '')+'"><h3>'+esc(full ? t("allJamsTitle", list.length) : t("jamsTitle", top.length))+'</h3><div class="jams">'+jams+'</div>'+
+      (kiLineFull && !kiInOverview ? '<p class="ki-line">'+esc(kiLineFull)+'</p>' : '')+'</section>'+
     (first ? '<section class="section"><div class="box start"><div class="eyebrow">'+esc(t("startEyebrow"))+'</div><h4>'+esc(t("startTitle", taskLabel(first.id), toolName(first.src), toolName(first.dst)))+'</h4>'+
       '<p>'+t("startText", fmtH(first.save/WEEKS))+'</p>'+
       '<p>'+esc(goalSentence(a.goal, r.saveWeek))+'</p><p class="sig">'+esc(CONTACT.name)+', Lavanchy Automation</p></div></section>' : '')+
-    '<section class="two">'+island+privacy+'</section>'+
+    findings+
     '<section class="cta"><h3>'+esc(t("ctaTitle"))+'</h3>'+
       '<p>'+esc(t("ctaText"))+'</p>'+
+      (full ? '<p class="print-cta">'+t("printCta", CONTACT.email)+'</p>' :
       '<a class="btn btn-book btn-book-xl" href="'+CONTACT.booking+'" target="_blank" rel="noopener">'+t("ctaBookXl")+'</a>'+
       '<p class="or">'+esc(t("ctaOr"))+'</p>'+
-      '<p class="print-only print-cta">'+t("printCta", CONTACT.email)+'</p>'+
+      teaser+
       '<form class="cta-send" id="send-form" novalidate>'+
         '<div class="text-field"><label for="send-email">'+esc(t("emailLabel"))+'</label><input id="send-email" type="email" required autocomplete="email" placeholder="'+esc(t("emailPh"))+'"></div>'+
         '<div class="text-field"><label for="send-phone">'+t("phoneLabel")+'</label><input id="send-phone" type="tel" autocomplete="tel" maxlength="30" placeholder="'+esc(t("phonePh"))+'"></div>'+
         '<div class="text-field"><label for="send-message">'+t("msgLabel")+'</label><textarea id="send-message" rows="3" maxlength="2000" placeholder="'+esc(t("msgPh"))+'"></textarea></div>'+
         '<button class="btn btn-secondary" type="submit" id="send-btn">'+esc(t("sendBtn"))+'</button>'+
         '<p class="status" id="send-status" role="status"></p>'+
-      '</form>'+
+      '</form>')+
     '</section>'+
-    '<div class="tools-row no-print">'+
+    (full ? '' : '<div class="tools-row no-print">'+
       '<button class="btn btn-ghost" type="button" id="edit-btn">'+esc(t("editBtn"))+'</button>'+
       '<button class="btn btn-ghost" type="button" id="restart-btn">'+esc(t("restartBtn"))+'</button>'+
-    '</div>'+
-    '<details class="method"><summary>'+esc(t("methodTitle"))+'</summary><ul>'+
+    '</div>')+
+    '<details class="method"'+(full ? ' open' : '')+'><summary>'+esc(t("methodTitle"))+'</summary><ul>'+
       L.method.map(m=>'<li>'+esc(tr(m))+'</li>').join("")+
     '</ul></details>'+
     '<div class="signature"><span>'+esc(t("signature"))+'</span><span>'+CONTACT.email+' · lavanchyautomation.ch</span></div>';
+}
+
+function renderReport(a, r){
+  const mail = buildMail(a, r);
+  lastReport = {a, r};
+  $("#report").innerHTML = reportBody(a, r, false);
 
   $("#send-form").addEventListener("submit", async e=>{
     e.preventDefault();
@@ -1527,7 +1748,7 @@ function showResult(){
   const r = compute(a);
   show("#view-result");
   city.mount($("#host-result"));
-  city.build(r, a.tools);
+  city.build(r, a.tools, {emptyLabels:true});
   countUp($("#res-num"), r.manualYear);
   renderReport(a, r);
   track("Landkarte ausgewertet");
