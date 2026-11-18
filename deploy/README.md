@@ -69,3 +69,25 @@ nicht mehr hinterher, lief ans Speicherlimit, brach ab und wurde neu versucht
 - `clickhouse/disable-internal-logs.xml` — deaktiviert ClickHouse's interne `system.*_log`-Tabellen (siehe oben)
 - `.env.example` — Vorlage für Secrets/Config, die auf dem VPS in `.env` liegen (nicht im Git-Repo)
 - `htpasswd` — Zugangsdaten für die Vorschau-Sperre (nicht im Git-Repo, siehe oben)
+
+## Landkarte-Render (PDF-Bericht der Zeitfresser-Landkarte)
+
+Der PDF-Bericht der Landkarte entsteht nicht im Browser, sondern auf dem **n8n-VPS** (nicht auf dem Website-VPS):
+der Container `landkarte-render` öffnet `https://lavanchyautomation.ch/landkarte/?render=1` mit Chromium,
+übergibt die Antworten (`window.__lkRender`) und druckt den Bericht als PDF. Er hängt nur im Docker-Netz
+`n8n_default` (kein öffentlicher Port), ist auf 1 CPU / 1 GB begrenzt und rendert immer nur ein PDF gleichzeitig.
+
+Genutzt von den n8n-Workflows «[Landkarte] Ergebnis-Webhook» (Node «PDF rendern», Fallback: PDF aus dem Browser)
+und «[Landkarte] PDF neu erstellen» (Webhook `/webhook/landkarte-pdf-neu?id=<JP-ID>&key=<Schlüssel>`, `&dry=1` = nur Daten prüfen).
+
+Deploy / Update (vom Laptop, im Repo-Root):
+
+```bash
+ssh joinpoint-vps 'mkdir -p /docker/landkarte-render'
+scp deploy/landkarte-render/{Dockerfile,server.mjs,package.json,docker-compose.yml} joinpoint-vps:/docker/landkarte-render/
+ssh joinpoint-vps 'cd /docker/landkarte-render && docker compose up -d --build && sleep 5 && docker exec n8n-n8n-1 wget -qO- http://landkarte-render:3000/health'
+```
+
+Lokal testen: `docker build -t landkarte-render:dev deploy/landkarte-render`, dann
+`docker run --rm --network host -e LANDKARTE_URL=http://localhost:8765 -e PORT=3999 --shm-size 256m landkarte-render:dev`
+(Landkarte vorher mit `node scripts/sync-landkarte-i18n.mjs` und `python3 -m http.server 8765` in `public/` bereitstellen).

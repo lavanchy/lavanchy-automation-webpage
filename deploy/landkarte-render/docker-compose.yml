@@ -1,0 +1,17 @@
+# Läuft auf dem n8n-VPS (/docker/landkarte-render), im Netz von n8n, ohne öffentlichen Port.
+# n8n erreicht den Dienst unter http://landkarte-render:3000
+services:
+  landkarte-render:
+    build: .
+    container_name: landkarte-render
+    restart: always
+    init: true
+    environment:
+      - LANDKARTE_URL=https://lavanchyautomation.ch
+    cpus: 1.0
+    mem_limit: 1g
+    shm_size: 256m
+    networks: [n8n_default]
+networks:
+  n8n_default:
+    external: true
