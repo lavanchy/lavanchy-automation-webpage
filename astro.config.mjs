@@ -3,6 +3,24 @@ import { defineConfig } from 'astro/config';
 
 import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
+import fs from 'node:fs';
+import path from 'node:path';
+
+// Nur Dev-Server: Ordner-URLs aus public/ (z.B. /landkarte/) auf index.html umleiten.
+// In Produktion macht das nginx.
+const publicDirIndex = {
+  name: 'public-dir-index',
+  apply: 'serve',
+  configureServer(server) {
+    server.middlewares.use((req, _res, next) => {
+      const url = (req.url || '').split('?')[0];
+      if (url.endsWith('/') && fs.existsSync(path.join('public', url, 'index.html'))) {
+        req.url = url + 'index.html' + (req.url.includes('?') ? req.url.slice(req.url.indexOf('?')) : '');
+      }
+      next();
+    });
+  },
+};
 
 // https://astro.build/config
 export default defineConfig({
@@ -59,6 +77,6 @@ export default defineConfig({
     }
   },
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss(), publicDirIndex]
   }
 });

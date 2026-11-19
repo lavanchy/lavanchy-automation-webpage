@@ -32,22 +32,28 @@
 <script async src="https://analytics.lavanchyautomation.ch/js/pa-Xex5KYHBg7ual4y0-sKhq.js"></script>
 <script>(function(){var m=location.pathname.match(/^\/(en|fr)\//),q=null;try{q=new URLSearchParams(location.search).get("lang");}catch(e){}var l=(q&&/^(de|en|fr)$/.test(q))?q:(m?m[1]:"de");window.__LK_LANG=l;var d=document.documentElement;d.lang=(l==="de"?"de-CH":l);if(l!=="de")d.className+=" i18n-pending";})();</script>
 <style>
+/* Website-Schriften (Kopie aus @fontsource, latin) */
+@font-face{font-family:"Space Grotesk";font-style:normal;font-weight:500;font-display:swap;src:url(/landkarte/fonts/space-grotesk-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"Space Grotesk";font-style:normal;font-weight:700;font-display:swap;src:url(/landkarte/fonts/space-grotesk-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:"Inter";font-style:normal;font-weight:400;font-display:swap;src:url(/landkarte/fonts/inter-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"Inter";font-style:normal;font-weight:500;font-display:swap;src:url(/landkarte/fonts/inter-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"Inter";font-style:normal;font-weight:600;font-display:swap;src:url(/landkarte/fonts/inter-latin-600-normal.woff2) format("woff2")}
 :root{
   /* Planungsplan: kühles Papier, Tinte, Petrol als Akzent. Ampelfarben nur für Zustände. */
-  --paper:#EDF1F4;
+  --paper:#F4F8F8;
   --surface:#FFFFFF;
-  --ink:#132130;
-  --muted:#5B6979;
-  --line:#D2DAE2;
-  --accent:#1C5D7B;
+  --ink:#17242A;
+  --muted:#45575E;
+  --line:#D3DEE0;
+  --accent:#1C6F72;
   --accent-ink:#FFFFFF;
-  --accent-soft:#E2EEF3;
+  --accent-soft:#E0EEEE;
   --ok:#2F9E6B;
   --warn:#D99A12;
   --bad:#D4483B;
   --island:#EE7A16;
-  --font-display:"Avenir Next","Avenir","Segoe UI Variable Display","Segoe UI","Helvetica Neue",Arial,sans-serif;
-  --font-body:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --font-display:"Space Grotesk","Avenir Next","Avenir","Segoe UI Variable Display","Segoe UI","Helvetica Neue",Arial,sans-serif;
+  --font-body:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   --font-mono:ui-monospace,"SF Mono","Cascadia Mono",Menlo,Consolas,monospace;
   --radius:14px;
   color-scheme:light;
@@ -63,13 +69,39 @@ button,input{font:inherit;color:inherit}
 [hidden]{display:none !important}
 .i18n-pending body{visibility:hidden}
 
-.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px clamp(16px,4vw,40px);border-bottom:1px solid var(--line);background:var(--surface)}
-.brand{font-family:var(--font-display);font-weight:700;font-size:18px;letter-spacing:-0.01em;display:flex;align-items:center;gap:10px}
-.brand-mark{width:26px;height:26px;border-radius:7px;background:var(--accent);display:grid;place-items:center}
-.brand-mark svg{width:16px;height:16px}
-.brand span{font-weight:500;color:var(--muted)}
-.top a{font-size:14px;text-decoration:none;color:var(--muted)}
-.top a:hover{color:var(--accent)}
+/* Website-Header und -Footer (Nachbau von src/components/Header.astro / Footer.astro) */
+.sh{position:sticky;top:0;z-index:50;border-bottom:1px solid var(--line);background:var(--paper)}
+.sh-in{max-width:72rem;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding:16px}
+.sh-brand{display:flex;align-items:center;gap:8px;font-family:var(--font-display);font-size:18px;font-weight:700;color:var(--accent);text-decoration:none;line-height:1.5}
+.sh-brand img{width:48px;height:38px}
+.sh-tools{display:flex;align-items:center;gap:8px}
+.sh ul{list-style:none;margin:0;padding:0}
+.sh-lang{display:flex;align-items:center;gap:4px;font-size:14px}
+.sh-lang a{display:block;border-radius:4px;padding:4px 6px;font-weight:600;color:var(--muted);text-decoration:none}
+.sh-lang a:hover,.sh-lang a[aria-current]{color:var(--accent)}
+.sh-toggle{display:flex;width:40px;height:40px;align-items:center;justify-content:center;border:0;border-radius:6px;background:none;color:var(--ink);cursor:pointer;padding:0}
+.sh-nav{display:none;width:100%;padding-bottom:8px}
+.sh-nav.open{display:block}
+.sh-nav ul{display:flex;flex-direction:column;gap:16px}
+.sh-nav a{color:var(--ink);text-decoration:none}
+.sh-nav a:hover{color:var(--accent)}
+.sh-nav a[aria-current]{font-weight:700;color:var(--accent)}
+@media (min-width:768px){
+  .sh-tools{order:3}
+  .sh-toggle{display:none}
+  .sh-nav,.sh-nav.open{display:block;order:2;width:auto;padding-bottom:0}
+  .sh-nav ul{flex-direction:row;flex-wrap:wrap;align-items:center;gap:24px}
+}
+.sf{border-top:1px solid var(--line);background:#DCE7E8}
+.sf-in{max-width:72rem;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding:24px 16px;font-size:14px;color:var(--muted)}
+.sf p{margin:0}
+.sf-right{display:flex;flex-wrap:wrap;align-items:center;gap:16px}
+.sf ul{display:flex;gap:16px;list-style:none;margin:0;padding:0}
+.sf a{color:var(--muted);text-decoration:none}
+.sf a:hover{color:var(--accent)}
+.sf svg{display:block}
+.lk-note{font-size:13px;color:var(--muted);margin-top:-8px}
+.lk-note a{color:var(--muted)}
 
 main{max-width:1240px;margin:0 auto;padding:clamp(20px,4vw,48px) clamp(16px,4vw,40px) 64px}
 
@@ -275,7 +307,7 @@ input[type=range]{width:100%;accent-color:var(--accent);height:28px}
 .sticky-book .btn-book{padding:12px 20px;font-size:16px;box-shadow:none}
 #view-result{padding-bottom:70px}
 @media (max-width:560px){.sticky-book span{display:none}.sticky-book{padding:8px}}
-footer{max-width:1240px;margin:0 auto;padding:0 clamp(16px,4vw,40px) 100px;font-size:13px;color:var(--muted);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between}
+body:has(#view-result:not([hidden])) .sf-in{padding-bottom:96px}
 
 @media (max-width:900px){
   .intro{grid-template-columns:1fr}
@@ -291,7 +323,6 @@ footer{max-width:1240px;margin:0 auto;padding:0 clamp(16px,4vw,40px) 100px;font-
   .ov-counter{max-width:calc(100% - 32px)}
   .ov-hint{display:none}
   .slider-row{grid-template-columns:minmax(0,1fr) 80px}
-  .top{flex-wrap:wrap;row-gap:6px}
 }
 @media (prefers-reduced-motion:reduce){
   *{transition:none !important}
@@ -352,8 +383,9 @@ html.lk-render .pdf-export .section > h3{break-after:avoid}
   @page{size:A4;margin:12mm 14mm}
   html,body{background:#fff}
   body{font-size:11.5px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-  .top{padding:0 0 8px;border-bottom:2px solid var(--ink)}
-  .top a,.no-print,.book-banner,.btn-book-xl,.cta .or,#view-intro,#view-quiz,.result-city,footer,.cta-actions,.tools-row,.cta .status,#send-form{display:none !important}
+  .sh{position:static;background:#fff;border-bottom:2px solid var(--ink)}
+  .sh-in{padding:0 0 8px;max-width:none}
+  .sh-tools,.sh-nav,.sf,.lk-note,.no-print,.book-banner,.btn-book-xl,.cta .or,#view-intro,#view-quiz,.result-city,.cta-actions,.tools-row,.cta .status,#send-form{display:none !important}
   main{padding:14px 0 0;max-width:none}
   #view-result{padding-bottom:0}
   .result,.report{display:block}
@@ -388,13 +420,21 @@ html.lk-render .pdf-export .section > h3{break-after:avoid}
 </head>
 <body>
 
-<header class="top">
-  <div class="brand">
-    <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M2 12 6 4l4 6 2-3 2 5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-    Lavanchy <span>Automation</span>
+<!-- SITE-HEADER:START (generiert von scripts/sync-landkarte-i18n.mjs, nicht von Hand ändern) -->
+<header class="sh">
+  <div class="sh-in">
+    <a class="sh-brand" href="/de/"><img src="/landkarte/logo-icon.png" alt="" width="48" height="38">Lavanchy Automation</a>
+    <div class="sh-tools">
+      <ul class="sh-lang" aria-label="Sprache wählen"><li><a href="/landkarte/" aria-current="page">DE</a></li><li><a href="/fr/landkarte/">FR</a></li><li><a href="/en/landkarte/">EN</a></li></ul>
+      <button class="sh-toggle" id="sh-toggle" type="button" aria-expanded="false" aria-controls="sh-nav" aria-label="Menü öffnen" data-open="Menü öffnen" data-close="Menü schliessen">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+    <nav class="sh-nav" id="sh-nav" aria-label="Hauptnavigation"><ul><li><a href="/de/">Startseite</a></li><li><a href="/de/leistungen/">Leistungen</a></li><li><a href="/de/referenzen/">Referenzen</a></li><li><a href="/landkarte/" aria-current="page">Zeitfresser-Check</a></li><li><a href="/de/ueber-mich/">Über mich</a></li><li><a href="/de/kontakt/">Kontakt</a></li></ul></nav>
   </div>
-  <a href="https://lavanchyautomation.ch/de/" data-href="home">lavanchyautomation.ch</a>
 </header>
+<script>(function(){var b=document.getElementById("sh-toggle"),n=document.getElementById("sh-nav");function s(o){n.classList.toggle("open",o);b.setAttribute("aria-expanded",String(o));b.setAttribute("aria-label",o?b.dataset.close:b.dataset.open);}b.addEventListener("click",function(){s(!n.classList.contains("open"));});document.addEventListener("keydown",function(e){if(e.key==="Escape")s(false);});})();</script>
+<!-- SITE-HEADER:END -->
 
 <main>
   <!-- INTRO -->
@@ -439,6 +479,7 @@ html.lk-render .pdf-export .section > h3{break-after:avoid}
         <button class="btn btn-ghost" type="button" id="q-back" data-i18n="back">Zurück</button>
         <button class="btn btn-primary" type="submit" id="q-next" data-i18n="next">Weiter</button>
       </div>
+      <p class="lk-note" data-i18n-html="footerNote"></p>
     </form>
   </section>
 
@@ -465,10 +506,17 @@ html.lk-render .pdf-export .section > h3{break-after:avoid}
   </section>
 </main>
 
-<footer>
-  <span>Lavanchy Automation · Rue du Centre 53 · 1025 St-Sulpice VD</span>
-  <span data-i18n-html="footerNote"></span>
+<!-- SITE-FOOTER:START (generiert von scripts/sync-landkarte-i18n.mjs, nicht von Hand ändern) -->
+<footer class="sf">
+  <div class="sf-in">
+    <p>&copy; 2026 Lavanchy Automation</p>
+    <div class="sf-right">
+      <ul><li><a href="/de/impressum/">Impressum</a></li><li><a href="/de/datenschutz/">Datenschutz</a></li><li><a href="/de/agb/">AGB</a></li></ul>
+      <a href="https://www.linkedin.com/in/loic-lavanchy/" target="_blank" rel="noopener noreferrer" aria-label="Loïc Lavanchy auf LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.114 20.452H3.558V9h3.556v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+    </div>
+  </div>
 </footer>
+<!-- SITE-FOOTER:END -->
 
 <script src="/landkarte/three.min.js"></script>
 <script src="/landkarte/OrbitControls.js"></script>
@@ -540,7 +588,7 @@ de:{
   introLead:"Beantworte 12 kurze Fragen. Danach siehst du deinen Betrieb als kleine Stadt: Jedes Tool ist ein Gebäude, jeder Datenfluss eine Strasse. Wo von Hand kopiert wird, steht der Verkehr.",
   fact1:"<b>12</b> Fragen", fact2:"ca. <b>5</b> Minuten", fact3:"Report sofort",
   startBtn:"Test starten",
-  privacyIntro:"Deine Antworten bleiben während des Tests in deinem Browser. Sobald die Auswertung erscheint, wird das Ergebnis ohne Namen und Kontaktdaten anonym gespeichert. Deine E-Mail-Adresse, Telefonnummer und Nachricht werden nur übermittelt, wenn du am Ende den Report per E-Mail anforderst. <a href='https://lavanchyautomation.ch/de/datenschutz/' target='_blank' rel='noopener'>Datenschutzerklärung</a>",
+  privacyIntro:"Deine Antworten bleiben während des Tests in deinem Browser. Sobald die Auswertung erscheint, wird das Ergebnis ohne Namen und Kontaktdaten gespeichert. Deine E-Mail-Adresse, Telefonnummer und Nachricht werden nur übermittelt, wenn du am Ende den Report per E-Mail anforderst. <a href='https://lavanchyautomation.ch/de/datenschutz/' target='_blank' rel='noopener'>Datenschutzerklärung</a>",
   counterIntro:"<b>Stunden pro Jahr</b> Handarbeit zwischen den Tools",
   exampleCaption:"Beispiel: Treuhandbüro, 6 Personen",
   progress:"Frage <b id='q-index'>1</b> von <b>12</b>",
@@ -550,7 +598,7 @@ de:{
   legOk:"läuft automatisch", legWarn:"teils von Hand", legBad:"Handarbeit, Stau", legIsland:"Wissen bei einer Person",
   stickyText:"Deine Landkarte mit Loïc besprechen: <b>30 Min., kostenlos</b>",
   bookBtn:"Termin buchen",
-  footerNote:"Alle Werte sind Schätzungen auf Basis deiner Angaben. · <a href='https://lavanchyautomation.ch/de/datenschutz/' target='_blank' rel='noopener'>Datenschutz</a> · <a href='https://lavanchyautomation.ch/de/impressum/' target='_blank' rel='noopener'>Impressum</a>",
+  footerNote:"Alle Werte sind Schätzungen auf Basis deiner Angaben.",
   fallback3d:"Die 3D-Ansicht konnte nicht geladen werden. Dein Report unten ist trotzdem vollständig.",
   hWeek:"h/Wo", noFlow:"kein Ablauf erfasst", perHour:"pro Stunde", currencyAria:"Währung", rateAria:"Kosten pro Arbeitsstunde",
   firmaLabel:"Name deines Betriebs <span style='font-weight:400;color:var(--muted)'>(optional, erscheint im Report)</span>",
@@ -626,7 +674,7 @@ de:{
   numsMonth:(m,s)=>"<b>"+m+" h</b> pro Monat · davon ca. <b>"+s+" h</b> automatisierbar",
   stat1m:"Stunden pro Monat Handarbeit zwischen den Tools",
   stat2m:"Stunden davon lassen sich jeden Monat automatisieren",
-  next:{
+  nextSteps:{
     anfragen:"Leg fest, welche Angaben jede Anfrage braucht (zum Beispiel Name, Anliegen, Dringlichkeit). Damit kann die Übernahme ins System automatisch laufen.",
     angebote:"Nimm drei typische Angebote und markiere, welche Teile immer gleich sind. Das ist die Grundlage für die automatische Vorlage.",
     rechnungen:"Prüfe, wo Leistungen heute erfasst werden (Projekt-Tool, Excel oder Notizen). Eine einzige Quelle ist die Voraussetzung für automatische Rechnungen.",
@@ -673,7 +721,7 @@ de:{
   privWarnTitle:"Datenschutz-Hinweis", privOkTitle:"Datenschutz",
   privOkText:"Nach deinen Angaben landen keine Kundendaten in KI-Tools. Bei jeder Automatisierung prüfe ich trotzdem, wo die Daten verarbeitet werden, bevorzugt in der Schweiz oder der EU.",
   ctaTitle:"Willst du sehen, wie dein erster Ablauf konkret aussieht?",
-  ctaText:"In 30 Minuten schauen wir deine Landkarte gemeinsam an. Du erfährst, was sich lohnt, was es ungefähr kostet und was du besser so lässt, wie es ist.",
+  ctaText:"In 30 Minuten schauen wir deine Landkarte gemeinsam an. Wir nehmen den Ablauf mit den meisten Stunden und gehen ihn Schritt für Schritt durch. Du erfährst, was sich lohnt, was es ungefähr kostet und was du besser so lässt, wie es ist.",
   ctaBookXl:"Jetzt Termin buchen <small>30 Min. · kostenlos</small>",
   ctaOr:"Lieber zuerst in Ruhe lesen? Hol dir den vollständigen Bericht als PDF per E-Mail. Loïc erhält dein Ergebnis ebenfalls und meldet sich persönlich bei dir.",
   printCta:e=>"<b>Termin buchen (30 Min., kostenlos):</b> cal.meetergo.com/loic-lavanchy/30-min-meeting<br><b>E-Mail:</b> "+e,
@@ -708,7 +756,7 @@ en:{
   introLead:"Answer 12 short questions. Then you’ll see your business as a small city: every tool is a building, every data flow a street. Wherever data is copied by hand, traffic jams up.",
   fact1:"<b>12</b> questions", fact2:"approx. <b>5</b> minutes", fact3:"Instant report",
   startBtn:"Start the test",
-  privacyIntro:"Your answers stay in your browser while you take the test. As soon as the results appear, the result is stored anonymously, without name or contact details. Your email address, phone number and message are only transmitted if you request the report by email at the end. <a href='https://lavanchyautomation.ch/en/datenschutz/' target='_blank' rel='noopener'>Privacy policy</a>",
+  privacyIntro:"Your answers stay in your browser while you take the test. As soon as the results appear, the result is stored without name or contact details. Your email address, phone number and message are only transmitted if you request the report by email at the end. <a href='https://lavanchyautomation.ch/en/datenschutz/' target='_blank' rel='noopener'>Privacy policy</a>",
   counterIntro:"<b>hours per year</b> of manual work between tools",
   exampleCaption:"Example: fiduciary office, 6 people",
   progress:"Question <b id='q-index'>1</b> of <b>12</b>",
@@ -718,7 +766,7 @@ en:{
   legOk:"runs automatically", legWarn:"partly manual", legBad:"manual work, jam", legIsland:"knowledge held by one person",
   stickyText:"Discuss your map with Loïc: <b>30 min, free</b>",
   bookBtn:"Book a call",
-  footerNote:"All figures are estimates based on your answers. · <a href='https://lavanchyautomation.ch/en/datenschutz/' target='_blank' rel='noopener'>Privacy</a> · <a href='https://lavanchyautomation.ch/en/impressum/' target='_blank' rel='noopener'>Legal notice</a>",
+  footerNote:"All figures are estimates based on your answers.",
   fallback3d:"The 3D view could not be loaded. Your report below is still complete.",
   hWeek:"h/wk", noFlow:"no process entered", perHour:"per hour", currencyAria:"Currency", rateAria:"Cost per working hour",
   firmaLabel:"Name of your business <span style='font-weight:400;color:var(--muted)'>(optional, shown in the report)</span>",
@@ -794,7 +842,7 @@ en:{
   numsMonth:(m,s)=>"<b>"+m+" h</b> per month · approx. <b>"+s+" h</b> can be automated",
   stat1m:"hours per month of manual work between tools",
   stat2m:"hours of it can be automated every month",
-  next:{
+  nextSteps:{
     anfragen:"Decide which details every enquiry needs (for example name, request, urgency). Then the transfer into your system can run automatically.",
     angebote:"Take three typical quotes and mark which parts are always the same. That is the basis for the automated template.",
     rechnungen:"Check where work is recorded today (project tool, Excel or notes). A single source is the prerequisite for automated invoices.",
@@ -841,7 +889,7 @@ en:{
   privWarnTitle:"Data protection note", privOkTitle:"Data protection",
   privOkText:"According to your answers, no customer data ends up in AI tools. With every automation, I still check where the data is processed, preferably in Switzerland or the EU.",
   ctaTitle:"Want to see what your first process would look like?",
-  ctaText:"In 30 minutes, we go through your map together. You’ll find out what’s worth it, roughly what it costs and what you’re better off leaving as it is.",
+  ctaText:"In 30 minutes, we go through your map together. We take the process with the most hours and walk through it step by step. You’ll find out what’s worth it, roughly what it costs and what you’re better off leaving as it is.",
   ctaBookXl:"Book a call now <small>30 min · free</small>",
   ctaOr:"Prefer to read it first? Get the full report as a PDF by email. Loïc also receives your result and will get in touch with you personally.",
   printCta:e=>"<b>Book a call (30 min, free):</b> cal.meetergo.com/loic-lavanchy/30-min-meeting<br><b>Email:</b> "+e,
@@ -876,7 +924,7 @@ fr:{
   introLead:"Répondez à 12 courtes questions. Vous verrez ensuite votre entreprise comme une petite ville : chaque outil est un bâtiment, chaque flux de données une rue. Là où l’on copie à la main, la circulation se bloque.",
   fact1:"<b>12</b> questions", fact2:"env. <b>5</b> minutes", fact3:"Rapport immédiat",
   startBtn:"Commencer le test",
-  privacyIntro:"Vos réponses restent dans votre navigateur pendant le test. Dès que l’évaluation s’affiche, le résultat est enregistré de manière anonyme, sans nom ni coordonnées. Votre adresse e-mail, votre numéro de téléphone et votre message ne sont transmis que si vous demandez le rapport par e-mail à la fin. <a href='https://lavanchyautomation.ch/fr/datenschutz/' target='_blank' rel='noopener'>Déclaration de protection des données</a>",
+  privacyIntro:"Vos réponses restent dans votre navigateur pendant le test. Dès que l’évaluation s’affiche, le résultat est enregistré sans nom ni coordonnées. Votre adresse e-mail, votre numéro de téléphone et votre message ne sont transmis que si vous demandez le rapport par e-mail à la fin. <a href='https://lavanchyautomation.ch/fr/datenschutz/' target='_blank' rel='noopener'>Déclaration de protection des données</a>",
   counterIntro:"<b>heures par an</b> de travail manuel entre les outils",
   exampleCaption:"Exemple : fiduciaire, 6 personnes",
   progress:"Question <b id='q-index'>1</b> sur <b>12</b>",
@@ -886,7 +934,7 @@ fr:{
   legOk:"automatisé", legWarn:"en partie manuel", legBad:"travail manuel, bouchon", legIsland:"savoir détenu par une personne",
   stickyText:"Discuter de votre carte avec Loïc : <b>30 min, gratuit</b>",
   bookBtn:"Réserver un appel",
-  footerNote:"Toutes les valeurs sont des estimations basées sur vos réponses. · <a href='https://lavanchyautomation.ch/fr/datenschutz/' target='_blank' rel='noopener'>Protection des données</a> · <a href='https://lavanchyautomation.ch/fr/impressum/' target='_blank' rel='noopener'>Mentions légales</a>",
+  footerNote:"Toutes les valeurs sont des estimations basées sur vos réponses.",
   fallback3d:"La vue 3D n’a pas pu être chargée. Votre rapport ci-dessous reste complet.",
   hWeek:"h/sem.", noFlow:"aucun processus saisi", perHour:"par heure", currencyAria:"Devise", rateAria:"Coût par heure de travail",
   firmaLabel:"Nom de votre entreprise <span style='font-weight:400;color:var(--muted)'>(facultatif, apparaît dans le rapport)</span>",
@@ -962,7 +1010,7 @@ fr:{
   numsMonth:(m,s)=>"<b>"+m+" h</b> par mois · dont env. <b>"+s+" h</b> automatisables",
   stat1m:"heures par mois de travail manuel entre les outils",
   stat2m:"heures automatisables chaque mois",
-  next:{
+  nextSteps:{
     anfragen:"Définissez les informations dont chaque demande a besoin (par exemple nom, objet, urgence). Le transfert dans votre système peut alors se faire automatiquement.",
     angebote:"Prenez trois offres typiques et marquez les parties qui sont toujours identiques. C’est la base du modèle automatisé.",
     rechnungen:"Vérifiez où les prestations sont saisies aujourd’hui (outil de projet, Excel ou notes). Une source unique est la condition pour des factures automatiques.",
@@ -1009,7 +1057,7 @@ fr:{
   privWarnTitle:"Remarque sur la protection des données", privOkTitle:"Protection des données",
   privOkText:"D’après vos réponses, aucune donnée client ne se retrouve dans des outils d’IA. Pour chaque automatisation, je vérifie tout de même où les données sont traitées, de préférence en Suisse ou dans l’UE.",
   ctaTitle:"Vous voulez voir à quoi ressemblerait concrètement votre premier processus ?",
-  ctaText:"En 30 minutes, nous parcourons votre carte ensemble. Vous saurez ce qui vaut la peine, ce que cela coûte environ et ce qu’il vaut mieux laisser tel quel.",
+  ctaText:"En 30 minutes, nous parcourons votre carte ensemble. Nous prenons le processus qui prend le plus d’heures et le passons en revue étape par étape. Vous saurez ce qui vaut la peine, ce que cela coûte environ et ce qu’il vaut mieux laisser tel quel.",
   ctaBookXl:"Réserver un appel <small>30 min · gratuit</small>",
   ctaOr:"Vous préférez d’abord le lire tranquillement ? Recevez le rapport complet en PDF par e-mail. Loïc reçoit également votre résultat et vous contactera personnellement.",
   printCta:e=>"<b>Réserver un appel (30 min, gratuit) :</b> cal.meetergo.com/loic-lavanchy/30-min-meeting<br><b>E-mail :</b> "+e,
@@ -1570,7 +1618,7 @@ function reportBody(a, r, full){
       '<div><h4>'+esc(taskLabel(it.id))+'</h4><div class="route">'+esc(toolName(it.src))+' → '+esc(toolName(it.dst))+'</div></div>'+
       '<div class="jam-side"><span class="pill '+solKey(it)+'">'+esc(t(solKey(it)==="ai" ? "pillAi" : solKey(it)==="ocr" ? "pillOcr" : "pillApi"))+'</span></div>'+
       (full ? '<p class="why">'+esc(taskWhy(it.id, it.src))+'</p>' : '')+
-      (full && L.next[it.id] ? '<p class="next"><b>'+esc(t("nextLabel"))+'</b> '+esc(tr(L.next[it.id]))+'</p>' : '')+
+      (full && L.nextSteps[it.id] ? '<p class="next"><b>'+esc(t("nextLabel"))+'</b> '+esc(tr(L.nextSteps[it.id]))+'</p>' : '')+
       numsLine(it)+baBlock(it)+'</article>';
   }).join("");
 
