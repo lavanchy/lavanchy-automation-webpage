@@ -4,10 +4,12 @@ seo:
   description: "Automatisation n8n et IA managée pour PME et indépendants en Suisse : connectez vos outils existants, simplifiez vos processus, données en Suisse ou UE."
 hero:
   eyebrow: "Automatisation des processus et conseil en IA pour PME, indépendants et startups"
-  headline: "Vos outils restent. La charge de travail disparaît."
+  headline: "Vos outils restent. Le travail manuel diminue."
   subheadline: "Vos données ne passent plus manuellement d'Excel au CRM puis aux e-mails. Les tâches récurrentes tournent automatiquement en arrière-plan, avec vos systèmes existants. L'IA intervient là où elle fait une réelle différence dans le processus."
   zusatztext: "Un processus simple peut souvent être automatisé en quelques jours. Les démarches plus complexes sont découpées en étapes claires."
   ctaNote: "30 minutes, sans engagement, en français, allemand ou anglais."
+  secondaryCtaLabel: "Trouver les pertes de temps"
+  secondaryCtaHref: "/fr/landkarte/"
 problem:
   headline: "Trois situations que beaucoup de PME connaissent"
   items:
@@ -17,13 +19,18 @@ problem:
       text: "Un processus important ne fonctionne que parce qu'une personne le connaît. Si cette personne est absente, le processus ralentit ou s'arrête."
     - title: "Une IA sans connexion"
       text: "De nouveaux outils d'IA sont testés, mais restent souvent des solutions isolées. Ils ne sont pas reliés aux processus et systèmes existants."
+landkarteTeaser:
+  headline: "Où perdez-vous du temps au quotidien ?"
+  text: "Avec la Carte des pertes de temps, vous passez en revue les tâches récurrentes entre e-mail, Excel et comptabilité. Un premier aperçu, avant que nous examinions ensemble un processus concret."
+  linkLabel: "Lancer le test des pertes de temps"
+  linkHref: "/fr/landkarte/"
 angebot:
   headline: "Simplifier les processus, sans tout refaire"
   items:
     - title: "Automatiser les processus"
       text:
         - "Vos outils existants travaillent ensemble, les tâches récurrentes s'effectuent d'elles-mêmes. Vos systèmes habituels restent en place."
-        - "Chaque exécution est enregistrée. Vous pouvez consulter et vérifier chaque étape a posteriori."
+        - "Les processus sont journalisés de façon à pouvoir retracer les résultats et les erreurs. Quelles informations sont enregistrées et pendant combien de temps, nous le définissons selon le processus et vos exigences en matière de protection des données."
         - "Les processus peuvent, sur demande, inclure des étapes d'IA. Dans de nombreux cas, ce n'est toutefois pas nécessaire. Pour remplir et lire automatiquement un fichier Excel par exemple, une interface claire apporte souvent plus qu'une étape d'IA supplémentaire."
         - "Mis en œuvre techniquement avec n8n, une plateforme open source reconnue, originaire d'Allemagne."
     - title: "Une IA adaptée à vos processus"
@@ -34,10 +41,10 @@ kontrolle:
   headline: "Pas de boîte noire, mais une automatisation traçable"
   text:
     - "La mise en œuvre se fait processus par processus. Nous rassemblons ensemble les premières expériences, ce qui réduit le risque. Le prochain processus n'est abordé que lorsque le précédent est opérationnel."
-    - "Vos processus sont documentés, testés et surveillés. Vous voyez ce qui tourne automatiquement et comment le déroulement est construit. Si besoin, l'ancien processus manuel reste disponible comme référence."
+    - "Vos processus sont documentés et testés. Les contrôles automatiques et les messages d'erreur font partie de la solution selon l'étendue convenue. Qui traite les messages, se charge des adaptations et dans quel délai, nous le réglons séparément. Vous voyez ce qui tourne automatiquement et comment le déroulement est construit. Si besoin, l'ancien processus manuel reste disponible comme référence."
 referenzabschnitt:
-  headline: "Prouvé, pas seulement promis"
-  text: "Dans une autorité fédérale suisse, une procédure sur papier avec environ 7'000 dossiers par an a été numérisée et automatisée."
+  headline: "Une expérience tirée de la pratique"
+  text: "Dans une autorité fédérale suisse, une procédure sur papier avec environ 7'000 dossiers par an a été numérisée et automatisée. J'ai réalisé ce projet en tant que salarié, comme Requirement Engineer, avant la création de Lavanchy Automation."
   stats:
     - value: "Environ 90 %"
       label: "de charge manuelle en moins par dossier"
@@ -49,7 +56,7 @@ referenzabschnitt:
   linkHref: "/fr/referenzen/"
 fallstudienHinweis:
   headline: "Devenez une étude de cas"
-  text: "Jusqu'au 16 octobre 2026, j'élabore gratuitement des études de cas pour des entreprises sélectionnées. Vous obtenez une solution d'automatisation sur mesure. J'obtiens un cas de référence pour mon activité."
+  text: "J'élabore gratuitement des études de cas pour des entreprises sélectionnées. Vous obtenez une solution d'automatisation sur mesure. J'obtiens un cas de référence pour mon activité."
   ctaLabel: "Réserver ma place (étude de cas)"
 ueberMichTeaser:
   headline: "Qui se cache derrière"

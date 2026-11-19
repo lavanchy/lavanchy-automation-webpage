@@ -3,7 +3,7 @@ title: "AGB"
 description: "Allgemeine Geschäftsbedingungen."
 ---
 
-Lavanchy Automation — Stand: 28.09.2026
+Lavanchy Automation — Stand: 19.11.2026
 
 ## 1. Geltungsbereich
 
@@ -21,7 +21,7 @@ Offerten von Lavanchy Automation sind freibleibend und gelten, sofern nicht ande
 
 Der konkrete Leistungsumfang wird für jedes Projekt separat in einer Offerte oder einem Einzelauftrag vereinbart. Dazu gehören insbesondere Ziel, Umfang, Mitwirkungspflichten, Zeitplan, Kostendach bzw. Vergütung und Abnahmekriterien.
 
-Wo ein Kostendach vereinbart wird, dient dieses primär der internen Kalkulation von Lavanchy Automation. Sollte der tatsächliche Aufwand das vereinbarte Kostendach übersteigen, informiert Lavanchy Automation den Kunden zeitnah und entscheidet nach Rücksprache mit dem Kunden, ob und zu welchen Bedingungen das Projekt fortgeführt wird, sofern die jeweilige Offerte nichts Abweichendes vorsieht.
+Wo ein Kostendach vereinbart wird, gilt dieses als verbindliche Obergrenze der Vergütung für den vereinbarten Leistungsumfang. Zeichnet sich ab, dass der Aufwand das Kostendach übersteigt, informiert Lavanchy Automation den Kunden zeitnah. Mehraufwand über das Kostendach hinaus wird nur erbracht und in Rechnung gestellt, wenn der Kunde ihn vorgängig schriftlich (E-Mail genügt) freigegeben hat. Erweitert der Kunde den Leistungsumfang, wird das Kostendach im gegenseitigen Einverständnis angepasst. Abweichende Regelungen in der jeweiligen Offerte gehen vor.
 
 ## 4. Mitwirkungspflichten
 
@@ -43,7 +43,7 @@ Die Vergütung wird im jeweiligen Auftrag (Offerte oder Einzelauftrag) vereinbar
 
 Bezahlt der Kunde eine fällige Rechnung nicht fristgerecht, gerät er ohne weitere Mahnung in Verzug. Lavanchy Automation ist berechtigt, Verzugszins von 5 % pro Jahr sowie die Kosten einer schriftlichen Mahnung zu verlangen. Weitergehende Schadenersatzansprüche bleiben vorbehalten.
 
-Wird im Rahmen einer Case Study, eines Pilotprojekts oder einer vergleichbaren Vereinbarung ein Rabatt bis zu 100 % gewährt, gilt dieser ausschliesslich für das im jeweiligen Auftrag genannte Kostendach bzw. den dort genannten Leistungsumfang. Mehraufwand, der dieses Kostendach übersteigt und in gegenseitigem Einverständnis weitergeführt wird, sowie Folgeaufträge, Wartung und Support nach Ablauf der vereinbarten Rabattperiode werden, sofern nicht ausdrücklich anders vereinbart, zum jeweils gültigen Stundensatz von Lavanchy Automation in Rechnung gestellt.
+Wird im Rahmen einer Case Study, eines Pilotprojekts oder einer vergleichbaren Vereinbarung ein Rabatt bis zu 100 % gewährt, gilt dieser ausschliesslich für das im jeweiligen Auftrag genannte Kostendach bzw. den dort genannten Leistungsumfang. Mehraufwand, der dieses Kostendach übersteigt und vom Kunden gemäss Ziff. 3 freigegeben wurde, sowie Folgeaufträge, Wartung und Support nach Ablauf der vereinbarten Rabattperiode werden, sofern nicht ausdrücklich anders vereinbart, zum jeweils gültigen Stundensatz von Lavanchy Automation in Rechnung gestellt.
 
 ## 7. Wartung und Support
 
@@ -55,7 +55,7 @@ Umfang, Reaktionszeit und weitere Bedingungen werden in der jeweiligen Vereinbar
 
 Sofern im jeweiligen Auftrag nicht anders vereinbart, gehen die im Rahmen des Projekts spezifisch für den Kunden erstellten Arbeitsergebnisse (z. B. kundenspezifische Workflow-Konfigurationen) nach vollständiger Bezahlung der vereinbarten Vergütung auf den Kunden über. Zugänge, Konten und Instanzen bei Drittanbietern (z. B. n8n.io), die auf den Namen des Kunden laufen, verbleiben in jedem Fall beim Kunden; laufende Kosten solcher Instanzen trägt der Kunde.
 
-Vorbestehende, nicht spezifisch für den Kunden entwickelte Komponenten, Vorlagen oder Frameworks von Lavanchy Automation bleiben unabhängig vom Projekt im Eigentum von Lavanchy Automation. Der Kunde erhält daran ein einfaches, nicht übertragbares Nutzungsrecht im Rahmen des vereinbarten Zwecks.
+Vorbestehende, nicht spezifisch für den Kunden entwickelte Komponenten, Vorlagen oder Frameworks von Lavanchy Automation bleiben unabhängig vom Projekt im Eigentum von Lavanchy Automation. Soweit sie Teil der für den Kunden erstellten Lösung sind, erhält der Kunde daran ein einfaches, zeitlich unbeschränktes Nutzungsrecht im Rahmen des vereinbarten Zwecks. Dieses umfasst das Recht, die Lösung selbst oder durch beauftragte Dritte zu betreiben, zu warten und anzupassen. Eine Weitergabe dieser Komponenten losgelöst von der Lösung ist nicht gestattet.
 
 Lavanchy Automation ist berechtigt, die im Rahmen eines Projekts erstellten Workflow-Konfigurationen zusätzlich in einem eigenen, privaten Archiv zu sichern, soweit dies für die Erbringung von Support- oder Wartungsleistungen erforderlich ist oder mit dem Kunden vereinbart wurde.
 

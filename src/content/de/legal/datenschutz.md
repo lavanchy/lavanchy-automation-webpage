@@ -3,7 +3,7 @@ title: "Datenschutzerklärung"
 description: "Datenschutzerklärung nach Schweizer DSG und DSGVO."
 ---
 
-Lavanchy Automation — Stand: 16.11.2026
+Lavanchy Automation — Stand: 19.11.2026
 
 ## 1. Verantwortlicher
 
@@ -66,13 +66,13 @@ Bei der Terminbuchung können Name, E-Mail-Adresse, Terminangaben und weitere vo
 
 Für das interaktive Selbsttest-Tool «Zeitfresser-Landkarte» (auch auf Englisch und Französisch verfügbar) werden Ihre Antworten während des Quiz ausschliesslich lokal in Ihrem Browser verarbeitet. Die Website-Statistik (Plausible, siehe Ziff. 5) erfasst dabei nur, ob das Tool gestartet, abgeschlossen und der Report angefordert wurde, nicht aber Ihre Antworten.
 
-Sobald die Auswertung erstellt wird, werden die Quiz-Ergebnisse (z. B. Branche, Teamgrösse, genutzte Tools, geschätzte Einsparung, gewählte Sprache) ohne Namen oder Kontaktdaten automatisch an einen selbst betriebenen n8n-Workflow übermittelt (Hosting wie unter Ziff. 4, VPS bei Hostinger, Deutschland) und dort als anonymer Eintrag im CRM-System Joinpoint gespeichert, um die Nutzung des Tools statistisch auszuwerten (z. B. nach Branche oder Firmengrösse). Joinpoint wird von der Joinpoints GmbH (Graz, Österreich) betrieben; die Daten werden ausschliesslich in österreichischen Rechenzentren verarbeitet.
+Sobald die Auswertung erstellt wird, werden die Quiz-Ergebnisse (z. B. Branche, Teamgrösse, genutzte Tools, geschätzte Einsparung, gewählte Sprache) ohne Namen oder Kontaktdaten automatisch an einen selbst betriebenen n8n-Workflow übermittelt (Hosting wie unter Ziff. 4, VPS bei Hostinger, Deutschland) und dort als Eintrag ohne Namen und Kontaktdaten im CRM-System Joinpoint gespeichert, um die Nutzung des Tools statistisch auszuwerten (z. B. nach Branche oder Firmengrösse). Joinpoint wird von der Joinpoints GmbH (Graz, Österreich) betrieben; die Daten werden ausschliesslich in österreichischen Rechenzentren verarbeitet.
 
 Klicken Sie auf den Buchungslink oder fordern Sie Ihr Ergebnis als PDF per E-Mail an (dabei geht Ihr Ergebnis auch an Loïc Lavanchy, damit er sich bei Ihnen melden kann), wird dieser Eintrag ergänzt: im ersten Fall mit dem Hinweis, dass der Buchungslink angeklickt wurde, im zweiten Fall mit der von Ihnen eingegebenen E-Mail-Adresse, Ihrer Nachricht und, falls angegeben, Ihrer Telefonnummer. Im zweiten Fall wird Loïc Lavanchy zusätzlich per E-Mail benachrichtigt, und Sie erhalten an die angegebene E-Mail-Adresse eine Bestätigung mit Ihrem Ergebnis als PDF-Report und einer Zusammenfassung. Der E-Mail-Versand erfolgt über den E-Mail-Dienst der Infomaniak Network SA (Genf, Schweiz); die Daten werden in Rechenzentren in der Schweiz verarbeitet.
 
-Grundlage für die automatische, anonyme Nutzungsauswertung ist das berechtigte Interesse an der Verbesserung und Weiterentwicklung des Angebots (Art. 31 Abs. 1 DSG bzw. Art. 6 Abs. 1 lit. f DSGVO). Grundlage für die Bearbeitung bei aktiver Kontaktaufnahme ist die Kontaktaufnahme bzw. die Anbahnung eines Beratungsgesprächs als vorvertragliche Massnahme (Art. 31 Abs. 2 lit. a DSG bzw. Art. 6 Abs. 1 lit. b DSGVO).
+Grundlage für die automatische Nutzungsauswertung ohne Namen und Kontaktdaten ist das berechtigte Interesse an der Verbesserung und Weiterentwicklung des Angebots (Art. 31 Abs. 1 DSG bzw. Art. 6 Abs. 1 lit. f DSGVO). Grundlage für die Bearbeitung bei aktiver Kontaktaufnahme ist die Kontaktaufnahme bzw. die Anbahnung eines Beratungsgesprächs als vorvertragliche Massnahme (Art. 31 Abs. 2 lit. a DSG bzw. Art. 6 Abs. 1 lit. b DSGVO).
 
-Die anonymen Nutzungsdaten werden spätestens nach 12 Monaten gelöscht oder anonymisiert. Mit Kontaktdaten ergänzte Einträge werden gelöscht, sobald sie für die Kontaktaufnahme nicht mehr erforderlich sind, spätestens jedoch nach 24 Monaten ohne weiteren Kontakt, soweit keine gesetzlichen Aufbewahrungspflichten entgegenstehen (siehe Ziff. 12).
+Nicht mit Kontaktdaten ergänzte Einträge werden spätestens nach 12 Monaten gelöscht oder anonymisiert. Mit Kontaktdaten ergänzte Einträge werden gelöscht, sobald sie für die Kontaktaufnahme nicht mehr erforderlich sind, spätestens jedoch nach 24 Monaten ohne weiteren Kontakt, soweit keine gesetzlichen Aufbewahrungspflichten entgegenstehen (siehe Ziff. 12).
 
 ## 9. Datenverarbeitung im Rahmen von Automatisierungsprojekten
 

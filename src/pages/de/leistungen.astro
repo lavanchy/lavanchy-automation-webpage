@@ -12,7 +12,7 @@ import { siteConfig } from '../../config/site';
 
 const entry = await getEntry('leistungen', 'leistungen');
 if (!entry) throw new Error('Content entry "leistungen" not found');
-const { hero, n8n, zusammenarbeit, schrittFuerSchritt, mittenCta, qualitaet, managedKi, faq, fuerWen, abschlussCta } =
+const { hero, n8n, zusammenarbeit, kosten, mittenCta, qualitaet, managedKi, faq, fuerWen, abschlussCta } =
   entry.data;
 
 const servicesJsonLd = {
@@ -97,21 +97,17 @@ const faqJsonLd = {
     </ol>
   </Section>
 
-  <Section bg="paper" class="bg-surface">
-    <h2 class="mb-4 font-heading text-3xl font-bold text-text">{schrittFuerSchritt.headline}</h2>
-    <div class="mb-10 max-w-3xl space-y-3 leading-relaxed text-text-muted">
-      {schrittFuerSchritt.intro.map((p) => <p>{p}</p>)}
-    </div>
-    <ol class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-      {
-        schrittFuerSchritt.schritte.map((schritt, i) => (
-          <li>
-            <TitledCard title={schritt.title} text={schritt.text} index={i + 1} />
-          </li>
-        ))
-      }
-    </ol>
-  </Section>
+  {
+    kosten && (
+      <Section>
+        <h2 class="mb-4 font-heading text-3xl font-bold text-text">{kosten.headline}</h2>
+        <p class="mb-10 max-w-3xl leading-relaxed text-text-muted">{kosten.intro}</p>
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          {kosten.items.map((item) => <TitledCard title={item.title} text={item.text} />)}
+        </div>
+      </Section>
+    )
+  }
 
   <Section class="text-center">
     <div class="mx-auto max-w-2xl">
@@ -157,10 +153,6 @@ const faqJsonLd = {
         </a>
         {qualitaet.pruefungNachLink}
       </p>
-    </div>
-
-    <div class="mb-8 grid gap-6 md:grid-cols-2">
-      {qualitaet.cards.map((card) => <TitledCard title={card.title} text={card.text} />)}
     </div>
 
     <p class="text-sm text-text-muted">{qualitaet.hinweis}</p>

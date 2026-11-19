@@ -56,6 +56,11 @@ function tileGridClass(count: number) {
         </div>
 
         <div class="mt-10">
+          {fallstudie.statsHinweis && (
+            <p class="mb-4 font-body text-sm font-semibold uppercase tracking-wide text-brand-primary">
+              {fallstudie.statsHinweis}
+            </p>
+          )}
           <StatGrid stats={fallstudie.stats} />
         </div>
       </Section>

@@ -3,7 +3,7 @@ title: "Politique de confidentialité"
 description: "Politique de confidentialité selon la LPD suisse et le RGPD."
 ---
 
-Lavanchy Automation — Version du 16.11.2026
+Lavanchy Automation — Version du 19.11.2026
 
 *Ceci est une traduction libre fournie à titre informatif. Seule la version allemande fait foi et prévaut en cas de divergence.*
 
@@ -68,13 +68,13 @@ Lors de la prise de rendez-vous, le nom, l'adresse e-mail, les indications relat
 
 Pour l'outil interactif d'auto-évaluation « Zeitfresser-Landkarte » (en français « Carte des pertes de temps »), vos réponses sont traitées exclusivement localement dans votre navigateur pendant que vous remplissez le questionnaire. Les statistiques du site (Plausible, voir ch. 5) enregistrent uniquement si l'outil a été lancé, terminé et si le rapport a été demandé, mais pas vos réponses.
 
-Dès que le résultat est généré, les résultats du questionnaire (p. ex. secteur, taille de l'équipe, outils utilisés, économie estimée, langue choisie) sont transmis automatiquement, sans votre nom ni vos coordonnées, à un workflow n8n auto-hébergé (hébergement comme au ch. 4, VPS chez Hostinger, Allemagne) et enregistrés sous forme d'entrée anonyme dans le système CRM Joinpoint, afin d'évaluer statistiquement l'utilisation de l'outil (p. ex. par secteur ou taille d'entreprise). Joinpoint est exploité par Joinpoints GmbH (Graz, Autriche) ; les données sont traitées exclusivement dans des centres de données autrichiens.
+Dès que le résultat est généré, les résultats du questionnaire (p. ex. secteur, taille de l'équipe, outils utilisés, économie estimée, langue choisie) sont transmis automatiquement, sans votre nom ni vos coordonnées, à un workflow n8n auto-hébergé (hébergement comme au ch. 4, VPS chez Hostinger, Allemagne) et enregistrés sous forme d'entrée sans nom ni coordonnées dans le système CRM Joinpoint, afin d'évaluer statistiquement l'utilisation de l'outil (p. ex. par secteur ou taille d'entreprise). Joinpoint est exploité par Joinpoints GmbH (Graz, Autriche) ; les données sont traitées exclusivement dans des centres de données autrichiens.
 
 Si vous cliquez sur le lien de réservation, ou si vous demandez votre résultat en PDF par e-mail (votre résultat est alors également transmis à Loïc Lavanchy afin qu'il puisse vous contacter), cette entrée est complétée : dans le premier cas par la mention que le lien de réservation a été cliqué, dans le second cas par l'adresse e-mail que vous avez saisie, votre message et, le cas échéant, votre numéro de téléphone. Dans le second cas, Loïc Lavanchy est en outre notifié par e-mail, et vous recevez à l'adresse e-mail indiquée une confirmation contenant votre résultat sous forme de rapport PDF ainsi qu'un résumé. L'envoi des e-mails est effectué via le service de messagerie d'Infomaniak Network SA (Genève, Suisse) ; les données sont traitées dans des centres de données en Suisse.
 
-Le fondement de l'évaluation d'utilisation automatique et anonyme est l'intérêt légitime à l'amélioration et au développement de l'offre (art. 31 al. 1 LPD ou art. 6 par. 1 let. f RGPD). Le fondement du traitement lors d'une prise de contact active est la prise de contact, respectivement l'organisation d'un entretien-conseil, en tant que mesure précontractuelle (art. 31 al. 2 let. a LPD ou art. 6 par. 1 let. b RGPD).
+Le fondement de l'évaluation d'utilisation automatique sans nom ni coordonnées est l'intérêt légitime à l'amélioration et au développement de l'offre (art. 31 al. 1 LPD ou art. 6 par. 1 let. f RGPD). Le fondement du traitement lors d'une prise de contact active est la prise de contact, respectivement l'organisation d'un entretien-conseil, en tant que mesure précontractuelle (art. 31 al. 2 let. a LPD ou art. 6 par. 1 let. b RGPD).
 
-Les données d'utilisation anonymes sont supprimées ou anonymisées au plus tard après 12 mois. Les entrées complétées par des coordonnées sont supprimées dès qu'elles ne sont plus nécessaires à la prise de contact, mais au plus tard après 24 mois sans autre contact, sous réserve d'obligations légales de conservation (voir ch. 12).
+Les entrées non complétées par des coordonnées sont supprimées ou anonymisées au plus tard après 12 mois. Les entrées complétées par des coordonnées sont supprimées dès qu'elles ne sont plus nécessaires à la prise de contact, mais au plus tard après 24 mois sans autre contact, sous réserve d'obligations légales de conservation (voir ch. 12).
 
 ## 9. Traitement de données dans le cadre de projets d'automatisation
 

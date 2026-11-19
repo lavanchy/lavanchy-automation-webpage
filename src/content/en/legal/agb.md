@@ -3,7 +3,7 @@ title: "Terms and Conditions"
 description: "General terms and conditions."
 ---
 
-Lavanchy Automation — Version: 28.09.2026
+Lavanchy Automation — Version: 19.11.2026
 
 *This is a free translation for information purposes. Only the German version is legally binding and prevails in case of discrepancies.*
 
@@ -23,7 +23,7 @@ Quotes from Lavanchy Automation are non-binding and, unless stated otherwise, va
 
 The specific scope of services is agreed separately for each project in a quote or an individual order. This includes in particular the objective, scope, cooperation duties, timeline, cost ceiling or fee, and acceptance criteria.
 
-Where a cost ceiling is agreed, it serves primarily for Lavanchy Automation's internal calculation. Should the actual effort exceed the agreed cost ceiling, Lavanchy Automation informs the client promptly and decides, after consulting the client, whether and on what terms the project will be continued, unless the respective quote provides otherwise.
+Where a cost ceiling is agreed, it is a binding upper limit on the fee for the agreed scope of services. If it becomes apparent that the effort will exceed the cost ceiling, Lavanchy Automation informs the client promptly. Additional effort beyond the cost ceiling is only performed and invoiced if the client has approved it in advance in writing (email is sufficient). If the client extends the scope of services, the cost ceiling is adjusted by mutual agreement. Deviating provisions in the respective quote take precedence.
 
 ## 4. Client cooperation duties
 
@@ -45,7 +45,7 @@ Fees are agreed in the respective engagement (quote or individual order). Unless
 
 If the client does not pay a due invoice on time, it is in default without further reminder. Lavanchy Automation is entitled to charge default interest of 5 % per year as well as the costs of a written reminder. Further claims for damages remain reserved.
 
-If a discount of up to 100 % is granted as part of a case study, pilot project or comparable arrangement, it applies exclusively to the cost ceiling or scope of services stated in the respective engagement. Additional effort exceeding this cost ceiling that is continued by mutual agreement, as well as follow-up engagements, maintenance and support after the agreed discount period, are invoiced at Lavanchy Automation's hourly rate in force at the time, unless expressly agreed otherwise.
+If a discount of up to 100 % is granted as part of a case study, pilot project or comparable arrangement, it applies exclusively to the cost ceiling or scope of services stated in the respective engagement. Additional effort exceeding this cost ceiling that has been approved by the client in accordance with section 3, as well as follow-up engagements, maintenance and support after the agreed discount period, are invoiced at Lavanchy Automation's hourly rate in force at the time, unless expressly agreed otherwise.
 
 ## 7. Maintenance and support
 
@@ -57,7 +57,7 @@ Scope, response time and other conditions are set out in the respective agreemen
 
 Unless otherwise agreed in the respective engagement, the work results created specifically for the client within the project (e.g. client-specific workflow configurations) pass to the client upon full payment of the agreed fee. Access, accounts and instances with third-party providers (e.g. n8n.io) registered in the client's name remain with the client in all cases; the client bears the running costs of such instances.
 
-Pre-existing components, templates or frameworks of Lavanchy Automation that were not developed specifically for the client remain the property of Lavanchy Automation regardless of the project. The client receives a simple, non-transferable right to use them within the agreed purpose.
+Pre-existing components, templates or frameworks of Lavanchy Automation that were not developed specifically for the client remain the property of Lavanchy Automation regardless of the project. Insofar as they form part of the solution created for the client, the client receives a simple right of use, unlimited in time, within the agreed purpose. This includes the right to operate, maintain and adapt the solution itself or through third parties it has engaged. Passing on these components separately from the solution is not permitted.
 
 Lavanchy Automation is entitled to additionally back up the workflow configurations created within a project in its own private archive, insofar as this is necessary for providing support or maintenance services or has been agreed with the client.
 

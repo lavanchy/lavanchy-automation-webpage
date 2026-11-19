@@ -1,10 +1,10 @@
 ---
 seo:
-  title: "Études de cas d'automatisation n8n"
+  title: "Exemples pratiques d'automatisation n8n"
   description: "Exemples concrets d'automatisation des processus : intégrer Excel, réduire les transferts manuels et numériser les processus administratifs de manière traçable."
 hero:
   eyebrow: "Références"
-  headline: "Prouvé, pas seulement promis"
+  headline: "Projets et exemples pratiques"
   subheadline: "Deux exemples concrets montrent à quoi ressemble l'automatisation des processus et quelle valeur ajoutée elle peut apporter."
 fallstudien:
   - headline: "L'Excel éprouvé reste, la rupture de média disparaît"
@@ -16,6 +16,7 @@ fallstudien:
       - "Le processus existant est conservé tout en étant accéléré. Les erreurs de saisie et de copie sont réduites. Grâce à la copie automatique, on sait toujours quel fichier a été utilisé et quel calcul a eu lieu."
       - "Avec quatre appels par jour, environ 100 minutes d'effort manuel par semaine peuvent être économisées. Si en plus une erreur par semaine est évitée, cela représente environ 30 minutes de retouches en moins. Cela correspond dans cet exemple à environ 2 heures et 10 minutes par semaine."
       - "Ce calcul est un exemple prudent. L'économie de temps réelle dépend de l'utilisation et de la fréquence d'erreurs antérieure."
+    statsHinweis: "Exemple de calcul, pas une mesure"
     stats:
       - value: "5 min."
         label: "de gain de temps par appel Excel"
@@ -25,8 +26,6 @@ fallstudien:
         label: "d'effort manuel en moins par semaine"
       - value: "30 min."
         label: "de retouches en moins par erreur évitée"
-      - value: "Plus de 90 %"
-        label: "d'erreurs de saisie et de copie en moins, sous réserve de confirmation dans le cas concret"
   - headline: "Une procédure manuelle devient un travail automatisé"
     ausgangslage:
       - "Dans une autorité fédérale suisse, une procédure sur papier accaparait beaucoup de temps des spécialistes. Chaque dossier devait être examiné et traité individuellement à la main, pour environ 7'000 dossiers par an."
@@ -56,7 +55,7 @@ weitereIdeen:
       text: "Lorsque des informations doivent être classées, résumées ou préparées, un processus peut, sur demande, comporter une étape d'IA. Là où l'IA n'est pas nécessaire, la solution reste volontairement simple."
 fallstudienHinweis:
   headline: "Devenez une étude de cas"
-  text: "Jusqu'au 16 octobre 2026, j'élabore gratuitement des études de cas pour des entreprises sélectionnées. Vous obtenez une solution d'automatisation sur mesure. J'obtiens un cas de référence pour mon activité."
+  text: "J'élabore gratuitement des études de cas pour des entreprises sélectionnées. Vous obtenez une solution d'automatisation sur mesure. J'obtiens un cas de référence pour mon activité."
   ctaLabel: "Réserver ma place (étude de cas)"
 abschlussCta:
   headline: "Prêts à simplifier vos processus ?"

@@ -3,7 +3,7 @@ title: "CGV"
 description: "Conditions générales de vente."
 ---
 
-Lavanchy Automation — Version du 28.09.2026
+Lavanchy Automation — Version du 19.11.2026
 
 *Ceci est une traduction libre fournie à titre informatif. Seule la version allemande fait foi et prévaut en cas de divergence.*
 
@@ -23,7 +23,7 @@ Les offres de Lavanchy Automation sont sans engagement et, sauf indication contr
 
 L'étendue concrète des prestations est convenue séparément pour chaque projet dans une offre ou un mandat individuel. Cela comprend notamment l'objectif, le périmètre, les obligations de collaboration, le calendrier, le plafond de coûts ou la rémunération et les critères de réception.
 
-Lorsqu'un plafond de coûts est convenu, il sert principalement au calcul interne de Lavanchy Automation. Si le travail effectif dépasse le plafond de coûts convenu, Lavanchy Automation en informe le client dans les meilleurs délais et décide, après concertation avec le client, si et à quelles conditions le projet est poursuivi, sauf disposition contraire de l'offre concernée.
+Lorsqu'un plafond de coûts est convenu, il constitue une limite supérieure contraignante de la rémunération pour l'étendue des prestations convenue. S'il apparaît que le travail dépassera le plafond de coûts, Lavanchy Automation en informe le client dans les meilleurs délais. Le travail supplémentaire au-delà du plafond de coûts n'est fourni et facturé que si le client l'a préalablement approuvé par écrit (un e-mail suffit). Si le client étend l'étendue des prestations, le plafond de coûts est adapté d'un commun accord. Les dispositions contraires de l'offre concernée prévalent.
 
 ## 4. Obligations de collaboration
 
@@ -45,7 +45,7 @@ La rémunération est convenue dans le mandat concerné (offre ou mandat individ
 
 Si le client ne paie pas une facture échue dans les délais, il est en demeure sans autre rappel. Lavanchy Automation est en droit d'exiger un intérêt moratoire de 5 % par an ainsi que les frais d'un rappel écrit. Toute autre prétention en dommages-intérêts demeure réservée.
 
-Si un rabais allant jusqu'à 100 % est accordé dans le cadre d'une étude de cas, d'un projet pilote ou d'un accord comparable, il s'applique exclusivement au plafond de coûts ou à l'étendue des prestations mentionnés dans le mandat concerné. Le travail supplémentaire dépassant ce plafond de coûts et poursuivi d'un commun accord, ainsi que les mandats ultérieurs, la maintenance et le support après l'expiration de la période de rabais convenue, sont facturés, sauf convention expresse contraire, au taux horaire en vigueur de Lavanchy Automation.
+Si un rabais allant jusqu'à 100 % est accordé dans le cadre d'une étude de cas, d'un projet pilote ou d'un accord comparable, il s'applique exclusivement au plafond de coûts ou à l'étendue des prestations mentionnés dans le mandat concerné. Le travail supplémentaire dépassant ce plafond de coûts et approuvé par le client conformément au ch. 3, ainsi que les mandats ultérieurs, la maintenance et le support après l'expiration de la période de rabais convenue, sont facturés, sauf convention expresse contraire, au taux horaire en vigueur de Lavanchy Automation.
 
 ## 7. Maintenance et support
 
@@ -57,7 +57,7 @@ L'étendue, le délai de réaction et les autres conditions sont définis dans l
 
 Sauf accord contraire dans le mandat concerné, les résultats du travail créés spécifiquement pour le client dans le cadre du projet (p. ex. configurations de workflows propres au client) passent au client après paiement intégral de la rémunération convenue. Les accès, comptes et instances auprès de fournisseurs tiers (p. ex. n8n.io) enregistrés au nom du client restent dans tous les cas acquis au client ; les frais courants de ces instances sont à la charge du client.
 
-Les composants, modèles ou frameworks préexistants de Lavanchy Automation qui n'ont pas été développés spécifiquement pour le client restent, indépendamment du projet, la propriété de Lavanchy Automation. Le client reçoit un droit d'utilisation simple et non transférable dans le cadre de l'objectif convenu.
+Les composants, modèles ou frameworks préexistants de Lavanchy Automation qui n'ont pas été développés spécifiquement pour le client restent, indépendamment du projet, la propriété de Lavanchy Automation. Dans la mesure où ils font partie de la solution créée pour le client, celui-ci reçoit un droit d'utilisation simple et illimité dans le temps dans le cadre de l'objectif convenu. Ce droit comprend le droit d'exploiter, de maintenir et d'adapter la solution lui-même ou par l'intermédiaire de tiers mandatés. Une transmission de ces composants indépendamment de la solution n'est pas autorisée.
 
 Lavanchy Automation est en droit de sauvegarder en outre les configurations de workflows créées dans le cadre d'un projet dans ses propres archives privées, dans la mesure où cela est nécessaire à la fourniture de prestations de support ou de maintenance ou a été convenu avec le client.
 

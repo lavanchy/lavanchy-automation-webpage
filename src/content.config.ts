@@ -31,11 +31,21 @@ const homeSchema = z.object({
   hero: hero.extend({
     zusatztext: z.string(),
     ctaNote: z.string(),
+    secondaryCtaLabel: z.string().optional(),
+    secondaryCtaHref: z.string().optional(),
   }),
   problem: z.object({
     headline: z.string(),
     items: z.array(titledText),
   }),
+  landkarteTeaser: z
+    .object({
+      headline: z.string(),
+      text: z.string(),
+      linkLabel: z.string(),
+      linkHref: z.string(),
+    })
+    .optional(),
   angebot: z.object({
     headline: z.string(),
     items: z.array(z.object({ title: z.string(), text: z.array(z.string()) })),
@@ -89,11 +99,13 @@ const leistungenSchema = z.object({
     intro: z.string(),
     schritte: z.array(titledText),
   }),
-  schrittFuerSchritt: z.object({
-    headline: z.string(),
-    intro: z.array(z.string()),
-    schritte: z.array(titledText),
-  }),
+  kosten: z
+    .object({
+      headline: z.string(),
+      intro: z.string(),
+      items: z.array(titledText),
+    })
+    .optional(),
   mittenCta: z.object({
     headline: z.string(),
     text: z.string(),
@@ -110,7 +122,6 @@ const leistungenSchema = z.object({
     linkLexGeneralis: z.string(),
     pruefungNachLink: z.string(),
     linkUrl: z.string(),
-    cards: z.array(titledText),
     hinweis: z.string(),
   }),
   managedKi: z.object({
@@ -127,7 +138,13 @@ const leistungenSchema = z.object({
     gruppen: z.array(
       z.object({
         label: z.string(),
-        items: z.array(z.object({ frage: z.string(), antwort: z.array(z.string()) })),
+        items: z.array(
+          z.object({
+            frage: z.string(),
+            antwort: z.array(z.string()),
+            link: z.object({ label: z.string(), href: z.string() }).optional(),
+          })
+        ),
       })
     ),
   }),
@@ -144,6 +161,7 @@ const referenzenSchema = z.object({
       ausgangslage: z.array(z.string()),
       loesung: z.array(z.string()),
       mehrwert: z.array(z.string()),
+      statsHinweis: z.string().optional(),
       stats: z.array(statItem),
     })
   ),

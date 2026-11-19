@@ -1,10 +1,10 @@
 ---
 seo:
-  title: "Fallstudien zur n8n Automatisierung"
+  title: "Praxisbeispiele zur n8n Automatisierung"
   description: "Konkrete Beispiele für Prozessautomatisierung: Excel integrieren, manuelle Übertragungen reduzieren und Verwaltungsprozesse nachvollziehbar digitalisieren."
 hero:
   eyebrow: "Referenzen"
-  headline: "Bewiesen, nicht nur versprochen"
+  headline: "Projekte und Praxisbeispiele"
   subheadline: "Zwei Beispiele aus der Praxis zeigen, wie Prozessautomatisierung konkret aussieht und welchen Mehrwert sie bringen kann."
 fallstudien:
   - headline: "Das bewährte Excel bleibt, der Medienbruch verschwindet"
@@ -16,6 +16,7 @@ fallstudien:
       - "Der bestehende Prozess bleibt erhalten und wird gleichzeitig beschleunigt. Fehler beim Eintragen und Kopieren werden reduziert. Durch die automatische Kopie bleibt nachvollziehbar, welche Datei verwendet wurde und welche Berechnung stattgefunden hat."
       - "Bei vier Aufrufen pro Tag lassen sich rund 100 Minuten manueller Aufwand pro Woche einsparen. Wenn zusätzlich ein Fehler pro Woche vermieden wird, kommen rund 30 Minuten weniger Nacharbeit hinzu. Das entspricht in diesem Beispiel ungefähr 2 Stunden und 10 Minuten pro Woche."
       - "Die Rechnung ist eine konservative Beispielrechnung. Die tatsächliche Zeitersparnis hängt von der Nutzung und der früheren Fehlerhäufigkeit ab."
+    statsHinweis: "Beispielrechnung, keine Messung"
     stats:
       - value: "5 Min."
         label: "Zeitersparnis pro Excel Aufruf"
@@ -25,8 +26,6 @@ fallstudien:
         label: "weniger manueller Aufwand pro Woche"
       - value: "30 Min."
         label: "weniger Nacharbeit pro vermiedenem Fehler"
-      - value: "Über 90 %"
-        label: "weniger Fehler beim Eintragen und Kopieren, sofern im konkreten Fall bestätigt"
   - headline: "Ein manuelles Verfahren wird zur automatisierten Arbeit"
     ausgangslage:
       - "Bei einer Schweizer Bundesbehörde band ein papierbasiertes Verfahren viel Zeit von Fachpersonen. Jeder Fall musste einzeln manuell geprüft und bearbeitet werden, bei rund 7'000 Verfahren pro Jahr."
@@ -56,7 +55,7 @@ weitereIdeen:
       text: "Wenn Informationen klassifiziert, zusammengefasst oder vorbereitet werden müssen, kann ein Prozess auf Wunsch einen KI Schritt enthalten. Wo keine KI nötig ist, bleibt die Lösung bewusst einfach."
 fallstudienHinweis:
   headline: "Jetzt einsteigen, als Fallstudie"
-  text: "Bis 16. Oktober 2026 erarbeite ich für ausgewählte Betriebe kostenlose Fallstudien. Ihr bekommt eine massgeschneiderte Automatisierungslösung. Ich erhalte einen Referenzfall für meine Arbeit."
+  text: "Für ausgewählte Betriebe erarbeite ich kostenlose Fallstudien. Ihr bekommt eine massgeschneiderte Automatisierungslösung. Ich erhalte einen Referenzfall für meine Arbeit."
   ctaLabel: "Fallstudien-Platz sichern"
 abschlussCta:
   headline: "Bereit, eure Prozesse zu vereinfachen?"
